@@ -20,13 +20,17 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mRu-uD-6em">
                                 <rect key="frame" x="16" y="52" width="382" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="All"/>
+                                    <segment title="Completed"/>
+                                    <segment title="Incompleted"/>
                                 </segments>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="afp-2q-9Sk">
                                 <rect key="frame" x="8" y="83" width="398" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="PXD-Fj-BgS"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="U1u-G7-W5L">
                                 <rect key="frame" x="0.0" y="134" width="414" height="728"/>
@@ -67,6 +71,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addTodoButton" destination="jsg-sC-Akc" id="Cr0-U7-M5D"/>
+                        <outlet property="searchBar" destination="afp-2q-9Sk" id="6e1-a0-Q1D"/>
                         <outlet property="tableView" destination="U1u-G7-W5L" id="H3O-CW-8du"/>
                     </connections>
                 </viewController>

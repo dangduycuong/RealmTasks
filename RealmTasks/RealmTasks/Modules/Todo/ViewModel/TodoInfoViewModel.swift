@@ -7,9 +7,12 @@
 
 import Foundation
 
+
 class TodoInfoViewModel {
     var todo = TodoModel()
     var todoCompleted: Bool = false
+    
+    
     
     func setupData(data: TodoModel) {
         todo = data
