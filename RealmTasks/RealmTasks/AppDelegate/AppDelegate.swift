@@ -6,14 +6,36 @@
 //
 
 import UIKit
+import IQKeyboardManager
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Remove before app release.
+        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared().isEnableAutoToolbar = false
+        IQKeyboardManager.shared().shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared().keyboardDistanceFromTextField = 80
+        
+        let mySchemaVersion = 2
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: UInt64(mySchemaVersion),
+            migrationBlock: { (migration, oldSchemaVersion) in
+                migration.enumerateObjects(ofType: TodoModel.className(), {
+                    (oldObject, newObject) in
+                    //                            newObject?["fullname"] = oldObject?["name"]
+                })
+            })
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+            schemaVersion: UInt64(mySchemaVersion),
+            migrationBlock: { (migration, oldSchemaVersion) in
+                //                        migration.renameProperty(onType: Model.className(), from: "name", to: "fullname")
+            })
+        
         return true
     }
 

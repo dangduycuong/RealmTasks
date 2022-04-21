@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RealmTasks' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RealmTasks
+	pod 'IQKeyboardManager'
+	pod 'RealmSwift', '10.24.1'
+	pod 'R.swift', '6.1'
+  pod 'Material', '3.1.0'
+
+  target 'RealmTasksTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'RealmTasksUITests' do
+    # Pods for testing
+  end
+
+end
