@@ -10,6 +10,7 @@ target 'RealmTasks' do
 	pod 'RealmSwift', '10.24.1'
 	pod 'R.swift', '6.1'
   pod 'Material', '3.1.0'
+  pod 'GoogleMaps', '6.1'
 
   target 'RealmTasksTests' do
     inherit! :search_paths

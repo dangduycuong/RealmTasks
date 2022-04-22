@@ -8,6 +8,9 @@
 import UIKit
 import IQKeyboardManager
 import RealmSwift
+import GoogleMaps
+
+let googleApiKey = "AIzaSyBjK7ZifDuLbogjhWx9XjpIcRlczC6c-I0"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             migrationBlock: { (migration, oldSchemaVersion) in
                 //                        migration.renameProperty(onType: Model.className(), from: "name", to: "fullname")
             })
-        
+        GMSServices.provideAPIKey(googleApiKey)
         return true
     }
 

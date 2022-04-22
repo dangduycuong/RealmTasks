@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol TodoTableViewCellDelegate: AnyObject {
+    func modifyTodoStatus(indexPath: IndexPath)
+}
+
 class TodoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkboxImageView: UIImageView!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var todoTitleLabel: UILabel!
     @IBOutlet weak var todoDescriptionLabel: UILabel!
+    
+    var indexPath: IndexPath?
+    weak var delegate: TodoTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,5 +46,8 @@ class TodoTableViewCell: UITableViewCell {
     }
     
     @IBAction func checkboxButtonClicked(_ sender: Any) {
+        if let delegate = delegate, let indexPath = indexPath {
+            delegate.modifyTodoStatus(indexPath: indexPath)
+        }
     }
 }

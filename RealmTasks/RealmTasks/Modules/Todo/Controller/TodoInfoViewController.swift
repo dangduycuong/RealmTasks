@@ -15,17 +15,6 @@ class TodoInfoViewController: BaseViewController {
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var checkboxImageView: UIImageView!
     
-    var rightButton: UIButton = {
-        let originalImage = R.image.icons8Save()
-        let tintedImage = originalImage!.withRenderingMode(.alwaysTemplate)
-        let button = IconButton(image: nil, tintColor: AppColor.blueCustom)
-        button.setBackgroundImage(tintedImage, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        button.contentHorizontalAlignment = .right
-        return button
-    }()
-    
     var placeholderLabel : UILabel!
     
     var viewModel = TodoInfoViewModel()
@@ -35,12 +24,20 @@ class TodoInfoViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         fillData()
+        viewModel.delegate = self
     }
     
     private func setupUI() {
+        let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        imageView.tintColor = AppColor.blueCustom
         
-        rightButton.addTarget(self, action: #selector(saveTodo), for: .touchUpInside)
-        let rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveTodo(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
         addBackButton()
@@ -56,18 +53,8 @@ class TodoInfoViewController: BaseViewController {
         placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
     }
     
-    func fillData() {
-        if let todo = todo {
-            viewModel.setupData(data: todo)
-            todoTitleTextField.text = todo.todoTitle
-            todoDescriptionTextView.text = todo.todoDescription
-            placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
-        }
-        checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = AppColor.blueCustom
-    }
-    
-    @objc func saveTodo() {
+    @objc func saveTodo(tapGestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
         if let todoTitle = todoTitleTextField.text,
            let todoDescription = todoDescriptionTextView.text {
             if let _ = todo {
@@ -78,10 +65,20 @@ class TodoInfoViewController: BaseViewController {
         }
     }
     
+    func fillData() {
+        if let todo = todo {
+            viewModel.setupData(todo: todo)
+            todoTitleTextField.text = todo.todoTitle
+            todoDescriptionTextView.text = todo.todoDescription
+            placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
+        }
+        checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
+        checkboxImageView.tintColor = AppColor.blueCustom
+    }
+    
     @IBAction func checkboxButtonClicked(_ sender: Any) {
         viewModel.todoCompleted = !viewModel.todoCompleted
         checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = AppColor.blueCustom
     }
 }
 
@@ -93,5 +90,31 @@ extension TodoInfoViewController: UITextFieldDelegate {
 extension TodoInfoViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+}
+
+extension TodoInfoViewController: SaveTodoInfoDelegate {
+    func savedTodo(message: String, type: TodoTask) {
+        let titleLeftButton = type == .add ? "Continue" : nil
+        let titleRightButton = type == .error ? "OK" : "Done"
+        showAlert(type: .notice, titleAlert: nil, message: message, titleLeftButton: titleLeftButton, titleRightButton: titleRightButton, leftAction: {
+            self.resetDataDisplay()
+        }, rightAction: {
+            if type != .error {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+    }
+    
+    func resetDataDisplay() {
+        todoTitleTextField.text = ""
+        todoDescriptionTextView.text = ""
+        viewModel.todoCompleted = false
+        todoTitleTextField.becomeFirstResponder()
+        checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
     }
 }

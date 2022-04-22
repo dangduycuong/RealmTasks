@@ -12,6 +12,27 @@ protocol UpdateTodoData: AnyObject {
     func updateData()
 }
 
+enum TodoType {
+    case all
+    case completed
+    case incompleted
+    
+    static let list = [all, completed, incompleted]
+    
+    var text: String {
+        get {
+            switch self {
+            case .all:
+                return "All"
+            case .completed:
+                return "Completed"
+            case .incompleted:
+                return "Incompleted"
+            }
+        }
+    }
+}
+
 class TodoViewModel {
     
     var listTodo = [TodoModel]()
@@ -25,13 +46,27 @@ class TodoViewModel {
         }
     }
     
-    weak var delegate: UpdateTodoData?
-    
-    func modifyDataRealm(dataEdit: TodoModel) {
-        DataManager.shared.modifyDataRealm(dataEdit: dataEdit)
+    var segmentIndex: Int = 0 {
+        didSet(oldValue) {
+            print("changed from \(oldValue) to \(segmentIndex)")
+            filterData()
+        }
     }
     
-    func removeTodo(todo: TodoModel, completed: @escaping(() -> Void)) {
+    weak var delegate: UpdateTodoData?
+    
+    func modifyDataRealm(indexPath: IndexPath) {
+        let todo = filterTodos[indexPath.row]
+        let todoUpdate = TodoModel()
+        todoUpdate.id = todo.id
+        todoUpdate.todoTitle = todo.todoTitle
+        todoUpdate.todoDescription = todo.todoDescription
+        todoUpdate.isCompleted = !todo.isCompleted
+        DataManager.shared.modifyDataRealm(dataEdit: todoUpdate)
+        getListDataFromRealm()
+    }
+    
+    func removeTodo(todo: TodoModel) {
         if DataManager.shared.removeDocumentOffline(id: todo.id) {
             getListDataFromRealm()
         }
@@ -46,15 +81,32 @@ class TodoViewModel {
     }
     
     private func filterData() {
+        let type = TodoType.list[segmentIndex]
+        var list = [TodoModel]()
+        
+        switch type {
+        case .all:
+            list = listTodo
+        case .completed:
+            list = listTodo.filter({ todo in
+                return todo.isCompleted == true
+            })
+        case .incompleted:
+            list = listTodo.filter({ todo in
+                return todo.isCompleted == false
+            })
+        }
+        
         if searchText == "" {
-            filterTodos = listTodo
+            filterTodos = list
         } else {
-            filterTodos = listTodo.filter { (todo: TodoModel) in
+            filterTodos = list.filter { (todo: TodoModel) in
                 let title = todo.todoTitle.lowercased().unaccent()
                 let description = todo.todoDescription.lowercased().unaccent()
                 
                 let keyText = searchText.lowercased().unaccent()
                 if title.range(of: keyText) != nil || description.range(of: keyText) != nil {
+                    
                     return true
                 }
                 return false
