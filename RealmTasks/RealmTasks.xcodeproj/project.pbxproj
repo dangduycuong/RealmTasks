@@ -28,7 +28,19 @@
 		ACB1B70828113B6D00C2F90D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B70728113B6D00C2F90D /* DataManager.swift */; };
 		ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B70A28113DDB00C2F90D /* TodoViewModel.swift */; };
 		ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B70C28113E6A00C2F90D /* TodoInfoViewModel.swift */; };
-		ACB1B715281160D200C2F90D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B714281160D200C2F90D /* R.generated.swift */; };
+		ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE3FC281251EF007D0049 /* MenloFont.swift */; };
+		ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCEE3FE28125B49007D0049 /* Alert.storyboard */; };
+		ACCEE40128125B7C007D0049 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40028125B7C007D0049 /* Alert.swift */; };
+		ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40228125C0C007D0049 /* ShowAlertViewController.swift */; };
+		ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4072812A7A1007D0049 /* GoogleDataProvider.swift */; };
+		ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4092812A7CF007D0049 /* GooglePlace.swift */; };
+		ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40B2812A7E4007D0049 /* PlaceMarker.swift */; };
+		ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */; };
+		ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40F2812A81A007D0049 /* Metadata.swift */; };
+		ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */; };
+		ACCEE4162812A98D007D0049 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */; };
+		ACCEE4172812A98D007D0049 /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */; };
+		ACCEE41A2812BA02007D0049 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4192812BA02007D0049 /* R.generated.swift */; };
 		E2751673F1C0B68D39FDBE6F /* Pods_RealmTasks_RealmTasksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979F362572726448521C334A /* Pods_RealmTasks_RealmTasksUITests.framework */; };
 		E763FEDA0BF1723B79C71164 /* Pods_RealmTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB73B2FBB58274AE91B57BC /* Pods_RealmTasks.framework */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
@@ -87,7 +99,19 @@
 		ACB1B70728113B6D00C2F90D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB1B70A28113DDB00C2F90D /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		ACB1B70C28113E6A00C2F90D /* TodoInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoInfoViewModel.swift; sourceTree = "<group>"; };
-		ACB1B714281160D200C2F90D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		ACCEE3FC281251EF007D0049 /* MenloFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenloFont.swift; sourceTree = "<group>"; };
+		ACCEE3FE28125B49007D0049 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		ACCEE40028125B7C007D0049 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		ACCEE40228125C0C007D0049 /* ShowAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertViewController.swift; sourceTree = "<group>"; };
+		ACCEE4072812A7A1007D0049 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
+		ACCEE4092812A7CF007D0049 /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
+		ACCEE40B2812A7E4007D0049 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate+Extensions.swift"; sourceTree = "<group>"; };
+		ACCEE40F2812A81A007D0049 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MarkerInfoView.xib; path = "../../../../../../../../Downloads/Materials/final/Feed Me/Views/MarkerInfoView.xib"; sourceTree = "<group>"; };
+		ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerInfoView.swift; path = "../../../../../../../../Downloads/Materials/final/Feed Me/Views/MarkerInfoView.swift"; sourceTree = "<group>"; };
+		ACCEE4192812BA02007D0049 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D3ED986AFE0D11BD87EA5C12 /* Pods-RealmTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.debug.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.debug.xcconfig"; sourceTree = "<group>"; };
 		D72808B26742C64768DCA327 /* Pods-RealmTasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.release.xcconfig"; sourceTree = "<group>"; };
 		E5C24FDABE1E00A8F85CD7ED /* Pods-RealmTasks-RealmTasksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +197,7 @@
 				AC2019F02811305700ACFC4E /* Todo.storyboard */,
 				AC2019F42811308900ACFC4E /* Weather.storyboard */,
 				AC2019F62811309C00ACFC4E /* Media.storyboard */,
+				ACCEE3FE28125B49007D0049 /* Alert.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -180,7 +205,7 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				ACB1B714281160D200C2F90D /* R.generated.swift */,
+				ACCEE4192812BA02007D0049 /* R.generated.swift */,
 				AC2019D828112F2200ACFC4E /* Storyboard */,
 				AC2019D728112F1100ACFC4E /* Assets */,
 			);
@@ -240,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				AC2019E128112F9700ACFC4E /* AppColor.swift */,
+				ACCEE3FC281251EF007D0049 /* MenloFont.swift */,
+				ACCEE40228125C0C007D0049 /* ShowAlertViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -248,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2019E428112FBC00ACFC4E /* BaseViewController.swift */,
+				ACCEE40028125B7C007D0049 /* Alert.swift */,
 				AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */,
 			);
 			path = Base;
@@ -256,6 +284,9 @@
 		AC2019E82811300100ACFC4E /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				ACCEE4182812B87C007D0049 /* ViewModel */,
+				ACCEE4132812A96A007D0049 /* View */,
+				ACCEE4062812A799007D0049 /* Model */,
 				AC2019E92811300A00ACFC4E /* Controller */,
 			);
 			path = Weather;
@@ -291,6 +322,8 @@
 				ACB1B6F42811376400C2F90D /* Identifier */,
 				ACB1B6FB281137CF00C2F90D /* UITableView+Extension.swift */,
 				FA73C3AE28118D3100742B5E /* String+Extension.swift */,
+				ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */,
+				ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +377,33 @@
 			children = (
 				ACB1B70A28113DDB00C2F90D /* TodoViewModel.swift */,
 				ACB1B70C28113E6A00C2F90D /* TodoInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACCEE4062812A799007D0049 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEE4072812A7A1007D0049 /* GoogleDataProvider.swift */,
+				ACCEE4092812A7CF007D0049 /* GooglePlace.swift */,
+				ACCEE40B2812A7E4007D0049 /* PlaceMarker.swift */,
+				ACCEE40F2812A81A007D0049 /* Metadata.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACCEE4132812A96A007D0049 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */,
+				ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACCEE4182812B87C007D0049 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -414,6 +474,7 @@
 				FA3E74ED28105C570087F8EE /* Frameworks */,
 				FA3E74EE28105C570087F8EE /* Resources */,
 				01BE67A25EE74591BAE42F4B /* [CP] Embed Pods Frameworks */,
+				CBD291D5AF867EC4249CB884 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,6 +513,7 @@
 				FA3E750D28105C5A0087F8EE /* Frameworks */,
 				FA3E750E28105C5A0087F8EE /* Resources */,
 				24CC7D59D083A50ECB5F9418 /* [CP] Embed Pods Frameworks */,
+				4916C62D4DD33112865E9436 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -518,6 +580,8 @@
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
+				ACCEE4162812A98D007D0049 /* MarkerInfoView.xib in Resources */,
+				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +658,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4916C62D4DD33112865E9436 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5F88405EFC0C472AB43BC096 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -657,6 +738,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
+		CBD291D5AF867EC4249CB884 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmTasks/Pods-RealmTasks-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmTasks/Pods-RealmTasks-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealmTasks/Pods-RealmTasks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -666,21 +764,31 @@
 			files = (
 				AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */,
 				FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */,
+				ACCEE41A2812BA02007D0049 /* R.generated.swift in Sources */,
 				ACB1B6FA281137A700C2F90D /* UIViewController+Identifier.swift in Sources */,
+				ACCEE40128125B7C007D0049 /* Alert.swift in Sources */,
 				ACB1B6FC281137CF00C2F90D /* UITableView+Extension.swift in Sources */,
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
+				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
+				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
-				ACB1B715281160D200C2F90D /* R.generated.swift in Sources */,
 				ACB1B70828113B6D00C2F90D /* DataManager.swift in Sources */,
 				ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */,
 				AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */,
+				ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */,
+				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
+				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
+				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
+				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
+				ACCEE4172812A98D007D0049 /* MarkerInfoView.swift in Sources */,
+				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,

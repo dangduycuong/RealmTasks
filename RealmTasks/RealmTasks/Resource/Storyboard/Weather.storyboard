@@ -5,29 +5,72 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Weather View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="JSW-XF-hau">
             <objects>
-                <viewController storyboardIdentifier="WeatherViewController" id="Y6W-OH-hqX" customClass="WeatherViewController" customModule="RealmTasks" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="WeatherViewController" id="g5G-qm-9c5" customClass="WeatherViewController" customModule="RealmTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fVa-Hc-CIx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-5s-ita" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tib-0c-g1f">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bKd-eG-rSY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="emV-hr-lso">
+                                <rect key="frame" x="192" y="398" width="30" height="55"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UF2-IJ-BBw"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UF2-IJ-BBw" firstAttribute="trailing" secondItem="tib-0c-g1f" secondAttribute="trailing" id="E81-Eg-F91"/>
+                            <constraint firstItem="UF2-IJ-BBw" firstAttribute="bottom" secondItem="tib-0c-g1f" secondAttribute="bottom" id="VbK-vv-Veh"/>
+                            <constraint firstItem="tib-0c-g1f" firstAttribute="leading" secondItem="UF2-IJ-BBw" secondAttribute="leading" id="Vn6-Ci-HBJ"/>
+                            <constraint firstItem="CAH-5s-ita" firstAttribute="leading" secondItem="fVa-Hc-CIx" secondAttribute="leading" id="X2P-FO-UDm"/>
+                            <constraint firstItem="UF2-IJ-BBw" firstAttribute="centerY" secondItem="emV-hr-lso" secondAttribute="bottom" id="XrS-Lp-Rx2"/>
+                            <constraint firstItem="UF2-IJ-BBw" firstAttribute="centerX" secondItem="emV-hr-lso" secondAttribute="centerX" id="YyN-ML-wzx"/>
+                            <constraint firstItem="CAH-5s-ita" firstAttribute="top" secondItem="fVa-Hc-CIx" secondAttribute="top" id="hpq-ok-dWT"/>
+                            <constraint firstAttribute="trailing" secondItem="CAH-5s-ita" secondAttribute="trailing" id="mU5-Pa-Vrd"/>
+                            <constraint firstAttribute="bottom" secondItem="CAH-5s-ita" secondAttribute="bottom" id="zmo-yD-y4b"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4Y2-o4-Om7">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="nqo-44-Hzs">
+                            <connections>
+                                <action selector="refreshPlaces:" destination="g5G-qm-9c5" id="qLf-Nu-b9H"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="filter" id="Zmf-1V-0KR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="tib-0c-g1f" id="ifX-Yr-A3f"/>
+                        <outlet property="mapCenterPinImage" destination="emV-hr-lso" id="o4x-c2-Ncb"/>
+                        <outlet property="mapView" destination="CAH-5s-ita" id="H54-iR-Fhz"/>
+                        <outlet property="pinImageVerticalConstraint" destination="XrS-Lp-Rx2" id="9MI-TX-yxr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNj-Gd-hFf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="114"/>
+            <point key="canvasLocation" x="983" y="797"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="filter" width="25" height="25"/>
+        <image name="icon_me" width="30" height="55"/>
     </resources>
 </document>

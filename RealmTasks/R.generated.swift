@@ -89,8 +89,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
+    /// Storyboard `Alert`.
+    static let alert = _R.storyboard.alert()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
@@ -101,6 +103,13 @@ struct R: Rswift.Validatable {
     static let todo = _R.storyboard.todo()
     /// Storyboard `Weather`.
     static let weather = _R.storyboard.weather()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Alert", bundle: ...)`
+    static func alert(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.alert)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -166,16 +175,52 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 32 images.
   struct image {
+    /// Image `NoData`.
+    static let noData = Rswift.ImageResource(bundle: R.hostingBundle, name: "NoData")
+    /// Image `bakery_pin`.
+    static let bakery_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "bakery_pin")
+    /// Image `bakery`.
+    static let bakery = Rswift.ImageResource(bundle: R.hostingBundle, name: "bakery")
+    /// Image `bar_pin`.
+    static let bar_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar_pin")
+    /// Image `bar`.
+    static let bar = Rswift.ImageResource(bundle: R.hostingBundle, name: "bar")
+    /// Image `cafe_pin`.
+    static let cafe_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "cafe_pin")
+    /// Image `cafe`.
+    static let cafe = Rswift.ImageResource(bundle: R.hostingBundle, name: "cafe")
+    /// Image `coffee`.
+    static let coffee = Rswift.ImageResource(bundle: R.hostingBundle, name: "coffee")
+    /// Image `driving_pin`.
+    static let driving_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "driving_pin")
+    /// Image `driving`.
+    static let driving = Rswift.ImageResource(bundle: R.hostingBundle, name: "driving")
+    /// Image `filter`.
+    static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "filter")
+    /// Image `generic`.
+    static let generic = Rswift.ImageResource(bundle: R.hostingBundle, name: "generic")
+    /// Image `grocery_or_supermarket_pin`.
+    static let grocery_or_supermarket_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "grocery_or_supermarket_pin")
+    /// Image `grocery_or_supermarket`.
+    static let grocery_or_supermarket = Rswift.ImageResource(bundle: R.hostingBundle, name: "grocery_or_supermarket")
+    /// Image `icon_me`.
+    static let icon_me = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_me")
+    /// Image `icons8-airport_arrow_baggage_direction_luggage_move_62`.
+    static let icons8Airport_arrow_baggage_direction_luggage_move_62 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-airport_arrow_baggage_direction_luggage_move_62")
     /// Image `icons8-back`.
     static let icons8Back = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-back")
     /// Image `icons8-check_circle`.
     static let icons8Check_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-check_circle")
     /// Image `icons8-checked_checkbox`.
     static let icons8Checked_checkbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-checked_checkbox")
+    /// Image `icons8-done`.
+    static let icons8Done = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-done")
     /// Image `icons8-kodi`.
     static let icons8Kodi = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-kodi")
+    /// Image `icons8-ok`.
+    static let icons8Ok = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-ok")
     /// Image `icons8-round`.
     static let icons8Round = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-round")
     /// Image `icons8-save`.
@@ -186,6 +231,128 @@ struct R: Rswift.Validatable {
     static let icons8Unchecked_checkbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-unchecked_checkbox")
     /// Image `icons8-wind_speed_38-42`.
     static let icons8Wind_speed_3842 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-wind_speed_38-42")
+    /// Image `restaurant_pin`.
+    static let restaurant_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "restaurant_pin")
+    /// Image `restaurant`.
+    static let restaurant = Rswift.ImageResource(bundle: R.hostingBundle, name: "restaurant")
+    /// Image `rw-logo`.
+    static let rwLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "rw-logo")
+    /// Image `rwdevcon-bg`.
+    static let rwdevconBg = Rswift.ImageResource(bundle: R.hostingBundle, name: "rwdevcon-bg")
+    /// Image `walking`.
+    static let walking = Rswift.ImageResource(bundle: R.hostingBundle, name: "walking")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "NoData", bundle: ..., traitCollection: ...)`
+    static func noData(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.noData, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bakery", bundle: ..., traitCollection: ...)`
+    static func bakery(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bakery, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bakery_pin", bundle: ..., traitCollection: ...)`
+    static func bakery_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bakery_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bar", bundle: ..., traitCollection: ...)`
+    static func bar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bar, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bar_pin", bundle: ..., traitCollection: ...)`
+    static func bar_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bar_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cafe", bundle: ..., traitCollection: ...)`
+    static func cafe(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cafe, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cafe_pin", bundle: ..., traitCollection: ...)`
+    static func cafe_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cafe_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "coffee", bundle: ..., traitCollection: ...)`
+    static func coffee(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.coffee, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "driving", bundle: ..., traitCollection: ...)`
+    static func driving(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.driving, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "driving_pin", bundle: ..., traitCollection: ...)`
+    static func driving_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.driving_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "filter", bundle: ..., traitCollection: ...)`
+    static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "generic", bundle: ..., traitCollection: ...)`
+    static func generic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.generic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "grocery_or_supermarket", bundle: ..., traitCollection: ...)`
+    static func grocery_or_supermarket(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.grocery_or_supermarket, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "grocery_or_supermarket_pin", bundle: ..., traitCollection: ...)`
+    static func grocery_or_supermarket_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.grocery_or_supermarket_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_me", bundle: ..., traitCollection: ...)`
+    static func icon_me(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_me, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icons8-airport_arrow_baggage_direction_luggage_move_62", bundle: ..., traitCollection: ...)`
+    static func icons8Airport_arrow_baggage_direction_luggage_move_62(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icons8Airport_arrow_baggage_direction_luggage_move_62, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icons8-back", bundle: ..., traitCollection: ...)`
@@ -209,9 +376,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icons8-done", bundle: ..., traitCollection: ...)`
+    static func icons8Done(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icons8Done, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icons8-kodi", bundle: ..., traitCollection: ...)`
     static func icons8Kodi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icons8Kodi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icons8-ok", bundle: ..., traitCollection: ...)`
+    static func icons8Ok(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icons8Ok, compatibleWith: traitCollection)
     }
     #endif
 
@@ -250,6 +431,41 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "restaurant", bundle: ..., traitCollection: ...)`
+    static func restaurant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.restaurant, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "restaurant_pin", bundle: ..., traitCollection: ...)`
+    static func restaurant_pin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.restaurant_pin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rw-logo", bundle: ..., traitCollection: ...)`
+    static func rwLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rwLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rwdevcon-bg", bundle: ..., traitCollection: ...)`
+    static func rwdevconBg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rwdevconBg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "walking", bundle: ..., traitCollection: ...)`
+    static func walking(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.walking, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
@@ -284,10 +500,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `MarkerInfoView`.
+    static let markerInfoView = _R.nib._MarkerInfoView()
     /// Nib `TodoTableViewCell`.
     static let todoTableViewCell = _R.nib._TodoTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MarkerInfoView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.markerInfoView) instead")
+    static func markerInfoView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.markerInfoView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "TodoTableViewCell", in: bundle)`
@@ -296,6 +522,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.todoTableViewCell)
     }
     #endif
+
+    static func markerInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
+      return R.nib.markerInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
+    }
 
     static func todoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TodoTableViewCell? {
       return R.nib.todoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TodoTableViewCell
@@ -326,6 +556,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _MarkerInfoView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MarkerInfoView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _TodoTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "TodoTableViewCell"
@@ -345,6 +586,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try alert.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -360,6 +604,26 @@ struct _R: Rswift.Validatable {
       try weather.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct alert: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Alert"
+      let showAlertViewController = StoryboardViewControllerResource<ShowAlertViewController>(identifier: "ShowAlertViewController")
+
+      func showAlertViewController(_: Void = ()) -> ShowAlertViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: showAlertViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.alert().showAlertViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showAlertViewController' could not be loaded from storyboard 'Alert' as 'ShowAlertViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -441,6 +705,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "NoData", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NoData' is used in storyboard 'Todo', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icons8-ok", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icons8-ok' is used in storyboard 'Todo', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus' is used in storyboard 'Todo', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
@@ -463,6 +729,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "filter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'filter' is used in storyboard 'Weather', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon_me", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_me' is used in storyboard 'Weather', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.weather().weatherViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'weatherViewController' could not be loaded from storyboard 'Weather' as 'WeatherViewController'.") }

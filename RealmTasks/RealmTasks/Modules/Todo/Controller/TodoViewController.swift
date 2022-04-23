@@ -8,10 +8,17 @@
 import UIKit
 
 class TodoViewController: BaseViewController {
-    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTodoButton: UIButton!
+    @IBOutlet var noDataImageView: UIImageView!
+    
+    var noData: Bool = true {
+        didSet {
+            noData ? (tableView.tableHeaderView = noDataImageView) : (tableView.tableHeaderView = nil)
+        }
+    }
     
     var viewModel = TodoViewModel()
     
@@ -25,10 +32,6 @@ class TodoViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getData()
-    }
-    
-    private func getData() {
         viewModel.getListDataFromRealm()
     }
     
@@ -43,6 +46,18 @@ class TodoViewController: BaseViewController {
         addTodoButton.layer.shadowRadius = 5
         addTodoButton.layer.shadowOpacity = 1.0
         addTodoButton.layer.cornerRadius = 20
+        
+        if let bold = MenloFont.bold(with: 16) {
+            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
+            segmentedControl.backgroundColor = .brown
+            segmentedControl.selectedSegmentTintColor = AppColor.blueCustom
+        }
+        
+    }
+    
+    @IBAction func segmentControlValueChanged(_ sender: Any) {
+        viewModel.segmentIndex = segmentedControl.selectedSegmentIndex
     }
     
     @IBAction func addTodoButtonClicked(_ sender: Any) {
@@ -59,6 +74,8 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: TodoTableViewCell.self, forIndexPath: indexPath)
+        cell.indexPath = indexPath
+        cell.delegate = self
         cell.fillData(todo: viewModel.filterTodos[indexPath.row])
         return cell
     }
@@ -72,11 +89,7 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.removeTodo(todo: viewModel.filterTodos[indexPath.row], completed: { [weak self] in
-                guard let `self` = self else { return }
-                self.getData()
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            })
+            viewModel.removeTodo(todo: viewModel.filterTodos[indexPath.row])
         }
     }
 }
@@ -89,6 +102,13 @@ extension TodoViewController: UISearchBarDelegate {
 
 extension TodoViewController: UpdateTodoData {
     func updateData() {
+        noData = viewModel.filterTodos.isEmpty
         tableView.reloadData()
+    }
+}
+
+extension TodoViewController: TodoTableViewCellDelegate {
+    func modifyTodoStatus(indexPath: IndexPath) {
+        viewModel.modifyDataRealm(indexPath: indexPath)
     }
 }

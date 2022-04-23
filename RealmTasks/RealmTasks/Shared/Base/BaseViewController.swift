@@ -20,6 +20,8 @@ class BaseViewController: UIViewController {
         return button
     }()
     
+    let alertService = AlertService()
+    
     func removeBorderNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -34,6 +36,13 @@ class BaseViewController: UIViewController {
     
     @objc func backButtonClicked(sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func showAlert(type: AlertType, titleAlert: String?, message: String, titleLeftButton: String?, titleRightButton: String?, leftAction: @escaping () -> Void, rightAction: @escaping () -> Void) {
+        let vc = alertService.showAlert(type: type, titleAlert: titleAlert, message: message, titleLeftButton: titleLeftButton, titleRightButton: titleRightButton, leftAction: leftAction, rightAction: rightAction)
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: false, completion: nil)
     }
     
 }

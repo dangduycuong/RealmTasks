@@ -24,6 +24,9 @@
                                     <segment title="Completed"/>
                                     <segment title="Incompleted"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControlValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="02s-Eb-aTw"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="afp-2q-9Sk">
                                 <rect key="frame" x="8" y="83" width="398" height="51"/>
@@ -72,11 +75,17 @@
                     </view>
                     <connections>
                         <outlet property="addTodoButton" destination="jsg-sC-Akc" id="Cr0-U7-M5D"/>
+                        <outlet property="noDataImageView" destination="lic-b4-afA" id="FBu-Ce-vIn"/>
                         <outlet property="searchBar" destination="afp-2q-9Sk" id="6e1-a0-Q1D"/>
+                        <outlet property="segmentedControl" destination="mRu-uD-6em" id="Uhh-do-zYY"/>
                         <outlet property="tableView" destination="U1u-G7-W5L" id="H3O-CW-8du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoData" id="lic-b4-afA">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
             <point key="canvasLocation" x="77" y="114"/>
         </scene>
@@ -88,27 +97,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GL7-3N-aYG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL7-3N-aYG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-g7-5YX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-S3-tyx">
-                                                <rect key="frame" x="57" y="153.5" width="87" height="19"/>
+                                                <rect key="frame" x="57" y="117.5" width="87" height="19"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-8H-NbO">
-                                                <rect key="frame" x="24" y="150.5" width="25" height="25"/>
+                                                <rect key="frame" x="24" y="114.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="XAR-cm-xd2"/>
                                                     <constraint firstAttribute="height" constant="25" id="s6s-Nu-1fh"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tn8-FI-CLv">
-                                                <rect key="frame" x="16" y="16" width="382" height="167"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tn8-FI-CLv">
+                                                <rect key="frame" x="16" y="16" width="382" height="131"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOS-w8-dnQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -122,7 +131,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-9l-FtQ">
-                                                        <rect key="frame" x="0.0" y="48" width="382" height="71"/>
+                                                        <rect key="frame" x="0.0" y="48" width="382" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
@@ -132,7 +141,7 @@
                                                         </connections>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl4-SC-Fpl">
-                                                        <rect key="frame" x="0.0" y="127" width="382" height="40"/>
+                                                        <rect key="frame" x="0.0" y="91" width="382" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="TYB-19-Txb"/>
                                                         </constraints>
@@ -152,7 +161,7 @@
                                             <constraint firstItem="Tn8-FI-CLv" firstAttribute="leading" secondItem="TeE-g7-5YX" secondAttribute="leading" constant="16" id="e4J-3q-DlV"/>
                                             <constraint firstItem="Rl4-SC-Fpl" firstAttribute="leading" secondItem="Lej-8H-NbO" secondAttribute="leading" constant="-8" id="fbE-5N-u1p"/>
                                             <constraint firstAttribute="trailing" secondItem="Tn8-FI-CLv" secondAttribute="trailing" constant="16" id="h1F-Df-ouV"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="100" id="iqr-XC-D1d"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="50" id="iqr-XC-D1d"/>
                                             <constraint firstItem="Ay7-S3-tyx" firstAttribute="centerY" secondItem="Lej-8H-NbO" secondAttribute="centerY" id="itk-4u-571"/>
                                             <constraint firstItem="Tn8-FI-CLv" firstAttribute="top" secondItem="TeE-g7-5YX" secondAttribute="top" constant="16" id="jpX-mR-4H6"/>
                                             <constraint firstAttribute="bottom" secondItem="Tn8-FI-CLv" secondAttribute="bottom" constant="16" id="sF5-pY-ihO"/>
@@ -177,6 +186,9 @@
                             <constraint firstItem="GL7-3N-aYG" firstAttribute="top" secondItem="1G7-16-AYj" secondAttribute="top" id="qmL-AY-zOZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Feb-z6-MCO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-ok" width="45" id="aIW-Wj-nmP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="checkboxButton" destination="Rl4-SC-Fpl" id="VJl-PG-1Hw"/>
                         <outlet property="checkboxImageView" destination="Lej-8H-NbO" id="X7Z-eX-rrN"/>
@@ -186,10 +198,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHb-iE-GI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.85507246376812" y="113.83928571428571"/>
+            <point key="canvasLocation" x="1700.0000000000002" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
+        <image name="NoData" width="800" height="600"/>
+        <image name="icons8-ok" width="12" height="12"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
