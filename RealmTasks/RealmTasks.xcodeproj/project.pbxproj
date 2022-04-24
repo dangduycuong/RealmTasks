@@ -38,11 +38,14 @@
 		ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */; };
 		ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40F2812A81A007D0049 /* Metadata.swift */; };
 		ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */; };
-		ACCEE4162812A98D007D0049 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */; };
-		ACCEE4172812A98D007D0049 /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */; };
 		ACCEE41A2812BA02007D0049 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4192812BA02007D0049 /* R.generated.swift */; };
 		E2751673F1C0B68D39FDBE6F /* Pods_RealmTasks_RealmTasksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979F362572726448521C334A /* Pods_RealmTasks_RealmTasksUITests.framework */; };
 		E763FEDA0BF1723B79C71164 /* Pods_RealmTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB73B2FBB58274AE91B57BC /* Pods_RealmTasks.framework */; };
+		FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD762813A83C00C820ED /* MarkerInfoView.swift */; };
+		FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA02FD782813A86A00C820ED /* MarkerInfoView.xib */; };
+		FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */; };
+		FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD7F2813C43E00C820ED /* Data+Extension.swift */; };
+		FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD81281406AA00C820ED /* RealtimeWeather.swift */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
 		FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F528105C570087F8EE /* SceneDelegate.swift */; };
 		FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F728105C570087F8EE /* MenuTabbarViewController.swift */; };
@@ -109,12 +112,15 @@
 		ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate+Extensions.swift"; sourceTree = "<group>"; };
 		ACCEE40F2812A81A007D0049 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MarkerInfoView.xib; path = "../../../../../../../../Downloads/Materials/final/Feed Me/Views/MarkerInfoView.xib"; sourceTree = "<group>"; };
-		ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkerInfoView.swift; path = "../../../../../../../../Downloads/Materials/final/Feed Me/Views/MarkerInfoView.swift"; sourceTree = "<group>"; };
 		ACCEE4192812BA02007D0049 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D3ED986AFE0D11BD87EA5C12 /* Pods-RealmTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.debug.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.debug.xcconfig"; sourceTree = "<group>"; };
 		D72808B26742C64768DCA327 /* Pods-RealmTasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.release.xcconfig"; sourceTree = "<group>"; };
 		E5C24FDABE1E00A8F85CD7ED /* Pods-RealmTasks-RealmTasksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA02FD762813A83C00C820ED /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
+		FA02FD782813A86A00C820ED /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
+		FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		FA02FD7F2813C43E00C820ED /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		FA02FD81281406AA00C820ED /* RealtimeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeWeather.swift; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E74F328105C570087F8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3E74F528105C570087F8EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,7 +290,7 @@
 		AC2019E82811300100ACFC4E /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				ACCEE4182812B87C007D0049 /* ViewModel */,
+				FA02FD7C2813B7DC00C820ED /* ViewModel */,
 				ACCEE4132812A96A007D0049 /* View */,
 				ACCEE4062812A799007D0049 /* Model */,
 				AC2019E92811300A00ACFC4E /* Controller */,
@@ -324,6 +330,7 @@
 				FA73C3AE28118D3100742B5E /* String+Extension.swift */,
 				ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */,
 				ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */,
+				FA02FD7F2813C43E00C820ED /* Data+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -388,6 +395,7 @@
 				ACCEE4092812A7CF007D0049 /* GooglePlace.swift */,
 				ACCEE40B2812A7E4007D0049 /* PlaceMarker.swift */,
 				ACCEE40F2812A81A007D0049 /* Metadata.swift */,
+				FA02FD81281406AA00C820ED /* RealtimeWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,15 +403,16 @@
 		ACCEE4132812A96A007D0049 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACCEE4152812A98D007D0049 /* MarkerInfoView.swift */,
-				ACCEE4142812A98D007D0049 /* MarkerInfoView.xib */,
+				FA02FD782813A86A00C820ED /* MarkerInfoView.xib */,
+				FA02FD762813A83C00C820ED /* MarkerInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		ACCEE4182812B87C007D0049 /* ViewModel */ = {
+		FA02FD7C2813B7DC00C820ED /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -575,12 +584,12 @@
 			files = (
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
+				FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
-				ACCEE4162812A98D007D0049 /* MarkerInfoView.xib in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -770,15 +779,18 @@
 				ACB1B6FC281137CF00C2F90D /* UITableView+Extension.swift in Sources */,
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
+				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				ACB1B70828113B6D00C2F90D /* DataManager.swift in Sources */,
+				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
 				ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */,
 				AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */,
 				ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */,
 				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
+				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
@@ -786,8 +798,8 @@
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
+				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
-				ACCEE4172812A98D007D0049 /* MarkerInfoView.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
