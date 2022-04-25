@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RealmTasks
+
+  Created by cuongdd on 25/04/2022.
+  
+*/
+//MARK: Todo
+"todo" = "Công việc";
+"all" = "Tất cả";
+"completed" = "Hoàn thành";
+"incompleted" = "Chưa hoàn thành";
+//MARK: Weather
+"weather" = "Thời tiết";
+//MARK: Media
+"media" = "Giả trí";
+"favorite" = "Yêu thích";

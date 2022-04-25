@@ -175,7 +175,29 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 32 images.
+  /// This `R.file` struct is generated, and contains static references to 2 files.
+  struct file {
+    /// Resource file `ca_dao_hoc_tap.rtf`.
+    static let ca_dao_hoc_tapRtf = Rswift.FileResource(bundle: R.hostingBundle, name: "ca_dao_hoc_tap", pathExtension: "rtf")
+    /// Resource file `lao_dong_san_xuat.rtf`.
+    static let lao_dong_san_xuatRtf = Rswift.FileResource(bundle: R.hostingBundle, name: "lao_dong_san_xuat", pathExtension: "rtf")
+
+    /// `bundle.url(forResource: "ca_dao_hoc_tap", withExtension: "rtf")`
+    static func ca_dao_hoc_tapRtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ca_dao_hoc_tapRtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "lao_dong_san_xuat", withExtension: "rtf")`
+    static func lao_dong_san_xuatRtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.lao_dong_san_xuatRtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 33 images.
   struct image {
     /// Image `NoData`.
     static let noData = Rswift.ImageResource(bundle: R.hostingBundle, name: "NoData")
@@ -231,6 +253,8 @@ struct R: Rswift.Validatable {
     static let icons8Unchecked_checkbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-unchecked_checkbox")
     /// Image `icons8-wind_speed_38-42`.
     static let icons8Wind_speed_3842 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons8-wind_speed_38-42")
+    /// Image `loginBG`.
+    static let loginBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "loginBG")
     /// Image `restaurant_pin`.
     static let restaurant_pin = Rswift.ImageResource(bundle: R.hostingBundle, name: "restaurant_pin")
     /// Image `restaurant`.
@@ -432,6 +456,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "loginBG", bundle: ..., traitCollection: ...)`
+    static func loginBG(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.loginBG, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "restaurant", bundle: ..., traitCollection: ...)`
     static func restaurant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.restaurant, compatibleWith: traitCollection)
@@ -500,10 +531,40 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `MarkerInfoView`.
+    static let markerInfoView = _R.nib._MarkerInfoView()
+    /// Nib `MediaDetailTableViewCell`.
+    static let mediaDetailTableViewCell = _R.nib._MediaDetailTableViewCell()
+    /// Nib `MediaTableViewCell`.
+    static let mediaTableViewCell = _R.nib._MediaTableViewCell()
     /// Nib `TodoTableViewCell`.
     static let todoTableViewCell = _R.nib._TodoTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MarkerInfoView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.markerInfoView) instead")
+    static func markerInfoView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.markerInfoView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MediaDetailTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mediaDetailTableViewCell) instead")
+    static func mediaDetailTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mediaDetailTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MediaTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mediaTableViewCell) instead")
+    static func mediaTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mediaTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "TodoTableViewCell", in: bundle)`
@@ -513,8 +574,164 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func markerInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
+      return R.nib.markerInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
+    }
+
+    static func mediaDetailTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MediaDetailTableViewCell? {
+      return R.nib.mediaDetailTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MediaDetailTableViewCell
+    }
+
+    static func mediaTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MediaTableViewCell? {
+      return R.nib.mediaTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MediaTableViewCell
+    }
+
     static func todoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TodoTableViewCell? {
       return R.nib.todoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TodoTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    struct localizable {
+      /// en translation: All
+      ///
+      /// Locales: en
+      static let all = Rswift.StringResource(key: "all", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Completed
+      ///
+      /// Locales: en
+      static let completed = Rswift.StringResource(key: "completed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Favorite
+      ///
+      /// Locales: en
+      static let favorite = Rswift.StringResource(key: "favorite", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Incompleted
+      ///
+      /// Locales: en
+      static let incompleted = Rswift.StringResource(key: "incompleted", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Media
+      ///
+      /// Locales: en
+      static let media = Rswift.StringResource(key: "media", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Todo
+      ///
+      /// Locales: en
+      static let todo = Rswift.StringResource(key: "todo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Weather
+      ///
+      /// Locales: en
+      static let weather = Rswift.StringResource(key: "weather", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: All
+      ///
+      /// Locales: en
+      static func all(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("all", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "all"
+        }
+
+        return NSLocalizedString("all", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Completed
+      ///
+      /// Locales: en
+      static func completed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("completed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "completed"
+        }
+
+        return NSLocalizedString("completed", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Favorite
+      ///
+      /// Locales: en
+      static func favorite(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favorite", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favorite"
+        }
+
+        return NSLocalizedString("favorite", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Incompleted
+      ///
+      /// Locales: en
+      static func incompleted(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("incompleted", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "incompleted"
+        }
+
+        return NSLocalizedString("incompleted", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Media
+      ///
+      /// Locales: en
+      static func media(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("media", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "media"
+        }
+
+        return NSLocalizedString("media", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Todo
+      ///
+      /// Locales: en
+      static func todo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("todo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "todo"
+        }
+
+        return NSLocalizedString("todo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Weather
+      ///
+      /// Locales: en
+      static func weather(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("weather", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "weather"
+        }
+
+        return NSLocalizedString("weather", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
     }
 
     fileprivate init() {}
@@ -542,6 +759,39 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _MarkerInfoView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MarkerInfoView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MediaDetailTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MediaDetailTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MediaDetailTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MediaDetailTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MediaTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MediaTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MediaTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MediaTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _TodoTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "TodoTableViewCell"
@@ -618,10 +868,11 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = BaseNavigationController
+      typealias InitialController = LoginViewController
 
       let baseNavigationController = StoryboardViewControllerResource<BaseNavigationController>(identifier: "BaseNavigationController")
       let bundle = R.hostingBundle
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let menuTabbarViewController = StoryboardViewControllerResource<MenuTabbarViewController>(identifier: "MenuTabbarViewController")
       let name = "Main"
 
@@ -629,14 +880,20 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: baseNavigationController)
       }
 
+      func loginViewController(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
+      }
+
       func menuTabbarViewController(_: Void = ()) -> MenuTabbarViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: menuTabbarViewController)
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "loginBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loginBG' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().baseNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseNavigationController' could not be loaded from storyboard 'Main' as 'BaseNavigationController'.") }
+        if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
         if _R.storyboard.main().menuTabbarViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'menuTabbarViewController' could not be loaded from storyboard 'Main' as 'MenuTabbarViewController'.") }
       }
 
@@ -647,8 +904,13 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct media: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let mediaDetailViewController = StoryboardViewControllerResource<MediaDetailViewController>(identifier: "MediaDetailViewController")
       let mediaViewController = StoryboardViewControllerResource<MediaViewController>(identifier: "MediaViewController")
       let name = "Media"
+
+      func mediaDetailViewController(_: Void = ()) -> MediaDetailViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mediaDetailViewController)
+      }
 
       func mediaViewController(_: Void = ()) -> MediaViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mediaViewController)
@@ -657,6 +919,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.media().mediaDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mediaDetailViewController' could not be loaded from storyboard 'Media' as 'MediaDetailViewController'.") }
         if _R.storyboard.media().mediaViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mediaViewController' could not be loaded from storyboard 'Media' as 'MediaViewController'.") }
       }
 

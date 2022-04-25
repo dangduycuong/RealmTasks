@@ -25,9 +25,18 @@ class TodoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.delegate = self
         tableView.registerCell(TodoTableViewCell.self)
+        
+        
+        if let language = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
+            LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(language)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,7 +47,7 @@ class TodoViewController: BaseViewController {
     private func setupUI() {
         removeBorderNavigationBar()
         tabBarController?.tabBar.tintColor = AppColor.blueCustom
-        tabBarController?.title = "Todo"
+        tabBarController?.title = "todo".language()
         addTodoButton.tintColor = AppColor.blueCustom
         addTodoButton.setTitle("", for: .normal)
         addTodoButton.layer.shadowColor = AppColor.blueCustom.cgColor
@@ -47,13 +56,16 @@ class TodoViewController: BaseViewController {
         addTodoButton.layer.shadowOpacity = 1.0
         addTodoButton.layer.cornerRadius = 20
         
+        segmentedControl.setTitle(R.string.localizable.all().language(), forSegmentAt: 0)
+        segmentedControl.setTitle(R.string.localizable.completed().language(), forSegmentAt: 1)
+        segmentedControl.setTitle(R.string.localizable.incompleted().language(), forSegmentAt: 2)
+        
         if let bold = MenloFont.bold(with: 16) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .brown
             segmentedControl.selectedSegmentTintColor = AppColor.blueCustom
         }
-        
     }
     
     @IBAction func segmentControlValueChanged(_ sender: Any) {

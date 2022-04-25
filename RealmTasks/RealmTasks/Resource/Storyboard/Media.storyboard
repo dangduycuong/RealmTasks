@@ -16,13 +16,116 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-6a-tvB">
+                                <rect key="frame" x="16" y="52" width="382" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlClicked:" destination="Y6W-OH-hqX" eventType="valueChanged" id="DJa-Lk-kfE"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="4ef-kj-vTj">
+                                <rect key="frame" x="8" y="91" width="398" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="JWe-pJ-Gyl"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-cM-T7m">
+                                <rect key="frame" x="0.0" y="150" width="414" height="712"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="hMU-GX-6Gk"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="dqR-FQ-b58"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4ef-kj-vTj" secondAttribute="trailing" constant="8" id="1w1-E3-rpa"/>
+                            <constraint firstItem="1ww-6a-tvB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CAV-3s-G5v"/>
+                            <constraint firstItem="1ir-cM-T7m" firstAttribute="top" secondItem="4ef-kj-vTj" secondAttribute="bottom" constant="8" id="Hg8-hL-kOS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1ww-6a-tvB" secondAttribute="trailing" constant="16" id="JIR-ry-CFR"/>
+                            <constraint firstItem="1ir-cM-T7m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Na4-uW-g4H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1ir-cM-T7m" secondAttribute="trailing" id="Qkv-uX-qwM"/>
+                            <constraint firstItem="4ef-kj-vTj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="eOO-9R-p7J"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1ir-cM-T7m" secondAttribute="bottom" id="i33-Mt-TSt"/>
+                            <constraint firstItem="4ef-kj-vTj" firstAttribute="top" secondItem="1ww-6a-tvB" secondAttribute="bottom" constant="8" id="kIK-QM-mKf"/>
+                            <constraint firstItem="1ww-6a-tvB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="kwA-m5-EJU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="4ef-kj-vTj" id="WzD-Yw-PQh"/>
+                        <outlet property="segmentControl" destination="1ww-6a-tvB" id="3gN-as-ceC"/>
+                        <outlet property="tableView" destination="1ir-cM-T7m" id="5np-aL-TU1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="114"/>
+            <point key="canvasLocation" x="76.811594202898561" y="113.83928571428571"/>
+        </scene>
+        <!--Media Detail View Controller-->
+        <scene sceneID="pC2-Qp-KEV">
+            <objects>
+                <viewController storyboardIdentifier="MediaDetailViewController" id="NUg-lf-RvE" customClass="MediaDetailViewController" customModule="RealmTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h4p-Zu-YCT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1Sn-09-KR9">
+                                <rect key="frame" x="8" y="91" width="398" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NUg-lf-RvE" id="qm6-rv-ugF"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-Ri-sHh">
+                                <rect key="frame" x="0.0" y="150" width="414" height="712"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NUg-lf-RvE" id="EEE-Wi-wE6"/>
+                                    <outlet property="delegate" destination="NUg-lf-RvE" id="BuW-5c-jMP"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-k1-bJS">
+                                <rect key="frame" x="16" y="52" width="382" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Favorite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlClicked:" destination="NUg-lf-RvE" eventType="valueChanged" id="orS-Fd-gPS"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="euF-dg-tlL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rOb-k1-bJS" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" constant="16" id="4l4-mh-Orf"/>
+                            <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="Js8-Ri-sHh" secondAttribute="trailing" id="Bjh-yZ-AbR"/>
+                            <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="rOb-k1-bJS" secondAttribute="trailing" constant="16" id="Heq-iS-UBQ"/>
+                            <constraint firstItem="1Sn-09-KR9" firstAttribute="top" secondItem="rOb-k1-bJS" secondAttribute="bottom" constant="8" id="Hiy-1r-E5p"/>
+                            <constraint firstItem="1Sn-09-KR9" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" constant="8" id="Sl6-mo-Lmd"/>
+                            <constraint firstItem="Js8-Ri-sHh" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" id="UoN-Lx-Vqc"/>
+                            <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="1Sn-09-KR9" secondAttribute="trailing" constant="8" id="aJp-Ic-rAE"/>
+                            <constraint firstItem="euF-dg-tlL" firstAttribute="bottom" secondItem="Js8-Ri-sHh" secondAttribute="bottom" id="bXU-X4-qw0"/>
+                            <constraint firstItem="rOb-k1-bJS" firstAttribute="top" secondItem="euF-dg-tlL" secondAttribute="top" constant="8" id="thr-Ky-JfB"/>
+                            <constraint firstItem="Js8-Ri-sHh" firstAttribute="top" secondItem="1Sn-09-KR9" secondAttribute="bottom" constant="8" id="wDQ-HI-yKv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="1Sn-09-KR9" id="kqK-7M-hpz"/>
+                        <outlet property="segmentedControl" destination="rOb-k1-bJS" id="g1h-1l-0dw"/>
+                        <outlet property="tableView" destination="Js8-Ri-sHh" id="6IC-57-RM6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOK-Zq-M7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="114"/>
         </scene>
     </scenes>
     <resources>

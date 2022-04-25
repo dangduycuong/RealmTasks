@@ -18,11 +18,11 @@ enum TabbarTitle {
         get {
             switch self {
             case .todo:
-                return "Todo"
+                return "todo".language()
             case .weather:
-                return "Weather"
+                return "weather".language()
             case .media:
-                return "Media"
+                return "media".language()
             }
         }
     }

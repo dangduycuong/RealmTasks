@@ -8,22 +8,42 @@
 import UIKit
 
 class MediaViewController: BaseViewController {
-
+    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    var viewModel = MediaViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.registerCell(MediaTableViewCell.self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
     }
-    */
-
+    
+}
+// MARK: - Navigation
+extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.listCadao.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
+        cell.fillData(title: viewModel.listCadao[indexPath.row].title)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = R.storyboard.media.mediaDetailViewController() {
+            vc.folkType = viewModel.listCadao[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }

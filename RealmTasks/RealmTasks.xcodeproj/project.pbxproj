@@ -17,6 +17,26 @@
 		AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019F22811306F00ACFC4E /* TodoViewController.swift */; };
 		AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F42811308900ACFC4E /* Weather.storyboard */; };
 		AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F62811309C00ACFC4E /* Media.storyboard */; };
+		AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74074F281639890073E38E /* MediaTableViewCell.swift */; };
+		AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC740750281639890073E38E /* MediaTableViewCell.xib */; };
+		AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74075428163CDF0073E38E /* MediaViewModel.swift */; };
+		AC74075B281640220073E38E /* lao_dong_san_xuat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC74075A281640220073E38E /* lao_dong_san_xuat.rtf */; };
+		AC74075D281640740073E38E /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74075C281640740073E38E /* MediaDetailViewController.swift */; };
+		AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740761281644B80073E38E /* MediaDetailTableViewCell.swift */; };
+		AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC740762281644B80073E38E /* MediaDetailTableViewCell.xib */; };
+		AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC740765281645C70073E38E /* MediaDetailViewModel.swift */; };
+		AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC740767281656080073E38E /* ca_dao_hoc_tap.rtf */; };
+		AC740771281671E40073E38E /* BundleLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = AC740770281671E40073E38E /* BundleLocalization.m */; };
+		AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7407732816721E0073E38E /* LocalizationHandlerUtil.m */; };
+		AC740777281672510073E38E /* NSBundle+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = AC740776281672510073E38E /* NSBundle+Localization.m */; };
+		AC74077E281674D20073E38E /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74077D281674D20073E38E /* LocalData.swift */; };
+		AC7407812816774D0073E38E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7407832816774D0073E38E /* Localizable.strings */; };
+		AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078628167BEF0073E38E /* LoginViewController.swift */; };
+		AC74078B281682190073E38E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078A281682190073E38E /* R.generated.swift */; };
+		AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */; };
+		AC7407962816975C0073E38E /* DataMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407952816975C0073E38E /* DataMediaManager.swift */; };
+		AC7407982816987B0073E38E /* FolkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407972816987B0073E38E /* FolkModel.swift */; };
+		AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407992816989C0073E38E /* ProverbModel.swift */; };
 		ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */; };
 		ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F52811377700C2F90D /* Identifier.swift */; };
 		ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */; };
@@ -38,7 +58,6 @@
 		ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */; };
 		ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE40F2812A81A007D0049 /* Metadata.swift */; };
 		ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */; };
-		ACCEE41A2812BA02007D0049 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEE4192812BA02007D0049 /* R.generated.swift */; };
 		E2751673F1C0B68D39FDBE6F /* Pods_RealmTasks_RealmTasksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979F362572726448521C334A /* Pods_RealmTasks_RealmTasksUITests.framework */; };
 		E763FEDA0BF1723B79C71164 /* Pods_RealmTasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB73B2FBB58274AE91B57BC /* Pods_RealmTasks.framework */; };
 		FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD762813A83C00C820ED /* MarkerInfoView.swift */; };
@@ -91,6 +110,33 @@
 		AC2019F22811306F00ACFC4E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		AC2019F42811308900ACFC4E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		AC2019F62811309C00ACFC4E /* Media.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		AC74074F281639890073E38E /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		AC740750281639890073E38E /* MediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaTableViewCell.xib; sourceTree = "<group>"; };
+		AC74075428163CDF0073E38E /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
+		AC74075A281640220073E38E /* lao_dong_san_xuat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = lao_dong_san_xuat.rtf; sourceTree = "<group>"; };
+		AC74075C281640740073E38E /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
+		AC740761281644B80073E38E /* MediaDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AC740762281644B80073E38E /* MediaDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailTableViewCell.xib; sourceTree = "<group>"; };
+		AC740765281645C70073E38E /* MediaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewModel.swift; sourceTree = "<group>"; };
+		AC740767281656080073E38E /* ca_dao_hoc_tap.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_hoc_tap.rtf; sourceTree = "<group>"; };
+		AC74076E281671C30073E38E /* BundleLocalization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BundleLocalization.h; sourceTree = "<group>"; };
+		AC74076F281671E40073E38E /* RealmTasks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RealmTasks-Bridging-Header.h"; sourceTree = "<group>"; };
+		AC740770281671E40073E38E /* BundleLocalization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BundleLocalization.m; sourceTree = "<group>"; };
+		AC740772281672050073E38E /* LocalizationHandlerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHandlerUtil.h; sourceTree = "<group>"; };
+		AC7407732816721E0073E38E /* LocalizationHandlerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizationHandlerUtil.m; sourceTree = "<group>"; };
+		AC7407752816723C0073E38E /* NSBundle+Localization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Localization.h"; sourceTree = "<group>"; };
+		AC740776281672510073E38E /* NSBundle+Localization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Localization.m"; sourceTree = "<group>"; };
+		AC74077D281674D20073E38E /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		AC7407822816774D0073E38E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AC74078628167BEF0073E38E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC74078A281682190073E38E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		AC740790281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		AC740791281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AC7407922816881D0073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_an_noi_ung_xu.rtf; sourceTree = "<group>"; };
+		AC7407952816975C0073E38E /* DataMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMediaManager.swift; sourceTree = "<group>"; };
+		AC7407972816987B0073E38E /* FolkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolkModel.swift; sourceTree = "<group>"; };
+		AC7407992816989C0073E38E /* ProverbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbModel.swift; sourceTree = "<group>"; };
 		ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoInfoViewController.swift; sourceTree = "<group>"; };
 		ACB1B6F52811377700C2F90D /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
@@ -112,7 +158,6 @@
 		ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate+Extensions.swift"; sourceTree = "<group>"; };
 		ACCEE40F2812A81A007D0049 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		ACCEE4192812BA02007D0049 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D3ED986AFE0D11BD87EA5C12 /* Pods-RealmTasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.debug.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.debug.xcconfig"; sourceTree = "<group>"; };
 		D72808B26742C64768DCA327 /* Pods-RealmTasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks/Pods-RealmTasks.release.xcconfig"; sourceTree = "<group>"; };
 		E5C24FDABE1E00A8F85CD7ED /* Pods-RealmTasks-RealmTasksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; path = "Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,7 +256,10 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				ACCEE4192812BA02007D0049 /* R.generated.swift */,
+				AC74078A281682190073E38E /* R.generated.swift */,
+				AC74076D2816717F0073E38E /* Localize */,
+				AC74076B28166F3E0073E38E /* Language */,
+				AC7407592816400D0073E38E /* File rtf */,
 				AC2019D828112F2200ACFC4E /* Storyboard */,
 				AC2019D728112F1100ACFC4E /* Assets */,
 			);
@@ -222,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3E74F728105C570087F8EE /* MenuTabbarViewController.swift */,
+				AC74078628167BEF0073E38E /* LoginViewController.swift */,
 			);
 			path = MenuTabbar;
 			sourceTree = "<group>";
@@ -260,6 +309,7 @@
 		AC2019DF28112F7B00ACFC4E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AC74077C2816745A0073E38E /* LocalData */,
 				ACB1B6F32811375A00C2F90D /* Extension */,
 				AC2019E328112FA500ACFC4E /* Base */,
 				AC2019E028112F8500ACFC4E /* Common */,
@@ -309,6 +359,9 @@
 		AC2019EC2811302800ACFC4E /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				AC74075628163D0B0073E38E /* Model */,
+				AC74075328163CCA0073E38E /* ViewModel */,
+				AC74074D2816395C0073E38E /* View */,
 				AC2019ED2811303200ACFC4E /* Controller */,
 			);
 			path = Media;
@@ -318,8 +371,95 @@
 			isa = PBXGroup;
 			children = (
 				AC2019EE2811304100ACFC4E /* MediaViewController.swift */,
+				AC74075C281640740073E38E /* MediaDetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC74074D2816395C0073E38E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC7407602816449C0073E38E /* MediaDetailTableViewCell */,
+				AC74074E281639690073E38E /* MediaTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC74074E281639690073E38E /* MediaTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC74074F281639890073E38E /* MediaTableViewCell.swift */,
+				AC740750281639890073E38E /* MediaTableViewCell.xib */,
+			);
+			path = MediaTableViewCell;
+			sourceTree = "<group>";
+		};
+		AC74075328163CCA0073E38E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC74075428163CDF0073E38E /* MediaViewModel.swift */,
+				AC740765281645C70073E38E /* MediaDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC74075628163D0B0073E38E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC7407972816987B0073E38E /* FolkModel.swift */,
+				AC7407992816989C0073E38E /* ProverbModel.swift */,
+				AC7407952816975C0073E38E /* DataMediaManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC7407592816400D0073E38E /* File rtf */ = {
+			isa = PBXGroup;
+			children = (
+				AC74075A281640220073E38E /* lao_dong_san_xuat.rtf */,
+				AC740767281656080073E38E /* ca_dao_hoc_tap.rtf */,
+				AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */,
+			);
+			path = "File rtf";
+			sourceTree = "<group>";
+		};
+		AC7407602816449C0073E38E /* MediaDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC740761281644B80073E38E /* MediaDetailTableViewCell.swift */,
+				AC740762281644B80073E38E /* MediaDetailTableViewCell.xib */,
+			);
+			path = MediaDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		AC74076B28166F3E0073E38E /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				AC7407832816774D0073E38E /* Localizable.strings */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		AC74076D2816717F0073E38E /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				AC74076E281671C30073E38E /* BundleLocalization.h */,
+				AC740770281671E40073E38E /* BundleLocalization.m */,
+				AC74076F281671E40073E38E /* RealmTasks-Bridging-Header.h */,
+				AC740772281672050073E38E /* LocalizationHandlerUtil.h */,
+				AC7407732816721E0073E38E /* LocalizationHandlerUtil.m */,
+				AC7407752816723C0073E38E /* NSBundle+Localization.h */,
+				AC740776281672510073E38E /* NSBundle+Localization.m */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
+		AC74077C2816745A0073E38E /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				AC74077D281674D20073E38E /* LocalData.swift */,
+			);
+			path = LocalData;
 			sourceTree = "<group>";
 		};
 		ACB1B6F32811375A00C2F90D /* Extension */ = {
@@ -546,6 +686,7 @@
 				TargetAttributes = {
 					FA3E74EF28105C570087F8EE = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					FA3E750528105C5A0087F8EE = {
 						CreatedOnToolsVersion = 13.1;
@@ -564,6 +705,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = FA3E74E728105C570087F8EE;
 			productRefGroup = FA3E74F128105C570087F8EE /* Products */;
@@ -584,13 +726,19 @@
 			files = (
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
+				AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */,
+				AC7407812816774D0073E38E /* Localizable.strings in Resources */,
 				FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
+				AC74075B281640220073E38E /* lao_dong_san_xuat.rtf in Resources */,
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
+				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
+				AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
+				AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,10 +921,10 @@
 			files = (
 				AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */,
 				FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */,
-				ACCEE41A2812BA02007D0049 /* R.generated.swift in Sources */,
 				ACB1B6FA281137A700C2F90D /* UIViewController+Identifier.swift in Sources */,
 				ACCEE40128125B7C007D0049 /* Alert.swift in Sources */,
 				ACB1B6FC281137CF00C2F90D /* UITableView+Extension.swift in Sources */,
+				AC74075D281640740073E38E /* MediaDetailViewController.swift in Sources */,
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
 				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
@@ -785,26 +933,39 @@
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				ACB1B70828113B6D00C2F90D /* DataManager.swift in Sources */,
+				AC7407962816975C0073E38E /* DataMediaManager.swift in Sources */,
 				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
 				ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */,
 				AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */,
 				ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */,
+				AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */,
+				AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */,
 				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
+				AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */,
+				AC740771281671E40073E38E /* BundleLocalization.m in Sources */,
+				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
+				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
+				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
+				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
+				AC74078B281682190073E38E /* R.generated.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
+				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
+				AC7407982816987B0073E38E /* FolkModel.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,
 				FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */,
+				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,10 +1002,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AC7407832816774D0073E38E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC7407822816774D0073E38E /* en */,
+				AC7407922816881D0073E38E /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FA3E74F928105C570087F8EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FA3E74FA28105C570087F8EE /* Base */,
+				AC740790281688100073E38E /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -853,6 +1024,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA3E74FF28105C5A0087F8EE /* Base */,
+				AC740791281688100073E38E /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -864,6 +1036,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -925,6 +1098,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -982,6 +1156,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1000,6 +1175,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cdd.nutrition.RealmTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RealmTasks/Resource/Localize/RealmTasks-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1011,6 +1188,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1029,6 +1207,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cdd.nutrition.RealmTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RealmTasks/Resource/Localize/RealmTasks-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
