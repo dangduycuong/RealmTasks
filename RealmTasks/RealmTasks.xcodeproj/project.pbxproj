@@ -32,7 +32,6 @@
 		AC74077E281674D20073E38E /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74077D281674D20073E38E /* LocalData.swift */; };
 		AC7407812816774D0073E38E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7407832816774D0073E38E /* Localizable.strings */; };
 		AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078628167BEF0073E38E /* LoginViewController.swift */; };
-		AC74078B281682190073E38E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078A281682190073E38E /* R.generated.swift */; };
 		AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */; };
 		AC7407962816975C0073E38E /* DataMediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407952816975C0073E38E /* DataMediaManager.swift */; };
 		AC7407982816987B0073E38E /* FolkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407972816987B0073E38E /* FolkModel.swift */; };
@@ -65,6 +64,10 @@
 		FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */; };
 		FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD7F2813C43E00C820ED /* Data+Extension.swift */; };
 		FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD81281406AA00C820ED /* RealtimeWeather.swift */; };
+		FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */; };
+		FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */; };
+		FA09B44F2816F1E20018D4B6 /* ProverbType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09B44E2816F1E20018D4B6 /* ProverbType.swift */; };
+		FA09B4512816F3330018D4B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09B4502816F3330018D4B6 /* R.generated.swift */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
 		FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F528105C570087F8EE /* SceneDelegate.swift */; };
 		FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F728105C570087F8EE /* MenuTabbarViewController.swift */; };
@@ -129,7 +132,6 @@
 		AC74077D281674D20073E38E /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		AC7407822816774D0073E38E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC74078628167BEF0073E38E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AC74078A281682190073E38E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC740790281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		AC740791281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AC7407922816881D0073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -166,6 +168,10 @@
 		FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FA02FD7F2813C43E00C820ED /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		FA02FD81281406AA00C820ED /* RealtimeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeWeather.swift; sourceTree = "<group>"; };
+		FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
+		FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
+		FA09B44E2816F1E20018D4B6 /* ProverbType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbType.swift; sourceTree = "<group>"; };
+		FA09B4502816F3330018D4B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E74F328105C570087F8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3E74F528105C570087F8EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,7 +262,7 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AC74078A281682190073E38E /* R.generated.swift */,
+				FA09B4502816F3330018D4B6 /* R.generated.swift */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
 				AC7407592816400D0073E38E /* File rtf */,
@@ -408,6 +414,7 @@
 			children = (
 				AC7407972816987B0073E38E /* FolkModel.swift */,
 				AC7407992816989C0073E38E /* ProverbModel.swift */,
+				FA09B44E2816F1E20018D4B6 /* ProverbType.swift */,
 				AC7407952816975C0073E38E /* DataMediaManager.swift */,
 			);
 			path = Model;
@@ -416,6 +423,8 @@
 		AC7407592816400D0073E38E /* File rtf */ = {
 			isa = PBXGroup;
 			children = (
+				FA09B44B2816F1450018D4B6 /* Proverb */,
+				FA09B4482816EBEC0018D4B6 /* Folk */,
 				AC74075A281640220073E38E /* lao_dong_san_xuat.rtf */,
 				AC740767281656080073E38E /* ca_dao_hoc_tap.rtf */,
 				AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */,
@@ -555,6 +564,22 @@
 				FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA09B4482816EBEC0018D4B6 /* Folk */ = {
+			isa = PBXGroup;
+			children = (
+				FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */,
+			);
+			path = Folk;
+			sourceTree = "<group>";
+		};
+		FA09B44B2816F1450018D4B6 /* Proverb */ = {
+			isa = PBXGroup;
+			children = (
+				FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */,
+			);
+			path = Proverb;
 			sourceTree = "<group>";
 		};
 		FA3E74E728105C570087F8EE = {
@@ -736,6 +761,8 @@
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
+				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,
+				FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */,
 				AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 				AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */,
@@ -930,6 +957,7 @@
 				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
+				FA09B4512816F3330018D4B6 /* R.generated.swift in Sources */,
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				ACB1B70828113B6D00C2F90D /* DataManager.swift in Sources */,
@@ -949,12 +977,12 @@
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
+				FA09B44F2816F1E20018D4B6 /* ProverbType.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
-				AC74078B281682190073E38E /* R.generated.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,

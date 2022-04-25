@@ -31,6 +31,7 @@ class MediaDetailViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var folkType = FolkTypeModel()
+    var proverbType = ProverbType()
     var viewModel = MediaDetailViewModel()
     
     

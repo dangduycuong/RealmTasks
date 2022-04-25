@@ -7,6 +7,24 @@
 
 import UIKit
 
+enum MediaType {
+    case folk
+    case proverb
+    
+    static let list = [folk, proverb]
+    
+    var text: String {
+        get {
+            switch self {
+            case .folk:
+                return "R.string.localizable."
+            case .proverb:
+                return "8989"
+            }
+        }
+    }
+}
+
 class MediaViewController: BaseViewController {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -30,18 +48,28 @@ class MediaViewController: BaseViewController {
 // MARK: - Navigation
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.listCadao.count
+        return MediaType.list[segmentControl.selectedSegmentIndex] == .folk ? viewModel.listFolkType.count : viewModel.listProverbType.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(title: viewModel.listCadao[indexPath.row].title)
+        if MediaType.list[segmentControl.selectedSegmentIndex] == .folk {
+            cell.fillData(title: viewModel.listFolkType[indexPath.row].title)
+        } else {
+            cell.fillData(title: viewModel.listProverbType[indexPath.row].title)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = R.storyboard.media.mediaDetailViewController() {
-            vc.folkType = viewModel.listCadao[indexPath.row]
+            if MediaType.list[segmentControl.selectedSegmentIndex] == .folk {
+                vc.folkType = viewModel.listFolkType[indexPath.row]
+            } else {
+                vc.proverbType = viewModel.listProverbType[indexPath.row]
+            }
+            
             navigationController?.pushViewController(vc, animated: true)
         }
     }
