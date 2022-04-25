@@ -500,20 +500,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `MarkerInfoView`.
-    static let markerInfoView = _R.nib._MarkerInfoView()
     /// Nib `TodoTableViewCell`.
     static let todoTableViewCell = _R.nib._TodoTableViewCell()
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "MarkerInfoView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.markerInfoView) instead")
-    static func markerInfoView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.markerInfoView)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "TodoTableViewCell", in: bundle)`
@@ -522,10 +512,6 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.todoTableViewCell)
     }
     #endif
-
-    static func markerInfoView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
-      return R.nib.markerInfoView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
-    }
 
     static func todoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TodoTableViewCell? {
       return R.nib.todoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TodoTableViewCell
@@ -556,17 +542,6 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
-    struct _MarkerInfoView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "MarkerInfoView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MarkerInfoView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MarkerInfoView
-      }
-
-      fileprivate init() {}
-    }
-
     struct _TodoTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "TodoTableViewCell"

@@ -11,19 +11,35 @@ import GoogleMaps
 import UIKit
 import GoogleMaps
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: BaseViewController {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var mapView: GMSMapView!
     @IBOutlet private weak var mapCenterPinImage: UIImageView!
     @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var timeConditionLabel: UILabel!
+    
+    @IBOutlet weak var weatherIconImageView: UIImageView!
+    
+    @IBOutlet weak var tempCLabel: UILabel!
+    @IBOutlet weak var feelslikeCLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    
+    @IBOutlet weak var windkphLabel: UILabel!
+    
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
     private let dataProvider = GoogleDataProvider()
     private let searchRadius: Double = 1000
+    
+    var viewModel = WeatherViewModel()
 }
 
 // MARK: - Lifecycle
 extension WeatherViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +54,11 @@ extension WeatherViewController {
         }
         
         mapView.delegate = self
-        let camera = GMSCameraPosition(latitude: 21.032706, longitude: 105.754419, zoom: 17)
-        mapView.animate(to: camera)
+//        let camera = GMSCameraPosition(latitude: 21.032706, longitude: 105.754419, zoom: 17)
+//        mapView.animate(to: camera)
+        
+        viewModel.delegate = self
+        viewModel.realtimeWeather()
     }
     
     //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,7 +168,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
 extension WeatherViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         reverseGeocode(coordinate: position.target)
-        
+        viewModel.cocationCoordinate = position.target
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
@@ -188,7 +207,38 @@ extension WeatherViewController: GMSMapViewDelegate {
         print("didTapMyLocationButton")
         mapCenterPinImage.fadeIn(0.25)
         mapView.selectedMarker = nil
-        
+        mapView.animate(toZoom: 17)
+        viewModel.realtimeWeather()
         return false
+    }
+}
+
+
+extension WeatherViewController: WeatherViewModelDelegate {
+    func updateData(weather: RealtimeWeather) {
+        DispatchQueue.main.async {
+            self.fillData(weather: weather)
+        }
+    }
+    
+    private func fillData(weather: RealtimeWeather) {
+        locationLabel.text = weather.location?.name
+        timeConditionLabel.text = weather.current?.lastUpdated
+        tempCLabel.text = weather.current?.tempC?.toString()
+        feelslikeCLabel.text = weather.current?.feelslikeC?.toString()
+        humidityLabel.text = weather.current?.humidity?.toString()
+        windkphLabel.text = weather.current?.windKph?.toString()
+    }
+}
+
+extension Int {
+    func toString() -> String? {
+        return String(self)
+    }
+}
+
+extension Double {
+    func toString() -> String? {
+        return String(self)
     }
 }
