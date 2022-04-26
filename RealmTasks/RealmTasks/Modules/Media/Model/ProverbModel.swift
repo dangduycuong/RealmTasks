@@ -5,16 +5,28 @@
 //  Created by cuongdd on 25/04/2022.
 //
 
+import Foundation
 import RealmSwift
 
-class ProverbModel: Object {
-    
-    @objc dynamic var nameDocumentType: String = ""
-    @objc dynamic var loadDocument: Bool = true
-    @objc dynamic var idDocumentType: Int = 0
+class ProverbTypeModel: Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var fileName: String = ""
+    @objc dynamic var title: String = ""
     
     override static func primaryKey() -> String? {
-        return "idDocumentType"
+        return "id"
     }
+}
+
+class ProverbModel: Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var fileName: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var content: String = ""
     
+    @objc dynamic var isFavorite: Bool = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

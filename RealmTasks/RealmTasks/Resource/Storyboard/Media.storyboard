@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-black-wallpaper-pattern.1024" translatesAutoresizingMaskIntoConstraints="NO" id="bpJ-Td-fTa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-6a-tvB">
                                 <rect key="frame" x="16" y="52" width="382" height="32"/>
                                 <segments>
@@ -36,7 +39,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-cM-T7m">
                                 <rect key="frame" x="0.0" y="150" width="414" height="712"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="hMU-GX-6Gk"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="dqR-FQ-b58"/>
@@ -51,16 +54,20 @@
                             <constraint firstItem="1ir-cM-T7m" firstAttribute="top" secondItem="4ef-kj-vTj" secondAttribute="bottom" constant="8" id="Hg8-hL-kOS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1ww-6a-tvB" secondAttribute="trailing" constant="16" id="JIR-ry-CFR"/>
                             <constraint firstItem="1ir-cM-T7m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Na4-uW-g4H"/>
+                            <constraint firstItem="bpJ-Td-fTa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="OUU-Qq-7dF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1ir-cM-T7m" secondAttribute="trailing" id="Qkv-uX-qwM"/>
+                            <constraint firstItem="bpJ-Td-fTa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="XIm-PK-aK6"/>
                             <constraint firstItem="4ef-kj-vTj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="eOO-9R-p7J"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1ir-cM-T7m" secondAttribute="bottom" id="i33-Mt-TSt"/>
+                            <constraint firstAttribute="bottom" secondItem="bpJ-Td-fTa" secondAttribute="bottom" id="jTi-FN-hY8"/>
                             <constraint firstItem="4ef-kj-vTj" firstAttribute="top" secondItem="1ww-6a-tvB" secondAttribute="bottom" constant="8" id="kIK-QM-mKf"/>
                             <constraint firstItem="1ww-6a-tvB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="kwA-m5-EJU"/>
+                            <constraint firstAttribute="trailing" secondItem="bpJ-Td-fTa" secondAttribute="trailing" id="nNS-wL-eth"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="4ef-kj-vTj" id="WzD-Yw-PQh"/>
-                        <outlet property="segmentControl" destination="1ww-6a-tvB" id="3gN-as-ceC"/>
+                        <outlet property="segmentedControl" destination="1ww-6a-tvB" id="3gN-as-ceC"/>
                         <outlet property="tableView" destination="1ir-cM-T7m" id="5np-aL-TU1"/>
                     </connections>
                 </viewController>
@@ -76,6 +83,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-black-wallpaper-pattern.1024" translatesAutoresizingMaskIntoConstraints="NO" id="WRO-NZ-XRV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1Sn-09-KR9">
                                 <rect key="frame" x="8" y="91" width="398" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -85,7 +95,8 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-Ri-sHh">
                                 <rect key="frame" x="0.0" y="150" width="414" height="712"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="NUg-lf-RvE" id="EEE-Wi-wE6"/>
                                     <outlet property="delegate" destination="NUg-lf-RvE" id="BuW-5c-jMP"/>
@@ -106,13 +117,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rOb-k1-bJS" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" constant="16" id="4l4-mh-Orf"/>
+                            <constraint firstItem="WRO-NZ-XRV" firstAttribute="leading" secondItem="h4p-Zu-YCT" secondAttribute="leading" id="A3l-ja-N5D"/>
                             <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="Js8-Ri-sHh" secondAttribute="trailing" id="Bjh-yZ-AbR"/>
+                            <constraint firstAttribute="bottom" secondItem="WRO-NZ-XRV" secondAttribute="bottom" id="C8K-LX-HJZ"/>
                             <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="rOb-k1-bJS" secondAttribute="trailing" constant="16" id="Heq-iS-UBQ"/>
                             <constraint firstItem="1Sn-09-KR9" firstAttribute="top" secondItem="rOb-k1-bJS" secondAttribute="bottom" constant="8" id="Hiy-1r-E5p"/>
+                            <constraint firstItem="WRO-NZ-XRV" firstAttribute="top" secondItem="h4p-Zu-YCT" secondAttribute="top" id="PXY-cr-bp6"/>
                             <constraint firstItem="1Sn-09-KR9" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" constant="8" id="Sl6-mo-Lmd"/>
                             <constraint firstItem="Js8-Ri-sHh" firstAttribute="leading" secondItem="euF-dg-tlL" secondAttribute="leading" id="UoN-Lx-Vqc"/>
                             <constraint firstItem="euF-dg-tlL" firstAttribute="trailing" secondItem="1Sn-09-KR9" secondAttribute="trailing" constant="8" id="aJp-Ic-rAE"/>
                             <constraint firstItem="euF-dg-tlL" firstAttribute="bottom" secondItem="Js8-Ri-sHh" secondAttribute="bottom" id="bXU-X4-qw0"/>
+                            <constraint firstAttribute="trailing" secondItem="WRO-NZ-XRV" secondAttribute="trailing" id="m6w-lc-zIb"/>
                             <constraint firstItem="rOb-k1-bJS" firstAttribute="top" secondItem="euF-dg-tlL" secondAttribute="top" constant="8" id="thr-Ky-JfB"/>
                             <constraint firstItem="Js8-Ri-sHh" firstAttribute="top" secondItem="1Sn-09-KR9" secondAttribute="bottom" constant="8" id="wDQ-HI-yKv"/>
                         </constraints>
@@ -129,6 +144,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2-black-wallpaper-pattern.1024" width="512" height="314"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

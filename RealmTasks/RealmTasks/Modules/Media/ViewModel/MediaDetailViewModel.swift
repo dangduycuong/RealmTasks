@@ -11,102 +11,113 @@ protocol MediaDetailViewModelDelegate: AnyObject {
     func reloadData()
 }
 
+struct MediaDisplayList {
+    var id: String
+    var fileName: String
+    var title: String
+    var content: String
+    
+    var isFavorite: Bool
+}
+
 class MediaDetailViewModel {
     var folkType = FolkTypeModel()
-    var listFolks = [FolkModel]()
-    var listString = [String]()
-    var filterList = [String]()
-    var listFavoriteFolk = [FavoriteFolkModel]()
+    var proverbType = ProverbTypeModel()
+    
+    var filteredList = [MediaDisplayList]()
+    var sourceAllList = [MediaDisplayList]()
+    var sourceFavoriteList = [MediaDisplayList]()
+    
+    var mediaType = MediaType.folk
     
     weak var delegate: MediaDetailViewModelDelegate?
     
     var searchText: String = "" {
         didSet(oldName) {
             print("Name changed from \(oldName) to \(searchText)")
-            filterData()
+            searchData()
         }
     }
     
-    func addFavoriteFolk(data: FavoriteFolkModel) {
-        DataMediaManager.shared.addFolkToRealm(data)
-        delegate?.reloadData()
-    }
-    
-    func removeFolk(folk: FavoriteFolkModel) {
-        if DataMediaManager.shared.removeDataMedia(id: folk.id) {
-            
+    var valueChange: MediaDetailSegmentedControl = .all {
+        didSet {
+            searchData()
         }
     }
     
-    func checkFavoriteFolk(folk: FolkModel) -> Bool {
-        for item in listFavoriteFolk {
-            if item.content == folk.content {
-                return true
-            }
-        }
-        return false
-    }
-    
-    func mappingFolkFavorite() {
-        for i in 0..<listFolks.count {
-            if checkFavoriteFolk(folk: listFolks[i]) {
-                listFolks[i].isFavorite = true
-            }
-        }
-    }
-    
-    func getListFavoriteFolk() {
-        DataMediaManager.shared.getListFavoriteFolkFromRealm({ [weak self] list in
-            guard let `self` = self else { return }
-            self.listFavoriteFolk = list
-            self.mappingFolkFavorite()
-        })
-    }
-    
-    func loadFile() {
-        guard let fileName = folkType.fileName else { return }
-        if let rtfPath = Bundle.main.url(forResource: fileName, withExtension: "rtf") {
-            do {
-                let attributedStringWithRtf: NSAttributedString = try NSAttributedString(url: rtfPath, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
-                //                textView.attributedText = attributedStringWithRtf
-                
-                var item = FolkModel()
-                var content = ""
-                for char in attributedStringWithRtf.string {
-                    if char == "*" {
-                        item.id = UUID().uuidString
-                        item.fileName = fileName
-                        item.title = folkType.title
-                        item.isFavorite = false
-                        item.content = content
-                        self.listFolks.append(item)
-                        self.listString.append(content)
-                        content = ""
-                        item = FolkModel()
-                    } else {
-                        content.append(char)
-                    }
-                    print(char)
-                }
-                filterList = listString
-                
-            } catch let error {
-                print("Got an error \(error)")
-            }
-        }
-    }
-    
-    func filterData() {
-        if searchText == "" {
-            filterList = listString
+    func loadData(mediaType: MediaType, folkType: FolkTypeModel, proverbType: ProverbTypeModel) {
+        self.mediaType = mediaType
+        if mediaType == .folk {
+            self.folkType = folkType
+            getListFolk()
         } else {
-            filterList = listString.filter { (text: String) in
-                let content = text.lowercased().unaccent()
+            self.proverbType = proverbType
+            getListProverb()
+        }
+    }
+    
+    private func modifyFolk(folk: MediaDisplayList) {
+        let dataEdit = FolkModel()
+        dataEdit.id = folk.id
+        dataEdit.fileName = folk.fileName
+        dataEdit.content = folk.content
+        dataEdit.title = folk.title
+        dataEdit.isFavorite = folk.isFavorite
+        DataManager.shared.modifyFolk(dataEdit: dataEdit)
+        getListFolk()
+    }
+    
+    private func modifyProverb(prover: MediaDisplayList) {
+        let dataEdit = ProverbModel()
+        dataEdit.id = prover.id
+        dataEdit.fileName = prover.fileName
+        dataEdit.content = prover.content
+        dataEdit.title = prover.title
+        dataEdit.isFavorite = prover.isFavorite
+        DataManager.shared.modifyProverb(dataEdit: dataEdit)
+        getListProverb()
+    }
+    
+    func getListFolk() {
+        DataManager.shared.getListFolk { [weak self] list in
+            guard let `self` = self else { return }
+            list.forEach({ data in
+                guard data.fileName == self.folkType.fileName else { return }
+                let item = MediaDisplayList(id: data.id, fileName: data.fileName, title: data.title, content: data.content, isFavorite: data.isFavorite)
                 
+                self.sourceAllList.append(item)
+                self.filteredList.append(item)
+                if data.isFavorite {
+                    self.sourceFavoriteList.append(item)
+                }
+            })
+        }
+    }
+    
+    func getListProverb() {
+        DataManager.shared.getListProverb { [weak self] list in
+            guard let `self` = self else { return }
+            list.forEach( { data in
+                guard data.fileName == self.proverbType.fileName else { return }
+                let item = MediaDisplayList(id: data.id, fileName: data.fileName, title: data.title, content: data.content, isFavorite: data.isFavorite)
+                self.sourceAllList.append(item)
+                self.filteredList.append(item)
+                if data.isFavorite {
+                    self.sourceFavoriteList.append(item)
+                }
+            })
+        }
+    }
+    
+    func filterData(sourceList: [MediaDisplayList]) {
+        if searchText == "" {
+            filteredList = sourceList
+        } else {
+            filteredList = sourceList.filter { (data: MediaDisplayList) in
+                let content = data.content.lowercased().unaccent()
                 let keyText = searchText.lowercased().unaccent()
                 
                 if content.range(of: keyText) != nil {
-                    
                     return true
                 }
                 return false
@@ -114,5 +125,31 @@ class MediaDetailViewModel {
         }
         
         delegate?.reloadData()
+    }
+    
+    func modifyData(data: MediaDisplayList, type: MediaType) {
+        removeAllData()
+        switch type {
+        case .folk:
+            modifyFolk(folk: data)
+        case .proverb:
+            modifyProverb(prover: data)
+        }
+        searchData()
+    }
+    
+    private func searchData() {
+        switch valueChange {
+        case .all:
+            filterData(sourceList: sourceAllList)
+        case .favorite:
+            filterData(sourceList: sourceFavoriteList)
+        }
+    }
+    
+    private func removeAllData() {
+        sourceAllList.removeAll()
+        sourceFavoriteList.removeAll()
+        filteredList.removeAll()
     }
 }

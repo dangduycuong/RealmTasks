@@ -21,10 +21,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-j0-hrB">
                         <rect key="frame" x="8" y="4" width="347" height="118"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trâu ơi ta bảo trâu này" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDE-dF-dTe">
-                                <rect key="frame" x="4" y="0.0" width="295" height="118"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="25-black-wallpaper.1024" translatesAutoresizingMaskIntoConstraints="NO" id="nlb-dp-AHo">
+                                <rect key="frame" x="0.0" y="27" width="347" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="IDk-Xg-JUp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDE-dF-dTe">
+                                <rect key="frame" x="8" y="4" width="287" height="110"/>
+                                <mutableString key="text">Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này Trâu ơi ta bảo trâu này </mutableString>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-heart_suit" translatesAutoresizingMaskIntoConstraints="NO" id="MS1-Nc-3tA">
@@ -51,17 +58,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MS1-Nc-3tA" firstAttribute="trailing" secondItem="4B3-t4-Vs3" secondAttribute="trailing" id="0Yl-ba-ZlT"/>
-                            <constraint firstItem="iDE-dF-dTe" firstAttribute="top" secondItem="tL5-j0-hrB" secondAttribute="top" id="VHR-dP-pWQ"/>
-                            <constraint firstItem="4B3-t4-Vs3" firstAttribute="leading" secondItem="iDE-dF-dTe" secondAttribute="trailing" constant="4" id="Yk4-jr-fTy"/>
-                            <constraint firstItem="iDE-dF-dTe" firstAttribute="leading" secondItem="tL5-j0-hrB" secondAttribute="leading" constant="4" id="Z23-Hp-unA"/>
+                            <constraint firstAttribute="trailing" secondItem="nlb-dp-AHo" secondAttribute="trailing" id="DcY-kH-vD7"/>
+                            <constraint firstItem="4B3-t4-Vs3" firstAttribute="leading" secondItem="iDE-dF-dTe" secondAttribute="trailing" constant="8" id="LMI-wB-lvR"/>
+                            <constraint firstItem="iDE-dF-dTe" firstAttribute="leading" secondItem="tL5-j0-hrB" secondAttribute="leading" constant="8" id="Nid-Gx-TC1"/>
+                            <constraint firstItem="iDE-dF-dTe" firstAttribute="centerY" secondItem="nlb-dp-AHo" secondAttribute="centerY" id="QWr-PO-ubm"/>
                             <constraint firstItem="MS1-Nc-3tA" firstAttribute="centerY" secondItem="4B3-t4-Vs3" secondAttribute="centerY" id="Zo8-Ff-DKn"/>
-                            <constraint firstAttribute="bottom" secondItem="iDE-dF-dTe" secondAttribute="bottom" id="fSb-pZ-7mn"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="20" id="toQ-pq-035"/>
+                            <constraint firstAttribute="bottom" secondItem="iDE-dF-dTe" secondAttribute="bottom" constant="4" id="i01-SR-XfZ"/>
+                            <constraint firstItem="nlb-dp-AHo" firstAttribute="leading" secondItem="tL5-j0-hrB" secondAttribute="leading" id="lKc-SA-Tfb"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="40" id="qEU-gt-6Jz"/>
                             <constraint firstItem="MS1-Nc-3tA" firstAttribute="centerY" secondItem="tL5-j0-hrB" secondAttribute="centerY" id="urI-Mu-dhV"/>
                             <constraint firstAttribute="trailing" secondItem="MS1-Nc-3tA" secondAttribute="trailing" constant="4" id="wvf-tp-YnB"/>
+                            <constraint firstItem="iDE-dF-dTe" firstAttribute="top" secondItem="tL5-j0-hrB" secondAttribute="top" constant="4" id="zpX-dz-USg"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tL5-j0-hrB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="6ZU-VX-nBF"/>
                     <constraint firstAttribute="trailing" secondItem="tL5-j0-hrB" secondAttribute="trailing" constant="8" id="k6h-Kn-bsV"/>
@@ -70,9 +81,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="backgroundImageView" destination="nlb-dp-AHo" id="PQp-Bu-yRu"/>
                 <outlet property="favoriteButton" destination="4B3-t4-Vs3" id="XMg-rL-6j9"/>
                 <outlet property="favoriteImageView" destination="MS1-Nc-3tA" id="9eV-XS-5NX"/>
+                <outlet property="heightBackgroundImageView" destination="IDk-Xg-JUp" id="SC5-HK-Fa5"/>
                 <outlet property="messageLabel" destination="iDE-dF-dTe" id="fac-IR-P2H"/>
                 <outlet property="subView" destination="tL5-j0-hrB" id="3iC-jW-XgO"/>
             </connections>
@@ -80,6 +94,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="25-black-wallpaper.1024" width="512" height="320"/>
         <image name="icons8-heart_suit" width="12.5" height="12.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

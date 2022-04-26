@@ -13,6 +13,10 @@ protocol TodoTableViewCellDelegate: AnyObject {
 
 class TodoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var heightBackGroundImageView: NSLayoutConstraint!
     @IBOutlet weak var checkboxImageView: UIImageView!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var todoTitleLabel: UILabel!
@@ -36,6 +40,15 @@ class TodoTableViewCell: UITableViewCell {
         checkboxButton.setTitle("", for: .normal)
         checkboxButton.tintColor = AppColor.blueCustom
         
+        subView.layer.shadowColor = UIColor.white.cgColor
+        subView.layer.shadowOpacity = 0.35
+        subView.layer.shadowOffset = .zero
+        subView.layer.shadowRadius = 2
+        
+        subView.layer.cornerRadius = 8
+        subView.backgroundColor = AppColor.blueCustom
+        
+        backgroundImageView.layer.cornerRadius = 8
     }
     
     func fillData(todo: TodoModel) {
@@ -43,6 +56,9 @@ class TodoTableViewCell: UITableViewCell {
         checkboxImageView.tintColor = AppColor.blueCustom
         todoTitleLabel.text = todo.todoTitle
         todoDescriptionLabel.text = todo.todoDescription
+        DispatchQueue.main.async {
+            self.heightBackGroundImageView.constant = self.stackView.bounds.size.height + 8
+        }
     }
     
     @IBAction func checkboxButtonClicked(_ sender: Any) {

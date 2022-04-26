@@ -85,11 +85,35 @@
                                     <action selector="loginClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="k7c-Kh-12r"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Ip-ZQD">
+                                <rect key="frame" x="16" y="123" width="382" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-9L-GUc">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Restore Data"/>
+                                        <connections>
+                                            <action selector="tapToRestoreData:" destination="zO3-t1-AFs" eventType="touchUpInside" id="2CG-xq-gqQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUX-qj-k1j">
+                                        <rect key="frame" x="217" y="0.0" width="165" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete Data"/>
+                                        <connections>
+                                            <action selector="tapToDeleteData:" destination="zO3-t1-AFs" eventType="touchUpInside" id="K6C-IM-4ny"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i96-Rd-PdG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4j5-Ip-ZQD" firstAttribute="top" secondItem="ztu-X0-g5J" secondAttribute="bottom" constant="32" id="1Jz-fc-cf3"/>
+                            <constraint firstItem="4j5-Ip-ZQD" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="1Kr-Xa-SeQ"/>
                             <constraint firstItem="CuQ-TR-HSh" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" id="6kB-7u-nYl"/>
+                            <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="4j5-Ip-ZQD" secondAttribute="trailing" constant="16" id="G4M-cC-5Lb"/>
                             <constraint firstItem="CuQ-TR-HSh" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="GLQ-Og-gDj"/>
                             <constraint firstAttribute="bottom" secondItem="CuQ-TR-HSh" secondAttribute="bottom" id="MoY-ah-s6g"/>
                             <constraint firstItem="vrb-vZ-QTd" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="TC0-CC-oYo"/>

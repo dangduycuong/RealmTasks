@@ -31,18 +31,16 @@ class MediaDetailViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var folkType = FolkTypeModel()
-    var proverbType = ProverbType()
+    var proverbType = ProverbTypeModel()
     var viewModel = MediaDetailViewModel()
-    
+    var mediaType = MediaType.folk
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Ca dao"
         tableView.registerCell(MediaDetailTableViewCell.self)
         viewModel.delegate = self
-        viewModel.folkType = folkType
-        viewModel.loadFile()
+        viewModel.loadData(mediaType: mediaType, folkType: folkType, proverbType: proverbType)
         tableView.reloadData()
     }
     
@@ -52,6 +50,7 @@ class MediaDetailViewController: BaseViewController {
     }
     
     private func setupUI() {
+        title = mediaType.text
         addBackButton()
         
         for i in 0..<MediaDetailSegmentedControl.list.count {
@@ -68,21 +67,23 @@ class MediaDetailViewController: BaseViewController {
     
     // MARK: - Action
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
+        viewModel.valueChange = MediaDetailSegmentedControl.list[segmentedControl.selectedSegmentIndex]
+        tableView.reloadData()
     }
     
 }
 
 extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.filterList.count
+        return viewModel.filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaDetailTableViewCell.self, forIndexPath: indexPath)
         cell.delegate = self
-        cell.fillData(text: viewModel.filterList[indexPath.row])
+        cell.fillData(data: viewModel.filteredList[indexPath.row])
         let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .white
+        selectedBackgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = selectedBackgroundView
         return cell
     }
@@ -103,12 +104,8 @@ extension MediaDetailViewController: UISearchBarDelegate {
 extension MediaDetailViewController: MediaDetailTableViewCellDelegate {
     func favoriteChange(cell: UITableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        print(viewModel.filterList[indexPath.row])
-        let type = MediaDetailSegmentedControl.list[segmentedControl.selectedSegmentIndex]
-        if type == .all {
-            
-        } else {
-//            viewModel.removeFolk(folk: )
-        }
+        var data = viewModel.filteredList[indexPath.row]
+        data.isFavorite = !data.isFavorite
+        viewModel.modifyData(data: data, type: mediaType)
     }
 }

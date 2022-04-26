@@ -13,14 +13,34 @@ class BaseViewController: UIViewController {
     var backButton: UIButton = {
         let originalImage = R.image.icons8Back()
         let tintedImage = originalImage!.withRenderingMode(.alwaysTemplate)
-        let button = IconButton(image: tintedImage, tintColor: AppColor.blueCustom)
+        let button = IconButton(image: tintedImage, tintColor: .white)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0)
         button.contentHorizontalAlignment = .left
         return button
     }()
     
+    var spinner = UIActivityIndicatorView(style: .large)
     let alertService = AlertService()
+    
+    func setupIndicatorView() {
+        view.layout(spinner)
+            .center()
+        spinner.tintColor = AppColor.blueCustom
+        spinner.color = AppColor.blueCustom
+    }
+    
+    func showLoading() {
+        DispatchQueue.main.async {
+            self.spinner.startAnimating()
+        }
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+        }
+    }
     
     func removeBorderNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)

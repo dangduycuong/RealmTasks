@@ -12,19 +12,13 @@ class TodoViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTodoButton: UIButton!
-    @IBOutlet var noDataImageView: UIImageView!
-    
-    var noData: Bool = true {
-        didSet {
-            noData ? (tableView.tableHeaderView = noDataImageView) : (tableView.tableHeaderView = nil)
-        }
-    }
     
     var viewModel = TodoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTabbar()
         viewModel.delegate = self
         tableView.registerCell(TodoTableViewCell.self)
         
@@ -44,13 +38,35 @@ class TodoViewController: BaseViewController {
         viewModel.getListDataFromRealm()
     }
     
+    private func setupTabbar() {
+        tabBarController?.title = "todo".language()
+        //Set the background color
+        // cach 1
+        let backroundImageView = UIImageView(image: UIImage(named: "cool-background"))
+        if let frame = tabBarController?.tabBar.bounds {
+            backroundImageView.frame = frame
+        }
+        
+        tabBarController?.tabBar.layout(backroundImageView)
+            .top().left().bottom().right()
+        tabBarController?.tabBar.sendSubviewToBack(backroundImageView)
+        tabBarController?.tabBar.tintColor = .white
+        tabBarController?.tabBar.unselectedItemTintColor = .lightText
+        
+        // cach 2
+//        UITabBar.appearance().backgroundColor = .black
+//        tabBarController?.tabBar.backgroundImage = UIImage()   //Clear background
+//
+//        //Set the item tint colors
+//        tabBarController?.tabBar.tintColor = .white
+//        tabBarController?.tabBar.unselectedItemTintColor = .lightGray
+    }
+    
     private func setupUI() {
         removeBorderNavigationBar()
-        tabBarController?.tabBar.tintColor = AppColor.blueCustom
-        tabBarController?.title = "todo".language()
-        addTodoButton.tintColor = AppColor.blueCustom
+        addTodoButton.tintColor = .white
         addTodoButton.setTitle("", for: .normal)
-        addTodoButton.layer.shadowColor = AppColor.blueCustom.cgColor
+        addTodoButton.layer.shadowColor = UIColor.white.cgColor
         addTodoButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         addTodoButton.layer.shadowRadius = 5
         addTodoButton.layer.shadowOpacity = 1.0
@@ -89,6 +105,9 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.indexPath = indexPath
         cell.delegate = self
         cell.fillData(todo: viewModel.filterTodos[indexPath.row])
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .clear
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
     
@@ -114,7 +133,6 @@ extension TodoViewController: UISearchBarDelegate {
 
 extension TodoViewController: UpdateTodoData {
     func updateData() {
-        noData = viewModel.filterTodos.isEmpty
         tableView.reloadData()
     }
 }

@@ -172,7 +172,7 @@ extension WeatherViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        print("cdd dang vuot", position.target.latitude, position.target.longitude)
+        print(position.target.latitude, position.target.longitude)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {

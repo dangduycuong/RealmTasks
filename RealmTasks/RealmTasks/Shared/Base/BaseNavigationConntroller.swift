@@ -13,20 +13,20 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = .white
+        navigationBar.barTintColor = .clear
         if let font = UIFont(name: "Menlo-Bold", size: 18) {
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppColor.blueCustom, NSAttributedString.Key.font: font]
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: font]
         }
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = .clear
         
-        for family in UIFont.familyNames {
-            
-            let sName: String = family as String
-            print("family: \(sName)")
-            
-            for name in UIFont.fontNames(forFamilyName: sName) {
-                print("name: \(name as String)")
-            }
-        }
+//        for family in UIFont.familyNames {
+//            
+//            let sName: String = family as String
+//            print("family: \(sName)")
+//            
+//            for name in UIFont.fontNames(forFamilyName: sName) {
+//                print("name: \(name as String)")
+//            }
+//        }
     }
 }

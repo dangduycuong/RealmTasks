@@ -7,24 +7,26 @@
 
 import UIKit
 
+struct MediaFile {
+    var fileName: String
+    var title: String
+}
+
 class LoginViewController: BaseViewController {
+    var viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupIndicatorView()
     }
     
     // MARK: - Actions
-    
     @IBAction func vietnamClicked(_ sender: Any) {
-        LocalizationHandlerUtil.shareInstance().setLanguageIdentifier("vi")
-        let current = "vi"
-        LocalData.saveToLocal(value: current, key: LocalKey.currentLanguage.rawValue)
+        viewModel.setLanguage(languageKey: .vietnamese)
     }
     
     @IBAction func englishClicked(_ sender: Any) {
-        LocalizationHandlerUtil.shareInstance().setLanguageIdentifier("en")
-        let current = "en"
-        LocalData.saveToLocal(value: current, key: LocalKey.currentLanguage.rawValue)
+        viewModel.setLanguage(languageKey: .english)
     }
     
     @IBAction func loginClicked(_ sender: Any) {
@@ -35,4 +37,14 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    
+    @IBAction func tapToRestoreData(_ sender: UIButton) {
+        showLoading()
+        viewModel.handleMediaData {
+            self.hideLoading()
+        }
+    }
+    
+    @IBAction func tapToDeleteData(_ sender: UIButton) {
+    }
 }

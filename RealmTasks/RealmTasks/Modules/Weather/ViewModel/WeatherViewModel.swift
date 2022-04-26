@@ -51,7 +51,6 @@ class WeatherViewModel {
             } else {
                 let httpResponse = response as? HTTPURLResponse
                 if httpResponse?.statusCode == 200 {
-                    print("cdd thanh cong dcm")
                 }
                 print(httpResponse)
             }
