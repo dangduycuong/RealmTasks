@@ -53,6 +53,10 @@
 		ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */; };
 		ACA38EA5281A32B40021428C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38EA4281A32B40021428C /* SearchView.swift */; };
 		ACA38EA7281A32C90021428C /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EA6281A32C90021428C /* SearchView.xib */; };
+		ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAA281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf */; };
+		ACA38EAD281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */; };
+		ACA38EAF281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */; };
+		ACA38EB1281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EB0281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf */; };
 		ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */; };
 		ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F52811377700C2F90D /* Identifier.swift */; };
 		ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */; };
@@ -170,6 +174,10 @@
 		ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevCenters+GIF.swift"; sourceTree = "<group>"; };
 		ACA38EA4281A32B40021428C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		ACA38EA6281A32C90021428C /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		ACA38EAA281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_viet_nam_hay_nhat.rtf; sourceTree = "<group>"; };
+		ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_ve_nguoi_phu_nu_viet_nam.rtf; sourceTree = "<group>"; };
+		ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_ve_y_chi_nghi_luc.rtf; sourceTree = "<group>"; };
+		ACA38EB0281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_ve_y_chi_nghi_luc.rtf; sourceTree = "<group>"; };
 		ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoInfoViewController.swift; sourceTree = "<group>"; };
 		ACB1B6F52811377700C2F90D /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
@@ -649,12 +657,15 @@
 			isa = PBXGroup;
 			children = (
 				FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */,
+				ACA38EAA281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf */,
 				AC6879972817FAC40052D736 /* ca_dao_hai_huoc.rtf */,
 				AC6879932817F5B00052D736 /* ca_dao_tinh_nghia_vo_chong.rtf */,
 				AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */,
 				AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */,
 				AC6879912817F4B60052D736 /* ca_dao_an_uong.rtf */,
 				AC6879992817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf */,
+				ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */,
+				ACA38EB0281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf */,
 			);
 			path = Folk;
 			sourceTree = "<group>";
@@ -669,6 +680,7 @@
 				AC6879952817F8280052D736 /* tuc_ngu_suc_khoe.rtf */,
 				AC7D84662818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf */,
 				ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */,
+				ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */,
 			);
 			path = Proverb;
 			sourceTree = "<group>";
@@ -847,6 +859,8 @@
 				AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */,
 				AC6879962817F8280052D736 /* tuc_ngu_suc_khoe.rtf in Resources */,
 				AC7407812816774D0073E38E /* Localizable.strings in Resources */,
+				ACA38EAF281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf in Resources */,
+				ACA38EAD281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf in Resources */,
 				FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
@@ -859,8 +873,10 @@
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
+				ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */,
 				ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */,
 				AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */,
+				ACA38EB1281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf in Resources */,
 				AC6879982817FAC40052D736 /* ca_dao_hai_huoc.rtf in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
 				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,

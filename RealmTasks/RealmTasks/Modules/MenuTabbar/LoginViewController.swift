@@ -18,6 +18,12 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupIndicatorView()
+        
+        var string = "tục ngữ về ý chí nghị lực"
+        print(string.localizedCapitalized)
+        string = string.unaccent().lowercased()
+        let newString = string.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
+        print(newString)
     }
     
     // MARK: - Actions

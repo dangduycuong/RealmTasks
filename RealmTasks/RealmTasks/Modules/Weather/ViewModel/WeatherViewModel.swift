@@ -46,6 +46,7 @@ class WeatherViewModel {
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            print("params", urlQueryItem)
             if (error != nil) {
                 print(error)
             } else {

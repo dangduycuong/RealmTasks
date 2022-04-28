@@ -17,6 +17,9 @@ class WeatherViewController: BaseViewController {
     @IBOutlet private weak var mapCenterPinImage: UIImageView!
     @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet weak var weatherInfoView: UIView!
+    
     @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var timeConditionLabel: UILabel!
@@ -28,6 +31,7 @@ class WeatherViewController: BaseViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     
     @IBOutlet weak var windkphLabel: UILabel!
+    @IBOutlet weak var conditionTextLabel: UILabel!
     
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
@@ -35,6 +39,7 @@ class WeatherViewController: BaseViewController {
     private let searchRadius: Double = 1000
     
     var viewModel = WeatherViewModel()
+    var timer = Timer()
 }
 
 // MARK: - Lifecycle
@@ -43,6 +48,7 @@ extension WeatherViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         locationManager.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
@@ -54,11 +60,24 @@ extension WeatherViewController {
         }
         
         mapView.delegate = self
-//        let camera = GMSCameraPosition(latitude: 21.032706, longitude: 105.754419, zoom: 17)
-//        mapView.animate(to: camera)
+        //        let camera = GMSCameraPosition(latitude: 21.032706, longitude: 105.754419, zoom: 17)
+        //        mapView.animate(to: camera)
         
         viewModel.delegate = self
+        mapView.mapType = .satellite
+    }
+    
+    @objc func timerAction() {
         viewModel.realtimeWeather()
+    }
+    
+    private func setupUI() {
+        weatherInfoView.layer.shadowColor = UIColor.white.cgColor
+        weatherInfoView.layer.shadowOpacity = 0.35
+        weatherInfoView.layer.shadowOffset = .zero
+        weatherInfoView.layer.shadowRadius = 2
+        weatherInfoView.layer.cornerRadius = 10
+        weatherInfoView.isHidden = true
     }
     
     //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -169,10 +188,12 @@ extension WeatherViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         reverseGeocode(coordinate: position.target)
         viewModel.cocationCoordinate = position.target
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         print(position.target.latitude, position.target.longitude)
+        timer.invalidate()
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
@@ -221,12 +242,28 @@ extension WeatherViewController: WeatherViewModelDelegate {
     }
     
     private func fillData(weather: RealtimeWeather) {
+        weatherInfoView.isHidden = false
         locationLabel.text = weather.location?.name
         timeConditionLabel.text = weather.current?.lastUpdated
-        tempCLabel.text = weather.current?.tempC?.toString()
-        feelslikeCLabel.text = weather.current?.feelslikeC?.toString()
-        humidityLabel.text = weather.current?.humidity?.toString()
-        windkphLabel.text = weather.current?.windKph?.toString()
+        if let tempC = weather.current?.tempC?.toString() {
+            tempCLabel.text = "\(tempC)"
+        }
+        
+        if let feelslikeC = weather.current?.feelslikeC?.toString() {
+            feelslikeCLabel.text = "Feels Like \(feelslikeC) °C"
+        }
+        
+        if let humidity = weather.current?.humidity?.toString() {
+            humidityLabel.text = "Humidity \(humidity) %"
+        }
+        
+        if let windKph = weather.current?.windKph?.toString() {
+            windkphLabel.text = "Wind \(windKph) Kph"
+        }
+        
+        if let text = weather.current?.condition?.text {
+            conditionTextLabel.text = text
+        }
     }
 }
 
