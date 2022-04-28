@@ -58,13 +58,13 @@ extension WeatherViewController {
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
+        mapView.animate(toZoom: 17)
         
         mapView.delegate = self
-        //        let camera = GMSCameraPosition(latitude: 21.032706, longitude: 105.754419, zoom: 17)
-        //        mapView.animate(to: camera)
         
         viewModel.delegate = self
         mapView.mapType = .satellite
+        
     }
     
     @objc func timerAction() {
