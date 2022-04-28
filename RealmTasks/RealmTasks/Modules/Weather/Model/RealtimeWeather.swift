@@ -10,6 +10,11 @@
 //
 //   let realtimeWeather = try? newJSONDecoder().decode(RealtimeWeather.self, from: jsonData)
 
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let realtimeWeather = try? newJSONDecoder().decode(RealtimeWeather.self, from: jsonData)
+
 import Foundation
 
 // MARK: - RealtimeWeather
@@ -20,8 +25,8 @@ struct RealtimeWeather: Codable {
 
 // MARK: - Current
 struct Current: Codable {
-    let gustMph, gustKph: Double?
-    let precipIn, precipMm, cloud, lastUpdatedEpoch: Int?
+    let gustMph, gustKph, precipIn, precipMm: Double?
+    let cloud, lastUpdatedEpoch: Int?
     let feelslikeF, feelslikeC: Double?
     let isDay, visMiles: Int?
     let pressureIn: Double?
@@ -36,7 +41,7 @@ struct Current: Codable {
     let windKph: Double?
     let lastUpdated: String?
     let tempC, uv: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case gustMph = "gust_mph"
         case gustKph = "gust_kph"
@@ -76,7 +81,7 @@ struct Location: Codable {
     let lon, lat: Double?
     let tzID, name: String?
     let localtimeEpoch: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case region, country, localtime, lon, lat
         case tzID = "tz_id"
@@ -84,4 +89,3 @@ struct Location: Codable {
         case localtimeEpoch = "localtime_epoch"
     }
 }
-

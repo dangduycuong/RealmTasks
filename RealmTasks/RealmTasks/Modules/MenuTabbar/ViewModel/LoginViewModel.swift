@@ -43,6 +43,10 @@ class LoginViewModel {
                 MediaFile(fileName: "ca_dao_tinh_nghia_vo_chong", title: "Tình nghĩa vợ chồng"),
                 MediaFile(fileName: "ca_dao_hai_huoc", title: "Hài hước"),
                 MediaFile(fileName: "ca_dao_tinh_kien_tri", title: "Tính kiên trì"),
+                MediaFile(fileName: "ca_dao_viet_nam_hay_nhat", title: "Việt Nam Hay Nhất"),
+                MediaFile(fileName: "ca_dao_viet_nam_hay_nhat", title: "Ca Dao Về Người Phụ Nữ Việt Nam"),
+                MediaFile(fileName: "ca_dao_ve_y_chi_nghi_luc", title: "Ca Dao Về Ý Chí Nghị Lực"),
+                
             ]
             
             for file in listFile {
@@ -96,6 +100,7 @@ class LoginViewModel {
                 MediaFile(fileName: "tuc_ngu_suc_khoe", title: "Sức khoẻ"),
                 MediaFile(fileName: "tuc_ngu_vo_chong", title: "Vợ chồng"),
                 MediaFile(fileName: "tuc_ngu_tinh_kien_tri", title: "Tính kiên trì"),
+                MediaFile(fileName: "tuc_ngu_ve_y_chi_nghi_luc", title: "Tục Ngữ Về Ý Chí Nghị Lực"),
             ]
             
             for file in listFile {
