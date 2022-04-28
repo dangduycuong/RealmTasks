@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "English"; ObjectID = "1aQ-NH-0lr"; */
+"1aQ-NH-0lr.configuration.title" = "English";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1aQ-NH-0lr"; */
+"1aQ-NH-0lr.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; R7Y-PP-Eqf.segmentTitles[0] = "First"; ObjectID = "R7Y-PP-Eqf"; */
+"R7Y-PP-Eqf.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; R7Y-PP-Eqf.segmentTitles[1] = "Second"; ObjectID = "R7Y-PP-Eqf"; */
+"R7Y-PP-Eqf.segmentTitles[1]" = "Second";
+
+/* Class = "UIButton"; configuration.title = "LOGIN"; ObjectID = "vrb-vZ-QTd"; */
+"vrb-vZ-QTd.configuration.title" = "LOGIN";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vrb-vZ-QTd"; */
+"vrb-vZ-QTd.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Tiếng Việt"; ObjectID = "w6z-Hb-wBi"; */
+"w6z-Hb-wBi.configuration.title" = "Tiếng Việt";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "w6z-Hb-wBi"; */
+"w6z-Hb-wBi.normalTitle" = "Button";

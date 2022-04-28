@@ -10,7 +10,14 @@ import Material
 
 class TodoInfoViewController: BaseViewController {
     
-    @IBOutlet weak var todoTitleTextField: UITextField!
+    @IBOutlet weak var todoTitleTextField: UITextField! {
+        didSet {
+            let redPlaceholderText = NSAttributedString(string: "Enter Todo Title",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            
+            todoTitleTextField.attributedPlaceholder = redPlaceholderText
+        }
+    }
     @IBOutlet weak var todoDescriptionTextView: UITextView!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var checkboxImageView: UIImageView!
@@ -31,7 +38,7 @@ class TodoInfoViewController: BaseViewController {
         let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        imageView.tintColor = AppColor.blueCustom
+        imageView.tintColor = .white
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveTodo(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
@@ -73,7 +80,7 @@ class TodoInfoViewController: BaseViewController {
             placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
         }
         checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = AppColor.blueCustom
+        checkboxImageView.tintColor = .white
     }
     
     @IBAction func checkboxButtonClicked(_ sender: Any) {
@@ -83,11 +90,18 @@ class TodoInfoViewController: BaseViewController {
 }
 
 extension TodoInfoViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        todoTitleTextField.tintColor = .white
+    }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
     }
 }
 
 extension TodoInfoViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
     }

@@ -15,6 +15,8 @@ class ShowAlertViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var widthContentView: NSLayoutConstraint!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var heightBackgroundImageView: NSLayoutConstraint!
     var alertType = AlertType.notice
     var titleAlert: String?
     var message: String = ""
@@ -28,10 +30,22 @@ class ShowAlertViewController: UIViewController {
         setupUI()
     }
     
-    func setupUI() {
-        let menloBoldItalic = MenloFont.boldItalic(with: 18)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.heightBackgroundImageView.constant = self.contentView.bounds.size.height
+        backgroundImageView.layer.cornerRadius = 10
+        backgroundImageView.layoutIfNeeded()
+        
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        contentView.layer.shadowColor = UIColor.white.cgColor
+        contentView.layer.shadowOpacity = 0.35
+        contentView.layer.shadowOffset = .zero
+        contentView.layer.shadowRadius = 2
+        contentView.layer.cornerRadius = 10
+    }
+    
+    private func setupUI() {
         let menloBold = MenloFont.bold(with: 18)
-        let menloItalic = MenloFont.italic(with: 16)
         let menloRegular = MenloFont.regular(with: 16)
         
         let width = UIScreen.main.bounds.width
@@ -49,11 +63,6 @@ class ShowAlertViewController: UIViewController {
             titleAlertLabel.isHidden = true
         }
         
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        
-        contentView.backgroundColor = .white
-        contentView.layer.cornerRadius = 10
-        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.2
         paragraphStyle.lineBreakMode = .byTruncatingTail
@@ -66,23 +75,25 @@ class ShowAlertViewController: UIViewController {
         messageLabel.attributedText = attribuild
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.textColor = AppColor.blueCustom
+        messageLabel.textColor = .white
         
         if let titleLeftButton = titleLeftButton {
             leftButton.setTitle(titleLeftButton, for: .normal)
-            leftButton.setTitleColor(AppColor.blueCustom, for: .normal)
-            leftButton.layer.cornerRadius = 16
+            leftButton.setTitleColor(.white, for: .normal)
             leftButton.titleLabel?.font = menloBold!
         } else {
             leftButton.isHidden = true
         }
         
-        
         rightButton.setTitle(titleRightButton, for: .normal)
         rightButton.setTitleColor(.white, for: .normal)
-        rightButton.backgroundColor = AppColor.blueCustom
-        rightButton.layer.cornerRadius = 16
         rightButton.titleLabel?.font = menloRegular
+        rightButton.backgroundColor = .black
+        rightButton.layer.shadowColor = UIColor.white.cgColor
+        rightButton.layer.shadowOpacity = 0.35
+        rightButton.layer.shadowOffset = .zero
+        rightButton.layer.shadowRadius = 2
+        rightButton.layer.cornerRadius = 16
     }
     
     deinit {

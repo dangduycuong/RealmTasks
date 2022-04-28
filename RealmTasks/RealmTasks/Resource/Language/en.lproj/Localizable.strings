@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  RealmTasks
+
+  Created by cuongdd on 25/04/2022.
+  
+*/
+//MARK: Todo
+"todo" = "Todo";
+"all" = "All";
+"completed" = "Completed";
+"incompleted" = "Incompleted";
+//MARK: Weather
+"weather" = "Weather";
+//MARK: Media
+"media" = "Media";
+"favorite" = "Favorite";
+"folk_verses" = "Folk Verses";
+"proverb" = "Proverb";
