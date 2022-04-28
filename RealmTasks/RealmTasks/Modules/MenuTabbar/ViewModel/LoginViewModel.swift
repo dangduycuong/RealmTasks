@@ -33,7 +33,6 @@ class LoginViewModel {
     
     private func saveFolkTypes(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("saveFolkTypes")
             let listFile: [MediaFile] = [
                 MediaFile(fileName: "lao_dong_san_xuat", title: "Lao động sản xuất"),
                 MediaFile(fileName: "ca_dao_hoc_tap", title: "Học tập"),
@@ -59,7 +58,6 @@ class LoginViewModel {
     
     private func saveFolks(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("saveFolks")
             DataManager.shared.getListFolkType { [weak self] list in
                 guard let `self` = self else { return }
                 for folkType in list {
@@ -90,7 +88,6 @@ class LoginViewModel {
     
     private func saveProverbTypes(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("saveProverbTypes")
             let listFile: [MediaFile] = [
                 MediaFile(fileName: "tuc_ngu_hoc_tap", title: "Tục ngự học tập"),
                 MediaFile(fileName: "tuc_ngu_tinh_yeu_nam_nu", title: "Tình yêu nam nữ"),
@@ -98,6 +95,7 @@ class LoginViewModel {
                 MediaFile(fileName: "tuc_ngu_an_uong", title: "Ăn uống"),
                 MediaFile(fileName: "tuc_ngu_suc_khoe", title: "Sức khoẻ"),
                 MediaFile(fileName: "tuc_ngu_vo_chong", title: "Vợ chồng"),
+                MediaFile(fileName: "tuc_ngu_tinh_kien_tri", title: "Tính kiên trì"),
             ]
             
             for file in listFile {
@@ -113,7 +111,6 @@ class LoginViewModel {
     
     private func saveProverbs(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("saveProverbs")
             DataManager.shared.getListProverbType { [weak self] list in
                 guard let `self` = self else { return }
                 for roverbType in list {
@@ -144,31 +141,25 @@ class LoginViewModel {
     
     private func deleteData(completion: @escaping () -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
-            print("deleteData")
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
             self.deleteFolkType {
-                print("deleteFolkType -> DONE")
                 dispatchGroup.leave()
             }
             dispatchGroup.enter()
             self.deleteFolk {
-                print("deleteFolk -> DONE")
                 dispatchGroup.leave()
             }
             dispatchGroup.enter()
             self.deleteProverbType {
-                print("deleteProverbType -> DONE")
                 dispatchGroup.leave()
             }
             dispatchGroup.enter()
             self.deleteProverb {
-                print("deleteProverb -> DONE")
                 dispatchGroup.leave()
             }
             
             dispatchGroup.notify(queue: .main) {
-                print("deleteData -> DONE")
                 completion()
             }
         }
@@ -176,17 +167,14 @@ class LoginViewModel {
     
     private func saveData(completion: @escaping () -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
-            print("saveData")
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
             self.saveFolkTypes {
-                print("saveFolkTypes -> DONE")
                 dispatchGroup.leave()
             }
             
             dispatchGroup.enter()
             self.saveProverbTypes {
-                print("saveProverbTypes -> DONE")
                 dispatchGroup.leave()
             }
             
@@ -194,17 +182,14 @@ class LoginViewModel {
             
             dispatchGroup.enter()
             self.saveFolks {
-                print("saveFolks -> DONE")
                 dispatchGroup.leave()
             }
             
             dispatchGroup.enter()
             self.saveProverbs {
-                print("saveProverbs -> DONE")
                 dispatchGroup.leave()
             }
             dispatchGroup.notify(queue: .main) {
-                print("saveData -> DONE")
                 completion()
             }
         }
@@ -212,7 +197,6 @@ class LoginViewModel {
     
     private func deleteFolkType(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("deleteFolkType")
             DataManager.shared.deleteFolkType {
                 completion()
             }
@@ -221,7 +205,6 @@ class LoginViewModel {
     
     private func deleteFolk(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("deleteFolk")
             DataManager.shared.deleteFolk {
                 completion()
             }
@@ -230,7 +213,6 @@ class LoginViewModel {
     
     private func deleteProverbType(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("deleteProverbType")
             DataManager.shared.deleteProverbType {
                 completion()
             }
@@ -239,7 +221,6 @@ class LoginViewModel {
     
     private func deleteProverb(completion: @escaping () -> Void) {
         DispatchQueue.main.async {
-            print("deleteProverb")
             DataManager.shared.deleteProverb {
                 completion()
             }
@@ -266,7 +247,6 @@ class LoginViewModel {
             
             dispatchGroup.enter()
             self.deleteData {
-                print("deleteData 2 -> DONE")
                 dispatchGroup.leave()
             }
             
@@ -274,12 +254,10 @@ class LoginViewModel {
             
             dispatchGroup.enter()
             self.saveData {
-                print("saveData 2 -> DONE")
                 dispatchGroup.leave()
             }
             
             dispatchGroup.notify(queue: .main) {
-                print("7878787878 -> DONE")
                 completion()
             }
         }

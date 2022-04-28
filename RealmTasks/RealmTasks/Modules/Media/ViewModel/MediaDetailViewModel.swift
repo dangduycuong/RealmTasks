@@ -28,13 +28,12 @@ class MediaDetailViewModel {
     var sourceAllList = [MediaDisplayList]()
     var sourceFavoriteList = [MediaDisplayList]()
     
-    var mediaType = MediaType.folk
+    var mediaType = MediaType.folkVerses
     
     weak var delegate: MediaDetailViewModelDelegate?
     
     var searchText: String = "" {
         didSet(oldName) {
-            print("Name changed from \(oldName) to \(searchText)")
             searchData()
         }
     }
@@ -47,7 +46,7 @@ class MediaDetailViewModel {
     
     func loadData(mediaType: MediaType, folkType: FolkTypeModel, proverbType: ProverbTypeModel) {
         self.mediaType = mediaType
-        if mediaType == .folk {
+        if mediaType == .folkVerses {
             self.folkType = folkType
             getListFolk()
         } else {
@@ -130,7 +129,7 @@ class MediaDetailViewModel {
     func modifyData(data: MediaDisplayList, type: MediaType) {
         removeAllData()
         switch type {
-        case .folk:
+        case .folkVerses:
             modifyFolk(folk: data)
         case .proverb:
             modifyProverb(prover: data)

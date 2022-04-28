@@ -44,13 +44,7 @@ class MediaDetailTableViewCell: UITableViewCell {
     
     func fillData(data: MediaDisplayList) {
         messageLabel.text = data.content
-        
         favoriteImageView.image = data.isFavorite ? R.image.icons8Heart_suit() : R.image.icons8Favorite()
-        
-        print("chieu cao\n",
-              "subView",subView.bounds.size.height,
-        "\nmessageLabel", messageLabel.bounds.size.height,
-              "\nheightBackgroundImageView.constant", heightBackgroundImageView.constant, backgroundImageView.bounds.size.height)
         DispatchQueue.main.async {
             self.heightBackgroundImageView.constant = self.messageLabel.bounds.size.height + 8
         }

@@ -89,16 +89,12 @@ class DataManager: NSObject {
         realm.beginWrite()
         
         if let i = listData.firstIndex(where: { $0.id == dataEdit.id }) {
-            print("\(listData[i])")
+            listData[i].fileName = dataEdit.fileName
+            listData[i].title = dataEdit.title
+            listData[i].content = dataEdit.content
+            listData[i].isFavorite = dataEdit.isFavorite
         }
-        for item in listData {
-            if item.id == dataEdit.id {
-                item.fileName = dataEdit.fileName
-                item.title = dataEdit.title
-                item.content = dataEdit.content
-                item.isFavorite = dataEdit.isFavorite
-            }
-        }
+        
         try! realm.commitWrite()
     }
     

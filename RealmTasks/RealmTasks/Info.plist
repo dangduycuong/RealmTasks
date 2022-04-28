@@ -22,6 +22,12 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Use Location</string>
+	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
 </dict>
 </plist>

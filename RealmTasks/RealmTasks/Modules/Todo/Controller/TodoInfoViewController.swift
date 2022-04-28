@@ -90,11 +90,18 @@ class TodoInfoViewController: BaseViewController {
 }
 
 extension TodoInfoViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        todoTitleTextField.tintColor = .white
+    }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
     }
 }
 
 extension TodoInfoViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
     }

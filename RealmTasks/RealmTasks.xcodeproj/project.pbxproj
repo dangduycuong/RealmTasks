@@ -48,6 +48,11 @@
 		AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */; };
 		AC7D84672818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7D84662818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf */; };
 		AC7D846A2818F9F500E40FB1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D84692818F9F500E40FB1 /* LoginViewModel.swift */; };
+		ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */; };
+		ACA38E9E281A2CA00021428C /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = ACA38E9D281A2CA00021428C /* loading.gif */; };
+		ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */; };
+		ACA38EA5281A32B40021428C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38EA4281A32B40021428C /* SearchView.swift */; };
+		ACA38EA7281A32C90021428C /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EA6281A32C90021428C /* SearchView.xib */; };
 		ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */; };
 		ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F52811377700C2F90D /* Identifier.swift */; };
 		ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */; };
@@ -160,6 +165,11 @@
 		AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_hoc_tap.rtf; sourceTree = "<group>"; };
 		AC7D84662818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_vo_chong.rtf; sourceTree = "<group>"; };
 		AC7D84692818F9F500E40FB1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_kien_tri.rtf; sourceTree = "<group>"; };
+		ACA38E9D281A2CA00021428C /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevCenters+GIF.swift"; sourceTree = "<group>"; };
+		ACA38EA4281A32B40021428C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		ACA38EA6281A32C90021428C /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		ACB1B6F12811370A00C2F90D /* TodoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoInfoViewController.swift; sourceTree = "<group>"; };
 		ACB1B6F52811377700C2F90D /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		ACB1B6F72811378F00C2F90D /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
@@ -260,6 +270,7 @@
 		AC2019D728112F1100ACFC4E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				ACA38E9C281A2C870021428C /* gif */,
 				FA3E74FC28105C5A0087F8EE /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -303,6 +314,7 @@
 		AC2019DC28112F5D00ACFC4E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ACA38EA1281A326C0021428C /* CommonUI */,
 				AC2019EC2811302800ACFC4E /* Media */,
 				AC2019E82811300100ACFC4E /* Weather */,
 				AC2019DD28112F6700ACFC4E /* Todo */,
@@ -504,6 +516,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		ACA38E9C281A2C870021428C /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				ACA38E9D281A2CA00021428C /* loading.gif */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
+		ACA38EA1281A326C0021428C /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				ACA38EA2281A32790021428C /* Views */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		ACA38EA2281A32790021428C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACA38EA3281A32940021428C /* SearchView */,
+			);
+			name = Views;
+			path = "../New Group/Views";
+			sourceTree = "<group>";
+		};
+		ACA38EA3281A32940021428C /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				ACA38EA4281A32B40021428C /* SearchView.swift */,
+				ACA38EA6281A32C90021428C /* SearchView.xib */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		ACB1B6F32811375A00C2F90D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +559,7 @@
 				ACCEE40D2812A803007D0049 /* CLLocationCoordinate+Extensions.swift */,
 				ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */,
 				FA02FD7F2813C43E00C820ED /* Data+Extension.swift */,
+				ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -621,6 +668,7 @@
 				AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */,
 				AC6879952817F8280052D736 /* tuc_ngu_suc_khoe.rtf */,
 				AC7D84662818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf */,
+				ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */,
 			);
 			path = Proverb;
 			sourceTree = "<group>";
@@ -809,13 +857,16 @@
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
+				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
+				ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */,
 				AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */,
 				AC6879982817FAC40052D736 /* ca_dao_hai_huoc.rtf in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
 				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,
 				AC6879922817F4B60052D736 /* ca_dao_an_uong.rtf in Resources */,
 				FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */,
+				ACA38EA7281A32C90021428C /* SearchView.xib in Resources */,
 				AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 				AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */,
@@ -1034,8 +1085,10 @@
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
+				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
+				ACA38EA5281A32B40021428C /* SearchView.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				AC7407982816987B0073E38E /* FolkModel.swift in Sources */,

@@ -204,7 +204,6 @@ extension WeatherViewController: GMSMapViewDelegate {
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
-        print("didTapMyLocationButton")
         mapCenterPinImage.fadeIn(0.25)
         mapView.selectedMarker = nil
         mapView.animate(toZoom: 17)

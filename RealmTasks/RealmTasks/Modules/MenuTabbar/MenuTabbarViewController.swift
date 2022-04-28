@@ -60,7 +60,6 @@ class MenuTabbarViewController: UITabBarController {
                 items[i].imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
             }
         }
-        print("cdd ", tabBarController == nil)
         
         //        for i in 0..<tabBar.items!.count {
         //            tabBar.items![i].title = TabbarTitle.all[i].text
@@ -101,23 +100,6 @@ extension MenuTabbarViewController: UITabBarControllerDelegate {
             tabBarController.title = TabbarTitle.all[index].text //title for navigatio item
             viewController.title = TabbarTitle.all[index].text //title for tabbar button
         }
-        print("Selected view controller")
-    }
-    
-    override func tabBar(_ tabBar: UITabBar, didBeginCustomizing items: [UITabBarItem]) {
-        print("cdd didBeginCustomizing")
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, willBeginCustomizing viewControllers: [UIViewController]) {
-        print("cdd willBeginCustomizing")
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, didEndCustomizing viewControllers: [UIViewController], changed: Bool) {
-        print("cdd didEndCustomizing")
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, willEndCustomizing viewControllers: [UIViewController], changed: Bool) {
-        print("cdd willEndCustomizing")
     }
 }
 

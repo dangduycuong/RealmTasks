@@ -24,7 +24,6 @@ class MediaTableViewCell: UITableViewCell {
         subView.layer.shadowOpacity = 0.35
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 2
-        
         subView.layer.cornerRadius = 8
         subView.backgroundColor = AppColor.blueCustom
         

@@ -8,16 +8,16 @@
 import UIKit
 
 enum MediaType {
-    case folk
+    case folkVerses
     case proverb
     
-    static let list = [folk, proverb]
+    static let list = [folkVerses, proverb]
     
     var text: String {
         get {
             switch self {
-            case .folk:
-                return R.string.localizable.folk().language()
+            case .folkVerses:
+                return R.string.localizable.folk_verses().language()
             case .proverb:
                 return R.string.localizable.proverb().language()
             }
@@ -28,7 +28,8 @@ enum MediaType {
 class MediaViewController: BaseViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -39,8 +40,14 @@ class MediaViewController: BaseViewController {
         
         setupUI()
         tableView.registerCell(MediaTableViewCell.self)
+        viewModel.delegate = self
         viewModel.loadData()
         tableView.reloadData()
+        
+        searchView.searchText = { [weak self] text in
+            guard let `self` = self else { return }
+            self.viewModel.searchText = text
+        }
     }
     
     private func setupUI() {
@@ -51,26 +58,26 @@ class MediaViewController: BaseViewController {
         if let bold = MenloFont.bold(with: 16) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .brown
-            segmentedControl.selectedSegmentTintColor = AppColor.blueCustom
+            segmentedControl.backgroundColor = .black
+            segmentedControl.selectedSegmentTintColor = .black
         }
     }
     
     
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
-        tableView.reloadData()
+        viewModel.mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
     }
     
 }
 // MARK: - Navigation
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MediaType.list[segmentedControl.selectedSegmentIndex] == .folk ? viewModel.listFolkType.count : viewModel.listProverbType.count
+        return MediaType.list[segmentedControl.selectedSegmentIndex] == .folkVerses ? viewModel.filteredFolkType.count : viewModel.filteredProverbType.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        if MediaType.list[segmentedControl.selectedSegmentIndex] == .folk {
+        if MediaType.list[segmentedControl.selectedSegmentIndex] == .folkVerses {
             cell.fillData(title: viewModel.listFolkType[indexPath.row].title)
         } else {
             cell.fillData(title: viewModel.listProverbType[indexPath.row].title)
@@ -85,14 +92,20 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
         if let vc = R.storyboard.media.mediaDetailViewController() {
             let mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
             
-            if mediaType == .folk {
-                vc.folkType = viewModel.listFolkType[indexPath.row]
+            if mediaType == .folkVerses {
+                vc.folkType = viewModel.filteredFolkType[indexPath.row]
             } else {
-                vc.proverbType = viewModel.listProverbType[indexPath.row]
+                vc.proverbType = viewModel.filteredProverbType[indexPath.row]
             }
             vc.mediaType = mediaType
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
+}
+
+extension MediaViewController: MediaViewModelDelegate {
+    func updateData() {
+        tableView.reloadData()
+    }
 }

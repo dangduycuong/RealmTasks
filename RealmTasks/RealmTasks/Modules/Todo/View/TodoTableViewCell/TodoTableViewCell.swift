@@ -46,14 +46,14 @@ class TodoTableViewCell: UITableViewCell {
         subView.layer.shadowRadius = 2
         
         subView.layer.cornerRadius = 8
-        subView.backgroundColor = AppColor.blueCustom
+        subView.backgroundColor = .white
         
         backgroundImageView.layer.cornerRadius = 8
     }
     
     func fillData(todo: TodoModel) {
         checkboxImageView.image = todo.isCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = AppColor.blueCustom
+        checkboxImageView.tintColor = .white
         todoTitleLabel.text = todo.todoTitle
         todoDescriptionLabel.text = todo.todoDescription
         DispatchQueue.main.async {

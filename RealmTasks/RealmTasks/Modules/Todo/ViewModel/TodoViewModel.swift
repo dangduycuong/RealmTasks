@@ -41,14 +41,12 @@ class TodoViewModel {
     
     var searchText: String = "" {
         didSet(oldName) {
-            print("Name changed from \(oldName) to \(searchText)")
             filterData()
         }
     }
     
     var segmentIndex: Int = 0 {
         didSet(oldValue) {
-            print("changed from \(oldValue) to \(segmentIndex)")
             filterData()
         }
     }

@@ -39,9 +39,15 @@ class LoginViewController: BaseViewController {
     
     
     @IBAction func tapToRestoreData(_ sender: UIButton) {
-        showLoading()
+        let jeremyGif = UIImage.gifImageWithName("loading")
+        let imageView = UIImageView(image: jeremyGif)
+//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
+//        view.addSubview(imageView)
+        imageView.layer.cornerRadius = 25
+        view.layout(imageView)
+            .top().left().bottom().right()
         viewModel.handleMediaData {
-            self.hideLoading()
+            imageView.removeFromSuperview()
         }
     }
     

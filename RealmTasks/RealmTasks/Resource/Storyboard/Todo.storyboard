@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mRu-uD-6em">
-                                <rect key="frame" x="16" y="52" width="382" height="32"/>
+                                <rect key="frame" x="8" y="52" width="398" height="32"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Completed"/>
@@ -31,15 +31,8 @@
                                     <action selector="segmentControlValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="02s-Eb-aTw"/>
                                 </connections>
                             </segmentedControl>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="afp-2q-9Sk">
-                                <rect key="frame" x="8" y="83" width="398" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="PXD-Fj-BgS"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="U1u-G7-W5L">
-                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="147" width="414" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="Bzg-0L-IGJ"/>
@@ -58,38 +51,45 @@
                                     <action selector="addTodoButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZmH-Yn-r7U"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-hz-5UF" customClass="SearchView" customModule="RealmTasks" customModuleProvider="target">
+                                <rect key="frame" x="8" y="99" width="398" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Men-Hw-ICB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jsg-sC-Akc" secondAttribute="trailing" constant="16" id="5bf-Z5-jQB"/>
+                            <constraint firstItem="e0w-hz-5UF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="8xs-Wf-EBK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jsg-sC-Akc" secondAttribute="bottom" constant="16" id="DML-Sj-A3E"/>
-                            <constraint firstItem="mRu-uD-6em" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="FGH-ea-igu"/>
+                            <constraint firstItem="mRu-uD-6em" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="FGH-ea-igu"/>
                             <constraint firstItem="2zW-gD-RjB" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="IlA-kz-uhk"/>
                             <constraint firstItem="mRu-uD-6em" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="L8O-Sy-vQC"/>
+                            <constraint firstItem="e0w-hz-5UF" firstAttribute="top" secondItem="mRu-uD-6em" secondAttribute="bottom" constant="16" id="O3g-Mh-b9X"/>
                             <constraint firstAttribute="trailing" secondItem="2zW-gD-RjB" secondAttribute="trailing" id="SjL-h6-vph"/>
                             <constraint firstAttribute="bottom" secondItem="2zW-gD-RjB" secondAttribute="bottom" id="Wrr-T8-eAw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="U1u-G7-W5L" secondAttribute="bottom" id="aCQ-Gf-XVi"/>
-                            <constraint firstItem="U1u-G7-W5L" firstAttribute="top" secondItem="afp-2q-9Sk" secondAttribute="bottom" id="azm-VV-3b9"/>
                             <constraint firstItem="2zW-gD-RjB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="fXh-9V-wug"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="U1u-G7-W5L" secondAttribute="trailing" id="gu4-va-1Zc"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="afp-2q-9Sk" secondAttribute="trailing" constant="8" id="i3h-oH-p1k"/>
-                            <constraint firstItem="afp-2q-9Sk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="8" id="i4O-Hr-lhy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e0w-hz-5UF" secondAttribute="trailing" constant="8" id="jZu-c2-k2K"/>
                             <constraint firstItem="U1u-G7-W5L" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qft-F9-Phw"/>
-                            <constraint firstItem="afp-2q-9Sk" firstAttribute="top" secondItem="mRu-uD-6em" secondAttribute="bottom" id="sVt-G2-NDw"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mRu-uD-6em" secondAttribute="trailing" constant="16" id="z4e-40-Kx9"/>
+                            <constraint firstItem="U1u-G7-W5L" firstAttribute="top" secondItem="e0w-hz-5UF" secondAttribute="bottom" constant="8" id="rze-9K-aM2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mRu-uD-6em" secondAttribute="trailing" constant="8" id="z4e-40-Kx9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addTodoButton" destination="jsg-sC-Akc" id="Cr0-U7-M5D"/>
-                        <outlet property="searchBar" destination="afp-2q-9Sk" id="6e1-a0-Q1D"/>
+                        <outlet property="searchView" destination="e0w-hz-5UF" id="t2c-Pe-NIa"/>
                         <outlet property="segmentedControl" destination="mRu-uD-6em" id="Uhh-do-zYY"/>
                         <outlet property="tableView" destination="U1u-G7-W5L" id="H3O-CW-8du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="114"/>
+            <point key="canvasLocation" x="76.811594202898561" y="113.83928571428571"/>
         </scene>
         <!--Todo Info View Controller-->
         <scene sceneID="eHA-gf-PUy">
@@ -127,6 +127,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HOS-w8-dnQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="3OE-85-sPm"/>
                                                         </constraints>
@@ -140,6 +141,7 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-9l-FtQ">
                                                         <rect key="frame" x="0.0" y="48" width="382" height="35"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

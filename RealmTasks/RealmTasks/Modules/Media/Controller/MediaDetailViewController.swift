@@ -28,12 +28,12 @@ enum MediaDetailSegmentedControl {
 class MediaDetailViewController: BaseViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
     var folkType = FolkTypeModel()
     var proverbType = ProverbTypeModel()
     var viewModel = MediaDetailViewModel()
-    var mediaType = MediaType.folk
+    var mediaType = MediaType.folkVerses
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,11 @@ class MediaDetailViewController: BaseViewController {
         viewModel.delegate = self
         viewModel.loadData(mediaType: mediaType, folkType: folkType, proverbType: proverbType)
         tableView.reloadData()
+        
+        searchView.searchText = { [weak self] text in
+            guard let `self` = self else { return }
+            self.viewModel.searchText = text
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,8 +65,8 @@ class MediaDetailViewController: BaseViewController {
         if let bold = MenloFont.bold(with: 16) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .brown
-            segmentedControl.selectedSegmentTintColor = AppColor.blueCustom
+            segmentedControl.backgroundColor = .black
+            segmentedControl.selectedSegmentTintColor = .black
         }
     }
     
@@ -92,12 +97,6 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource 
 extension MediaDetailViewController: MediaDetailViewModelDelegate {
     func reloadData() {
         tableView.reloadData()
-    }
-}
-
-extension MediaDetailViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.searchText = searchText
     }
 }
 

@@ -19,6 +19,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCZ-MY-nWS" userLabel="Content View">
                                 <rect key="frame" x="19.5" y="351" width="375" height="194"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30-black-wallpaper-hd-strips.1024" translatesAutoresizingMaskIntoConstraints="NO" id="7GM-ZE-Zqb">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NlO-WR-fs4"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="JMb-jP-DJ0">
                                         <rect key="frame" x="24" y="24" width="327" height="74"/>
                                         <subviews>
@@ -44,7 +50,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPO-JZ-DZI">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="48"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="No"/>
                                                 <connections>
                                                     <action selector="leftButtonClicked:" destination="Aud-E5-Z74" eventType="touchUpInside" id="Kbf-h5-Cje"/>
@@ -73,10 +79,13 @@
                                     <constraint firstItem="JMb-jP-DJ0" firstAttribute="leading" secondItem="wCZ-MY-nWS" secondAttribute="leading" constant="24" id="MHs-oW-bXb"/>
                                     <constraint firstAttribute="width" constant="375" id="OAB-Ar-PKQ"/>
                                     <constraint firstItem="cg6-sT-rpi" firstAttribute="centerX" secondItem="wCZ-MY-nWS" secondAttribute="centerX" id="T6k-jY-i2c"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="125" id="UZ3-ZM-lm1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="100" id="UZ3-ZM-lm1"/>
                                     <constraint firstAttribute="bottom" secondItem="cg6-sT-rpi" secondAttribute="bottom" constant="24" id="V3W-4c-icg"/>
+                                    <constraint firstItem="7GM-ZE-Zqb" firstAttribute="leading" secondItem="wCZ-MY-nWS" secondAttribute="leading" id="VuV-zm-3e3"/>
                                     <constraint firstItem="JMb-jP-DJ0" firstAttribute="top" secondItem="wCZ-MY-nWS" secondAttribute="top" constant="24" id="laL-hY-zJN"/>
+                                    <constraint firstAttribute="trailing" secondItem="7GM-ZE-Zqb" secondAttribute="trailing" id="qlA-WI-FMK"/>
                                     <constraint firstItem="cg6-sT-rpi" firstAttribute="top" secondItem="JMb-jP-DJ0" secondAttribute="bottom" constant="24" id="rPO-4k-Y9D"/>
+                                    <constraint firstItem="7GM-ZE-Zqb" firstAttribute="centerY" secondItem="wCZ-MY-nWS" secondAttribute="centerY" id="s6D-HC-4FU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -88,7 +97,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="7GM-ZE-Zqb" id="hFs-e2-Pes"/>
                         <outlet property="contentView" destination="wCZ-MY-nWS" id="Qtm-yq-CIr"/>
+                        <outlet property="heightBackgroundImageView" destination="NlO-WR-fs4" id="bnN-Pq-cJa"/>
                         <outlet property="leftButton" destination="VPO-JZ-DZI" id="HHg-zs-q7I"/>
                         <outlet property="messageLabel" destination="CkD-12-Y1d" id="TBr-6O-phN"/>
                         <outlet property="rightButton" destination="EIA-Kb-6AF" id="Jvt-my-5Qc"/>
@@ -101,4 +112,7 @@
             <point key="canvasLocation" x="5316" y="-321"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="30-black-wallpaper-hd-strips.1024" width="512" height="273"/>
+    </resources>
 </document>

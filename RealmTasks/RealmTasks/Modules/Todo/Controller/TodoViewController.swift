@@ -9,11 +9,17 @@ import UIKit
 
 class TodoViewController: BaseViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTodoButton: UIButton!
     
     var viewModel = TodoViewModel()
+    
+    var noData: Bool = false {
+        didSet {
+            searchView.isHidden = noData
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,10 @@ class TodoViewController: BaseViewController {
         
         if let language = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
             LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(language)
+        }
+        searchView.searchText = { [weak self] text in
+            guard let `self` = self else { return }
+            self.viewModel.searchText = text
         }
     }
     
@@ -51,7 +61,15 @@ class TodoViewController: BaseViewController {
             .top().left().bottom().right()
         tabBarController?.tabBar.sendSubviewToBack(backroundImageView)
         tabBarController?.tabBar.tintColor = .white
-        tabBarController?.tabBar.unselectedItemTintColor = .lightText
+        tabBarController?.tabBar.unselectedItemTintColor = .gray
+        
+        if let bold = MenloFont.bold(with: 12) {
+            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.gray]
+            let selectedAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            
+            UITabBarItem.appearance().setTitleTextAttributes(titleAttributes, for: .normal)
+            UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, for: .selected)
+        }
         
         // cach 2
 //        UITabBar.appearance().backgroundColor = .black
@@ -79,8 +97,8 @@ class TodoViewController: BaseViewController {
         if let bold = MenloFont.bold(with: 16) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .brown
-            segmentedControl.selectedSegmentTintColor = AppColor.blueCustom
+            segmentedControl.backgroundColor = .black
+            segmentedControl.selectedSegmentTintColor = .black
         }
     }
     
@@ -125,15 +143,10 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension TodoViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.searchText = searchText
-    }
-}
-
 extension TodoViewController: UpdateTodoData {
     func updateData() {
         tableView.reloadData()
+        noData = viewModel.filterTodos.isEmpty
     }
 }
 
