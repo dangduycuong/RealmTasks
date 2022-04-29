@@ -25,8 +25,8 @@ class MediaDetailViewModel {
     var proverbType = ProverbTypeModel()
     
     var filteredList = [MediaDisplayList]()
-    var sourceAllList = [MediaDisplayList]()
-    var sourceFavoriteList = [MediaDisplayList]()
+    private var sourceAllList = [MediaDisplayList]()
+    private var sourceFavoriteList = [MediaDisplayList]()
     
     var mediaType = MediaType.folkVerses
     

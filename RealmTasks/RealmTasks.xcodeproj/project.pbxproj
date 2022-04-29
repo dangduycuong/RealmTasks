@@ -17,6 +17,14 @@
 		AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019F22811306F00ACFC4E /* TodoViewController.swift */; };
 		AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F42811308900ACFC4E /* Weather.storyboard */; };
 		AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F62811309C00ACFC4E /* Media.storyboard */; };
+		AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E4281B9E8100ED185C /* Notification+Name.swift */; };
+		AC61C5E9281BBD3600ED185C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E8281BBD3600ED185C /* Int.swift */; };
+		AC61C5EB281BBDA200ED185C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5EA281BBDA200ED185C /* Double.swift */; };
+		AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */; };
+		AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */; };
+		AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */; };
+		AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */; };
+		AC61C5F5281BF36A00ED185C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5F4281BF36A00ED185C /* R.generated.swift */; };
 		AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */; };
 		AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */; };
 		AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */; };
@@ -42,7 +50,6 @@
 		AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */; };
 		AC7407982816987B0073E38E /* FolkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407972816987B0073E38E /* FolkModel.swift */; };
 		AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407992816989C0073E38E /* ProverbModel.swift */; };
-		AC77FB9F281781680085F8C8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77FB9E281781680085F8C8 /* R.generated.swift */; };
 		AC77FBA2281782090085F8C8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77FBA1281782090085F8C8 /* DataManager.swift */; };
 		AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */; };
 		AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */; };
@@ -131,6 +138,14 @@
 		AC2019F22811306F00ACFC4E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		AC2019F42811308900ACFC4E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		AC2019F62811309C00ACFC4E /* Media.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		AC61C5E4281B9E8100ED185C /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		AC61C5E8281BBD3600ED185C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AC61C5EA281BBDA200ED185C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_ve_thuoc_thang.rtf; sourceTree = "<group>"; };
+		AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ca_dao_đac_sac_va_giau_triet_ly_song.rtf"; sourceTree = "<group>"; };
+		AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_hay_ve_cach_an_uong.rtf; sourceTree = "<group>"; };
+		AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewController.swift; sourceTree = "<group>"; };
+		AC61C5F4281BF36A00ED185C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_an_uong.rtf; sourceTree = "<group>"; };
@@ -163,7 +178,6 @@
 		AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_an_noi_ung_xu.rtf; sourceTree = "<group>"; };
 		AC7407972816987B0073E38E /* FolkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolkModel.swift; sourceTree = "<group>"; };
 		AC7407992816989C0073E38E /* ProverbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbModel.swift; sourceTree = "<group>"; };
-		AC77FB9E281781680085F8C8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC77FBA1281782090085F8C8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = lao_dong_san_xuat.rtf; sourceTree = "<group>"; };
 		AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_hoc_tap.rtf; sourceTree = "<group>"; };
@@ -299,7 +313,7 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AC77FB9E281781680085F8C8 /* R.generated.swift */,
+				AC61C5F4281BF36A00ED185C /* R.generated.swift */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
 				AC7407592816400D0073E38E /* File rtf */,
@@ -418,8 +432,17 @@
 			children = (
 				AC2019EE2811304100ACFC4E /* MediaViewController.swift */,
 				AC74075C281640740073E38E /* MediaDetailViewController.swift */,
+				AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC61C5E3281B9E7100ED185C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				AC61C5E4281B9E8100ED185C /* Notification+Name.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		AC74074D2816395C0073E38E /* View */ = {
@@ -535,6 +558,7 @@
 		ACB1B6F32811375A00C2F90D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AC61C5E3281B9E7100ED185C /* Notification */,
 				ACB1B6F42811376400C2F90D /* Identifier */,
 				ACB1B6FB281137CF00C2F90D /* UITableView+Extension.swift */,
 				FA73C3AE28118D3100742B5E /* String+Extension.swift */,
@@ -542,6 +566,8 @@
 				ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */,
 				FA02FD7F2813C43E00C820ED /* Data+Extension.swift */,
 				ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */,
+				AC61C5E8281BBD3600ED185C /* Int.swift */,
+				AC61C5EA281BBDA200ED185C /* Double.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -640,6 +666,9 @@
 				AC6879992817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf */,
 				ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */,
 				ACA38EB0281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf */,
+				AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */,
+				AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */,
+				AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */,
 			);
 			path = Folk;
 			sourceTree = "<group>";
@@ -856,6 +885,7 @@
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				AC68799A2817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
+				AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */,
 				AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */,
 				AC6879962817F8280052D736 /* tuc_ngu_suc_khoe.rtf in Resources */,
 				AC7407812816774D0073E38E /* Localizable.strings in Resources */,
@@ -873,10 +903,12 @@
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
+				AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */,
 				ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */,
 				ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */,
 				AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */,
 				ACA38EB1281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf in Resources */,
+				AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */,
 				AC6879982817FAC40052D736 /* ca_dao_hai_huoc.rtf in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
 				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,
@@ -1071,13 +1103,13 @@
 				ACB1B6FA281137A700C2F90D /* UIViewController+Identifier.swift in Sources */,
 				ACCEE40128125B7C007D0049 /* Alert.swift in Sources */,
 				ACB1B6FC281137CF00C2F90D /* UITableView+Extension.swift in Sources */,
+				AC61C5E9281BBD3600ED185C /* Int.swift in Sources */,
 				AC74075D281640740073E38E /* MediaDetailViewController.swift in Sources */,
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
 				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
-				AC77FB9F281781680085F8C8 /* R.generated.swift in Sources */,
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
@@ -1092,12 +1124,15 @@
 				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
+				AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */,
 				AC7D846A2818F9F500E40FB1 /* LoginViewModel.swift in Sources */,
+				AC61C5EB281BBDA200ED185C /* Double.swift in Sources */,
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
+				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
@@ -1108,6 +1143,7 @@
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				AC7407982816987B0073E38E /* FolkModel.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
+				AC61C5F5281BF36A00ED185C /* R.generated.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,

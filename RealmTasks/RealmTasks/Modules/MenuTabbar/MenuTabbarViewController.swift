@@ -32,6 +32,7 @@ class MenuTabbarViewController: UITabBarController {
     var todoVC: TodoViewController!
     var weatherVC: WeatherViewController!
     var mediaVC: MediaViewController!
+    var tabbarType = TabbarTitle.todo
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -91,15 +92,36 @@ extension MenuTabbarViewController: UITabBarControllerDelegate {
         if let index = tabBar.items?.firstIndex(of: item) {
             tabBarController?.title = "\(index)"
         }
-        
     }
     
     // UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let index = tabBarController.viewControllers?.firstIndex(of: viewController) {
-            tabBarController.title = TabbarTitle.all[index].text //title for navigatio item
-            viewController.title = TabbarTitle.all[index].text //title for tabbar button
+            tabbarType = TabbarTitle.all[index]
+            tabBarController.title = tabbarType.text //title for navigatio item
+            viewController.title = tabbarType.text //title for tabbar button
+            if viewController.isKind(of: WeatherViewController.self) || viewController.isKind(of: MediaViewController.self) {
+                let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
+                let menuMapButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(playTapped))
+                menuMapButton.tintColor = .white
+                menuMapButton.imageInsets = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 0)
+                navigationItem.rightBarButtonItem = menuMapButton
+            } else {
+                navigationItem.rightBarButtonItems?.removeAll()
+            }
         }
+    }
+    
+    @objc func playTapped() {
+        switch tabbarType {
+        case .weather:
+            NotificationCenter.default.post(name: .changeMapType, object: nil)
+        case .media:
+            NotificationCenter.default.post(name: .openAllMedia, object: nil)
+        default:
+            break
+        }
+        
     }
 }
 

@@ -81,7 +81,7 @@ class TodoViewController: BaseViewController {
     }
     
     private func setupUI() {
-        removeBorderNavigationBar()
+//        removeBorderNavigationBar()
         addTodoButton.tintColor = .white
         addTodoButton.setTitle("", for: .normal)
         addTodoButton.layer.shadowColor = UIColor.white.cgColor

@@ -12,9 +12,9 @@ protocol MediaViewModelDelegate: AnyObject {
 }
 
 class MediaViewModel {
-    var listFolkType = [FolkTypeModel]()
+    private var listFolkType = [FolkTypeModel]()
     var filteredFolkType = [FolkTypeModel]()
-    var listProverbType = [ProverbTypeModel]()
+    private var listProverbType = [ProverbTypeModel]()
     var filteredProverbType = [ProverbTypeModel]()
     
     var searchText: String = "" {
@@ -69,7 +69,6 @@ class MediaViewModel {
             filteredFolkType = listFolkType.filter { (data: FolkTypeModel) in
                 let title = data.title.lowercased().unaccent()
                 let keyText = searchText.lowercased().unaccent()
-                
                 if title.range(of: keyText) != nil {
                     return true
                 }

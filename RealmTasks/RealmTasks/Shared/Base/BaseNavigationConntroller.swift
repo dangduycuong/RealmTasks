@@ -13,11 +13,12 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = .clear
-        if let font = UIFont(name: "Menlo-Bold", size: 18) {
+        
+        navigationBar.barTintColor = .black
+        if let font = MenloFont.bold(with: 18) {
             navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: font]
         }
-        navigationBar.tintColor = .clear
+//        navigationBar.tintColor = .black
         
 //        for family in UIFont.familyNames {
 //            

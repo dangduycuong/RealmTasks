@@ -7,9 +7,34 @@
 
 import UIKit
 import GoogleMaps
+import DropDown
 
-import UIKit
-import GoogleMaps
+enum MapType {
+    case normal
+    case satellite
+    case terrain
+    case hybrid
+    case noneNormal
+    
+    static let all = [normal, satellite, terrain, hybrid, noneNormal]
+    
+    var text: String {
+        get {
+            switch self {
+            case .normal:
+                return "Normal"
+            case .satellite:
+                return "Satellite"
+            case .terrain:
+                return "Terrain"
+            case .hybrid:
+                return "Hybrid"
+            case .noneNormal:
+                return "None"
+            }
+        }
+    }
+}
 
 class WeatherViewController: BaseViewController {
     @IBOutlet private weak var addressLabel: UILabel!
@@ -40,6 +65,10 @@ class WeatherViewController: BaseViewController {
     
     var viewModel = WeatherViewModel()
     var timer = Timer()
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .changeMapType, object: nil)
+    }
 }
 
 // MARK: - Lifecycle
@@ -48,6 +77,7 @@ extension WeatherViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(changeMapType), name: .changeMapType, object: nil)
         setupUI()
         locationManager.delegate = self
         
@@ -58,13 +88,11 @@ extension WeatherViewController {
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
-        mapView.animate(toZoom: 17)
-        
-        mapView.delegate = self
         
         viewModel.delegate = self
+        mapView.delegate = self
         mapView.mapType = .satellite
-        
+        mapView.animate(toZoom: 17)
     }
     
     @objc func timerAction() {
@@ -80,6 +108,54 @@ extension WeatherViewController {
         weatherInfoView.isHidden = true
     }
     
+    @objc private func changeMapType(notification: Notification) {
+        //        guard let isConnect = notification.userInfo?["key"] as? Bool else {
+        //            return
+        //        }
+        let dropDown = DropDown()
+        
+        DropDown.appearance().textColor = UIColor.white
+        DropDown.appearance().selectedTextColor = UIColor.red
+        if let font = MenloFont.bold(with: 16) {
+            DropDown.appearance().textFont = font
+        }
+        DropDown.appearance().backgroundColor = UIColor.black
+        DropDown.appearance().selectionBackgroundColor = UIColor.black
+        DropDown.appearance().cellHeight = 60
+        
+        DropDown.startListeningToKeyboard()
+        
+        // The view to which the drop down will appear on
+        dropDown.anchorView = view // UIView or UIBarButtonItem
+        
+        dropDown.direction = .bottom
+        dropDown.bottomOffset = CGPoint(x: UIScreen.main.bounds.width - 118, y: 8)
+        dropDown.width = 110
+        
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = MapType.all.map { $0.text }
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            var mapType = GMSMapViewType.normal
+            switch MapType.all[index] {
+            case .normal:
+                mapType = .normal
+            case .satellite:
+                mapType = .satellite
+            case .terrain:
+                mapType = .terrain
+            case .hybrid:
+                mapType = .hybrid
+            case .noneNormal:
+                mapType = .none
+            }
+            mapView.mapType = mapType
+            mapView.animate(toZoom: 17)
+        }
+        
+        dropDown.show()
+    }
+    
     //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //    guard
     //      let navigationController = segue.destination as? UINavigationController,
@@ -90,6 +166,8 @@ extension WeatherViewController {
     //    controller.selectedTypes = searchedTypes
     //    controller.delegate = self
     //  }
+    
+    
 }
 
 // MARK: - Actions
@@ -172,7 +250,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         
         mapView.camera = GMSCameraPosition(
             target: location.coordinate,
-            zoom: 15,
+            zoom: 17,
             bearing: 0,
             viewingAngle: 0)
         fetchPlaces(near: location.coordinate)
@@ -192,7 +270,6 @@ extension WeatherViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        print(position.target.latitude, position.target.longitude)
         timer.invalidate()
     }
     
@@ -264,17 +341,5 @@ extension WeatherViewController: WeatherViewModelDelegate {
         if let text = weather.current?.condition?.text {
             conditionTextLabel.text = text
         }
-    }
-}
-
-extension Int {
-    func toString() -> String? {
-        return String(self)
-    }
-}
-
-extension Double {
-    func toString() -> String? {
-        return String(self)
     }
 }

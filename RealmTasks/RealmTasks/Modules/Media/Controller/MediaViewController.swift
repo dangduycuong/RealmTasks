@@ -28,25 +28,31 @@ enum MediaType {
 class MediaViewController: BaseViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
-    
     
     var viewModel = MediaViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotifi(notification:)), name: .openAllMedia, object: nil)
         setupUI()
         tableView.registerCell(MediaTableViewCell.self)
         viewModel.delegate = self
         viewModel.loadData()
+        viewModel.mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
         tableView.reloadData()
         
         searchView.searchText = { [weak self] text in
             guard let `self` = self else { return }
             self.viewModel.searchText = text
+        }
+    }
+    
+    @objc func receivedNotifi(notification: Notification) {
+        if let vc = R.storyboard.media.mediaAllViewController() {
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -72,15 +78,21 @@ class MediaViewController: BaseViewController {
 // MARK: - Navigation
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MediaType.list[segmentedControl.selectedSegmentIndex] == .folkVerses ? viewModel.filteredFolkType.count : viewModel.filteredProverbType.count
+        switch viewModel.mediaType {
+        case .folkVerses:
+            return viewModel.filteredFolkType.count
+        case .proverb:
+            return viewModel.filteredProverbType.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        if MediaType.list[segmentedControl.selectedSegmentIndex] == .folkVerses {
-            cell.fillData(title: viewModel.listFolkType[indexPath.row].title)
-        } else {
-            cell.fillData(title: viewModel.listProverbType[indexPath.row].title)
+        switch viewModel.mediaType {
+        case .folkVerses:
+            cell.fillData(title: viewModel.filteredFolkType[indexPath.row].title)
+        case .proverb:
+            cell.fillData(title: viewModel.filteredProverbType[indexPath.row].title)
         }
         let backgroundView = UIView()
         backgroundView.backgroundColor = .clear

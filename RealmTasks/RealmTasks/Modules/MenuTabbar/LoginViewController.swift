@@ -19,7 +19,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         setupIndicatorView()
         
-        var string = "tục ngữ về ý chí nghị lực"
+        var string = "CA DAO HAY VỀ CÁCH ĂN UỐNG"
         print(string.localizedCapitalized)
         string = string.unaccent().lowercased()
         let newString = string.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)

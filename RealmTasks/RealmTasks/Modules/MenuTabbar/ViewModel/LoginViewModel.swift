@@ -46,7 +46,9 @@ class LoginViewModel {
                 MediaFile(fileName: "ca_dao_viet_nam_hay_nhat", title: "Việt Nam Hay Nhất"),
                 MediaFile(fileName: "ca_dao_viet_nam_hay_nhat", title: "Ca Dao Về Người Phụ Nữ Việt Nam"),
                 MediaFile(fileName: "ca_dao_ve_y_chi_nghi_luc", title: "Ca Dao Về Ý Chí Nghị Lực"),
-                
+                MediaFile(fileName: "ca_dao_ve_thuoc_thang", title: "Ca Dao Về Thuốc Thang"),
+                MediaFile(fileName: "ca_dao_đac_sac_va_giau_triet_ly_song", title: "Ca Dao Đặc Sắc Và Giàu Triết Lý Sống"),
+                MediaFile(fileName: "ca_dao_hay_ve_cach_an_uong", title: "Ca Dao Hay Về Cách Ăn Uống"),
             ]
             
             for file in listFile {
