@@ -23,7 +23,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30-black-wallpaper-hd-strips.1024" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-S5-yW1">
                                 <rect key="frame" x="0.0" y="0.0" width="520" height="64"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11-black-wallpaper.1024" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-up-DbG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar_pin" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-up-DbG">
                                 <rect key="frame" x="8" y="19.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="OC1-NX-Erg"/>
@@ -73,7 +73,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="11-black-wallpaper.1024" width="512" height="288"/>
         <image name="30-black-wallpaper-hd-strips.1024" width="512" height="273"/>
+        <image name="bar_pin" width="35" height="42"/>
     </resources>
 </document>

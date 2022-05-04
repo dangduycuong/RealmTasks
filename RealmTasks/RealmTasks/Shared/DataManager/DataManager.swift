@@ -78,14 +78,14 @@ class DataManager: NSObject {
         return true
     }
     //MARK: - Folk
-    func addFolkToRealm(_ data: FolkModel) {
+    func addFolkToRealm(_ data: FolkVersesModel) {
         try! realm.write {
             realm.add(data)
         }
     }
     
-    func modifyFolk(dataEdit: FolkModel) {
-        let listData = realm.objects(FolkModel.self)
+    func modifyFolk(dataEdit: FolkVersesModel) {
+        let listData = realm.objects(FolkVersesModel.self)
         realm.beginWrite()
         
         if let i = listData.firstIndex(where: { $0.id == dataEdit.id }) {
@@ -98,9 +98,9 @@ class DataManager: NSObject {
         try! realm.commitWrite()
     }
     
-    func getListFolk(_ completionHandler: @escaping ([FolkModel]) -> Void ) {
-        var listData = [FolkModel]()
-        let todo = realm.objects(FolkModel.self)
+    func getListFolk(_ completionHandler: @escaping ([FolkVersesModel]) -> Void ) {
+        var listData = [FolkVersesModel]()
+        let todo = realm.objects(FolkVersesModel.self)
         for item in todo {
             listData.append(item)
         }
@@ -108,7 +108,7 @@ class DataManager: NSObject {
     }
     
     func removeFolk(id: String) -> Bool {
-        guard let folk = realm.objects(FolkModel.self).filter({$0.id == id}).first else { return false }
+        guard let folk = realm.objects(FolkVersesModel.self).filter({$0.id == id}).first else { return false }
         try! realm.write {
             realm.delete(folk)
         }
@@ -195,7 +195,7 @@ class DataManager: NSObject {
     
     func deleteFolk(completion: @escaping() -> Void) {
         self.realm.beginWrite()
-        let folk = self.realm.objects(FolkModel.self)
+        let folk = self.realm.objects(FolkVersesModel.self)
         self.realm.delete(folk)
         try! self.realm.commitWrite()
         completion()

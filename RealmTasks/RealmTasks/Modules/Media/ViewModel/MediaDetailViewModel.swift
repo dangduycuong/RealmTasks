@@ -56,7 +56,7 @@ class MediaDetailViewModel {
     }
     
     private func modifyFolk(folk: MediaDisplayList) {
-        let dataEdit = FolkModel()
+        let dataEdit = FolkVersesModel()
         dataEdit.id = folk.id
         dataEdit.fileName = folk.fileName
         dataEdit.content = folk.content

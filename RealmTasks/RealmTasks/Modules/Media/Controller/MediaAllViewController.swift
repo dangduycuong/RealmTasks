@@ -35,10 +35,20 @@ class MediaAllViewController: BaseViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel = MediaAllViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
         tableView.registerCell(MediaTableViewCell.self)
+        
+        showLoading()
+        viewModel.loadData { [weak self] in
+            self?.hideLoading()
+            self?.tableView.reloadData()
+        }
     }
     
     private func setupUI() {
@@ -58,11 +68,12 @@ class MediaAllViewController: BaseViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension MediaAllViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return viewModel.filteredAllList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
+        cell.fillData(title: viewModel.filteredAllList[indexPath.row].content)
         return cell
     }
     

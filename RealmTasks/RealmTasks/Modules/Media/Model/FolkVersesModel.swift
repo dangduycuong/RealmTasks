@@ -19,7 +19,7 @@ class FolkTypeModel: Object {
     
 }
 
-class FolkModel: Object {
+class FolkVersesModel: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var fileName: String = ""
     @objc dynamic var title: String = ""

@@ -69,7 +69,7 @@ class LoginViewModel {
                 for folkType in list {
                     let fileName = folkType.fileName
                     if let string = self.getTextInRTFFile(fileName: fileName) {
-                        var item = FolkModel()
+                        var item = FolkVersesModel()
                         var content = ""
                         for char in string {
                             if char == "*" {
@@ -80,7 +80,7 @@ class LoginViewModel {
                                 item.content = content
                                 DataManager.shared.addFolkToRealm(item)
                                 content = ""
-                                item = FolkModel()
+                                item = FolkVersesModel()
                             } else {
                                 content.append(char)
                             }
