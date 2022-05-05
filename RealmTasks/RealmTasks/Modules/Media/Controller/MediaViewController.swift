@@ -23,6 +23,17 @@ enum MediaType {
             }
         }
     }
+    
+    var value: String {
+        get {
+            switch self {
+            case .folkVerses:
+                return "folkVerses"
+            case .proverb:
+                return "proverb"
+            }
+        }
+    }
 }
 
 class MediaViewController: BaseViewController {
@@ -78,22 +89,12 @@ class MediaViewController: BaseViewController {
 // MARK: - Navigation
 extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch viewModel.mediaType {
-        case .folkVerses:
-            return viewModel.filteredFolkType.count
-        case .proverb:
-            return viewModel.filteredProverbType.count
-        }
+        return viewModel.filteredMediaTypeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        switch viewModel.mediaType {
-        case .folkVerses:
-            cell.fillData(title: viewModel.filteredFolkType[indexPath.row].title)
-        case .proverb:
-            cell.fillData(title: viewModel.filteredProverbType[indexPath.row].title)
-        }
+        cell.fillData(title: viewModel.filteredMediaTypeList[indexPath.row].title)
         let backgroundView = UIView()
         backgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = backgroundView
@@ -102,13 +103,7 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = R.storyboard.media.mediaDetailViewController() {
-            let mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
-            
-            if mediaType == .folkVerses {
-                vc.folkType = viewModel.filteredFolkType[indexPath.row]
-            } else {
-                vc.proverbType = viewModel.filteredProverbType[indexPath.row]
-            }
+            let mediaType = viewModel.filteredMediaTypeList[indexPath.row]
             vc.mediaType = mediaType
             navigationController?.pushViewController(vc, animated: true)
         }

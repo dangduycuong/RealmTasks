@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6A30716DDDF49786FB7BE09F /* Pods_RealmTasksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E838EDC9DB1F107B1EB1F8 /* Pods_RealmTasksTests.framework */; };
+		AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */; };
+		AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */; };
+		AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */; };
+		AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC114C6A2823A272007F0528 /* Wisdom.storyboard */; };
+		AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6D2823A299007F0528 /* WisdomViewController.swift */; };
+		AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */; };
 		AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E128112F9700ACFC4E /* AppColor.swift */; };
 		AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E428112FBC00ACFC4E /* BaseViewController.swift */; };
 		AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */; };
@@ -48,8 +54,6 @@
 		AC7407812816774D0073E38E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7407832816774D0073E38E /* Localizable.strings */; };
 		AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078628167BEF0073E38E /* LoginViewController.swift */; };
 		AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */; };
-		AC7407982816987B0073E38E /* FolkVersesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407972816987B0073E38E /* FolkVersesModel.swift */; };
-		AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407992816989C0073E38E /* ProverbModel.swift */; };
 		AC77FBA2281782090085F8C8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77FBA1281782090085F8C8 /* DataManager.swift */; };
 		AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */; };
 		AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */; };
@@ -130,6 +134,12 @@
 		5B060A0EE35D973890A5E8C3 /* Pods-RealmTasksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasksTests.release.xcconfig"; path = "Target Support Files/Pods-RealmTasksTests/Pods-RealmTasksTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C9A5493DE581B98F30D64C1 /* Pods-RealmTasks-RealmTasksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks-RealmTasksUITests.debug.xcconfig"; path = "Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		979F362572726448521C334A /* Pods_RealmTasks_RealmTasksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmTasks_RealmTasksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayDetail.swift; sourceTree = "<group>"; };
+		AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailLocalModel.swift; sourceTree = "<group>"; };
+		AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeLocalModel.swift; sourceTree = "<group>"; };
+		AC114C6A2823A272007F0528 /* Wisdom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wisdom.storyboard; sourceTree = "<group>"; };
+		AC114C6D2823A299007F0528 /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
+		AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomDetailViewController.swift; sourceTree = "<group>"; };
 		AC2019E128112F9700ACFC4E /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		AC2019E428112FBC00ACFC4E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationConntroller.swift; sourceTree = "<group>"; };
@@ -177,8 +187,6 @@
 		AC740791281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AC7407922816881D0073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_an_noi_ung_xu.rtf; sourceTree = "<group>"; };
-		AC7407972816987B0073E38E /* FolkVersesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolkVersesModel.swift; sourceTree = "<group>"; };
-		AC7407992816989C0073E38E /* ProverbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbModel.swift; sourceTree = "<group>"; };
 		AC77FBA1281782090085F8C8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = lao_dong_san_xuat.rtf; sourceTree = "<group>"; };
 		AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_hoc_tap.rtf; sourceTree = "<group>"; };
@@ -291,6 +299,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC114C692823A23B007F0528 /* Wisdom */ = {
+			isa = PBXGroup;
+			children = (
+				AC114C6C2823A288007F0528 /* Controller */,
+			);
+			path = Wisdom;
+			sourceTree = "<group>";
+		};
+		AC114C6C2823A288007F0528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC114C6D2823A299007F0528 /* WisdomViewController.swift */,
+				AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		AC2019D728112F1100ACFC4E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +333,7 @@
 				AC2019F42811308900ACFC4E /* Weather.storyboard */,
 				AC2019F62811309C00ACFC4E /* Media.storyboard */,
 				ACCEE3FE28125B49007D0049 /* Alert.storyboard */,
+				AC114C6A2823A272007F0528 /* Wisdom.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -338,6 +364,7 @@
 		AC2019DC28112F5D00ACFC4E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AC114C692823A23B007F0528 /* Wisdom */,
 				FA37DCBD281AE1A6001F8FE3 /* CommonUI */,
 				AC2019EC2811302800ACFC4E /* Media */,
 				AC2019E82811300100ACFC4E /* Weather */,
@@ -478,8 +505,9 @@
 		AC74075628163D0B0073E38E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC7407972816987B0073E38E /* FolkVersesModel.swift */,
-				AC7407992816989C0073E38E /* ProverbModel.swift */,
+				AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */,
+				AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */,
+				AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -904,6 +932,7 @@
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
+				AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
 				AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */,
@@ -1117,13 +1146,15 @@
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
+				AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */,
 				ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */,
 				AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */,
 				ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */,
-				AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */,
 				AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */,
 				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
+				AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */,
 				AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */,
+				AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */,
 				AC740771281671E40073E38E /* BundleLocalization.m in Sources */,
 				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
@@ -1143,9 +1174,9 @@
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
+				AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */,
 				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
-				AC7407982816987B0073E38E /* FolkVersesModel.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
 				AC61C5F5281BF36A00ED185C /* R.generated.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
@@ -1154,6 +1185,7 @@
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,
 				FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */,
 				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
+				AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

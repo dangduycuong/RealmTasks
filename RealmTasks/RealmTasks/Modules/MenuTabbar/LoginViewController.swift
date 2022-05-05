@@ -10,6 +10,7 @@ import UIKit
 struct MediaFile {
     var fileName: String
     var title: String
+    var mediaType: String
 }
 
 class LoginViewController: BaseViewController {

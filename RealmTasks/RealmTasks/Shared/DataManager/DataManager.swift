@@ -54,38 +54,46 @@ class DataManager: NSObject {
         return true
     }
     
-    //MARK: - FolkType
-    func addFolkTypeToRealm(_ data: FolkTypeModel) {
+    //MARK: - MediaTypeLocalModel
+    func addMediaTypeToRealm(_ data: MediaTypeLocalModel) {
         try! realm.write {
             realm.add(data)
         }
     }
     
-    func getListFolkType(_ completionHandler: @escaping ([FolkTypeModel]) -> Void ) {
-        var listData = [FolkTypeModel]()
-        let todo = realm.objects(FolkTypeModel.self)
+    func getListMediaType(_ completionHandler: @escaping ([MediaTypeLocalModel]) -> Void ) {
+        var listData = [MediaTypeLocalModel]()
+        let todo = realm.objects(MediaTypeLocalModel.self)
         for item in todo {
             listData.append(item)
         }
         completionHandler(listData)
     }
     
-    func removeFolkType(id: String) -> Bool {
-        guard let todo = realm.objects(FolkTypeModel.self).filter({$0.id == id}).first else { return false }
+    func removeMediaType(id: String) -> Bool {
+        guard let todo = realm.objects(MediaTypeLocalModel.self).filter({$0.id == id}).first else { return false }
         try! realm.write {
             realm.delete(todo)
         }
         return true
     }
-    //MARK: - Folk
-    func addFolkToRealm(_ data: FolkVersesModel) {
+    
+    func deleteMediaType(completion: @escaping () -> Void) {
+        self.realm.beginWrite()
+        let mediaType = self.realm.objects(MediaTypeLocalModel.self)
+        self.realm.delete(mediaType)
+        try! self.realm.commitWrite()
+        completion()
+    }
+    //MARK: - Media Model
+    func addMediaToRealm(_ data: MediaDetailLocalModel) {
         try! realm.write {
             realm.add(data)
         }
     }
     
-    func modifyFolk(dataEdit: FolkVersesModel) {
-        let listData = realm.objects(FolkVersesModel.self)
+    func modifyMedia(dataEdit: MediaDetailLocalModel) {
+        let listData = realm.objects(MediaDetailLocalModel.self)
         realm.beginWrite()
         
         if let i = listData.firstIndex(where: { $0.id == dataEdit.id }) {
@@ -93,122 +101,36 @@ class DataManager: NSObject {
             listData[i].title = dataEdit.title
             listData[i].content = dataEdit.content
             listData[i].isFavorite = dataEdit.isFavorite
+            listData[i].mediaType = dataEdit.mediaType
         }
         
         try! realm.commitWrite()
     }
     
-    func getListFolk(_ completionHandler: @escaping ([FolkVersesModel]) -> Void ) {
-        var listData = [FolkVersesModel]()
-        let todo = realm.objects(FolkVersesModel.self)
+    func getListMedia(_ completionHandler: @escaping ([MediaDetailLocalModel]) -> Void ) {
+        var listData = [MediaDetailLocalModel]()
+        let todo = realm.objects(MediaDetailLocalModel.self)
         for item in todo {
             listData.append(item)
         }
         completionHandler(listData)
     }
     
-    func removeFolk(id: String) -> Bool {
-        guard let folk = realm.objects(FolkVersesModel.self).filter({$0.id == id}).first else { return false }
+    func removeMedia(id: String) -> Bool {
+        guard let folk = realm.objects(MediaDetailLocalModel.self).filter({$0.id == id}).first else { return false }
         try! realm.write {
             realm.delete(folk)
         }
         return true
     }
     
-    //MARK: - ProverbType
-    func addProverbType(_ data: ProverbTypeModel) {
-        try! realm.write {
-            realm.add(data)
-        }
-    }
-    
-    func getListProverbType(_ completionHandler: @escaping ([ProverbTypeModel]) -> Void ) {
-        var listData = [ProverbTypeModel]()
-        let proverbType = realm.objects(ProverbTypeModel.self)
-        for item in proverbType {
-            listData.append(item)
-        }
-        completionHandler(listData)
-    }
-    
-    func removeProverbType(id: String) -> Bool {
-        guard let proverbType = realm.objects(ProverbTypeModel.self).filter({$0.id == id}).first else { return false }
-        try! realm.write {
-            realm.delete(proverbType)
-        }
-        return true
-    }
-    
-    //MARK: - Proverbs
-    func addProverb(_ data: ProverbModel) {
-        try! realm.write {
-            realm.add(data)
-        }
-    }
-    
-    func modifyProverb(dataEdit: ProverbModel) {
-        let listData = realm.objects(ProverbModel.self)
-        realm.beginWrite()
-        for item in listData {
-            if item.id == dataEdit.id {
-                item.fileName = dataEdit.fileName
-                item.title = dataEdit.title
-                item.content = dataEdit.content
-                item.isFavorite = dataEdit.isFavorite
-            }
-        }
-        try! realm.commitWrite()
-    }
-    
-    func getListProverb(_ completionHandler: @escaping ([ProverbModel]) -> Void ) {
-        var listData = [ProverbModel]()
-        let proverbType = realm.objects(ProverbModel.self)
-        for item in proverbType {
-            listData.append(item)
-        }
-        completionHandler(listData)
-    }
-    
-    func removeProverb(id: String) -> Bool {
-        guard let proverbType = realm.objects(ProverbModel.self).filter({$0.id == id}).first else { return false }
-        try! realm.write {
-            realm.delete(proverbType)
-        }
-        return true
-    }
-    
-    func deleteFolkType(completion: @escaping () -> Void) {
+    func deleteMedia(completion: @escaping () -> Void) {
         self.realm.beginWrite()
-        let folkTypeModel = self.realm.objects(FolkTypeModel.self)
-        self.realm.delete(folkTypeModel)
+        let mediaDetail = self.realm.objects(MediaDetailLocalModel.self)
+        self.realm.delete(mediaDetail)
         try! self.realm.commitWrite()
         completion()
     }
-    
-    func deleteProverbType(completion: @escaping () -> Void) {
-        self.realm.beginWrite()
-        let proverbTypeModel = self.realm.objects(ProverbTypeModel.self)
-        self.realm.delete(proverbTypeModel)
-        try! self.realm.commitWrite()
-        completion()
-    }
-    
-    func deleteFolk(completion: @escaping() -> Void) {
-        self.realm.beginWrite()
-        let folk = self.realm.objects(FolkVersesModel.self)
-        self.realm.delete(folk)
-        try! self.realm.commitWrite()
-        completion()
-    }
-    
-    func deleteProverb(completion: @escaping() -> Void) {
-        self.realm.beginWrite()
-        let proverbModel = self.realm.objects(ProverbModel.self)
-        self.realm.delete(proverbModel)
-        try! self.realm.commitWrite()
-        completion()
-    }
-    
 }
 
 extension Results {

@@ -11,24 +11,23 @@ protocol MediaDetailViewModelDelegate: AnyObject {
     func reloadData()
 }
 
-struct MediaDisplayList {
+struct MediaDetailDisplay {
     var id: String
     var fileName: String
     var title: String
     var content: String
     
+    var mediaType: String
     var isFavorite: Bool
 }
 
 class MediaDetailViewModel {
-    var folkType = FolkTypeModel()
-    var proverbType = ProverbTypeModel()
     
-    var filteredList = [MediaDisplayList]()
-    private var sourceAllList = [MediaDisplayList]()
-    private var sourceFavoriteList = [MediaDisplayList]()
+    var filteredList = [MediaDetailDisplay]()
+    private var sourceAllList = [MediaDetailDisplay]()
+    private var sourceFavoriteList = [MediaDetailDisplay]()
     
-    var mediaType = MediaType.folkVerses
+    var mediaType = MediaTypeLocalModel()
     
     weak var delegate: MediaDetailViewModelDelegate?
     
@@ -44,75 +43,35 @@ class MediaDetailViewModel {
         }
     }
     
-    func loadData(mediaType: MediaType, folkType: FolkTypeModel, proverbType: ProverbTypeModel) {
+    func loadData(mediaType: MediaTypeLocalModel) {
         self.mediaType = mediaType
-        if mediaType == .folkVerses {
-            self.folkType = folkType
-            getListFolk()
-        } else {
-            self.proverbType = proverbType
-            getListProverb()
-        }
+        getListMedia(mediaType: mediaType)
     }
     
-    private func modifyFolk(folk: MediaDisplayList) {
-        let dataEdit = FolkVersesModel()
-        dataEdit.id = folk.id
-        dataEdit.fileName = folk.fileName
-        dataEdit.content = folk.content
-        dataEdit.title = folk.title
-        dataEdit.isFavorite = folk.isFavorite
-        DataManager.shared.modifyFolk(dataEdit: dataEdit)
-        getListFolk()
-    }
-    
-    private func modifyProverb(prover: MediaDisplayList) {
-        let dataEdit = ProverbModel()
-        dataEdit.id = prover.id
-        dataEdit.fileName = prover.fileName
-        dataEdit.content = prover.content
-        dataEdit.title = prover.title
-        dataEdit.isFavorite = prover.isFavorite
-        DataManager.shared.modifyProverb(dataEdit: dataEdit)
-        getListProverb()
-    }
-    
-    func getListFolk() {
-        DataManager.shared.getListFolk { [weak self] list in
+    private func getListMedia(mediaType: MediaTypeLocalModel) {
+        DataManager.shared.getListMedia { [weak self] list in
             guard let `self` = self else { return }
             list.forEach({ data in
-                guard data.fileName == self.folkType.fileName else { return }
-                let item = MediaDisplayList(id: data.id, fileName: data.fileName, title: data.title, content: data.content, isFavorite: data.isFavorite)
-                
-                self.sourceAllList.append(item)
-                self.filteredList.append(item)
-                if data.isFavorite {
-                    self.sourceFavoriteList.append(item)
-                }
+                guard data.fileName == mediaType.fileName else { return }
+                let item = MediaDetailDisplay(id: data.id, fileName: data.fileName, title: data.title, content: data.content, mediaType: data.mediaType, isFavorite: data.isFavorite)
+                self.setupData(data: item)
             })
         }
     }
     
-    func getListProverb() {
-        DataManager.shared.getListProverb { [weak self] list in
-            guard let `self` = self else { return }
-            list.forEach( { data in
-                guard data.fileName == self.proverbType.fileName else { return }
-                let item = MediaDisplayList(id: data.id, fileName: data.fileName, title: data.title, content: data.content, isFavorite: data.isFavorite)
-                self.sourceAllList.append(item)
-                self.filteredList.append(item)
-                if data.isFavorite {
-                    self.sourceFavoriteList.append(item)
-                }
-            })
+    private func setupData(data: MediaDetailDisplay) {
+        sourceAllList.append(data)
+        filteredList.append(data)
+        if data.isFavorite {
+            sourceFavoriteList.append(data)
         }
     }
     
-    func filterData(sourceList: [MediaDisplayList]) {
+    func filterData(sourceList: [MediaDetailDisplay]) {
         if searchText == "" {
             filteredList = sourceList
         } else {
-            filteredList = sourceList.filter { (data: MediaDisplayList) in
+            filteredList = sourceList.filter { (data: MediaDetailDisplay) in
                 let content = data.content.lowercased().unaccent()
                 let keyText = searchText.lowercased().unaccent()
                 
@@ -126,14 +85,17 @@ class MediaDetailViewModel {
         delegate?.reloadData()
     }
     
-    func modifyData(data: MediaDisplayList, type: MediaType) {
+    func modifyData(media: MediaDetailDisplay) {
         removeAllData()
-        switch type {
-        case .folkVerses:
-            modifyFolk(folk: data)
-        case .proverb:
-            modifyProverb(prover: data)
-        }
+        let dataEdit = MediaDetailLocalModel()
+        dataEdit.id = media.id
+        dataEdit.fileName = media.fileName
+        dataEdit.title = media.title
+        dataEdit.content = media.content
+        dataEdit.mediaType = media.mediaType
+        dataEdit.isFavorite = media.isFavorite
+        DataManager.shared.modifyMedia(dataEdit: dataEdit)
+        getListMedia(mediaType: self.mediaType)
         searchData()
     }
     

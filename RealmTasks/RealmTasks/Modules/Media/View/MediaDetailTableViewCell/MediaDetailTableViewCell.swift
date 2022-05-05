@@ -42,7 +42,7 @@ class MediaDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fillData(data: MediaDisplayList) {
+    func fillData(data: MediaDetailDisplay) {
         messageLabel.text = data.content
         favoriteImageView.image = data.isFavorite ? R.image.icons8Heart_suit() : R.image.icons8Favorite()
         DispatchQueue.main.async {

@@ -30,17 +30,16 @@ class MediaDetailViewController: BaseViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
-    var folkType = FolkTypeModel()
-    var proverbType = ProverbTypeModel()
+    
     var viewModel = MediaDetailViewModel()
-    var mediaType = MediaType.folkVerses
+    var mediaType = MediaTypeLocalModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerCell(MediaDetailTableViewCell.self)
         viewModel.delegate = self
-        viewModel.loadData(mediaType: mediaType, folkType: folkType, proverbType: proverbType)
+        viewModel.loadData(mediaType: mediaType)
         tableView.reloadData()
         
         searchView.searchText = { [weak self] text in
@@ -55,7 +54,7 @@ class MediaDetailViewController: BaseViewController {
     }
     
     private func setupUI() {
-        title = mediaType.text
+        title = mediaType.mediaType
         addBackButton()
         
         for i in 0..<MediaDetailSegmentedControl.list.count {
@@ -105,6 +104,6 @@ extension MediaDetailViewController: MediaDetailTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         var data = viewModel.filteredList[indexPath.row]
         data.isFavorite = !data.isFavorite
-        viewModel.modifyData(data: data, type: mediaType)
+        viewModel.modifyData(media: data)
     }
 }

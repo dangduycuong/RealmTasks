@@ -42,9 +42,16 @@ class MediaAllViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
-        tableView.registerCell(MediaTableViewCell.self)
+        tableView.registerCell(MediaDetailTableViewCell.self)
+        
+        viewModel.delegate = self
+        searchView.searchText = { [weak self] text in
+            guard let `self` = self else { return }
+            self.viewModel.searchText = text
+        }
         
         showLoading()
+        
         viewModel.loadData { [weak self] in
             self?.hideLoading()
             self?.tableView.reloadData()
@@ -52,6 +59,8 @@ class MediaAllViewController: BaseViewController {
     }
     
     private func setupUI() {
+        addBackButton()
+        navigationItem.title = "Ca dao tục ngữ Việt Nam"
         for i in 0..<MediaAllViewSegmented.list.count {
             segmentedControl.setTitle(MediaAllViewSegmented.list[i].text, forSegmentAt: i)
         }
@@ -63,19 +72,38 @@ class MediaAllViewController: BaseViewController {
             segmentedControl.selectedSegmentTintColor = .black
         }
     }
+    
+    @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
+        viewModel.displayType = MediaAllViewSegmented.list[segmentedControl.selectedSegmentIndex]
+    }
 
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension MediaAllViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.filteredAllList.count
+        return viewModel.filteredResultList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(title: viewModel.filteredAllList[indexPath.row].content)
+        let cell = tableView.dequeueReusableCell(cellType: MediaDetailTableViewCell.self, forIndexPath: indexPath)
+        cell.delegate = self
+        cell.fillData(data: viewModel.filteredResultList[indexPath.row])
         return cell
     }
     
-    
+}
+
+extension MediaAllViewController: MediaAllViewModelDelegate {
+    func reloadData() {
+        tableView.reloadData()
+    }
+}
+
+extension MediaAllViewController: MediaDetailTableViewCellDelegate {
+    func favoriteChange(cell: UITableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        var data = viewModel.filteredResultList[indexPath.row]
+        data.isFavorite = !data.isFavorite
+        viewModel.modifyData(media: data)
+    }
 }
