@@ -95,6 +95,7 @@
 		FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD81281406AA00C820ED /* RealtimeWeather.swift */; };
 		FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */; };
 		FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */; };
+		FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA15D7B4282419F30067EEBB /* galaxy.gif */; };
 		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
 		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
@@ -229,6 +230,7 @@
 		FA02FD81281406AA00C820ED /* RealtimeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeWeather.swift; sourceTree = "<group>"; };
 		FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
+		FA15D7B4282419F30067EEBB /* galaxy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = galaxy.gif; sourceTree = "<group>"; };
 		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -581,6 +583,7 @@
 		ACA38E9C281A2C870021428C /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				FA15D7B4282419F30067EEBB /* galaxy.gif */,
 				ACA38E9D281A2CA00021428C /* loading.gif */,
 			);
 			path = gif;
@@ -929,6 +932,7 @@
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
 				AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */,
+				FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */,
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
