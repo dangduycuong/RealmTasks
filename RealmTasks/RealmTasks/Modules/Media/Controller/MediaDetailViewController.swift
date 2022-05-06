@@ -54,14 +54,14 @@ class MediaDetailViewController: BaseViewController {
     }
     
     private func setupUI() {
-        title = mediaType.mediaType
+        title = mediaType.title
         addBackButton()
         
         for i in 0..<MediaDetailSegmentedControl.list.count {
             segmentedControl.setTitle(MediaDetailSegmentedControl.list[i].text, forSegmentAt: i)
         }
         
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black

@@ -116,7 +116,7 @@ extension WeatherViewController {
         
         DropDown.appearance().textColor = UIColor.white
         DropDown.appearance().selectedTextColor = UIColor.red
-        if let font = MenloFont.bold(with: 16) {
+        if let font = PlayfairDisplayFont.semiBold(with: 20) {
             DropDown.appearance().textFont = font
         }
         DropDown.appearance().backgroundColor = UIColor.black

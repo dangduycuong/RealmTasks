@@ -64,8 +64,7 @@ class MediaAllViewController: BaseViewController {
         for i in 0..<MediaAllViewSegmented.list.count {
             segmentedControl.setTitle(MediaAllViewSegmented.list[i].text, forSegmentAt: i)
         }
-        
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black

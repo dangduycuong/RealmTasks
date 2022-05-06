@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PlayfairDisplay-SemiBold.ttf">
+            <string>PlayfairDisplay-SemiBold</string>
+        </array>
+        <array key="PlayfairDisplay-VariableFont_wght.ttf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Todo View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -106,23 +114,23 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-g7-5YX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-S3-tyx">
-                                                <rect key="frame" x="57" y="117.5" width="87" height="19"/>
-                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                <rect key="frame" x="57" y="121.5" width="100" height="27"/>
+                                                <fontDescription key="fontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-8H-NbO">
-                                                <rect key="frame" x="24" y="114.5" width="25" height="25"/>
+                                                <rect key="frame" x="24" y="122.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="XAR-cm-xd2"/>
                                                     <constraint firstAttribute="height" constant="25" id="s6s-Nu-1fh"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tn8-FI-CLv">
-                                                <rect key="frame" x="16" y="16" width="382" height="131"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="139"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HOS-w8-dnQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -132,25 +140,25 @@
                                                             <constraint firstAttribute="height" constant="40" id="3OE-85-sPm"/>
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="ayw-E5-ffL" id="BwA-5y-Meq"/>
                                                         </connections>
                                                     </textField>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-9l-FtQ">
-                                                        <rect key="frame" x="0.0" y="48" width="382" height="35"/>
+                                                        <rect key="frame" x="0.0" y="48" width="382" height="43"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="ayw-E5-ffL" id="EUw-46-Y7P"/>
                                                         </connections>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl4-SC-Fpl">
-                                                        <rect key="frame" x="0.0" y="91" width="382" height="40"/>
+                                                        <rect key="frame" x="0.0" y="99" width="382" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="TYB-19-Txb"/>
                                                         </constraints>

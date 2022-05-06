@@ -23,8 +23,27 @@ enum LanguageKey {
     }
 }
 
+protocol LoginViewModelDelegate: AnyObject {
+    func verifySuccess()
+}
 
 class LoginViewModel {
+    
+    let pickerDataSize = 100_000
+    var dataSource = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]
+    var password = [[0], [0], [0], [0]] {
+        didSet {
+            verifyPassword()
+        }
+    }
+    weak var delegate: LoginViewModelDelegate?
+    
+    private func verifyPassword() {
+        let verify = [[2], [5], [9], [3]]
+        if password == verify {
+            delegate?.verifySuccess()
+        }
+    }
     
     func setLanguage(languageKey: LanguageKey) {
         LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(languageKey.value)

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-menu_rounded.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-menu_rounded.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

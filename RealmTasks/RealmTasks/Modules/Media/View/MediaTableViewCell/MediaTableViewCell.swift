@@ -37,7 +37,7 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     func fillData(title: String?) {
-        iconImageView.image = R.image.bakery()
+//        iconImageView.image = R.image.bakery()
         titleLabel.text = title
     }
     

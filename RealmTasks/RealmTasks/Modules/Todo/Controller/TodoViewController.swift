@@ -63,7 +63,7 @@ class TodoViewController: BaseViewController {
         tabBarController?.tabBar.tintColor = .white
         tabBarController?.tabBar.unselectedItemTintColor = .gray
         
-        if let bold = MenloFont.bold(with: 12) {
+        if let bold = PlayfairDisplayFont.bold(with: 12) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.gray]
             let selectedAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             
@@ -94,7 +94,7 @@ class TodoViewController: BaseViewController {
         segmentedControl.setTitle(R.string.localizable.completed().language(), forSegmentAt: 1)
         segmentedControl.setTitle(R.string.localizable.incompleted().language(), forSegmentAt: 2)
         
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black

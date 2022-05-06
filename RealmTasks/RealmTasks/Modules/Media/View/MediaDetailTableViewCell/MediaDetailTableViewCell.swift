@@ -22,23 +22,28 @@ class MediaDetailTableViewCell: UITableViewCell {
     weak var delegate: MediaDetailTableViewCellDelegate?
     
     @IBOutlet weak var heightBackgroundImageView: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
         subView.layer.shadowColor = UIColor.white.cgColor
         subView.layer.shadowOpacity = 0.35
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 2
         
         subView.layer.cornerRadius = 8
-        subView.backgroundColor = AppColor.blueCustom
+        
         favoriteButton.setTitle("", for: .normal)
         backgroundImageView.layer.cornerRadius = 8
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

@@ -53,59 +53,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBG" translatesAutoresizingMaskIntoConstraints="NO" id="CuQ-TR-HSh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flowerDrawing" translatesAutoresizingMaskIntoConstraints="NO" id="CuQ-TR-HSh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-X0-g5J">
-                                <rect key="frame" x="16" y="60" width="382" height="31"/>
+                                <rect key="frame" x="16" y="60" width="382" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-Hb-wBi">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="41"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Tiếng Việt"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Tiếng Việt">
+                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="vietnamClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="bKL-k2-s81"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-NH-0lr">
-                                        <rect key="frame" x="195" y="0.0" width="187" height="31"/>
+                                        <rect key="frame" x="195" y="0.0" width="187" height="41"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="English"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="English">
+                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="englishClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="p1d-DN-g9e"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-vZ-QTd">
-                                <rect key="frame" x="174" y="432.5" width="66.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LOGIN"/>
-                                <connections>
-                                    <action selector="loginClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="k7c-Kh-12r"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Ip-ZQD">
-                                <rect key="frame" x="16" y="123" width="382" height="31"/>
+                                <rect key="frame" x="16" y="133" width="382" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-9L-GUc">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="41"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Restore Data"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Restore Data">
+                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tapToRestoreData:" destination="zO3-t1-AFs" eventType="touchUpInside" id="2CG-xq-gqQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUX-qj-k1j">
-                                        <rect key="frame" x="217" y="0.0" width="165" height="31"/>
+                                        <rect key="frame" x="217" y="0.0" width="165" height="41"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Delete Data"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete Data">
+                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tapToDeleteData:" destination="zO3-t1-AFs" eventType="touchUpInside" id="K6C-IM-4ny"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyO-HJ-qrZ">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i96-Rd-PdG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,17 +118,20 @@
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="top" secondItem="ztu-X0-g5J" secondAttribute="bottom" constant="32" id="1Jz-fc-cf3"/>
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="1Kr-Xa-SeQ"/>
                             <constraint firstItem="CuQ-TR-HSh" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" id="6kB-7u-nYl"/>
+                            <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="8Et-hQ-PDN"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="4j5-Ip-ZQD" secondAttribute="trailing" constant="16" id="G4M-cC-5Lb"/>
                             <constraint firstItem="CuQ-TR-HSh" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="GLQ-Og-gDj"/>
                             <constraint firstAttribute="bottom" secondItem="CuQ-TR-HSh" secondAttribute="bottom" id="MoY-ah-s6g"/>
-                            <constraint firstItem="vrb-vZ-QTd" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="TC0-CC-oYo"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="top" secondItem="i96-Rd-PdG" secondAttribute="top" constant="16" id="ZT1-89-Go8"/>
                             <constraint firstItem="CuQ-TR-HSh" firstAttribute="trailing" secondItem="i96-Rd-PdG" secondAttribute="trailing" id="ZY9-dO-6t8"/>
+                            <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="a6t-vv-RUQ"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="ztu-X0-g5J" secondAttribute="trailing" constant="16" id="lAh-Eu-BzC"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="pLa-nt-QNc"/>
-                            <constraint firstItem="vrb-vZ-QTd" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="vew-2r-Peu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="JyO-HJ-qrZ" id="NVk-bK-8Hf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ue8-7J-uKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +157,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loginBG" width="540" height="360"/>
+        <image name="flowerDrawing" width="282" height="282"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

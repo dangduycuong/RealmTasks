@@ -17,7 +17,7 @@ enum MediaType {
         get {
             switch self {
             case .folkVerses:
-                return R.string.localizable.folk_verses().language()
+                return R.string.localizable.folkVerses().language()
             case .proverb:
                 return R.string.localizable.proverb().language()
             }
@@ -72,7 +72,7 @@ class MediaViewController: BaseViewController {
             segmentedControl.setTitle(MediaType.list[i].text, forSegmentAt: i)
         }
         
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black

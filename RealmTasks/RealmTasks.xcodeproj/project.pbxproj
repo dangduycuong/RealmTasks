@@ -23,6 +23,24 @@
 		AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019F22811306F00ACFC4E /* TodoViewController.swift */; };
 		AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F42811308900ACFC4E /* Weather.storyboard */; };
 		AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F62811309C00ACFC4E /* Media.storyboard */; };
+		AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */; };
+		AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */; };
+		AC5462292824C484003F0F5A /* PlayfairDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */; };
+		AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */; };
+		AC54622B2824C484003F0F5A /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */; };
+		AC54622C2824C484003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */; };
+		AC54622D2824C484003F0F5A /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */; };
+		AC54622E2824C484003F0F5A /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */; };
+		AC54622F2824C484003F0F5A /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */; };
+		AC5462302824C484003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */; };
+		AC5462312824C484003F0F5A /* PlayfairDisplay-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */; };
+		AC5462322824C484003F0F5A /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */; };
+		AC5462332824C484003F0F5A /* PlayfairDisplay-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */; };
+		AC5462342824C484003F0F5A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5462242824C483003F0F5A /* OFL.txt */; };
+		AC5462352824C484003F0F5A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5462252824C483003F0F5A /* README.txt */; };
+		AC5462362824C484003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
+		AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */; };
+		AC54623A2825065A003F0F5A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5462392825065A003F0F5A /* R.generated.swift */; };
 		AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E4281B9E8100ED185C /* Notification+Name.swift */; };
 		AC61C5E9281BBD3600ED185C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E8281BBD3600ED185C /* Int.swift */; };
 		AC61C5EB281BBDA200ED185C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5EA281BBDA200ED185C /* Double.swift */; };
@@ -30,7 +48,6 @@
 		AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */; };
 		AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */; };
 		AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */; };
-		AC61C5F5281BF36A00ED185C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5F4281BF36A00ED185C /* R.generated.swift */; };
 		AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */; };
 		AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */; };
 		AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */; };
@@ -150,6 +167,24 @@
 		AC2019F22811306F00ACFC4E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		AC2019F42811308900ACFC4E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		AC2019F62811309C00ACFC4E /* Media.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
+		AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; };
+		AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; };
+		AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AC5462242824C483003F0F5A /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		AC5462252824C483003F0F5A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfairDisplayFont.swift; sourceTree = "<group>"; };
+		AC5462392825065A003F0F5A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC61C5E4281B9E8100ED185C /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		AC61C5E8281BBD3600ED185C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		AC61C5EA281BBDA200ED185C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -157,7 +192,6 @@
 		AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ca_dao_đac_sac_va_giau_triet_ly_song.rtf"; sourceTree = "<group>"; };
 		AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_hay_ve_cach_an_uong.rtf; sourceTree = "<group>"; };
 		AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewController.swift; sourceTree = "<group>"; };
-		AC61C5F4281BF36A00ED185C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_an_uong.rtf; sourceTree = "<group>"; };
@@ -343,7 +377,8 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AC61C5F4281BF36A00ED185C /* R.generated.swift */,
+				AC5462132824C3E6003F0F5A /* Fonts */,
+				AC5462392825065A003F0F5A /* R.generated.swift */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
 				AC7407592816400D0073E38E /* File rtf */,
@@ -413,6 +448,7 @@
 			children = (
 				AC2019E128112F9700ACFC4E /* AppColor.swift */,
 				ACCEE3FC281251EF007D0049 /* MenloFont.swift */,
+				AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */,
 				ACCEE40228125C0C007D0049 /* ShowAlertViewController.swift */,
 			);
 			path = Common;
@@ -466,6 +502,45 @@
 				AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC5462132824C3E6003F0F5A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462152824C483003F0F5A /* Playfair_Display */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AC5462152824C483003F0F5A /* Playfair_Display */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */,
+				AC5462172824C483003F0F5A /* static */,
+				AC5462242824C483003F0F5A /* OFL.txt */,
+				AC5462252824C483003F0F5A /* README.txt */,
+				AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
+			);
+			path = Playfair_Display;
+			sourceTree = "<group>";
+		};
+		AC5462172824C483003F0F5A /* static */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */,
+				AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */,
+				AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */,
+				AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */,
+				AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */,
+				AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */,
+				AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */,
+				AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */,
+				AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */,
+				AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */,
+				AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */,
+				AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */,
+			);
+			path = static;
 			sourceTree = "<group>";
 		};
 		AC61C5E3281B9E7100ED185C /* Notification */ = {
@@ -914,30 +989,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC54622E2824C484003F0F5A /* PlayfairDisplay-Regular.ttf in Resources */,
 				AC7D84672818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf in Resources */,
 				FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */,
+				AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				AC68799A2817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf in Resources */,
+				AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
 				AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */,
 				AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */,
+				AC5462352824C484003F0F5A /* README.txt in Resources */,
 				AC6879962817F8280052D736 /* tuc_ngu_suc_khoe.rtf in Resources */,
 				AC7407812816774D0073E38E /* Localizable.strings in Resources */,
+				AC54622C2824C484003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */,
 				ACA38EAF281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf in Resources */,
+				AC5462302824C484003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */,
 				ACA38EAD281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf in Resources */,
 				FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */,
+				AC5462332824C484003F0F5A /* PlayfairDisplay-ExtraBold.ttf in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
 				AC6879942817F5B00052D736 /* ca_dao_tinh_nghia_vo_chong.rtf in Resources */,
+				AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */,
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
+				AC54622B2824C484003F0F5A /* PlayfairDisplay-BoldItalic.ttf in Resources */,
 				AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */,
 				FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */,
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
 				AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */,
+				AC5462342824C484003F0F5A /* OFL.txt in Resources */,
+				AC54622F2824C484003F0F5A /* PlayfairDisplay-Black.ttf in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
+				AC5462312824C484003F0F5A /* PlayfairDisplay-MediumItalic.ttf in Resources */,
+				AC5462362824C484003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
 				AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */,
 				ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */,
@@ -945,11 +1033,14 @@
 				AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */,
 				ACA38EB1281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf in Resources */,
 				AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */,
+				AC5462322824C484003F0F5A /* PlayfairDisplay-BlackItalic.ttf in Resources */,
 				AC6879982817FAC40052D736 /* ca_dao_hai_huoc.rtf in Resources */,
+				AC54622D2824C484003F0F5A /* PlayfairDisplay-Italic.ttf in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
 				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,
 				AC6879922817F4B60052D736 /* ca_dao_an_uong.rtf in Resources */,
 				FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */,
+				AC5462292824C484003F0F5A /* PlayfairDisplay-SemiBold.ttf in Resources */,
 				AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 				AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */,
@@ -1172,6 +1263,7 @@
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
 				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,
+				AC54623A2825065A003F0F5A /* R.generated.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
@@ -1182,10 +1274,10 @@
 				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
-				AC61C5F5281BF36A00ED185C /* R.generated.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
+				AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */,
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,
 				FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */,
 				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
