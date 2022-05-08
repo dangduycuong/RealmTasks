@@ -13,12 +13,22 @@ class SearchView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
-            let redPlaceholderText = NSAttributedString(string: "Enter Search Text",
-                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            let italic = PlayfairDisplayFont.italic(with: 20)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            paragraphStyle.alignment = .left
+            paragraphStyle.lineHeightMultiple = 1
             
-            searchTextField.attributedPlaceholder = redPlaceholderText
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: italic as Any,
+                .foregroundColor: UIColor.lightGray,
+                .paragraphStyle: paragraphStyle,
+            ]
+            let attributedPlaceholder = NSAttributedString(string: R.string.localizable.enterSearchText().language(), attributes: attributes)
+            searchTextField.attributedPlaceholder = attributedPlaceholder
         }
     }
+    
     
     var searchText: ((String) -> Void)?
 

@@ -28,10 +28,6 @@ class TodoViewController: BaseViewController {
         viewModel.delegate = self
         tableView.registerCell(TodoTableViewCell.self)
         
-        
-        if let language = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
-            LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(language)
-        }
         searchView.searchText = { [weak self] text in
             guard let `self` = self else { return }
             self.viewModel.searchText = text
@@ -146,7 +142,7 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
 extension TodoViewController: UpdateTodoData {
     func updateData() {
         tableView.reloadData()
-        noData = viewModel.filterTodos.isEmpty
+        noData = viewModel.listTodo.isEmpty
     }
 }
 

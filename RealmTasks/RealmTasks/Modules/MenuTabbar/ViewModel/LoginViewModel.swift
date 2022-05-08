@@ -45,6 +45,13 @@ class LoginViewModel {
         }
     }
     
+    func setCurentLanguage() {
+        if let currentLanguage = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
+            LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(currentLanguage)
+        }
+    }
+    
+    
     func setLanguage(languageKey: LanguageKey) {
         LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(languageKey.value)
         LocalData.saveToLocal(value: languageKey.value, key: LocalKey.currentLanguage.rawValue)

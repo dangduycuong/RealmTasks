@@ -53,9 +53,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flowerDrawing" translatesAutoresizingMaskIntoConstraints="NO" id="CuQ-TR-HSh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mt-5n-RBk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-X0-g5J">
                                 <rect key="frame" x="16" y="60" width="382" height="41"/>
                                 <subviews>
@@ -117,19 +118,20 @@
                         <constraints>
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="top" secondItem="ztu-X0-g5J" secondAttribute="bottom" constant="32" id="1Jz-fc-cf3"/>
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="1Kr-Xa-SeQ"/>
-                            <constraint firstItem="CuQ-TR-HSh" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" id="6kB-7u-nYl"/>
+                            <constraint firstAttribute="trailing" secondItem="2mt-5n-RBk" secondAttribute="trailing" id="7a8-nH-L46"/>
                             <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="8Et-hQ-PDN"/>
+                            <constraint firstItem="2mt-5n-RBk" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="9vG-fF-hWg"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="4j5-Ip-ZQD" secondAttribute="trailing" constant="16" id="G4M-cC-5Lb"/>
-                            <constraint firstItem="CuQ-TR-HSh" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="GLQ-Og-gDj"/>
-                            <constraint firstAttribute="bottom" secondItem="CuQ-TR-HSh" secondAttribute="bottom" id="MoY-ah-s6g"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="top" secondItem="i96-Rd-PdG" secondAttribute="top" constant="16" id="ZT1-89-Go8"/>
-                            <constraint firstItem="CuQ-TR-HSh" firstAttribute="trailing" secondItem="i96-Rd-PdG" secondAttribute="trailing" id="ZY9-dO-6t8"/>
                             <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="a6t-vv-RUQ"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="ztu-X0-g5J" secondAttribute="trailing" constant="16" id="lAh-Eu-BzC"/>
+                            <constraint firstAttribute="bottom" secondItem="2mt-5n-RBk" secondAttribute="bottom" id="p4W-hE-Yh3"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="pLa-nt-QNc"/>
+                            <constraint firstItem="2mt-5n-RBk" firstAttribute="leading" secondItem="Dll-68-qe3" secondAttribute="leading" id="q7x-wD-kLy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="2mt-5n-RBk" id="x4E-Cs-6IF"/>
                         <outlet property="pickerView" destination="JyO-HJ-qrZ" id="NVk-bK-8Hf"/>
                     </connections>
                 </viewController>
@@ -157,7 +159,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flowerDrawing" width="282" height="282"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

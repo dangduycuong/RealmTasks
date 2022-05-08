@@ -59,7 +59,7 @@ class MenuTabbarViewController: UITabBarController {
         mediaVC.tabBarItem.image = R.image.icons8Kodi()
         //        personVC.tabBarItem.selectedImage = R.image.king()
         
-        wisdomVC.tabBarItem.image = R.image.icons8Kodi()
+        wisdomVC.tabBarItem.image = R.image.icons8Ok()
         
         viewControllers = [todoVC, weatherVC, mediaVC, wisdomVC]
         

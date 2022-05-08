@@ -58,7 +58,7 @@ class BaseViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func showAlert(type: AlertType, titleAlert: String?, message: String, titleLeftButton: String?, titleRightButton: String?, leftAction: @escaping () -> Void, rightAction: @escaping () -> Void) {
+    func showAlert(type: AlertType, titleAlert: String? = nil, message: String, titleLeftButton: String? = nil, titleRightButton: String? = nil, leftAction: @escaping () -> Void, rightAction: @escaping () -> Void) {
         let vc = alertService.showAlert(type: type, titleAlert: titleAlert, message: message, titleLeftButton: titleLeftButton, titleRightButton: titleRightButton, leftAction: leftAction, rightAction: rightAction)
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve

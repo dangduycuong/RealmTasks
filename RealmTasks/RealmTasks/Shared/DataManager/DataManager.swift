@@ -18,6 +18,7 @@ class DataManager: NSObject {
     static let shared = DataManager()
     let realm = try! Realm()
     
+    //MARK: - TodoModel
     func addDataToRealm(_ todo: TodoModel) {
         try! realm.write {
             realm.add(todo)
@@ -130,6 +131,41 @@ class DataManager: NSObject {
         self.realm.delete(mediaDetail)
         try! self.realm.commitWrite()
         completion()
+    }
+    
+    //MARK: - TodoModel
+    func addWisdomToRealm(_ wisdom: WisdomModel) {
+        try! realm.write {
+            realm.add(wisdom)
+        }
+    }
+    
+    func modifyWisdom(dataEdit: WisdomModel) {
+        let listData = realm.objects(WisdomModel.self)
+        realm.beginWrite()
+        for item in listData {
+            if item.id == dataEdit.id {
+                item.content = dataEdit.content
+            }
+        }
+        try! realm.commitWrite()
+    }
+    
+    func getListWisdomFromRealm(_ completionHandler: @escaping ([WisdomModel]) -> Void ) {
+        var listData = [WisdomModel]()
+        let wisdoms = realm.objects(WisdomModel.self)
+        for item in wisdoms {
+            listData.append(item)
+        }
+        completionHandler(listData)
+    }
+    
+    func removeWisdomItem(id: String) -> Bool {
+        guard let wisdom = realm.objects(WisdomModel.self).filter({$0.id == id}).first else { return false }
+        try! realm.write {
+            realm.delete(wisdom)
+        }
+        return true
     }
 }
 

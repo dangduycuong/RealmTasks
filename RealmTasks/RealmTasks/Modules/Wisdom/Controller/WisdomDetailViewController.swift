@@ -7,67 +7,112 @@
 
 import UIKit
 
-class WisdomDetailViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WisdomDetailViewController: BaseViewController {
     
-    @IBOutlet weak var pickerView: UIPickerView!
-    let pickerDataSize = 100_000
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    private var placeholderLabel: UILabel!
+    var viewModel = WisdomDetailViewModel()
+    var wisdom = WisdomModel()
+    var isViewWisdomDetail: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupPicker()
+        setupUI()
+        viewModel.setupData(isViewWisdomDetail: isViewWisdomDetail, wisdom: wisdom)
+        viewModel.delegate = self
     }
     
-    func setupPicker() {
-        pickerView.dataSource = self
-        pickerView.delegate = self
+    private func setupUI() {
+        addBackButton()
+        title = "Tri Muu"
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Enter some text..."
+        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        contentTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (contentTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.isHidden = !contentTextView.text.isEmpty
+        addRightBarButtonItems()
+    }
+    
+    private func addRightBarButtonItems() {
+        let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        imageView.tintColor = .white
         
-        // set the picker to the middle of the long list
-        pickerView.selectRow(pickerDataSize/2, inComponent: 0, animated: false)
-        pickerView.selectRow(pickerDataSize/2, inComponent: 1, animated: false)
-        pickerView.selectRow(pickerDataSize/2, inComponent: 2, animated: false)
-        pickerView.selectRow(pickerDataSize/2, inComponent: 3, animated: false)
-    }
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return String(row % 10)
-//    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // do something with the resulting selected row
-        print("cdd didSelectRow", component, row)
-        // reset the picker to the middle of the long list
-        let position = pickerDataSize/2 + row
-        pickerView.selectRow(position, inComponent: 0, animated: false)
-    }
-    
-    // columns count
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 4
-    }
-    
-    // rows count
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSize
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel: UILabel? = (view as? UILabel)
-        if pickerLabel == nil {
-            pickerLabel = UILabel()
-            if let bold = PlayfairDisplayFont.bold(with: 20) {
-                pickerLabel?.font = bold
-            }
-
-            pickerLabel?.textAlignment = .center
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
+        navigationItem.rightBarButtonItems = [rightBarButtonItem]
+        
+        if isViewWisdomDetail {
+            fillData()
+            let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteItemClicked))
+            delete.tintColor = .white
+            navigationItem.rightBarButtonItems = [rightBarButtonItem, delete]
         }
-        pickerLabel?.text = String(row % 10)
-        pickerLabel?.textColor = UIColor.white
-
-        return pickerLabel!
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(row % 10)
+    @objc func saveClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+        viewModel.addWisdom(content: contentTextView.text)
+    }
+    
+    @objc private func deleteItemClicked() {
+        viewModel.deleteModify()
+    }
+    
+    private func fillData() {
+        contentTextView.text = wisdom.content
+    }
+}
+
+extension WisdomDetailViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+}
+
+extension WisdomDetailViewController: WisdomDetailViewModelDelegate {
+    func showResultAction(task: WisdomTaskResult) {
+        switch task {
+        case .add:
+            showAlert(type: .notice, message: "Thêm thành công", titleLeftButton: "Tiếp Tục", titleRightButton: "Xong", leftAction: {
+                self.contentTextView.text = ""
+            }, rightAction: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        case .modify:
+            showAlert(type: .notice, message: "Sửa nội dung thành công. Bạn có muốn thêm nội dung khác!", titleLeftButton: "Tiếp Tục", titleRightButton: "Xong", leftAction: {
+                self.contentTextView.text = ""
+                self.navigationItem.rightBarButtonItems?.remove(at: 1)
+            }, rightAction: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        case .delete:
+            showAlert(type: .notice, message: "Xoá thành công. Bạn có muốn thêm nội dung khác!", titleLeftButton: "Tiếp Tục", titleRightButton: "Xong", leftAction: {
+                self.contentTextView.text = ""
+                self.navigationItem.rightBarButtonItems?.remove(at: 1)
+            }, rightAction: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        case .error:
+            showAlert(type: .error, message: "Vui Lòng nhập nội dung", titleLeftButton: "Tiếp Tục", titleRightButton: "Hủy", leftAction: {
+                self.contentTextView.becomeFirstResponder()
+            }, rightAction: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
 }

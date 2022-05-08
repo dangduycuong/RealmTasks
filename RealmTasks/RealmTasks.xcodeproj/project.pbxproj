@@ -40,7 +40,6 @@
 		AC5462352824C484003F0F5A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5462252824C483003F0F5A /* README.txt */; };
 		AC5462362824C484003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
 		AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */; };
-		AC54623A2825065A003F0F5A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5462392825065A003F0F5A /* R.generated.swift */; };
 		AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E4281B9E8100ED185C /* Notification+Name.swift */; };
 		AC61C5E9281BBD3600ED185C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E8281BBD3600ED185C /* Int.swift */; };
 		AC61C5EB281BBDA200ED185C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5EA281BBDA200ED185C /* Double.swift */; };
@@ -113,6 +112,10 @@
 		FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */; };
 		FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */; };
 		FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA15D7B4282419F30067EEBB /* galaxy.gif */; };
+		FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DB2826299D009F1F8E /* R.generated.swift */; };
+		FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */; };
+		FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */; };
+		FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */; };
 		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
 		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
@@ -125,7 +128,11 @@
 		FA3E751528105C5A0087F8EE /* RealmTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */; };
 		FA3E751728105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */; };
 		FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C3AE28118D3100742B5E /* String+Extension.swift */; };
+		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
 		FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */; };
+		FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */; };
+		FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEECD282573EF00F10D18 /* WisdomModel.swift */; };
+		FAEDEED12825770E00F10D18 /* WisdomDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,7 +191,6 @@
 		AC5462252824C483003F0F5A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfairDisplayFont.swift; sourceTree = "<group>"; };
-		AC5462392825065A003F0F5A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC61C5E4281B9E8100ED185C /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		AC61C5E8281BBD3600ED185C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		AC61C5EA281BBDA200ED185C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -265,6 +271,10 @@
 		FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA15D7B4282419F30067EEBB /* galaxy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = galaxy.gif; sourceTree = "<group>"; };
+		FA1C15DB2826299D009F1F8E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomTableViewCell.swift; sourceTree = "<group>"; };
+		FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WisdomTableViewCell.xib; sourceTree = "<group>"; };
+		FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewModel.swift; sourceTree = "<group>"; };
 		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,7 +291,11 @@
 		FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITests.swift; sourceTree = "<group>"; };
 		FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA73C3AE28118D3100742B5E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
 		FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewModel.swift; sourceTree = "<group>"; };
+		FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = theForceOfTheStars.gif; sourceTree = "<group>"; };
+		FAEDEECD282573EF00F10D18 /* WisdomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomModel.swift; sourceTree = "<group>"; };
+		FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +352,9 @@
 		AC114C692823A23B007F0528 /* Wisdom */ = {
 			isa = PBXGroup;
 			children = (
+				FA1C15DD28262CF4009F1F8E /* View */,
+				FAEDEECF282576F300F10D18 /* ViewModel */,
+				FAEDEECC282573D600F10D18 /* Model */,
 				AC114C6C2823A288007F0528 /* Controller */,
 			);
 			path = Wisdom;
@@ -377,8 +394,8 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FA1C15DB2826299D009F1F8E /* R.generated.swift */,
 				AC5462132824C3E6003F0F5A /* Fonts */,
-				AC5462392825065A003F0F5A /* R.generated.swift */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
 				AC7407592816400D0073E38E /* File rtf */,
@@ -499,6 +516,7 @@
 			children = (
 				AC2019EE2811304100ACFC4E /* MediaViewController.swift */,
 				AC74075C281640740073E38E /* MediaDetailViewController.swift */,
+				FAA239CC2827FC1900798A27 /* DetailListVC.swift */,
 				AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */,
 			);
 			path = Controller;
@@ -658,6 +676,7 @@
 		ACA38E9C281A2C870021428C /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */,
 				FA15D7B4282419F30067EEBB /* galaxy.gif */,
 				ACA38E9D281A2CA00021428C /* loading.gif */,
 			);
@@ -797,6 +816,23 @@
 			path = Proverb;
 			sourceTree = "<group>";
 		};
+		FA1C15DD28262CF4009F1F8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C15DE28262D09009F1F8E /* WisdomTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA1C15DE28262D09009F1F8E /* WisdomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */,
+				FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */,
+			);
+			path = WisdomTableViewCell;
+			sourceTree = "<group>";
+		};
 		FA37DCBD281AE1A6001F8FE3 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -873,6 +909,23 @@
 				FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */,
 			);
 			path = RealmTasksUITests;
+			sourceTree = "<group>";
+		};
+		FAEDEECC282573D600F10D18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDEECD282573EF00F10D18 /* WisdomModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAEDEECF282576F300F10D18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */,
+				FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -995,6 +1048,7 @@
 				AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				AC68799A2817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf in Resources */,
+				FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */,
 				AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
 				AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */,
@@ -1010,6 +1064,7 @@
 				AC5462332824C484003F0F5A /* PlayfairDisplay-ExtraBold.ttf in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
+				FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */,
 				AC6879942817F5B00052D736 /* ca_dao_tinh_nghia_vo_chong.rtf in Resources */,
 				AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */,
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
@@ -1224,6 +1279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */,
 				AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */,
 				AC77FBA2281782090085F8C8 /* DataManager.swift in Sources */,
 				FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */,
@@ -1250,6 +1306,7 @@
 				AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */,
 				AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */,
 				AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */,
+				FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */,
 				AC740771281671E40073E38E /* BundleLocalization.m in Sources */,
 				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
@@ -1261,16 +1318,18 @@
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
+				FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
 				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,
-				AC54623A2825065A003F0F5A /* R.generated.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
+				FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
 				AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */,
+				FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */,
 				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
@@ -1279,6 +1338,7 @@
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
 				AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */,
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,
+				FAEDEED12825770E00F10D18 /* WisdomDetailViewModel.swift in Sources */,
 				FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */,
 				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
 				AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */,
@@ -1475,6 +1535,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LW34R6CMB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RealmTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -39,6 +39,7 @@ class MediaDetailTableViewCell: UITableViewCell {
         
         favoriteButton.setTitle("", for: .normal)
         backgroundImageView.layer.cornerRadius = 8
+        //030303 super black
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

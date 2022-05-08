@@ -22,7 +22,7 @@ class TodoInfoViewController: BaseViewController {
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var checkboxImageView: UIImageView!
     
-    var placeholderLabel : UILabel!
+    var placeholderLabel: UILabel!
     
     var viewModel = TodoInfoViewModel()
     var todo: TodoModel?

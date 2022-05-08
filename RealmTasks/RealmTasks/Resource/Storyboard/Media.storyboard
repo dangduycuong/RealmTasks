@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PlayfairDisplay-Regular.ttf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Media View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -143,6 +148,39 @@
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="820.3125"/>
         </scene>
+        <!--Detail ListVC-->
+        <scene sceneID="iv9-AS-ij1">
+            <objects>
+                <viewController storyboardIdentifier="DetailListVC" id="Nji-lO-i5O" customClass="DetailListVC" customModule="RealmTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GbG-vY-nfY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-WV-Zgr">
+                                <rect key="frame" x="8" y="60" width="398" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PGR-Db-w3j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PGR-Db-w3j" firstAttribute="trailing" secondItem="nPA-WV-Zgr" secondAttribute="trailing" constant="8" id="XdS-Tt-Kwm"/>
+                            <constraint firstItem="nPA-WV-Zgr" firstAttribute="top" secondItem="PGR-Db-w3j" secondAttribute="top" constant="16" id="hzw-1C-hcs"/>
+                            <constraint firstItem="nPA-WV-Zgr" firstAttribute="leading" secondItem="PGR-Db-w3j" secondAttribute="leading" constant="8" id="lk6-Lk-8vH"/>
+                            <constraint firstItem="PGR-Db-w3j" firstAttribute="bottom" secondItem="nPA-WV-Zgr" secondAttribute="bottom" constant="16" id="qmC-7u-RzP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contextTextView" destination="nPA-WV-Zgr" id="KJh-tX-ubL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAw-SY-p4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="820"/>
+        </scene>
         <!--Media Detail View Controller-->
         <scene sceneID="pC2-Qp-KEV">
             <objects>
@@ -213,6 +251,9 @@
     </scenes>
     <resources>
         <image name="2-black-wallpaper-pattern.1024" width="512" height="314"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

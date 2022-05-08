@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="PlayfairDisplay-VariableFont_wght.ttf">
+        <array key="PlayfairDisplay-Regular.ttf">
             <string>PlayfairDisplay-Regular</string>
         </array>
     </customFonts>
@@ -25,7 +25,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tL5-j0-hrB">
                         <rect key="frame" x="8" y="4" width="347" height="337"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool-background" translatesAutoresizingMaskIntoConstraints="NO" id="nlb-dp-AHo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30-black-wallpaper-hd-strips.1024" translatesAutoresizingMaskIntoConstraints="NO" id="nlb-dp-AHo">
                                 <rect key="frame" x="0.0" y="136.5" width="347" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="IDk-Xg-JUp"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.01176506374" green="0.01176406071" blue="0.01176474057" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MS1-Nc-3tA" firstAttribute="trailing" secondItem="4B3-t4-Vs3" secondAttribute="trailing" id="0Yl-ba-ZlT"/>
                             <constraint firstAttribute="trailing" secondItem="nlb-dp-AHo" secondAttribute="trailing" id="DcY-kH-vD7"/>
@@ -98,7 +98,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cool-background" width="960" height="540"/>
+        <image name="30-black-wallpaper-hd-strips.1024" width="512" height="273"/>
         <image name="icons8-heart_suit" width="12.5" height="12.5"/>
     </resources>
 </document>

@@ -15,15 +15,18 @@ struct MediaFile {
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
     
     var viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
         setupIndicatorView()
         viewModel.delegate = self
-        print([Int](0...9))
+        viewModel.setCurentLanguage()
         var string = "CA DAO HAY VỀ CÁCH ĂN UỐNG"
         print(string.localizedCapitalized)
         string = string.unaccent().lowercased()
@@ -31,6 +34,13 @@ class LoginViewController: BaseViewController {
         print(newString)
         
         setupPicker()
+    }
+    
+    private func setupUI() {
+        let jeremyGif = UIImage.gifImageWithName("theForceOfTheStars")
+        let imageView = UIImageView(image: jeremyGif)
+        backgroundView.layout(imageView)
+            .top().left().bottom().right()
     }
     
     // MARK: - Actions
@@ -65,7 +75,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func tapToDeleteData(_ sender: UIButton) {
-        
+        login()
     }
 }
 

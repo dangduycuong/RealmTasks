@@ -67,12 +67,34 @@ class MediaDetailViewController: BaseViewController {
             segmentedControl.backgroundColor = .black
             segmentedControl.selectedSegmentTintColor = .black
         }
+        addRightBarButtonItems()
+    }
+    
+    private func addRightBarButtonItems() {
+        let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        imageView.tintColor = .white
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
+        navigationItem.rightBarButtonItems = [rightBarButtonItem]
     }
     
     // MARK: - Action
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
         viewModel.valueChange = MediaDetailSegmentedControl.list[segmentedControl.selectedSegmentIndex]
         tableView.reloadData()
+    }
+    
+    @objc func saveClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        if let vc = R.storyboard.media.detailListVC() {
+            vc.mediaType = mediaType
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
