@@ -38,9 +38,9 @@ struct Current: Codable {
     let windMph: Double?
     let condition: Condition?
     let pressureMB: Int?
-    let windKph: Double?
+    let windKph, tempC: Double?
     let lastUpdated: String?
-    let tempC, uv: Int?
+    let uv: Int?
     
     enum CodingKeys: String, CodingKey {
         case gustMph = "gust_mph"

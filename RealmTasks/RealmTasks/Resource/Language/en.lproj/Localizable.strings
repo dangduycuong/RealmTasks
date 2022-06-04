@@ -15,5 +15,6 @@
 //MARK: Media
 "media" = "Media";
 "favorite" = "Favorite";
-"folk_verses" = "Folk Verses";
+"folkVerses" = "Folk Verses";
 "proverb" = "Proverb";
+"enterSearchText" = "Enter Search Text";

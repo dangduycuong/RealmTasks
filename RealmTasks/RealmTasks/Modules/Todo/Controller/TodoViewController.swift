@@ -28,10 +28,6 @@ class TodoViewController: BaseViewController {
         viewModel.delegate = self
         tableView.registerCell(TodoTableViewCell.self)
         
-        
-        if let language = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
-            LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(language)
-        }
         searchView.searchText = { [weak self] text in
             guard let `self` = self else { return }
             self.viewModel.searchText = text
@@ -63,7 +59,7 @@ class TodoViewController: BaseViewController {
         tabBarController?.tabBar.tintColor = .white
         tabBarController?.tabBar.unselectedItemTintColor = .gray
         
-        if let bold = MenloFont.bold(with: 12) {
+        if let bold = PlayfairDisplayFont.bold(with: 12) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.gray]
             let selectedAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             
@@ -81,7 +77,7 @@ class TodoViewController: BaseViewController {
     }
     
     private func setupUI() {
-        removeBorderNavigationBar()
+//        removeBorderNavigationBar()
         addTodoButton.tintColor = .white
         addTodoButton.setTitle("", for: .normal)
         addTodoButton.layer.shadowColor = UIColor.white.cgColor
@@ -94,7 +90,7 @@ class TodoViewController: BaseViewController {
         segmentedControl.setTitle(R.string.localizable.completed().language(), forSegmentAt: 1)
         segmentedControl.setTitle(R.string.localizable.incompleted().language(), forSegmentAt: 2)
         
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black
@@ -146,7 +142,7 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
 extension TodoViewController: UpdateTodoData {
     func updateData() {
         tableView.reloadData()
-        noData = viewModel.filterTodos.isEmpty
+        noData = viewModel.listTodo.isEmpty
     }
 }
 

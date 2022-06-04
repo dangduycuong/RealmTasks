@@ -12,10 +12,8 @@ protocol MediaViewModelDelegate: AnyObject {
 }
 
 class MediaViewModel {
-    var listFolkType = [FolkTypeModel]()
-    var filteredFolkType = [FolkTypeModel]()
-    var listProverbType = [ProverbTypeModel]()
-    var filteredProverbType = [ProverbTypeModel]()
+    private var sourceMediaTypeList = [MediaTypeLocalModel]()
+    var filteredMediaTypeList = [MediaTypeLocalModel]()
     
     var searchText: String = "" {
         didSet {
@@ -32,23 +30,10 @@ class MediaViewModel {
     weak var delegate: MediaViewModelDelegate?
     
     func loadData() {
-        getListFolkType()
-        getListProverbType()
-    }
-    
-    private func getListFolkType() {
-        DataManager.shared.getListFolkType { [weak self] list in
+        DataManager.shared.getListMediaType { [weak self] list in
             guard let `self` = self else { return }
-            self.listFolkType = list
-            self.filteredFolkType = list
-        }
-    }
-    
-    private func getListProverbType() {
-        DataManager.shared.getListProverbType { [weak self] list in
-            guard let `self` = self else { return }
-            self.listProverbType = list
-            self.filteredProverbType = list
+            self.sourceMediaTypeList = list
+            self.filteredMediaTypeList = list
         }
     }
     
@@ -64,14 +49,17 @@ class MediaViewModel {
     
     private func filterFolkVersesType() {
         if searchText == "" {
-            filteredFolkType = listFolkType
+            filteredMediaTypeList = sourceMediaTypeList.filter { data in
+                return data.mediaType == MediaType.folkVerses.value
+            }
         } else {
-            filteredFolkType = listFolkType.filter { (data: FolkTypeModel) in
-                let title = data.title.lowercased().unaccent()
-                let keyText = searchText.lowercased().unaccent()
-                
-                if title.range(of: keyText) != nil {
-                    return true
+            filteredMediaTypeList = sourceMediaTypeList.filter { (data: MediaTypeLocalModel) in
+                if data.mediaType == MediaType.folkVerses.value {
+                    let title = data.title.lowercased().unaccent()
+                    let keyText = searchText.lowercased().unaccent()
+                    if title.range(of: keyText) != nil {
+                        return true
+                    }
                 }
                 return false
             }
@@ -80,14 +68,17 @@ class MediaViewModel {
     
     private func filteProverbType() {
         if searchText == "" {
-            filteredProverbType = listProverbType
+            filteredMediaTypeList = sourceMediaTypeList.filter { data in
+                return data.mediaType == MediaType.proverb.value
+            }
         } else {
-            filteredProverbType = listProverbType.filter { (data: ProverbTypeModel) in
-                let title = data.title.lowercased().unaccent()
-                let keyText = searchText.lowercased().unaccent()
-                
-                if title.range(of: keyText) != nil {
-                    return true
+            filteredMediaTypeList = sourceMediaTypeList.filter { (data: MediaTypeLocalModel) in
+                if data.mediaType == MediaType.proverb.value {
+                    let title = data.title.lowercased().unaccent()
+                    let keyText = searchText.lowercased().unaccent()
+                    if title.range(of: keyText) != nil {
+                        return true
+                    }
                 }
                 return false
             }

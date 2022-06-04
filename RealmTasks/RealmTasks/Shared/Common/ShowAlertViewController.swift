@@ -45,8 +45,9 @@ class ShowAlertViewController: UIViewController {
     }
     
     private func setupUI() {
-        let menloBold = MenloFont.bold(with: 18)
-        let menloRegular = MenloFont.regular(with: 16)
+        let bold = PlayfairDisplayFont.bold(with: 20) //for button
+        let semiBold = PlayfairDisplayFont.semiBold(with: 20) //for title
+        let regular = PlayfairDisplayFont.regular(with: 20) //for message
         
         let width = UIScreen.main.bounds.width
         if width <= 375 {
@@ -56,7 +57,7 @@ class ShowAlertViewController: UIViewController {
         }
         
         if let titleAlert = titleAlert {
-            titleAlertLabel.font = menloBold
+            titleAlertLabel.font = semiBold
             titleAlertLabel.textColor = AppColor.blueCustom
             titleAlertLabel.text = titleAlert
         } else {
@@ -69,7 +70,7 @@ class ShowAlertViewController: UIViewController {
         let attribuild = NSMutableAttributedString(
             string: self.message,
             attributes: [
-                .font : menloRegular!,
+                .font : regular!,
                 .paragraphStyle: paragraphStyle
             ])
         messageLabel.attributedText = attribuild
@@ -80,14 +81,14 @@ class ShowAlertViewController: UIViewController {
         if let titleLeftButton = titleLeftButton {
             leftButton.setTitle(titleLeftButton, for: .normal)
             leftButton.setTitleColor(.white, for: .normal)
-            leftButton.titleLabel?.font = menloBold!
+            leftButton.titleLabel?.font = bold!
         } else {
             leftButton.isHidden = true
         }
         
         rightButton.setTitle(titleRightButton, for: .normal)
         rightButton.setTitleColor(.white, for: .normal)
-        rightButton.titleLabel?.font = menloRegular
+        rightButton.titleLabel?.font = regular
         rightButton.backgroundColor = .black
         rightButton.layer.shadowColor = UIColor.white.cgColor
         rightButton.layer.shadowOpacity = 0.35

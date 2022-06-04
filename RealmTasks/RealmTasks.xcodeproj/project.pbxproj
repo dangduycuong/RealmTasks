@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6A30716DDDF49786FB7BE09F /* Pods_RealmTasksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E838EDC9DB1F107B1EB1F8 /* Pods_RealmTasksTests.framework */; };
+		AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */; };
+		AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */; };
+		AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */; };
+		AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC114C6A2823A272007F0528 /* Wisdom.storyboard */; };
+		AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6D2823A299007F0528 /* WisdomViewController.swift */; };
+		AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */; };
 		AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E128112F9700ACFC4E /* AppColor.swift */; };
 		AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E428112FBC00ACFC4E /* BaseViewController.swift */; };
 		AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */; };
@@ -17,6 +23,30 @@
 		AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019F22811306F00ACFC4E /* TodoViewController.swift */; };
 		AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F42811308900ACFC4E /* Weather.storyboard */; };
 		AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F62811309C00ACFC4E /* Media.storyboard */; };
+		AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */; };
+		AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */; };
+		AC5462292824C484003F0F5A /* PlayfairDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */; };
+		AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */; };
+		AC54622B2824C484003F0F5A /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */; };
+		AC54622C2824C484003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */; };
+		AC54622D2824C484003F0F5A /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */; };
+		AC54622E2824C484003F0F5A /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */; };
+		AC54622F2824C484003F0F5A /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */; };
+		AC5462302824C484003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */; };
+		AC5462312824C484003F0F5A /* PlayfairDisplay-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */; };
+		AC5462322824C484003F0F5A /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */; };
+		AC5462332824C484003F0F5A /* PlayfairDisplay-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */; };
+		AC5462342824C484003F0F5A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5462242824C483003F0F5A /* OFL.txt */; };
+		AC5462352824C484003F0F5A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5462252824C483003F0F5A /* README.txt */; };
+		AC5462362824C484003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
+		AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */; };
+		AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E4281B9E8100ED185C /* Notification+Name.swift */; };
+		AC61C5E9281BBD3600ED185C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5E8281BBD3600ED185C /* Int.swift */; };
+		AC61C5EB281BBDA200ED185C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5EA281BBDA200ED185C /* Double.swift */; };
+		AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */; };
+		AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */; };
+		AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */; };
+		AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */; };
 		AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */; };
 		AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */; };
 		AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */; };
@@ -40,9 +70,6 @@
 		AC7407812816774D0073E38E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7407832816774D0073E38E /* Localizable.strings */; };
 		AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74078628167BEF0073E38E /* LoginViewController.swift */; };
 		AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */; };
-		AC7407982816987B0073E38E /* FolkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407972816987B0073E38E /* FolkModel.swift */; };
-		AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7407992816989C0073E38E /* ProverbModel.swift */; };
-		AC77FB9F281781680085F8C8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77FB9E281781680085F8C8 /* R.generated.swift */; };
 		AC77FBA2281782090085F8C8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77FBA1281782090085F8C8 /* DataManager.swift */; };
 		AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */; };
 		AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */; };
@@ -51,8 +78,6 @@
 		ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */; };
 		ACA38E9E281A2CA00021428C /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = ACA38E9D281A2CA00021428C /* loading.gif */; };
 		ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */; };
-		ACA38EA5281A32B40021428C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA38EA4281A32B40021428C /* SearchView.swift */; };
-		ACA38EA7281A32C90021428C /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EA6281A32C90021428C /* SearchView.xib */; };
 		ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAA281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf */; };
 		ACA38EAD281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */; };
 		ACA38EAF281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */; };
@@ -86,6 +111,13 @@
 		FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02FD81281406AA00C820ED /* RealtimeWeather.swift */; };
 		FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */; };
 		FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */; };
+		FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA15D7B4282419F30067EEBB /* galaxy.gif */; };
+		FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DB2826299D009F1F8E /* R.generated.swift */; };
+		FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */; };
+		FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */; };
+		FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */; };
+		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
+		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
 		FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F528105C570087F8EE /* SceneDelegate.swift */; };
 		FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F728105C570087F8EE /* MenuTabbarViewController.swift */; };
@@ -96,6 +128,11 @@
 		FA3E751528105C5A0087F8EE /* RealmTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */; };
 		FA3E751728105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */; };
 		FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C3AE28118D3100742B5E /* String+Extension.swift */; };
+		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
+		FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */; };
+		FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */; };
+		FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEECD282573EF00F10D18 /* WisdomModel.swift */; };
+		FAEDEED12825770E00F10D18 /* WisdomDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +159,12 @@
 		5B060A0EE35D973890A5E8C3 /* Pods-RealmTasksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasksTests.release.xcconfig"; path = "Target Support Files/Pods-RealmTasksTests/Pods-RealmTasksTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C9A5493DE581B98F30D64C1 /* Pods-RealmTasks-RealmTasksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTasks-RealmTasksUITests.debug.xcconfig"; path = "Target Support Files/Pods-RealmTasks-RealmTasksUITests/Pods-RealmTasks-RealmTasksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		979F362572726448521C334A /* Pods_RealmTasks_RealmTasksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmTasks_RealmTasksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayDetail.swift; sourceTree = "<group>"; };
+		AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailLocalModel.swift; sourceTree = "<group>"; };
+		AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeLocalModel.swift; sourceTree = "<group>"; };
+		AC114C6A2823A272007F0528 /* Wisdom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wisdom.storyboard; sourceTree = "<group>"; };
+		AC114C6D2823A299007F0528 /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
+		AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomDetailViewController.swift; sourceTree = "<group>"; };
 		AC2019E128112F9700ACFC4E /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		AC2019E428112FBC00ACFC4E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationConntroller.swift; sourceTree = "<group>"; };
@@ -131,6 +174,30 @@
 		AC2019F22811306F00ACFC4E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		AC2019F42811308900ACFC4E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		AC2019F62811309C00ACFC4E /* Media.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
+		AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; };
+		AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; };
+		AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AC5462242824C483003F0F5A /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		AC5462252824C483003F0F5A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfairDisplayFont.swift; sourceTree = "<group>"; };
+		AC61C5E4281B9E8100ED185C /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		AC61C5E8281BBD3600ED185C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AC61C5EA281BBDA200ED185C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_ve_thuoc_thang.rtf; sourceTree = "<group>"; };
+		AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ca_dao_đac_sac_va_giau_triet_ly_song.rtf"; sourceTree = "<group>"; };
+		AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_hay_ve_cach_an_uong.rtf; sourceTree = "<group>"; };
+		AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewController.swift; sourceTree = "<group>"; };
 		AC68798B2817E9C80052D736 /* tuc_ngu_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798D2817EDC40052D736 /* ca_dao_cha_me.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_cha_me.rtf; sourceTree = "<group>"; };
 		AC68798F2817F4760052D736 /* tuc_ngu_an_uong.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_an_uong.rtf; sourceTree = "<group>"; };
@@ -161,9 +228,6 @@
 		AC740791281688100073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AC7407922816881D0073E38E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC7407932816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_an_noi_ung_xu.rtf; sourceTree = "<group>"; };
-		AC7407972816987B0073E38E /* FolkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolkModel.swift; sourceTree = "<group>"; };
-		AC7407992816989C0073E38E /* ProverbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProverbModel.swift; sourceTree = "<group>"; };
-		AC77FB9E281781680085F8C8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		AC77FBA1281782090085F8C8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AC77FBA3281783270085F8C8 /* lao_dong_san_xuat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = lao_dong_san_xuat.rtf; sourceTree = "<group>"; };
 		AC77FBA528178C220085F8C8 /* tuc_ngu_hoc_tap.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_hoc_tap.rtf; sourceTree = "<group>"; };
@@ -172,8 +236,6 @@
 		ACA38E9A281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_kien_tri.rtf; sourceTree = "<group>"; };
 		ACA38E9D281A2CA00021428C /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DevCenters+GIF.swift"; sourceTree = "<group>"; };
-		ACA38EA4281A32B40021428C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		ACA38EA6281A32C90021428C /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		ACA38EAA281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_viet_nam_hay_nhat.rtf; sourceTree = "<group>"; };
 		ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_ve_nguoi_phu_nu_viet_nam.rtf; sourceTree = "<group>"; };
 		ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_ve_y_chi_nghi_luc.rtf; sourceTree = "<group>"; };
@@ -208,6 +270,13 @@
 		FA02FD81281406AA00C820ED /* RealtimeWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeWeather.swift; sourceTree = "<group>"; };
 		FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
+		FA15D7B4282419F30067EEBB /* galaxy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = galaxy.gif; sourceTree = "<group>"; };
+		FA1C15DB2826299D009F1F8E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomTableViewCell.swift; sourceTree = "<group>"; };
+		FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WisdomTableViewCell.xib; sourceTree = "<group>"; };
+		FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewModel.swift; sourceTree = "<group>"; };
+		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E74F328105C570087F8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3E74F528105C570087F8EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +291,11 @@
 		FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITests.swift; sourceTree = "<group>"; };
 		FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA73C3AE28118D3100742B5E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
+		FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewModel.swift; sourceTree = "<group>"; };
+		FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = theForceOfTheStars.gif; sourceTree = "<group>"; };
+		FAEDEECD282573EF00F10D18 /* WisdomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomModel.swift; sourceTree = "<group>"; };
+		FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +349,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC114C692823A23B007F0528 /* Wisdom */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C15DD28262CF4009F1F8E /* View */,
+				FAEDEECF282576F300F10D18 /* ViewModel */,
+				FAEDEECC282573D600F10D18 /* Model */,
+				AC114C6C2823A288007F0528 /* Controller */,
+			);
+			path = Wisdom;
+			sourceTree = "<group>";
+		};
+		AC114C6C2823A288007F0528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC114C6D2823A299007F0528 /* WisdomViewController.swift */,
+				AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		AC2019D728112F1100ACFC4E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +386,7 @@
 				AC2019F42811308900ACFC4E /* Weather.storyboard */,
 				AC2019F62811309C00ACFC4E /* Media.storyboard */,
 				ACCEE3FE28125B49007D0049 /* Alert.storyboard */,
+				AC114C6A2823A272007F0528 /* Wisdom.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -299,7 +394,8 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AC77FB9E281781680085F8C8 /* R.generated.swift */,
+				FA1C15DB2826299D009F1F8E /* R.generated.swift */,
+				AC5462132824C3E6003F0F5A /* Fonts */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
 				AC7407592816400D0073E38E /* File rtf */,
@@ -322,7 +418,8 @@
 		AC2019DC28112F5D00ACFC4E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				ACA38EA1281A326C0021428C /* CommonUI */,
+				AC114C692823A23B007F0528 /* Wisdom */,
+				FA37DCBD281AE1A6001F8FE3 /* CommonUI */,
 				AC2019EC2811302800ACFC4E /* Media */,
 				AC2019E82811300100ACFC4E /* Weather */,
 				AC2019DD28112F6700ACFC4E /* Todo */,
@@ -368,6 +465,7 @@
 			children = (
 				AC2019E128112F9700ACFC4E /* AppColor.swift */,
 				ACCEE3FC281251EF007D0049 /* MenloFont.swift */,
+				AC5462372824CC70003F0F5A /* PlayfairDisplayFont.swift */,
 				ACCEE40228125C0C007D0049 /* ShowAlertViewController.swift */,
 			);
 			path = Common;
@@ -418,8 +516,57 @@
 			children = (
 				AC2019EE2811304100ACFC4E /* MediaViewController.swift */,
 				AC74075C281640740073E38E /* MediaDetailViewController.swift */,
+				FAA239CC2827FC1900798A27 /* DetailListVC.swift */,
+				AC61C5F2281BF0FD00ED185C /* MediaAllViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC5462132824C3E6003F0F5A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462152824C483003F0F5A /* Playfair_Display */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AC5462152824C483003F0F5A /* Playfair_Display */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */,
+				AC5462172824C483003F0F5A /* static */,
+				AC5462242824C483003F0F5A /* OFL.txt */,
+				AC5462252824C483003F0F5A /* README.txt */,
+				AC5462262824C483003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
+			);
+			path = Playfair_Display;
+			sourceTree = "<group>";
+		};
+		AC5462172824C483003F0F5A /* static */ = {
+			isa = PBXGroup;
+			children = (
+				AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */,
+				AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */,
+				AC54621A2824C483003F0F5A /* PlayfairDisplay-Medium.ttf */,
+				AC54621B2824C483003F0F5A /* PlayfairDisplay-BoldItalic.ttf */,
+				AC54621C2824C483003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf */,
+				AC54621D2824C483003F0F5A /* PlayfairDisplay-Italic.ttf */,
+				AC54621E2824C483003F0F5A /* PlayfairDisplay-Regular.ttf */,
+				AC54621F2824C483003F0F5A /* PlayfairDisplay-Black.ttf */,
+				AC5462202824C483003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf */,
+				AC5462212824C483003F0F5A /* PlayfairDisplay-MediumItalic.ttf */,
+				AC5462222824C483003F0F5A /* PlayfairDisplay-BlackItalic.ttf */,
+				AC5462232824C483003F0F5A /* PlayfairDisplay-ExtraBold.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		AC61C5E3281B9E7100ED185C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				AC61C5E4281B9E8100ED185C /* Notification+Name.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		AC74074D2816395C0073E38E /* View */ = {
@@ -445,6 +592,7 @@
 			children = (
 				AC74075428163CDF0073E38E /* MediaViewModel.swift */,
 				AC740765281645C70073E38E /* MediaDetailViewModel.swift */,
+				FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -452,8 +600,9 @@
 		AC74075628163D0B0073E38E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC7407972816987B0073E38E /* FolkModel.swift */,
-				AC7407992816989C0073E38E /* ProverbModel.swift */,
+				AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */,
+				AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */,
+				AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,40 +676,17 @@
 		ACA38E9C281A2C870021428C /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */,
+				FA15D7B4282419F30067EEBB /* galaxy.gif */,
 				ACA38E9D281A2CA00021428C /* loading.gif */,
 			);
 			path = gif;
 			sourceTree = "<group>";
 		};
-		ACA38EA1281A326C0021428C /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				ACA38EA2281A32790021428C /* Views */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		ACA38EA2281A32790021428C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				ACA38EA3281A32940021428C /* SearchView */,
-			);
-			name = Views;
-			path = "../New Group/Views";
-			sourceTree = "<group>";
-		};
-		ACA38EA3281A32940021428C /* SearchView */ = {
-			isa = PBXGroup;
-			children = (
-				ACA38EA4281A32B40021428C /* SearchView.swift */,
-				ACA38EA6281A32C90021428C /* SearchView.xib */,
-			);
-			path = SearchView;
-			sourceTree = "<group>";
-		};
 		ACB1B6F32811375A00C2F90D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AC61C5E3281B9E7100ED185C /* Notification */,
 				ACB1B6F42811376400C2F90D /* Identifier */,
 				ACB1B6FB281137CF00C2F90D /* UITableView+Extension.swift */,
 				FA73C3AE28118D3100742B5E /* String+Extension.swift */,
@@ -568,6 +694,8 @@
 				ACCEE4112812A8A9007D0049 /* UIView+Extension.swift */,
 				FA02FD7F2813C43E00C820ED /* Data+Extension.swift */,
 				ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */,
+				AC61C5E8281BBD3600ED185C /* Int.swift */,
+				AC61C5EA281BBDA200ED185C /* Double.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -666,6 +794,9 @@
 				AC6879992817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf */,
 				ACA38EAC281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf */,
 				ACA38EB0281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf */,
+				AC61C5EC281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf */,
+				AC61C5EE281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf */,
+				AC61C5F0281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf */,
 			);
 			path = Folk;
 			sourceTree = "<group>";
@@ -683,6 +814,48 @@
 				ACA38EAE281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf */,
 			);
 			path = Proverb;
+			sourceTree = "<group>";
+		};
+		FA1C15DD28262CF4009F1F8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C15DE28262D09009F1F8E /* WisdomTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA1C15DE28262D09009F1F8E /* WisdomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */,
+				FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */,
+			);
+			path = WisdomTableViewCell;
+			sourceTree = "<group>";
+		};
+		FA37DCBD281AE1A6001F8FE3 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA37DCBE281AE1A6001F8FE3 /* Views */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		FA37DCBE281AE1A6001F8FE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA37DCBF281AE1A6001F8FE3 /* SearchView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA37DCBF281AE1A6001F8FE3 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */,
+				FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		FA3E74E728105C570087F8EE = {
@@ -736,6 +909,23 @@
 				FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */,
 			);
 			path = RealmTasksUITests;
+			sourceTree = "<group>";
+		};
+		FAEDEECC282573D600F10D18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDEECD282573EF00F10D18 /* WisdomModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAEDEECF282576F300F10D18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDEED02825770E00F10D18 /* WisdomDetailViewModel.swift */,
+				FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -852,37 +1042,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC54622E2824C484003F0F5A /* PlayfairDisplay-Regular.ttf in Resources */,
 				AC7D84672818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf in Resources */,
+				FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */,
+				AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
 				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				AC68799A2817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf in Resources */,
+				FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */,
+				AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */,
 				ACB1B7022811381300C2F90D /* TodoTableViewCell.xib in Resources */,
+				AC61C5ED281BCD0E00ED185C /* ca_dao_ve_thuoc_thang.rtf in Resources */,
 				AC740768281656080073E38E /* ca_dao_hoc_tap.rtf in Resources */,
+				AC5462352824C484003F0F5A /* README.txt in Resources */,
 				AC6879962817F8280052D736 /* tuc_ngu_suc_khoe.rtf in Resources */,
 				AC7407812816774D0073E38E /* Localizable.strings in Resources */,
+				AC54622C2824C484003F0F5A /* PlayfairDisplay-ExtraBoldItalic.ttf in Resources */,
 				ACA38EAF281A984B0021428C /* tuc_ngu_ve_y_chi_nghi_luc.rtf in Resources */,
+				AC5462302824C484003F0F5A /* PlayfairDisplay-SemiBoldItalic.ttf in Resources */,
 				ACA38EAD281A94100021428C /* ca_dao_ve_nguoi_phu_nu_viet_nam.rtf in Resources */,
 				FA02FD792813A86A00C820ED /* MarkerInfoView.xib in Resources */,
+				AC5462332824C484003F0F5A /* PlayfairDisplay-ExtraBold.ttf in Resources */,
 				AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */,
 				FA3E750028105C5A0087F8EE /* LaunchScreen.storyboard in Resources */,
+				FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */,
 				AC6879942817F5B00052D736 /* ca_dao_tinh_nghia_vo_chong.rtf in Resources */,
+				AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */,
 				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
+				AC54622B2824C484003F0F5A /* PlayfairDisplay-BoldItalic.ttf in Resources */,
 				AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */,
+				FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */,
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
+				AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */,
+				AC5462342824C484003F0F5A /* OFL.txt in Resources */,
+				AC54622F2824C484003F0F5A /* PlayfairDisplay-Black.ttf in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,
+				AC5462312824C484003F0F5A /* PlayfairDisplay-MediumItalic.ttf in Resources */,
+				AC5462362824C484003F0F5A /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
 				AC6879902817F4760052D736 /* tuc_ngu_an_uong.rtf in Resources */,
+				AC61C5F1281BE10D00ED185C /* ca_dao_hay_ve_cach_an_uong.rtf in Resources */,
 				ACA38EAB281A91820021428C /* ca_dao_viet_nam_hay_nhat.rtf in Resources */,
 				ACA38E9B281A29F80021428C /* tuc_ngu_tinh_kien_tri.rtf in Resources */,
 				AC77FBA628178C220085F8C8 /* tuc_ngu_hoc_tap.rtf in Resources */,
 				ACA38EB1281A990F0021428C /* ca_dao_ve_y_chi_nghi_luc.rtf in Resources */,
+				AC61C5EF281BD38C00ED185C /* ca_dao_đac_sac_va_giau_triet_ly_song.rtf in Resources */,
+				AC5462322824C484003F0F5A /* PlayfairDisplay-BlackItalic.ttf in Resources */,
 				AC6879982817FAC40052D736 /* ca_dao_hai_huoc.rtf in Resources */,
+				AC54622D2824C484003F0F5A /* PlayfairDisplay-Italic.ttf in Resources */,
 				AC740752281639890073E38E /* MediaTableViewCell.xib in Resources */,
 				FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */,
 				AC6879922817F4B60052D736 /* ca_dao_an_uong.rtf in Resources */,
 				FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */,
-				ACA38EA7281A32C90021428C /* SearchView.xib in Resources */,
+				AC5462292824C484003F0F5A /* PlayfairDisplay-SemiBold.ttf in Resources */,
 				AC7407942816899D0073E38E /* ca_dao_an_noi_ung_xu.rtf in Resources */,
 				ACCEE3FF28125B49007D0049 /* Alert.storyboard in Resources */,
 				AC740764281644B80073E38E /* MediaDetailTableViewCell.xib in Resources */,
@@ -1066,55 +1279,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */,
 				AC2019E528112FBC00ACFC4E /* BaseViewController.swift in Sources */,
 				AC77FBA2281782090085F8C8 /* DataManager.swift in Sources */,
 				FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */,
 				ACB1B6FA281137A700C2F90D /* UIViewController+Identifier.swift in Sources */,
 				ACCEE40128125B7C007D0049 /* Alert.swift in Sources */,
 				ACB1B6FC281137CF00C2F90D /* UITableView+Extension.swift in Sources */,
+				AC61C5E9281BBD3600ED185C /* Int.swift in Sources */,
 				AC74075D281640740073E38E /* MediaDetailViewController.swift in Sources */,
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
+				FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
 				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
-				AC77FB9F281781680085F8C8 /* R.generated.swift in Sources */,
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
+				AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */,
 				ACB1B70B28113DDB00C2F90D /* TodoViewModel.swift in Sources */,
 				AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */,
 				ACCEE40C2812A7E4007D0049 /* PlaceMarker.swift in Sources */,
-				AC74079A2816989C0073E38E /* ProverbModel.swift in Sources */,
 				AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */,
 				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
+				AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */,
 				AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */,
+				AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */,
+				FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */,
 				AC740771281671E40073E38E /* BundleLocalization.m in Sources */,
 				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
+				AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */,
 				AC7D846A2818F9F500E40FB1 /* LoginViewModel.swift in Sources */,
+				AC61C5EB281BBDA200ED185C /* Double.swift in Sources */,
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
+				FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
+				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
+				FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
-				ACA38EA5281A32B40021428C /* SearchView.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
+				AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */,
+				FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */,
+				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
-				AC7407982816987B0073E38E /* FolkModel.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
+				AC5462382824CC70003F0F5A /* PlayfairDisplayFont.swift in Sources */,
 				ACB1B6F62811377700C2F90D /* Identifier.swift in Sources */,
+				FAEDEED12825770E00F10D18 /* WisdomDetailViewModel.swift in Sources */,
 				FA3E74F628105C570087F8EE /* SceneDelegate.swift in Sources */,
 				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
+				AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,6 +1535,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LW34R6CMB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RealmTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

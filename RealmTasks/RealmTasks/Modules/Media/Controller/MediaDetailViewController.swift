@@ -30,17 +30,16 @@ class MediaDetailViewController: BaseViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var tableView: UITableView!
-    var folkType = FolkTypeModel()
-    var proverbType = ProverbTypeModel()
+    
     var viewModel = MediaDetailViewModel()
-    var mediaType = MediaType.folkVerses
+    var mediaType = MediaTypeLocalModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerCell(MediaDetailTableViewCell.self)
         viewModel.delegate = self
-        viewModel.loadData(mediaType: mediaType, folkType: folkType, proverbType: proverbType)
+        viewModel.loadData(mediaType: mediaType)
         tableView.reloadData()
         
         searchView.searchText = { [weak self] text in
@@ -55,25 +54,47 @@ class MediaDetailViewController: BaseViewController {
     }
     
     private func setupUI() {
-        title = mediaType.text
+        title = mediaType.title
         addBackButton()
         
         for i in 0..<MediaDetailSegmentedControl.list.count {
             segmentedControl.setTitle(MediaDetailSegmentedControl.list[i].text, forSegmentAt: i)
         }
         
-        if let bold = MenloFont.bold(with: 16) {
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black
             segmentedControl.selectedSegmentTintColor = .black
         }
+        addRightBarButtonItems()
+    }
+    
+    private func addRightBarButtonItems() {
+        let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        imageView.tintColor = .white
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
+        navigationItem.rightBarButtonItems = [rightBarButtonItem]
     }
     
     // MARK: - Action
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
         viewModel.valueChange = MediaDetailSegmentedControl.list[segmentedControl.selectedSegmentIndex]
         tableView.reloadData()
+    }
+    
+    @objc func saveClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        if let vc = R.storyboard.media.detailListVC() {
+            vc.mediaType = mediaType
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
@@ -105,6 +126,6 @@ extension MediaDetailViewController: MediaDetailTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         var data = viewModel.filteredList[indexPath.row]
         data.isFavorite = !data.isFavorite
-        viewModel.modifyData(data: data, type: mediaType)
+        viewModel.modifyData(media: data)
     }
 }

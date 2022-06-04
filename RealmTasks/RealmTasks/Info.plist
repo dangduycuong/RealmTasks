@@ -29,5 +29,20 @@
 	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your precise location is used to show your position on the map, get directions, estimate travel times and improve search results</string>
+	<key>UIAppFonts</key>
+	<array>
+        <string>PlayfairDisplay-Regular.ttf</string>
+        <string>PlayfairDisplay-Medium.ttf</string>
+        <string>PlayfairDisplay-SemiBold.ttf</string>
+        <string>PlayfairDisplay-Bold.ttf</string>
+        <string>PlayfairDisplay-ExtraBold.ttf</string>
+        <string>PlayfairDisplay-Black.ttf</string>
+        <string>PlayfairDisplay-Italic.ttf</string>
+        <string>PlayfairDisplay-MediumItalic.ttf</string>
+        <string>PlayfairDisplay-SemiBoldItalic.ttf</string>
+        <string>PlayfairDisplay-BoldItalic.ttf</string>
+        <string>PlayfairDisplay-ExtraBoldItalic.ttf</string>
+        <string>PlayfairDisplay-BlackItalic.ttf</string>
+	</array>
 </dict>
 </plist>

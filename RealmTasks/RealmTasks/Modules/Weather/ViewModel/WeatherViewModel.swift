@@ -48,12 +48,12 @@ class WeatherViewModel {
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
             print("params", urlQueryItem)
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
                 let httpResponse = response as? HTTPURLResponse
                 if httpResponse?.statusCode == 200 {
                 }
-                print(httpResponse)
+                print(httpResponse as Any)
             }
             do {
                 if let data = data {
