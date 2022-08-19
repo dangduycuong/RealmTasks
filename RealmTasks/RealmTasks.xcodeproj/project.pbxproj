@@ -127,6 +127,8 @@
 		FA3E750B28105C5A0087F8EE /* RealmTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E750A28105C5A0087F8EE /* RealmTasksTests.swift */; };
 		FA3E751528105C5A0087F8EE /* RealmTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */; };
 		FA3E751728105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */; };
+		FA57C36428AF7CA100FA04C4 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */; };
+		FA57C36628AF7D0B00FA04C4 /* ParticleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */; };
 		FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C3AE28118D3100742B5E /* String+Extension.swift */; };
 		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
 		FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */; };
@@ -290,6 +292,8 @@
 		FA3E751028105C5A0087F8EE /* RealmTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITests.swift; sourceTree = "<group>"; };
 		FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
+		FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ParticleScene.sks; sourceTree = "<group>"; };
 		FA73C3AE28118D3100742B5E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
 		FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewModel.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 		AC2019DB28112F4E00ACFC4E /* MenuTabbar */ = {
 			isa = PBXGroup;
 			children = (
+				FA57C35E28AF7C4D00FA04C4 /* View */,
 				FA3E74F728105C570087F8EE /* MenuTabbarViewController.swift */,
 				AC7D84682818F9EA00E40FB1 /* ViewModel */,
 				AC74078628167BEF0073E38E /* LoginViewController.swift */,
@@ -911,6 +916,15 @@
 			path = RealmTasksUITests;
 			sourceTree = "<group>";
 		};
+		FA57C35E28AF7C4D00FA04C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */,
+				FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FAEDEECC282573D600F10D18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,6 +1056,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA57C36628AF7D0B00FA04C4 /* ParticleScene.sks in Resources */,
 				AC54622E2824C484003F0F5A /* PlayfairDisplay-Regular.ttf in Resources */,
 				AC7D84672818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf in Resources */,
 				FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */,
@@ -1295,6 +1310,7 @@
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
 				ACCEE40328125C0C007D0049 /* ShowAlertViewController.swift in Sources */,
+				FA57C36428AF7CA100FA04C4 /* ParticleScene.swift in Sources */,
 				AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */,
 				FA02FD7E2813B7ED00C820ED /* WeatherViewModel.swift in Sources */,
 				AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */,

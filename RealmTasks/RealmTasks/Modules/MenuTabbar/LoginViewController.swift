@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 struct MediaFile {
     var fileName: String
@@ -17,6 +19,9 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var vietnamButton: UIButton!
+    @IBOutlet weak var englishButton: UIButton!
+    @IBOutlet weak var particleView: SKView!
     
     var viewModel = LoginViewModel()
     
@@ -41,6 +46,12 @@ class LoginViewController: BaseViewController {
         let imageView = UIImageView(image: jeremyGif)
         backgroundView.layout(imageView)
             .top().left().bottom().right()
+        vietnamButton.setTitle("", for: .normal)
+        englishButton.setTitle("", for: .normal)
+        
+        if let particleScene = SKScene(fileNamed: "ParticleScene") {
+            particleView.presentScene(particleScene)
+        }
     }
     
     // MARK: - Actions

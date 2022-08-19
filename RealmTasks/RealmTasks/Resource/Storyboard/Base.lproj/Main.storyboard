@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO3-t1-AFs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO3-t1-AFs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,25 +58,28 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-X0-g5J">
-                                <rect key="frame" x="16" y="60" width="382" height="41"/>
+                                <rect key="frame" x="16" y="60" width="382" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-Hb-wBi">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Tfc-gI-VXk"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Tiếng Việt">
-                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="icons8-vietnam"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="vietnamClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="bKL-k2-s81"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-NH-0lr">
-                                        <rect key="frame" x="195" y="0.0" width="187" height="41"/>
+                                        <rect key="frame" x="195" y="0.0" width="187" height="60"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="English">
-                                            <fontDescription key="titleFontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="icons8-anguilla"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="englishClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="p1d-DN-g9e"/>
@@ -85,7 +88,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Ip-ZQD">
-                                <rect key="frame" x="16" y="133" width="382" height="41"/>
+                                <rect key="frame" x="16" y="152" width="382" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-9L-GUc">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="41"/>
@@ -109,9 +112,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyO-HJ-qrZ">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
-                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0z-ys-3Yb" customClass="SKView">
+                                <rect key="frame" x="27" y="320" width="360" height="256"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyO-HJ-qrZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="256"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JyO-HJ-qrZ" secondAttribute="bottom" id="CeW-X5-vSq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="256" id="R4L-KO-FLv"/>
+                                    <constraint firstItem="JyO-HJ-qrZ" firstAttribute="top" secondItem="V0z-ys-3Yb" secondAttribute="top" id="THC-m9-Kkg"/>
+                                    <constraint firstAttribute="trailing" secondItem="JyO-HJ-qrZ" secondAttribute="trailing" id="lB2-Iy-mIc"/>
+                                    <constraint firstItem="JyO-HJ-qrZ" firstAttribute="leading" secondItem="V0z-ys-3Yb" secondAttribute="leading" id="mFr-wQ-8qS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="360" id="q0M-ZN-E8u"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i96-Rd-PdG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,20 +136,23 @@
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="top" secondItem="ztu-X0-g5J" secondAttribute="bottom" constant="32" id="1Jz-fc-cf3"/>
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="1Kr-Xa-SeQ"/>
                             <constraint firstAttribute="trailing" secondItem="2mt-5n-RBk" secondAttribute="trailing" id="7a8-nH-L46"/>
-                            <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="8Et-hQ-PDN"/>
                             <constraint firstItem="2mt-5n-RBk" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="9vG-fF-hWg"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="4j5-Ip-ZQD" secondAttribute="trailing" constant="16" id="G4M-cC-5Lb"/>
+                            <constraint firstItem="V0z-ys-3Yb" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="Tks-tI-zO7"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="top" secondItem="i96-Rd-PdG" secondAttribute="top" constant="16" id="ZT1-89-Go8"/>
-                            <constraint firstItem="JyO-HJ-qrZ" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="a6t-vv-RUQ"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="ztu-X0-g5J" secondAttribute="trailing" constant="16" id="lAh-Eu-BzC"/>
                             <constraint firstAttribute="bottom" secondItem="2mt-5n-RBk" secondAttribute="bottom" id="p4W-hE-Yh3"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="pLa-nt-QNc"/>
                             <constraint firstItem="2mt-5n-RBk" firstAttribute="leading" secondItem="Dll-68-qe3" secondAttribute="leading" id="q7x-wD-kLy"/>
+                            <constraint firstItem="V0z-ys-3Yb" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="xPN-t6-UFr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="2mt-5n-RBk" id="x4E-Cs-6IF"/>
+                        <outlet property="englishButton" destination="1aQ-NH-0lr" id="qhT-c3-tX4"/>
+                        <outlet property="particleView" destination="V0z-ys-3Yb" id="Jqf-0P-ufY"/>
                         <outlet property="pickerView" destination="JyO-HJ-qrZ" id="NVk-bK-8Hf"/>
+                        <outlet property="vietnamButton" destination="w6z-Hb-wBi" id="gKl-Oz-Aym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ue8-7J-uKZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -159,6 +179,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-anguilla" width="12.5" height="12.5"/>
+        <image name="icons8-vietnam" width="12.5" height="12.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

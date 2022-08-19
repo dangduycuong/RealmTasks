@@ -44,6 +44,25 @@ class TodoViewController: BaseViewController {
         viewModel.getListDataFromRealm()
     }
     
+    func showNavCustom(isHidden: Bool = false) {
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.tintColor = .white
+        //        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+        //                                                                   NSAttributedString.Key.font: LatoFont.bold(with: 16)]
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isHidden = isHidden
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.black
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        }
+    }
+    
     private func setupTabbar() {
         tabBarController?.title = "todo".language()
         //Set the background color
