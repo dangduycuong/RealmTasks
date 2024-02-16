@@ -116,6 +116,8 @@
 		FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */; };
 		FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */; };
 		FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */; };
+		FA23582F2B7E201D00DCC773 /* Tagore.json in Resources */ = {isa = PBXBuildFile; fileRef = FA23582E2B7E201D00DCC773 /* Tagore.json */; };
+		FA2358322B7E284D00DCC773 /* PoemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */; };
 		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
 		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
@@ -127,10 +129,13 @@
 		FA3E750B28105C5A0087F8EE /* RealmTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E750A28105C5A0087F8EE /* RealmTasksTests.swift */; };
 		FA3E751528105C5A0087F8EE /* RealmTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */; };
 		FA3E751728105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */; };
+		FA47B4092B7E3963004717AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47B4082B7E3963004717AC /* UIColor+Extension.swift */; };
 		FA57C36428AF7CA100FA04C4 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */; };
 		FA57C36628AF7D0B00FA04C4 /* ParticleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */; };
 		FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C3AE28118D3100742B5E /* String+Extension.swift */; };
 		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
+		FAC706892B70FF7F000A8F8B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC706882B70FF7F000A8F8B /* SettingViewController.swift */; };
+		FAC7068B2B710139000A8F8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */; };
 		FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */; };
 		FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */ = {isa = PBXBuildFile; fileRef = FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */; };
 		FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDEECD282573EF00F10D18 /* WisdomModel.swift */; };
@@ -277,6 +282,8 @@
 		FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomTableViewCell.swift; sourceTree = "<group>"; };
 		FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WisdomTableViewCell.xib; sourceTree = "<group>"; };
 		FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewModel.swift; sourceTree = "<group>"; };
+		FA23582E2B7E201D00DCC773 /* Tagore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tagore.json; sourceTree = "<group>"; };
+		FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemTableViewCell.swift; sourceTree = "<group>"; };
 		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,10 +299,13 @@
 		FA3E751028105C5A0087F8EE /* RealmTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3E751428105C5A0087F8EE /* RealmTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITests.swift; sourceTree = "<group>"; };
 		FA3E751628105C5A0087F8EE /* RealmTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA47B4082B7E3963004717AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ParticleScene.sks; sourceTree = "<group>"; };
 		FA73C3AE28118D3100742B5E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
+		FAC706882B70FF7F000A8F8B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewModel.swift; sourceTree = "<group>"; };
 		FAEDEECA28254D5200F10D18 /* theForceOfTheStars.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = theForceOfTheStars.gif; sourceTree = "<group>"; };
 		FAEDEECD282573EF00F10D18 /* WisdomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomModel.swift; sourceTree = "<group>"; };
@@ -398,6 +408,7 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FA23582C2B7E1FD300DCC773 /* JSON */,
 				FA1C15DB2826299D009F1F8E /* R.generated.swift */,
 				AC5462132824C3E6003F0F5A /* Fonts */,
 				AC74076D2816717F0073E38E /* Localize */,
@@ -423,6 +434,7 @@
 		AC2019DC28112F5D00ACFC4E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FAC706862B70FF5C000A8F8B /* Setting */,
 				AC114C692823A23B007F0528 /* Wisdom */,
 				FA37DCBD281AE1A6001F8FE3 /* CommonUI */,
 				AC2019EC2811302800ACFC4E /* Media */,
@@ -577,6 +589,7 @@
 		AC74074D2816395C0073E38E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA2358302B7E283700DCC773 /* PoemTableViewCell */,
 				AC7407602816449C0073E38E /* MediaDetailTableViewCell */,
 				AC74074E281639690073E38E /* MediaTableViewCell */,
 			);
@@ -701,6 +714,8 @@
 				ACA38E9F281A2CF90021428C /* DevCenters+GIF.swift */,
 				AC61C5E8281BBD3600ED185C /* Int.swift */,
 				AC61C5EA281BBDA200ED185C /* Double.swift */,
+				FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */,
+				FA47B4082B7E3963004717AC /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -838,6 +853,30 @@
 			path = WisdomTableViewCell;
 			sourceTree = "<group>";
 		};
+		FA23582C2B7E1FD300DCC773 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				FA23582D2B7E1FDD00DCC773 /* Poem */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		FA23582D2B7E1FDD00DCC773 /* Poem */ = {
+			isa = PBXGroup;
+			children = (
+				FA23582E2B7E201D00DCC773 /* Tagore.json */,
+			);
+			path = Poem;
+			sourceTree = "<group>";
+		};
+		FA2358302B7E283700DCC773 /* PoemTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */,
+			);
+			path = PoemTableViewCell;
+			sourceTree = "<group>";
+		};
 		FA37DCBD281AE1A6001F8FE3 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,6 +962,22 @@
 				FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FAC706862B70FF5C000A8F8B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FAC706872B70FF65000A8F8B /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		FAC706872B70FF65000A8F8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAC706882B70FF7F000A8F8B /* SettingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		FAEDEECC282573D600F10D18 /* Model */ = {
@@ -1088,6 +1143,7 @@
 				AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */,
 				FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */,
 				AC68798E2817EDC40052D736 /* ca_dao_cha_me.rtf in Resources */,
+				FA23582F2B7E201D00DCC773 /* Tagore.json in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
 				AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */,
@@ -1306,6 +1362,7 @@
 				ACB1B70628113A9A00C2F90D /* TodoModel.swift in Sources */,
 				FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */,
 				AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */,
+				FAC7068B2B710139000A8F8B /* UIViewController+Extension.swift in Sources */,
 				FA02FD802813C43E00C820ED /* Data+Extension.swift in Sources */,
 				FA3E74F828105C570087F8EE /* MenuTabbarViewController.swift in Sources */,
 				ACCEE40A2812A7CF007D0049 /* GooglePlace.swift in Sources */,
@@ -1340,6 +1397,7 @@
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
+				FA2358322B7E284D00DCC773 /* PoemTableViewCell.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
 				FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */,
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
@@ -1347,8 +1405,10 @@
 				AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */,
 				FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */,
 				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
+				FA47B4092B7E3963004717AC /* UIColor+Extension.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,
 				ACCEE4082812A7A1007D0049 /* GoogleDataProvider.swift in Sources */,
+				FAC706892B70FF7F000A8F8B /* SettingViewController.swift in Sources */,
 				ACCEE40E2812A803007D0049 /* CLLocationCoordinate+Extensions.swift in Sources */,
 				ACB1B7012811381300C2F90D /* TodoTableViewCell.swift in Sources */,
 				FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */,
@@ -1559,7 +1619,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1591,7 +1651,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

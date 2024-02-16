@@ -148,7 +148,7 @@ class LoginViewModel {
     }
     
     private func saveData(completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
             self.saveMediaTypes {

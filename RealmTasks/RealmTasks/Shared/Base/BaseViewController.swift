@@ -9,14 +9,13 @@ import UIKit
 import Material
 
 class BaseViewController: UIViewController {
+    lazy var titleLabel: UILabel = {
+        var label = UILabel()
+        return label
+    }()
     
     var backButton: UIButton = {
-        let originalImage = R.image.icons8Back()
-        let tintedImage = originalImage!.withRenderingMode(.alwaysTemplate)
-        let button = IconButton(image: tintedImage, tintColor: .white)
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0)
-        button.contentHorizontalAlignment = .left
+        let button = UIButton()
         return button
     }()
     
@@ -50,8 +49,21 @@ class BaseViewController: UIViewController {
     
     func addBackButton() {
         backButton.addTarget(self, action: #selector(backButtonClicked(sender:)), for: .touchUpInside)
-        let backBarButton = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = backBarButton
+        view.layout(backButton)
+            .left(16).topSafe().width(44).height(44)
+        
+        let backImageView = UIImageView(image: UIImage(named: "arrowBack"))
+        backButton.backgroundColor = UIColor.black
+    }
+    
+    func addTitle(title: String) {
+        if let extraBold = PlayfairDisplayFont.extraBold(with: 20) {
+            titleLabel.text = title
+            titleLabel.font = extraBold
+            titleLabel.textColor = UIColor.white
+            view.layout(titleLabel)
+                .centerX().topSafe()
+        }
     }
     
     @objc func backButtonClicked(sender: UIButton) {

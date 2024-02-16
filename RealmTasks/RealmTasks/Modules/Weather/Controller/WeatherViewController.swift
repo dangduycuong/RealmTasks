@@ -81,6 +81,17 @@ extension WeatherViewController {
         setupUI()
         locationManager.delegate = self
         
+        DispatchQueue.main.async {
+            self.requestPermissonLocationServices()
+        }
+        
+        viewModel.delegate = self
+        mapView.delegate = self
+        mapView.mapType = .satellite
+        mapView.animate(toZoom: 17)
+    }
+    
+    private func requestPermissonLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestLocation()
             mapView.isMyLocationEnabled = true
@@ -88,11 +99,6 @@ extension WeatherViewController {
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
-        
-        viewModel.delegate = self
-        mapView.delegate = self
-        mapView.mapType = .satellite
-        mapView.animate(toZoom: 17)
     }
     
     @objc func timerAction() {
@@ -106,6 +112,61 @@ extension WeatherViewController {
         weatherInfoView.layer.shadowRadius = 2
         weatherInfoView.layer.cornerRadius = 10
         weatherInfoView.isHidden = true
+        
+        let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
+        let buttonMapTypeMenuIcon = UIButton()
+        view.layout(buttonMapTypeMenuIcon)
+            .topSafe().right(16).width(44).height(44)
+        
+        view.layout(mapTypeMenuIcon)
+            .center(buttonMapTypeMenuIcon).width(24).height(24)
+        
+        buttonMapTypeMenuIcon.addTarget(self, action: #selector(updateMapType), for: .touchUpInside)
+    }
+    
+    @objc private func updateMapType(_ sender: UIButton) {
+        let dropDown = DropDown()
+        
+        DropDown.appearance().textColor = UIColor.white
+        DropDown.appearance().selectedTextColor = UIColor.red
+        if let font = PlayfairDisplayFont.semiBold(with: 20) {
+            DropDown.appearance().textFont = font
+        }
+        DropDown.appearance().backgroundColor = UIColor.black
+        DropDown.appearance().selectionBackgroundColor = UIColor.black
+        DropDown.appearance().cellHeight = 60
+        
+        DropDown.startListeningToKeyboard()
+        
+        // The view to which the drop down will appear on
+        dropDown.anchorView = view // UIView or UIBarButtonItem
+        
+        dropDown.direction = .bottom
+        dropDown.bottomOffset = CGPoint(x: UIScreen.main.bounds.width - 118, y: view.safeAreaInsets.top + 44)
+        dropDown.width = 110
+        
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = MapType.all.map { $0.text }
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            var mapType = GMSMapViewType.normal
+            switch MapType.all[index] {
+            case .normal:
+                mapType = .normal
+            case .satellite:
+                mapType = .satellite
+            case .terrain:
+                mapType = .terrain
+            case .hybrid:
+                mapType = .hybrid
+            case .noneNormal:
+                mapType = .none
+            }
+            mapView.mapType = mapType
+            mapView.animate(toZoom: 17)
+        }
+        
+        dropDown.show()
     }
     
     @objc private func changeMapType(notification: Notification) {

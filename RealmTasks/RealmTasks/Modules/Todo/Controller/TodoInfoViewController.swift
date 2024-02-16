@@ -44,11 +44,11 @@ class TodoInfoViewController: BaseViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
-        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+        view.layout(imageView)
+            .topSafe().right(16).width(44).height(44)
         
         addBackButton()
-        title = "Todo Detail"
+        
         checkboxButton.setTitle("", for: .normal)
         placeholderLabel = UILabel()
         placeholderLabel.text = "Enter some text..."

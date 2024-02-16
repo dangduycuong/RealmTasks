@@ -34,4 +34,12 @@ extension UIView: Identifier {
             withOwner: self,
             options: nil).first as? UIView
     }
+    
+    static func loadFromNib<T: UIView>() -> T {
+        let nameStr = "\(self)"
+        let arrName = nameStr.split { $0 == "." }
+        let nibName = arrName.map(String.init).last!
+        let nib = UINib(nibName: nibName, bundle: nil)
+        return nib.instantiate(withOwner: self, options: nil).first as! T
+    }
 }

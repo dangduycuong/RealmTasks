@@ -8,8 +8,8 @@
 //MARK: Todo
 "todo" = "Công việc";
 "all" = "Tất cả";
-"completed" = "Hoàn thành";
-"incompleted" = "Chưa hoàn thành";
+"completed" = "Xong";
+"incompleted" = "Chưa xong";
 //MARK: Weather
 "weather" = "Thời tiết";
 //MARK: Media

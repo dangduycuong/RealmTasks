@@ -12,8 +12,9 @@ enum TabbarTitle {
     case weather
     case media
     case wisdom
+    case setting
     
-    static let all = [todo, weather, media, wisdom]
+    static let all = [todo, weather, media, wisdom, setting]
     
     var text: String {
         get {
@@ -26,16 +27,20 @@ enum TabbarTitle {
                 return "media".language()
             case .wisdom:
                 return "Mưu"
+            case .setting:
+                return "Setting".language()
             }
         }
     }
 }
 
 class MenuTabbarViewController: UITabBarController {
-    var todoVC: TodoViewController!
+    var todoVC = TodoViewController()
     var weatherVC: WeatherViewController!
     var mediaVC: MediaViewController!
     var wisdomVC: WisdomViewController!
+    
+    var settingVC = SettingViewController()
     
     var tabbarType = TabbarTitle.todo
     
@@ -47,7 +52,7 @@ class MenuTabbarViewController: UITabBarController {
     }
     
     private func setupTabbar() {
-        todoVC = R.storyboard.todo.todoViewController()
+        todoVC = TodoViewController()
         weatherVC = R.storyboard.weather.weatherViewController()
         mediaVC = R.storyboard.media.mediaViewController()
         wisdomVC = R.storyboard.wisdom.wisdomViewController()
@@ -60,8 +65,9 @@ class MenuTabbarViewController: UITabBarController {
         //        personVC.tabBarItem.selectedImage = R.image.king()
         
         wisdomVC.tabBarItem.image = R.image.icons8Ok()
+        settingVC.tabItem.image = R.image.icons8Search()
         
-        viewControllers = [todoVC, weatherVC, mediaVC, wisdomVC]
+        viewControllers = [todoVC, weatherVC, mediaVC, wisdomVC, settingVC]
         
         if let items = tabBar.items {
             for i in 0..<items.count {

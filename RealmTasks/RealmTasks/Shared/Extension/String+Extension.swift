@@ -12,7 +12,11 @@ extension String {
         return self.folding(options: .diacriticInsensitive, locale: .current)
     }
     
-    
+    var folded: String {
+        return self.folding(options: .diacriticInsensitive, locale: nil)
+            .replacingOccurrences(of: "đ", with: "d")
+            .replacingOccurrences(of: "Đ", with: "D")
+    }
 }
 
 // language

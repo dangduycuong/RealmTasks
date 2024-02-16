@@ -64,10 +64,15 @@ class LoginViewController: BaseViewController {
     }
     
     private func login() {
-        if let vc = R.storyboard.main.baseNavigationController() {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            present(vc, animated: true, completion: nil)
+        if let vc = R.storyboard.main.menuTabbarViewController() {
+            let keyWindow = UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .compactMap({$0 as? UIWindowScene})
+                .first?.windows
+                .filter({$0.isKeyWindow}).first
+            
+            keyWindow?.rootViewController = vc.embedInNavigationController()
+            keyWindow?.makeKeyAndVisible()
         }
     }
     
