@@ -54,7 +54,7 @@ class MenuTabbarViewController: UITabBarController {
     private func setupTabbar() {
         todoVC = TodoViewController()
         weatherVC = R.storyboard.weather.weatherViewController()
-        mediaVC = R.storyboard.media.mediaViewController()
+        mediaVC = MediaViewController()
         wisdomVC = R.storyboard.wisdom.wisdomViewController()
         
         todoVC.tabBarItem.image = R.image.icons8Todo_list()

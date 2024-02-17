@@ -21,8 +21,6 @@ class MediaDetailTableViewCell: UITableViewCell {
     
     weak var delegate: MediaDetailTableViewCellDelegate?
     
-    @IBOutlet weak var heightBackgroundImageView: NSLayoutConstraint!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -36,10 +34,9 @@ class MediaDetailTableViewCell: UITableViewCell {
         subView.layer.shadowRadius = 2
         
         subView.layer.cornerRadius = 8
+        subView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         
         favoriteButton.setTitle("", for: .normal)
-        backgroundImageView.layer.cornerRadius = 8
-        //030303 super black
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,18 +45,47 @@ class MediaDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fillData(data: MediaDetailDisplay) {
-        messageLabel.text = data.content
-        favoriteImageView.image = data.isFavorite ? R.image.icons8Heart_suit() : R.image.icons8Favorite()
-        DispatchQueue.main.async {
-            self.heightBackgroundImageView.constant = self.messageLabel.bounds.size.height + 8
+    func fillData(data: MediaDetailDisplay, keyWord: String) {
+        selectionStyle = .none
+        let rangeContent = findRange(source: data.content.folded.lowercased(), textToFind: keyWord.folded.lowercased())
+        if rangeContent.location != NSNotFound {
+            setColorTextLabel(string: data.content, range: rangeContent, label: messageLabel)
+        } else {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            paragraphStyle.lineSpacing = 6
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: R.font.playfairDisplayMedium(size: 20) as Any,
+                .foregroundColor: UIColor(hexString: "4B5320"),
+                .paragraphStyle: paragraphStyle
+            ]
+            messageLabel.attributedText = NSAttributedString(string: data.content, attributes: attributes)
         }
-        backgroundImageView.layoutIfNeeded()
+        
+        favoriteImageView.image = data.isFavorite ? R.image.icons8Heart_suit() : R.image.icons8Favorite()
+    }
+    
+    func findRange(source: String, textToFind: String) -> NSRange {
+        let string = NSMutableAttributedString(string: source.folded.lowercased())
+        
+        let range = string.mutableString.range(of: textToFind.folded.lowercased(), options: .caseInsensitive)
+        return range
+    }
+    
+    func setColorTextLabel(string: String, range: NSRange, label: UILabel) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle
+        ]
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+        label.attributedText = myMutableString
     }
     
     @IBAction func favoriteButtonClicked(_ sender: Any) {
         delegate?.favoriteChange(cell: self)
     }
-    
-    
 }

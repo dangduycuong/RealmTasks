@@ -8,15 +8,18 @@
 import UIKit
 
 class TodoViewController: BaseViewController {
-    lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["First","Second","Third"])
-        return segmentedControl
+    lazy var searchView: NimsTinhChinhCapView = {
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        searchView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        searchView.layer.cornerRadius = 8
+        return searchView
     }()
     
-    private lazy var searchView: CustomView = {
-        //        let searchView: SearchView = SearchView.loadFromNib()
-        let searchView = CustomView()
-        return searchView
+    lazy var segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["First","Second","Third"])
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentControlValueChanged), for: .valueChanged)
+        return segmentedControl
     }()
     
     private lazy var tableView: UITableView = {
@@ -25,6 +28,8 @@ class TodoViewController: BaseViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -52,11 +57,7 @@ class TodoViewController: BaseViewController {
         setupTabbar()
         viewModel.delegate = self
         tableView.registerCell(TodoTableViewCell.self)
-        
-//        searchView.searchText = { [weak self] text in
-//            guard let `self` = self else { return }
-//            self.viewModel.searchText = text
-//        }
+        addObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,27 +70,45 @@ class TodoViewController: BaseViewController {
         viewModel.getListDataFromRealm()
     }
     
+    private func addObserver() {
+        searchView.searchText = { [weak self] text in
+            guard let `self` = self else { return }
+            self.viewModel.searchText = text
+        }
+    }
+    
     private func prepareForViewController() {
         navigationController?.navigationBar.isHidden = true
-        let imageView = UIImageView(image: UIImage(named: "woodGrain3"))
-        view.layout(imageView)
-            .top().left().bottom().right()
+        addBackground()
         
         addTitle(title: R.string.localizable.todo().language())
         
         view.layout(segmentedControl)
-            .below(titleLabel, 16).left(16).right(16).height(40)
+            .below(titleLabel, 32).left(16).right(16).height(40)
         
         segmentedControl.setTitle(R.string.localizable.all().language(), forSegmentAt: 0)
         segmentedControl.setTitle(R.string.localizable.completed().language(), forSegmentAt: 1)
         segmentedControl.setTitle(R.string.localizable.incompleted().language(), forSegmentAt: 2)
         
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
+            let titleNormalAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.4)
+            ]
+            let titleSelectedAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: UIColor.white
+            ]
+            segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
+            segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
             segmentedControl.backgroundColor = .black
             segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
         }
+        segmentedControl.layer.cornerRadius = 16
+        segmentedControl.layer.borderColor = UIColor.red.cgColor
+        segmentedControl.layer.borderWidth = 1
+        segmentedControl.layer.masksToBounds = true
+        
         
         view.layout(searchView)
             .below(segmentedControl, 16).left(16).right(16).height(40)
@@ -105,6 +124,23 @@ class TodoViewController: BaseViewController {
             .center(addTodoButton).width(24).height(24)
         
         addTodoButton.addTarget(self, action: #selector(addTodoButtonClicked), for: .touchUpInside)
+        
+        let customSegmented = CustomSegmentedControlView()
+//        customSegmented.titles = ["1", "2"]
+        view.layout(customSegmented)
+            .left(16).bottomSafe(160).right(16).height(40)
+//        customSegmented.backgroundColor = UIColor(hexString: "008080")
+//        customSegmented.customColor = UIColor(hexString: "008080")
+        
+        customSegmented.setNewValue(["Le", "Quynh", "Trang"])
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        segmentedControl.layer.cornerRadius = 16
+        segmentedControl.layer.borderColor = UIColor.red.cgColor
+        segmentedControl.layer.borderWidth = 1
+        segmentedControl.layer.masksToBounds = true
     }
     
     private func setupTabbar() {
@@ -150,14 +186,13 @@ class TodoViewController: BaseViewController {
         addTodoButton.layer.cornerRadius = 20
     }
     
-    @IBAction func segmentControlValueChanged(_ sender: Any) {
+    @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
         viewModel.segmentIndex = segmentedControl.selectedSegmentIndex
     }
     
     @IBAction func addTodoButtonClicked(_ sender: UIButton) {
-        if let vc = R.storyboard.todo.todoInfoViewController() {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = TodoInfoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -176,10 +211,9 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = R.storyboard.todo.todoInfoViewController() {
-            vc.todo = viewModel.filterTodos[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = TodoInfoViewController()
+        vc.todo = viewModel.filterTodos[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -207,7 +241,7 @@ import UIKit
 class CustomView: UIView {
     
     lazy var containerView: UIView = {
-       let view = UIView()
+        let view = UIView()
         return view
     }()
     

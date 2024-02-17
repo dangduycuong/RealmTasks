@@ -19,6 +19,11 @@ class BaseViewController: UIViewController {
         return button
     }()
     
+    lazy var backGroundImageView: UIImageView = {
+        let imageView = UIImageView(image: R.image.woodGrain3())
+        return imageView
+    }()
+    
     var spinner = UIActivityIndicatorView(style: .large)
     let alertService = AlertService()
     
@@ -48,12 +53,14 @@ class BaseViewController: UIViewController {
     }
     
     func addBackButton() {
+        backButton.removeFromSuperview()
         backButton.addTarget(self, action: #selector(backButtonClicked(sender:)), for: .touchUpInside)
         view.layout(backButton)
-            .left(16).topSafe().width(44).height(44)
+            .left(0).topSafe(16).width(44).height(44)
         
-        let backImageView = UIImageView(image: UIImage(named: "arrowBack"))
-        backButton.backgroundColor = UIColor.black
+        let backImageView = UIImageView(image: UIImage(named: "left-arrow"))
+        view.layout(backImageView)
+            .left(16).centerY(titleLabel).width(24).height(24)
     }
     
     func addTitle(title: String) {
@@ -62,8 +69,13 @@ class BaseViewController: UIViewController {
             titleLabel.font = extraBold
             titleLabel.textColor = UIColor.white
             view.layout(titleLabel)
-                .centerX().topSafe()
+                .centerX().topSafe(16)
         }
+    }
+    
+    func addBackground() {
+        view.layout(backGroundImageView)
+            .top().left().bottom().right()
     }
     
     @objc func backButtonClicked(sender: UIButton) {

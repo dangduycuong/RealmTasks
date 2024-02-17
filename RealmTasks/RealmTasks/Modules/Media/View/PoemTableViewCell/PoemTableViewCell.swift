@@ -95,7 +95,15 @@ class PoemTableViewCell: UITableViewCell {
         if rangeContent.location != NSNotFound {
             setColorTextLabel(string: description, range: rangeContent, label: descriptionLabel)
         } else {
-            descriptionLabel.text = description
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            paragraphStyle.lineSpacing = 6
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: R.font.playfairDisplayMedium(size: 20) as Any,
+                .foregroundColor: UIColor(hexString: "4B5320"),
+                .paragraphStyle: paragraphStyle
+            ]
+            descriptionLabel.attributedText = NSAttributedString(string: description, attributes: attributes)
         }
         
         let rangeNote = findRange(source: note ?? "".folded.lowercased(), textToFind: keyWord.folded.lowercased())
@@ -114,8 +122,14 @@ class PoemTableViewCell: UITableViewCell {
     }
     
     func setColorTextLabel(string: String, range: NSRange, label: UILabel) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle
+        ]
         var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: string)
+        myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
         myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
         label.attributedText = myMutableString
     }

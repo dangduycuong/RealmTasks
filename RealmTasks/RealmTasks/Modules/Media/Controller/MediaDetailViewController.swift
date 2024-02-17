@@ -26,13 +26,38 @@ enum MediaDetailSegmentedControl {
 }
 
 class MediaDetailViewController: BaseViewController {
+    lazy var segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["1", "2"])
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentControlValueChanged), for: .valueChanged)
+        return segmentedControl
+    }()
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchView: SearchView!
-    @IBOutlet weak var tableView: UITableView!
+    lazy var searchView: NimsTinhChinhCapView = {
+        let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
     
     var viewModel = MediaDetailViewModel()
     var mediaType = MediaTypeLocalModel()
+    
+    override func loadView() {
+        super.loadView()
+        prepareForViewController()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,14 +73,13 @@ class MediaDetailViewController: BaseViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupUI()
-    }
-    
-    private func setupUI() {
-        title = mediaType.title
+    private func prepareForViewController() {
+        addBackground()
+        addTitle(title: mediaType.title)
         addBackButton()
+        
+        view.layout(segmentedControl)
+            .below(titleLabel, 32).left(16).right(16).height(40)
         
         for i in 0..<MediaDetailSegmentedControl.list.count {
             segmentedControl.setTitle(MediaDetailSegmentedControl.list[i].text, forSegmentAt: i)
@@ -65,36 +89,41 @@ class MediaDetailViewController: BaseViewController {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black
-            segmentedControl.selectedSegmentTintColor = .black
+            segmentedControl.selectedSegmentTintColor = .white.withAlphaComponent(0.4)
         }
+        
+        view.layout(searchView)
+            .below(segmentedControl, 16).left(16).right(16).height(40)
+        
+        view.layout(tableView)
+            .below(searchView, 16).left().bottom().right()
         addRightBarButtonItems()
     }
     
     private func addRightBarButtonItems() {
         let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        
+        
         imageView.tintColor = .white
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
-        
-        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
-        navigationItem.rightBarButtonItems = [rightBarButtonItem]
+        view.layout(imageView)
+            .centerY(titleLabel).right(16).width(24).height(24)
     }
     
     // MARK: - Action
-    @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
+    @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
         viewModel.valueChange = MediaDetailSegmentedControl.list[segmentedControl.selectedSegmentIndex]
         tableView.reloadData()
     }
     
     @objc func saveClicked(tapGestureRecognizer: UITapGestureRecognizer) {
-        if let vc = R.storyboard.media.detailListVC() {
-            vc.mediaType = mediaType
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = DetailListVC()
+        vc.mediaType = mediaType
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -107,7 +136,7 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaDetailTableViewCell.self, forIndexPath: indexPath)
         cell.delegate = self
-        cell.fillData(data: viewModel.filteredList[indexPath.row])
+        cell.fillData(data: viewModel.filteredList[indexPath.row], keyWord: viewModel.searchText)
         let selectedBackgroundView = UIView()
         selectedBackgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = selectedBackgroundView

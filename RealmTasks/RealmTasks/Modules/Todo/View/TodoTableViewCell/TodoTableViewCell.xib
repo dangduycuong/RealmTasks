@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="PlayfairDisplay-Regular.ttf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
         <array key="PlayfairDisplay-SemiBold.ttf">
             <string>PlayfairDisplay-SemiBold</string>
-        </array>
-        <array key="PlayfairDisplay-VariableFont_wght.ttf">
-            <string>PlayfairDisplay-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -27,10 +27,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-bl-CBw">
-                        <rect key="frame" x="8" y="8" width="304" height="91"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="91"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="29-black-wallpaper-hd-strips.1024" translatesAutoresizingMaskIntoConstraints="NO" id="f93-Rp-OI6">
-                                <rect key="frame" x="0.0" y="13.5" width="304" height="64"/>
+                                <rect key="frame" x="0.0" y="13.5" width="288" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="zeb-6u-pKL"/>
                                 </constraints>
@@ -55,16 +55,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lpm-3y-f4k">
-                                <rect key="frame" x="56" y="4" width="240" height="83"/>
+                                <rect key="frame" x="56" y="4" width="224" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-7r-gC9">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="36"/>
                                         <fontDescription key="fontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNK-KM-f3A">
-                                        <rect key="frame" x="0.0" y="44" width="240" height="39"/>
+                                        <rect key="frame" x="0.0" y="44" width="224" height="39"/>
                                         <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -89,10 +89,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="nYr-bl-CBw" secondAttribute="trailing" constant="8" id="0Ky-Ex-sIn"/>
-                    <constraint firstItem="nYr-bl-CBw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2eu-X2-vHh"/>
-                    <constraint firstAttribute="bottom" secondItem="nYr-bl-CBw" secondAttribute="bottom" constant="8" id="e87-Dx-PlO"/>
-                    <constraint firstItem="nYr-bl-CBw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="l8y-tf-fHb"/>
+                    <constraint firstAttribute="trailing" secondItem="nYr-bl-CBw" secondAttribute="trailing" constant="16" id="0Ky-Ex-sIn"/>
+                    <constraint firstItem="nYr-bl-CBw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2eu-X2-vHh"/>
+                    <constraint firstAttribute="bottom" secondItem="nYr-bl-CBw" secondAttribute="bottom" constant="16" id="e87-Dx-PlO"/>
+                    <constraint firstItem="nYr-bl-CBw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="l8y-tf-fHb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

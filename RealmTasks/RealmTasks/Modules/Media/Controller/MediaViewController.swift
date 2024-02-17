@@ -42,25 +42,81 @@ enum MediaType {
 }
 
 class MediaViewController: BaseViewController {
+    lazy var segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["1", "2", "3"])
+        segmentedControl.addTarget(self, action: #selector(segmentedControlClicked), for: .valueChanged)
+        return segmentedControl
+    }()
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var searchView: SearchView!
-    @IBOutlet weak var tableView: UITableView!
+    lazy var searchView: NimsTinhChinhCapView = {
+        let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .clear
+        return tableView
+    }()
     
     var viewModel = MediaViewModel()
+    
+    override func loadView() {
+        super.loadView()
+        prepareForViewController()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addObserver()
         
-        setupUI()
         tableView.registerCell(MediaTableViewCell.self)
         tableView.register(with: PoemTableViewCell.self)
         viewModel.delegate = self
         viewModel.loadData()
-        
+        segmentedControl.selectedSegmentIndex = 0
         viewModel.mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
+    }
+    
+    private func prepareForViewController() {
+        addBackground()
+        addTitle(title: "Giai Tri")
+        
+        let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
+        let buttonMapTypeMenuIcon = UIButton()
+        view.layout(buttonMapTypeMenuIcon)
+            .topSafe().right(16).width(44).height(44)
+        
+        view.layout(mapTypeMenuIcon)
+            .center(buttonMapTypeMenuIcon).width(24).height(24)
+        
+        buttonMapTypeMenuIcon.addTarget(self, action: #selector(openAllMedia), for: .touchUpInside)
+        
+        view.layout(segmentedControl)
+            .below(titleLabel, 32).left(16).right(16).height(40)
+        for i in 0..<MediaType.list.count {
+            segmentedControl.setTitle(MediaType.list[i].text, forSegmentAt: i)
+        }
+        
+        if let bold = PlayfairDisplayFont.bold(with: 20) {
+            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
+            segmentedControl.backgroundColor = .black
+            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
+        }
+        
+        view.layout(searchView)
+            .below(segmentedControl, 16).left(16).right(16).height(40)
+        
+        view.layout(tableView)
+            .below(searchView, 16).left().bottom().right()
     }
     
     private func addObserver() {
@@ -78,32 +134,8 @@ class MediaViewController: BaseViewController {
     }
     
     @objc func openAllMedia(_ sender: UIButton) {
-        if let vc = R.storyboard.media.mediaAllViewController() {
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    private func setupUI() {
-        for i in 0..<MediaType.list.count {
-            segmentedControl.setTitle(MediaType.list[i].text, forSegmentAt: i)
-        }
-        
-        if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .black
-            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
-        }
-        
-        let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
-        let buttonMapTypeMenuIcon = UIButton()
-        view.layout(buttonMapTypeMenuIcon)
-            .topSafe().right(16).width(44).height(44)
-        
-        view.layout(mapTypeMenuIcon)
-            .center(buttonMapTypeMenuIcon).width(24).height(24)
-        
-        buttonMapTypeMenuIcon.addTarget(self, action: #selector(openAllMedia), for: .touchUpInside)
+        let vc = MediaAllViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
@@ -139,11 +171,10 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.mediaType == .poem {
             return
         }
-        if let vc = R.storyboard.media.mediaDetailViewController() {
-            let mediaType = viewModel.filteredMediaTypeList[indexPath.row]
-            vc.mediaType = mediaType
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = MediaDetailViewController()
+        let mediaType = viewModel.filteredMediaTypeList[indexPath.row]
+        vc.mediaType = mediaType
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

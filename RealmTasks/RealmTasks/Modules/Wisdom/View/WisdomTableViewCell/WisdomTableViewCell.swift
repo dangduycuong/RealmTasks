@@ -23,7 +23,15 @@ class WisdomTableViewCell: UITableViewCell {
     }
     
     func fillData(content: String) {
-        contentLabel.text = content
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: R.font.playfairDisplayMedium(size: 20) as Any,
+            .foregroundColor: UIColor(hexString: "4B5320"),
+            .paragraphStyle: paragraphStyle
+        ]
+        contentLabel.attributedText = NSAttributedString(string: content, attributes: attributes)
     }
     
 }

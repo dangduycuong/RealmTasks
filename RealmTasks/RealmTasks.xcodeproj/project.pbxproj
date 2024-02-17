@@ -19,10 +19,8 @@
 		AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */; };
 		AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019EA2811301E00ACFC4E /* WeatherViewController.swift */; };
 		AC2019EF2811304100ACFC4E /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019EE2811304100ACFC4E /* MediaViewController.swift */; };
-		AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F02811305700ACFC4E /* Todo.storyboard */; };
 		AC2019F32811306F00ACFC4E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019F22811306F00ACFC4E /* TodoViewController.swift */; };
 		AC2019F52811308900ACFC4E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F42811308900ACFC4E /* Weather.storyboard */; };
-		AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2019F62811309C00ACFC4E /* Media.storyboard */; };
 		AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */; };
 		AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */; };
 		AC5462292824C484003F0F5A /* PlayfairDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */; };
@@ -118,6 +116,7 @@
 		FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */; };
 		FA23582F2B7E201D00DCC773 /* Tagore.json in Resources */ = {isa = PBXBuildFile; fileRef = FA23582E2B7E201D00DCC773 /* Tagore.json */; };
 		FA2358322B7E284D00DCC773 /* PoemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */; };
+		FA35D2FD2B807D1A00C2FC35 /* CustomSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */; };
 		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
 		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
 		FA3E74F428105C570087F8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E74F328105C570087F8EE /* AppDelegate.swift */; };
@@ -133,6 +132,8 @@
 		FA57C36428AF7CA100FA04C4 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */; };
 		FA57C36628AF7D0B00FA04C4 /* ParticleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */; };
 		FA73C3AF28118D3100742B5E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C3AE28118D3100742B5E /* String+Extension.swift */; };
+		FAA179F72B7F87A40041D4FC /* NimsTinhChinhCapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA179F62B7F87A40041D4FC /* NimsTinhChinhCapView.swift */; };
+		FAA179F92B7F87BA0041D4FC /* NimsTinhChinhCapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA179F82B7F87BA0041D4FC /* NimsTinhChinhCapView.xib */; };
 		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
 		FAC706892B70FF7F000A8F8B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC706882B70FF7F000A8F8B /* SettingViewController.swift */; };
 		FAC7068B2B710139000A8F8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */; };
@@ -177,10 +178,8 @@
 		AC2019E628112FEE00ACFC4E /* BaseNavigationConntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationConntroller.swift; sourceTree = "<group>"; };
 		AC2019EA2811301E00ACFC4E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		AC2019EE2811304100ACFC4E /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
-		AC2019F02811305700ACFC4E /* Todo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Todo.storyboard; sourceTree = "<group>"; };
 		AC2019F22811306F00ACFC4E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		AC2019F42811308900ACFC4E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
-		AC2019F62811309C00ACFC4E /* Media.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		AC5462162824C483003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		AC5462182824C483003F0F5A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		AC5462192824C483003F0F5A /* PlayfairDisplay-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -284,6 +283,7 @@
 		FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewModel.swift; sourceTree = "<group>"; };
 		FA23582E2B7E201D00DCC773 /* Tagore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tagore.json; sourceTree = "<group>"; };
 		FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemTableViewCell.swift; sourceTree = "<group>"; };
+		FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlView.swift; sourceTree = "<group>"; };
 		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		FA3E74F028105C570087F8EE /* RealmTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +303,8 @@
 		FA57C36328AF7CA100FA04C4 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ParticleScene.sks; sourceTree = "<group>"; };
 		FA73C3AE28118D3100742B5E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FAA179F62B7F87A40041D4FC /* NimsTinhChinhCapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimsTinhChinhCapView.swift; sourceTree = "<group>"; };
+		FAA179F82B7F87BA0041D4FC /* NimsTinhChinhCapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NimsTinhChinhCapView.xib; sourceTree = "<group>"; };
 		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
 		FAC706882B70FF7F000A8F8B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -396,9 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3E74F928105C570087F8EE /* Main.storyboard */,
-				AC2019F02811305700ACFC4E /* Todo.storyboard */,
 				AC2019F42811308900ACFC4E /* Weather.storyboard */,
-				AC2019F62811309C00ACFC4E /* Media.storyboard */,
 				ACCEE3FE28125B49007D0049 /* Alert.storyboard */,
 				AC114C6A2823A272007F0528 /* Wisdom.storyboard */,
 			);
@@ -434,13 +434,13 @@
 		AC2019DC28112F5D00ACFC4E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FAC706862B70FF5C000A8F8B /* Setting */,
-				AC114C692823A23B007F0528 /* Wisdom */,
 				FA37DCBD281AE1A6001F8FE3 /* CommonUI */,
 				AC2019EC2811302800ACFC4E /* Media */,
-				AC2019E82811300100ACFC4E /* Weather */,
-				AC2019DD28112F6700ACFC4E /* Todo */,
 				AC2019DB28112F4E00ACFC4E /* MenuTabbar */,
+				FAC706862B70FF5C000A8F8B /* Setting */,
+				AC2019DD28112F6700ACFC4E /* Todo */,
+				AC2019E82811300100ACFC4E /* Weather */,
+				AC114C692823A23B007F0528 /* Wisdom */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -888,7 +888,9 @@
 		FA37DCBE281AE1A6001F8FE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAA179F52B7F879D0041D4FC /* NimsTinhChinhCapView */,
 				FA37DCBF281AE1A6001F8FE3 /* SearchView */,
+				FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -962,6 +964,15 @@
 				FA57C36528AF7D0B00FA04C4 /* ParticleScene.sks */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FAA179F52B7F879D0041D4FC /* NimsTinhChinhCapView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA179F62B7F87A40041D4FC /* NimsTinhChinhCapView.swift */,
+				FAA179F82B7F87BA0041D4FC /* NimsTinhChinhCapView.xib */,
+			);
+			path = NimsTinhChinhCapView;
 			sourceTree = "<group>";
 		};
 		FAC706862B70FF5C000A8F8B /* Setting */ = {
@@ -1116,7 +1127,6 @@
 				AC7D84672818DF5300E40FB1 /* tuc_ngu_vo_chong.rtf in Resources */,
 				FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */,
 				AC5462272824C484003F0F5A /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
-				AC2019F12811305700ACFC4E /* Todo.storyboard in Resources */,
 				AC68799A2817FDC60052D736 /* ca_dao_tinh_kien_tri.rtf in Resources */,
 				FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */,
 				AC54622A2824C484003F0F5A /* PlayfairDisplay-Medium.ttf in Resources */,
@@ -1137,8 +1147,8 @@
 				FAEDEECB28254D5200F10D18 /* theForceOfTheStars.gif in Resources */,
 				AC6879942817F5B00052D736 /* ca_dao_tinh_nghia_vo_chong.rtf in Resources */,
 				AC5462282824C484003F0F5A /* PlayfairDisplay-Bold.ttf in Resources */,
-				AC2019F72811309C00ACFC4E /* Media.storyboard in Resources */,
 				FA3E74FD28105C5A0087F8EE /* Assets.xcassets in Resources */,
+				FAA179F92B7F87BA0041D4FC /* NimsTinhChinhCapView.xib in Resources */,
 				AC54622B2824C484003F0F5A /* PlayfairDisplay-BoldItalic.ttf in Resources */,
 				AC77FBA4281783270085F8C8 /* lao_dong_san_xuat.rtf in Resources */,
 				FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */,
@@ -1390,7 +1400,9 @@
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
+				FAA179F72B7F87A40041D4FC /* NimsTinhChinhCapView.swift in Sources */,
 				ACB1B70D28113E6A00C2F90D /* TodoInfoViewModel.swift in Sources */,
+				FA35D2FD2B807D1A00C2FC35 /* CustomSegmentedControlView.swift in Sources */,
 				FAEDEECE282573EF00F10D18 /* WisdomModel.swift in Sources */,
 				AC740766281645C70073E38E /* MediaDetailViewModel.swift in Sources */,
 				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,

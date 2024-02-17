@@ -50,9 +50,8 @@ class WisdomViewController: BaseViewController {
     }
     
     @IBAction func nextDetail(_ sender: UIButton) {
-        if let vc = R.storyboard.wisdom.wisdomDetailViewController() {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = WisdomDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -72,11 +71,10 @@ extension WisdomViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = R.storyboard.wisdom.wisdomDetailViewController() {
-            vc.wisdom = viewModel.filteredListWisdom[indexPath.row]
-            vc.isViewWisdomDetail = true
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = WisdomDetailViewController()
+        vc.wisdom = viewModel.filteredListWisdom[indexPath.row]
+        vc.isViewWisdomDetail = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

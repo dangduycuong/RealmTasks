@@ -8,33 +8,77 @@
 import UIKit
 
 class WisdomDetailViewController: BaseViewController {
+    lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        return view
+    }()
     
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var contentTextView: UITextView!
+    lazy var contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
     
-    private var placeholderLabel: UILabel!
+    lazy var contentTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = R.font.playfairDisplayMedium(size: 20)
+        textView.delegate = self
+        textView.backgroundColor = UIColor.clear
+        textView.isScrollEnabled = false
+        return textView
+    }()
+    
+    private lazy var placeholderLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     var viewModel = WisdomDetailViewModel()
     var wisdom = WisdomModel()
     var isViewWisdomDetail: Bool = false
     
+    override func loadView() {
+        super.loadView()
+        prepareForViewController()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         viewModel.setupData(isViewWisdomDetail: isViewWisdomDetail, wisdom: wisdom)
         viewModel.delegate = self
     }
     
-    private func setupUI() {
+    private func prepareForViewController() {
+        addBackground()
+        addTitle(title: R.string.localizable.todo())
         addBackButton()
-        title = "Tri Muu"
-        placeholderLabel = UILabel()
+        
+        view.layout(scrollView)
+            .below(titleLabel, 32).left().bottom().right()
+        
+        scrollView.addSubview(contentView)
+        scrollView.layoutIfNeeded()
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+            contentView.widthAnchor.constraint(equalToConstant: scrollView.bounds.width)
+        ])
+        let heightConstraint = NSLayoutConstraint(item: contentView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
+        contentView.addConstraints([heightConstraint])
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.layout(contentTextView)
+            .top().left(16).bottom().right(16)
+        
         placeholderLabel.text = "Enter some text..."
-        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
+//        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
+        placeholderLabel.font = R.font.playfairDisplayMediumItalic(size: 20)
         placeholderLabel.sizeToFit()
         contentTextView.addSubview(placeholderLabel)
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (contentTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.textColor = UIColor.white.withAlphaComponent(0.5)
         placeholderLabel.isHidden = !contentTextView.text.isEmpty
         addRightBarButtonItems()
     }
@@ -42,21 +86,23 @@ class WisdomDetailViewController: BaseViewController {
     private func addRightBarButtonItems() {
         let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        
         imageView.tintColor = .white
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
-        let rightBarButtonItem = UIBarButtonItem(customView: imageView)
-        navigationItem.rightBarButtonItems = [rightBarButtonItem]
+        view.layout(imageView)
+            .bottomSafe(16).right(16).width(24).height(24)
         
         if isViewWisdomDetail {
             fillData()
-            let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteItemClicked))
-            delete.tintColor = .white
-            navigationItem.rightBarButtonItems = [rightBarButtonItem, delete]
+            let deleteButton = UIButton()
+            deleteButton.backgroundColor = UIColor.red
+            view.layout(deleteButton)
+                .bottomSafe(16).before(imageView, 16).width(24).height(24)
+            deleteButton.addTarget(self, action: #selector(deleteItemClicked), for: .touchUpInside)
         }
     }
     
