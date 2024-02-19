@@ -87,7 +87,7 @@ class MediaViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Giai Tri")
+        addTitle(title: "Giải Trí")
         
         let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
         let buttonMapTypeMenuIcon = UIButton()
@@ -108,7 +108,7 @@ class MediaViewController: BaseViewController {
         if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .black
+            segmentedControl.backgroundColor = UIColor.random
             segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         

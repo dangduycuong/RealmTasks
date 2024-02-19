@@ -70,7 +70,7 @@ extension SearchView {
         addSubview(view)
 
         contentView = view
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = UIColor.random
         
 //        contentView.clipsToBounds = true
         

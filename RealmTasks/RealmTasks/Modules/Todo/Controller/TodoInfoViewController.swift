@@ -73,7 +73,7 @@ class TodoInfoViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Chi tiet cong viec")
+        addTitle(title: "Chi tiết công việc")
         addBackButton()
         
         view.layout(scrollView)
@@ -109,7 +109,7 @@ class TodoInfoViewController: BaseViewController {
         saveImageView.tintColor = UIColor.random
         
         view.layout(saveButton)
-            .topSafe().right(16).width(44).height(44)
+            .centerY(titleLabel).right(16).width(44).height(44)
         
         view.layout(saveImageView)
             .center(saveButton).width(24).height(24)

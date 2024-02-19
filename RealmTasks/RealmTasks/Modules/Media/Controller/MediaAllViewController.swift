@@ -97,7 +97,7 @@ class MediaAllViewController: BaseViewController {
         if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = .black
+            segmentedControl.backgroundColor = UIColor.random
             segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         segmentedControl.selectedSegmentIndex = 0

@@ -36,7 +36,7 @@ class ShowAlertViewController: UIViewController {
         backgroundImageView.layer.cornerRadius = 10
         backgroundImageView.layoutIfNeeded()
         
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
         contentView.layer.shadowColor = UIColor.random.cgColor
         contentView.layer.shadowOpacity = 0.35
         contentView.layer.shadowOffset = .zero
@@ -89,7 +89,7 @@ class ShowAlertViewController: UIViewController {
         rightButton.setTitle(titleRightButton, for: .normal)
         rightButton.setTitleColor(UIColor.random, for: .normal)
         rightButton.titleLabel?.font = regular
-        rightButton.backgroundColor = .black
+        rightButton.backgroundColor = UIColor.random
         rightButton.layer.shadowColor = UIColor.random.cgColor
         rightButton.layer.shadowOpacity = 0.35
         rightButton.layer.shadowOffset = .zero

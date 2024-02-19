@@ -101,7 +101,7 @@ class TodoViewController: BaseViewController {
             ]
             segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
             segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
-            segmentedControl.backgroundColor = .black
+            segmentedControl.backgroundColor = UIColor.random
             segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         segmentedControl.layer.cornerRadius = 16
@@ -279,7 +279,7 @@ class CustomView: UIView {
         
         self.layout(containerView)
             .top().left().bottom().right()
-        containerView.backgroundColor = .black
+        containerView.backgroundColor = UIColor.random
         containerView.layer.shadowColor = UIColor.random.cgColor
         containerView.layer.shadowOpacity = 0.35
         containerView.layer.shadowOffset = .zero

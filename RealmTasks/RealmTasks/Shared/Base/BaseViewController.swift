@@ -58,7 +58,9 @@ class BaseViewController: UIViewController {
         view.layout(backButton)
             .left(0).topSafe(16).width(44).height(44)
         
-        let backImageView = UIImageView(image: UIImage(named: "left-arrow"))
+        let backImage = UIImage(named: "left-arrow")?.withRenderingMode(.alwaysTemplate)
+        let backImageView = UIImageView(image: backImage)
+        backImageView.tintColor = UIColor.random
         view.layout(backImageView)
             .left(16).centerY(titleLabel).width(24).height(24)
     }

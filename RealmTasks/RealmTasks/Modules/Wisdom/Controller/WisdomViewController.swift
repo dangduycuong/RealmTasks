@@ -57,7 +57,7 @@ class WisdomViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Muu Tri")
+        addTitle(title: "Mưu Trí")
         
         view.layout(searchView)
             .below(titleLabel, 32).left(16).right(16).height(40)
