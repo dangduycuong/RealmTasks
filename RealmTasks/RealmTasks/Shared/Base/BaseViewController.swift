@@ -67,7 +67,7 @@ class BaseViewController: UIViewController {
         if let extraBold = PlayfairDisplayFont.extraBold(with: 20) {
             titleLabel.text = title
             titleLabel.font = extraBold
-            titleLabel.textColor = UIColor.white
+            titleLabel.textColor = UIColor.random
             view.layout(titleLabel)
                 .centerX().topSafe(16)
         }

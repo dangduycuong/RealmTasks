@@ -35,7 +35,7 @@ class MediaDetailViewController: BaseViewController {
     
     lazy var searchView: NimsTinhChinhCapView = {
         let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
         view.layer.cornerRadius = 8
         return view
     }()
@@ -86,10 +86,10 @@ class MediaDetailViewController: BaseViewController {
         }
         
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black
-            segmentedControl.selectedSegmentTintColor = .white.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         
         view.layout(searchView)
@@ -105,7 +105,7 @@ class MediaDetailViewController: BaseViewController {
         let imageView = UIImageView(image: image)
         
         
-        imageView.tintColor = .white
+        imageView.tintColor = UIColor.random
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true

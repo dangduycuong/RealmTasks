@@ -28,13 +28,13 @@ class MediaDetailTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        subView.layer.shadowColor = UIColor.white.cgColor
+        subView.layer.shadowColor = UIColor.random.cgColor
         subView.layer.shadowOpacity = 0.35
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 2
         
         subView.layer.cornerRadius = 8
-        subView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        subView.backgroundColor = UIColor.random.withAlphaComponent(0.4)
         
         favoriteButton.setTitle("", for: .normal)
     }
@@ -56,7 +56,7 @@ class MediaDetailTableViewCell: UITableViewCell {
             paragraphStyle.lineSpacing = 6
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: R.font.playfairDisplayMedium(size: 20) as Any,
-                .foregroundColor: UIColor(hexString: "4B5320"),
+                .foregroundColor: UIColor.random,
                 .paragraphStyle: paragraphStyle
             ]
             messageLabel.attributedText = NSAttributedString(string: data.content, attributes: attributes)

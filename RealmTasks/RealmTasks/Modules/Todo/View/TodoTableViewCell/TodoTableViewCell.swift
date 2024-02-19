@@ -40,20 +40,20 @@ class TodoTableViewCell: UITableViewCell {
         checkboxButton.setTitle("", for: .normal)
         checkboxButton.tintColor = AppColor.blueCustom
         
-        subView.layer.shadowColor = UIColor.white.cgColor
+        subView.layer.shadowColor = UIColor.random.cgColor
         subView.layer.shadowOpacity = 0.35
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 2
         
         subView.layer.cornerRadius = 8
-        subView.backgroundColor = .white
+        subView.backgroundColor = UIColor.random
         
         backgroundImageView.layer.cornerRadius = 8
     }
     
     func fillData(todo: TodoModel) {
         checkboxImageView.image = todo.isCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = .white
+        checkboxImageView.tintColor = UIColor.random
         todoTitleLabel.text = todo.todoTitle
         todoDescriptionLabel.text = todo.todoDescription
         DispatchQueue.main.async {

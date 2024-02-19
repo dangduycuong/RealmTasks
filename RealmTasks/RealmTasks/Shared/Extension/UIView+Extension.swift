@@ -18,7 +18,7 @@ extension UIView {
             lockView.tag = 10
             lockView.alpha = 0.0
             let activity = UIActivityIndicatorView(style: .medium)
-            activity.color = .white
+            activity.color = UIColor.random
             activity.hidesWhenStopped = true
             activity.center = lockView.center
             lockView.addSubview(activity)

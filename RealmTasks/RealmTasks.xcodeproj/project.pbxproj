@@ -11,7 +11,6 @@
 		AC114C64282374FC007F0528 /* MediaDisplayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */; };
 		AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */; };
 		AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */; };
-		AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC114C6A2823A272007F0528 /* Wisdom.storyboard */; };
 		AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6D2823A299007F0528 /* WisdomViewController.swift */; };
 		AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */; };
 		AC2019E228112F9700ACFC4E /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019E128112F9700ACFC4E /* AppColor.swift */; };
@@ -170,7 +169,6 @@
 		AC114C63282374FC007F0528 /* MediaDisplayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayDetail.swift; sourceTree = "<group>"; };
 		AC114C652823751B007F0528 /* MediaDetailLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailLocalModel.swift; sourceTree = "<group>"; };
 		AC114C67282375D9007F0528 /* MediaTypeLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeLocalModel.swift; sourceTree = "<group>"; };
-		AC114C6A2823A272007F0528 /* Wisdom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wisdom.storyboard; sourceTree = "<group>"; };
 		AC114C6D2823A299007F0528 /* WisdomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewController.swift; sourceTree = "<group>"; };
 		AC114C6F2823A2D9007F0528 /* WisdomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomDetailViewController.swift; sourceTree = "<group>"; };
 		AC2019E128112F9700ACFC4E /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 				FA3E74F928105C570087F8EE /* Main.storyboard */,
 				AC2019F42811308900ACFC4E /* Weather.storyboard */,
 				ACCEE3FE28125B49007D0049 /* Alert.storyboard */,
-				AC114C6A2823A272007F0528 /* Wisdom.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1156,7 +1153,6 @@
 				FA23582F2B7E201D00DCC773 /* Tagore.json in Resources */,
 				AC68798C2817E9C80052D736 /* tuc_ngu_cha_me.rtf in Resources */,
 				FA3E74FB28105C570087F8EE /* Main.storyboard in Resources */,
-				AC114C6B2823A272007F0528 /* Wisdom.storyboard in Resources */,
 				AC5462342824C484003F0F5A /* OFL.txt in Resources */,
 				AC54622F2824C484003F0F5A /* PlayfairDisplay-Black.ttf in Resources */,
 				ACA38E9E281A2CA00021428C /* loading.gif in Resources */,

@@ -10,7 +10,7 @@ import UIKit
 class TodoViewController: BaseViewController {
     lazy var searchView: NimsTinhChinhCapView = {
         let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        searchView.backgroundColor = UIColor.random.withAlphaComponent(0.4)
         searchView.layer.cornerRadius = 8
         return searchView
     }()
@@ -93,20 +93,18 @@ class TodoViewController: BaseViewController {
         if let bold = PlayfairDisplayFont.bold(with: 20) {
             let titleNormalAttributes = [
                 NSAttributedString.Key.font: bold,
-                NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.4)
+                NSAttributedString.Key.foregroundColor: UIColor.random.withAlphaComponent(0.4)
             ]
             let titleSelectedAttributes = [
                 NSAttributedString.Key.font: bold,
-                NSAttributedString.Key.foregroundColor: UIColor.white
+                NSAttributedString.Key.foregroundColor: UIColor.random
             ]
             segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
             segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
             segmentedControl.backgroundColor = .black
-            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         segmentedControl.layer.cornerRadius = 16
-        segmentedControl.layer.borderColor = UIColor.red.cgColor
-        segmentedControl.layer.borderWidth = 1
         segmentedControl.layer.masksToBounds = true
         
         
@@ -119,7 +117,7 @@ class TodoViewController: BaseViewController {
         view.layout(addTodoButton)
             .right(32).bottomSafe(32).width(44).height(44)
         
-        let buttonIcon = UIImage(named: "canhBuom")
+        let buttonIcon = UIImage(named: "add")
         view.layout(UIImageView(image: buttonIcon))
             .center(addTodoButton).width(24).height(24)
         
@@ -132,15 +130,7 @@ class TodoViewController: BaseViewController {
 //        customSegmented.backgroundColor = UIColor(hexString: "008080")
 //        customSegmented.customColor = UIColor(hexString: "008080")
         
-        customSegmented.setNewValue(["Le", "Quynh", "Trang"])
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        segmentedControl.layer.cornerRadius = 16
-        segmentedControl.layer.borderColor = UIColor.red.cgColor
-        segmentedControl.layer.borderWidth = 1
-        segmentedControl.layer.masksToBounds = true
+        customSegmented.setNewValue(["That", "Can", "Than"])
     }
     
     private func setupTabbar() {
@@ -156,12 +146,12 @@ class TodoViewController: BaseViewController {
         tabBarController?.tabBar.layout(backroundImageView)
             .top().left().bottom().right()
         tabBarController?.tabBar.sendSubviewToBack(backroundImageView)
-        tabBarController?.tabBar.tintColor = .white
+        tabBarController?.tabBar.tintColor = UIColor.random
         tabBarController?.tabBar.unselectedItemTintColor = .gray
         
         if let bold = PlayfairDisplayFont.bold(with: 12) {
             let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.gray]
-            let selectedAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            let selectedAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
             
             UITabBarItem.appearance().setTitleTextAttributes(titleAttributes, for: .normal)
             UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, for: .selected)
@@ -172,14 +162,14 @@ class TodoViewController: BaseViewController {
         //        tabBarController?.tabBar.backgroundImage = UIImage()   //Clear background
         //
         //        //Set the item tint colors
-        //        tabBarController?.tabBar.tintColor = .white
+        //        tabBarController?.tabBar.tintColor = UIColor.random
         //        tabBarController?.tabBar.unselectedItemTintColor = .lightGray
     }
     
     private func setupUI() {
-        addTodoButton.tintColor = .white
+        addTodoButton.tintColor = UIColor.random
         addTodoButton.setTitle("", for: .normal)
-        addTodoButton.layer.shadowColor = UIColor.white.cgColor
+        addTodoButton.layer.shadowColor = UIColor.random.cgColor
         addTodoButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         addTodoButton.layer.shadowRadius = 5
         addTodoButton.layer.shadowOpacity = 1.0
@@ -257,7 +247,7 @@ class CustomView: UIView {
         paragraphStyle.lineHeightMultiple = 1.0
         let attributes = [
             NSAttributedString.Key.font: UIFont(name: "PlayfairDisplay-Italic", size: 20)!,
-            NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.4),
+            NSAttributedString.Key.foregroundColor: UIColor.random.withAlphaComponent(0.4),
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
         let attributedPlaceholder = NSAttributedString(string: "Nhập tên bài thơ", attributes: attributes)
@@ -290,7 +280,7 @@ class CustomView: UIView {
         self.layout(containerView)
             .top().left().bottom().right()
         containerView.backgroundColor = .black
-        containerView.layer.shadowColor = UIColor.white.cgColor
+        containerView.layer.shadowColor = UIColor.random.cgColor
         containerView.layer.shadowOpacity = 0.35
         containerView.layer.shadowOffset = .zero
         containerView.layer.shadowRadius = 2
@@ -304,8 +294,8 @@ class CustomView: UIView {
             .after(searchImageView, 4)
             .bottom(4).right(4)
         searchTextField.font = R.font.playfairDisplayMedium(size: 20)
-        searchTextField.textColor = UIColor.white
-        searchTextField.tintColor = UIColor.white
+        searchTextField.textColor = UIColor.random
+        searchTextField.tintColor = UIColor.random
     }
     
     // Override draw method if you want to perform custom drawing

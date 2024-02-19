@@ -137,7 +137,7 @@ extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if let bold = PlayfairDisplayFont.bold(with: 20) {
             pickerLabel.font = bold
             pickerLabel.textAlignment = .center
-            pickerLabel.textColor = UIColor.white
+            pickerLabel.textColor = UIColor.random
         }
         pickerLabel.text = "\(viewModel.dataSource[component][row % 10])"
         return pickerLabel

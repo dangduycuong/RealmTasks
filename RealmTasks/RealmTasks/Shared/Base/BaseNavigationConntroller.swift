@@ -16,7 +16,7 @@ class BaseNavigationController: UINavigationController {
         
         navigationBar.barTintColor = .black
         if let extraBold = PlayfairDisplayFont.extraBold(with: 20) {
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: extraBold]
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.random, NSAttributedString.Key.font: extraBold]
         }
 //        navigationBar.tintColor = .black
         

@@ -10,7 +10,7 @@ import UIKit
 class CustomSegmentedControlView: UIView {
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(hexString: "008080")
+        
         return view
     }()
     
@@ -30,7 +30,7 @@ class CustomSegmentedControlView: UIView {
     // Add any custom properties
     
     // Example custom property
-    var customColor: UIColor = .blue {
+    var customColor: UIColor = .random {
         didSet {
             // Call setNeedsDisplay to update the view when the property changes
             setNeedsDisplay()
@@ -61,10 +61,10 @@ class CustomSegmentedControlView: UIView {
             .top().left().bottom().right()
         
         containerView.layer.cornerRadius = 10
-        containerView.backgroundColor = UIColor(hexString: "1282A0")
+        containerView.backgroundColor = UIColor.random
         
         containerView.layout(stackView)
-            .top(2).left(2).bottom(2).right(2)
+            .top().left().bottom().right()
         
         for i in 0..<titles.count {
             let view = UIView()
@@ -98,13 +98,13 @@ class CustomSegmentedControlView: UIView {
         UIView.animate(withDuration: 0.35) {
             for i in 0..<self.titles.count {
                 if i == selectedSegmentIndex {
-                    self.selectedSubViews[i].backgroundColor = UIColor.white.withAlphaComponent(0.4)
-                    self.selectedSubViews[i].layer.borderColor = UIColor(hexString: "B42569").cgColor
-                    self.selectedLabels[i].textColor = UIColor(hexString: "B42569")
+                    self.selectedSubViews[i].backgroundColor = UIColor.random.withAlphaComponent(0.4)
+                    self.selectedSubViews[i].layer.borderColor = UIColor.random.cgColor
+                    self.selectedLabels[i].textColor = UIColor.random
                 } else {
                     self.selectedSubViews[i].backgroundColor = UIColor.clear
                     self.selectedSubViews[i].layer.borderColor = UIColor.clear.cgColor
-                    self.selectedLabels[i].textColor = UIColor.white.withAlphaComponent(0.4)
+                    self.selectedLabels[i].textColor = UIColor.random.withAlphaComponent(0.4)
                 }
             }
         }

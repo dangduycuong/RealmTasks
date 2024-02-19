@@ -76,8 +76,8 @@ class PoemTableViewCell: UITableViewCell {
         titleLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
         
-        titleLabel.textColor = UIColor.yellow
-        noteLabel.textColor = UIColor.systemRed
+        titleLabel.textColor = UIColor.random
+        noteLabel.textColor = UIColor.random
         
         titleLabel.font = R.font.playfairDisplayBold(size: 20)
         descriptionLabel.font = R.font.playfairDisplayMedium(size: 20)
@@ -100,7 +100,7 @@ class PoemTableViewCell: UITableViewCell {
             paragraphStyle.lineSpacing = 6
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: R.font.playfairDisplayMedium(size: 20) as Any,
-                .foregroundColor: UIColor(hexString: "4B5320"),
+                .foregroundColor: UIColor.random,
                 .paragraphStyle: paragraphStyle
             ]
             descriptionLabel.attributedText = NSAttributedString(string: description, attributes: attributes)

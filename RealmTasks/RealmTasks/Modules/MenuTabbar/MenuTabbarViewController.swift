@@ -55,7 +55,7 @@ class MenuTabbarViewController: UITabBarController {
         todoVC = TodoViewController()
         weatherVC = R.storyboard.weather.weatherViewController()
         mediaVC = MediaViewController()
-        wisdomVC = R.storyboard.wisdom.wisdomViewController()
+        wisdomVC = WisdomViewController()
         
         todoVC.tabBarItem.image = R.image.icons8Todo_list()
         //        dynastyVC.tabBarItem.selectedImage = R.image.dynasty()
@@ -117,7 +117,7 @@ extension MenuTabbarViewController: UITabBarControllerDelegate {
             if viewController.isKind(of: WeatherViewController.self) || viewController.isKind(of: MediaViewController.self) {
                 let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
                 let menuMapButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(playTapped))
-                menuMapButton.tintColor = .white
+                menuMapButton.tintColor = UIColor.random
                 menuMapButton.imageInsets = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 0)
                 navigationItem.rightBarButtonItem = menuMapButton
             } else {

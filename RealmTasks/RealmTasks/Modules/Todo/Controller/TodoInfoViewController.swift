@@ -15,7 +15,7 @@ class TodoInfoViewController: BaseViewController {
     var todoTitleTextField: UITextField! {
         didSet {
             let attributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.white.withAlphaComponent(0.4),
+                .foregroundColor: UIColor.random.withAlphaComponent(0.4),
                 .font: R.font.playfairDisplayMediumItalic(size: 20) as Any
             ]
             let redPlaceholderText = NSAttributedString(
@@ -24,7 +24,7 @@ class TodoInfoViewController: BaseViewController {
             )
             todoTitleTextField.attributedPlaceholder = redPlaceholderText
             todoTitleTextField.font = R.font.playfairDisplayMedium(size: 20)
-            todoTitleTextField.textColor = UIColor.black
+            todoTitleTextField.textColor = UIColor.random
         }
     }
     
@@ -106,7 +106,7 @@ class TodoInfoViewController: BaseViewController {
         
         let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
         let saveImageView = UIImageView(image: image)
-        saveImageView.tintColor = .white
+        saveImageView.tintColor = UIColor.random
         
         view.layout(saveButton)
             .topSafe().right(16).width(44).height(44)
@@ -122,7 +122,7 @@ class TodoInfoViewController: BaseViewController {
         todoDescriptionTextView.addSubview(placeholderLabel)
         
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (todoDescriptionTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.textColor = UIColor.random
         placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
         
         let titleButtonCheckBox = UILabel()
@@ -152,7 +152,7 @@ class TodoInfoViewController: BaseViewController {
             placeholderLabel.isHidden = !todoDescriptionTextView.text.isEmpty
         }
         checkboxImageView.image = viewModel.todoCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = .white
+        checkboxImageView.tintColor = UIColor.random
     }
     
     @IBAction func checkboxButtonClicked(_ sender: Any) {
@@ -163,7 +163,7 @@ class TodoInfoViewController: BaseViewController {
 
 extension TodoInfoViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        todoTitleTextField.tintColor = .white
+        todoTitleTextField.tintColor = UIColor.random
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {

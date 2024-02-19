@@ -57,14 +57,14 @@ class DetailListVC: BaseViewController {
                     string: string,
                     attributes: [
                         .font: medium as Any,
-                        .foregroundColor: UIColor.black,
+                        .foregroundColor: UIColor.random,
                         .paragraphStyle: paragraphStyle
                     ]
                 )
                 
                 let attributes: [NSAttributedString.Key: Any] = [
                     .font: medium as Any,
-                    .foregroundColor: UIColor.blue,
+                    .foregroundColor: UIColor.random,
                     .paragraphStyle: paragraphStyle
                 ]
                 

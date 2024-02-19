@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ns-VW-OUP">
-                        <rect key="frame" x="8" y="8" width="520" height="64"/>
+                        <rect key="frame" x="16" y="8" width="504" height="64"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30-black-wallpaper-hd-strips.1024" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-S5-yW1">
-                                <rect key="frame" x="0.0" y="0.0" width="520" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="504" height="64"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-up-DbG">
                                 <rect key="frame" x="8" y="19.5" width="25" height="25"/>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5m-By-jFs">
-                                <rect key="frame" x="41" y="4" width="471" height="56"/>
+                                <rect key="frame" x="41" y="4" width="455" height="56"/>
                                 <fontDescription key="fontDescription" name="PlayfairDisplay-SemiBold" family="Playfair Display" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,9 +60,9 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="9ns-VW-OUP" secondAttribute="trailing" constant="8" id="86H-ia-1gy"/>
+                    <constraint firstAttribute="trailing" secondItem="9ns-VW-OUP" secondAttribute="trailing" constant="16" id="86H-ia-1gy"/>
                     <constraint firstAttribute="bottom" secondItem="9ns-VW-OUP" secondAttribute="bottom" constant="8" id="UWi-zu-94I"/>
-                    <constraint firstItem="9ns-VW-OUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="XrN-Hp-nh4"/>
+                    <constraint firstItem="9ns-VW-OUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="XrN-Hp-nh4"/>
                     <constraint firstItem="9ns-VW-OUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="sHS-Ld-9wZ"/>
                 </constraints>
             </tableViewCellContentView>

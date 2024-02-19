@@ -37,7 +37,7 @@ class ShowAlertViewController: UIViewController {
         backgroundImageView.layoutIfNeeded()
         
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        contentView.layer.shadowColor = UIColor.white.cgColor
+        contentView.layer.shadowColor = UIColor.random.cgColor
         contentView.layer.shadowOpacity = 0.35
         contentView.layer.shadowOffset = .zero
         contentView.layer.shadowRadius = 2
@@ -76,21 +76,21 @@ class ShowAlertViewController: UIViewController {
         messageLabel.attributedText = attribuild
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.textColor = .white
+        messageLabel.textColor = UIColor.random
         
         if let titleLeftButton = titleLeftButton {
             leftButton.setTitle(titleLeftButton, for: .normal)
-            leftButton.setTitleColor(.white, for: .normal)
+            leftButton.setTitleColor(UIColor.random, for: .normal)
             leftButton.titleLabel?.font = bold!
         } else {
             leftButton.isHidden = true
         }
         
         rightButton.setTitle(titleRightButton, for: .normal)
-        rightButton.setTitleColor(.white, for: .normal)
+        rightButton.setTitleColor(UIColor.random, for: .normal)
         rightButton.titleLabel?.font = regular
         rightButton.backgroundColor = .black
-        rightButton.layer.shadowColor = UIColor.white.cgColor
+        rightButton.layer.shadowColor = UIColor.random.cgColor
         rightButton.layer.shadowOpacity = 0.35
         rightButton.layer.shadowOffset = .zero
         rightButton.layer.shadowRadius = 2

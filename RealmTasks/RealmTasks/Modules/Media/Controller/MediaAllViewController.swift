@@ -41,7 +41,7 @@ class MediaAllViewController: BaseViewController {
     
     lazy var searchView: NimsTinhChinhCapView = {
         let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
         view.layer.cornerRadius = 8
         return view
     }()
@@ -95,10 +95,10 @@ class MediaAllViewController: BaseViewController {
             segmentedControl.setTitle(MediaAllViewSegmented.list[i].text, forSegmentAt: i)
         }
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.white]
+            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
             segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
             segmentedControl.backgroundColor = .black
-            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
         }
         segmentedControl.selectedSegmentIndex = 0
         

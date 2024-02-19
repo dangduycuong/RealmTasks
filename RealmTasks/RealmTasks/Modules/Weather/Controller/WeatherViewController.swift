@@ -106,7 +106,7 @@ extension WeatherViewController {
     }
     
     private func setupUI() {
-        weatherInfoView.layer.shadowColor = UIColor.white.cgColor
+        weatherInfoView.layer.shadowColor = UIColor.random.cgColor
         weatherInfoView.layer.shadowOpacity = 0.35
         weatherInfoView.layer.shadowOffset = .zero
         weatherInfoView.layer.shadowRadius = 2
@@ -127,13 +127,13 @@ extension WeatherViewController {
     @objc private func updateMapType(_ sender: UIButton) {
         let dropDown = DropDown()
         
-        DropDown.appearance().textColor = UIColor.white
-        DropDown.appearance().selectedTextColor = UIColor.red
+        DropDown.appearance().textColor = UIColor.random
+        DropDown.appearance().selectedTextColor = UIColor.random
         if let font = PlayfairDisplayFont.semiBold(with: 20) {
             DropDown.appearance().textFont = font
         }
-        DropDown.appearance().backgroundColor = UIColor.black
-        DropDown.appearance().selectionBackgroundColor = UIColor.black
+        DropDown.appearance().backgroundColor = UIColor.random
+        DropDown.appearance().selectionBackgroundColor = UIColor.random
         DropDown.appearance().cellHeight = 60
         
         DropDown.startListeningToKeyboard()
@@ -175,13 +175,13 @@ extension WeatherViewController {
         //        }
         let dropDown = DropDown()
         
-        DropDown.appearance().textColor = UIColor.white
-        DropDown.appearance().selectedTextColor = UIColor.red
+        DropDown.appearance().textColor = UIColor.random
+        DropDown.appearance().selectedTextColor = UIColor.random
         if let font = PlayfairDisplayFont.semiBold(with: 20) {
             DropDown.appearance().textFont = font
         }
-        DropDown.appearance().backgroundColor = UIColor.black
-        DropDown.appearance().selectionBackgroundColor = UIColor.black
+        DropDown.appearance().backgroundColor = UIColor.random
+        DropDown.appearance().selectionBackgroundColor = UIColor.random
         DropDown.appearance().cellHeight = 60
         
         DropDown.startListeningToKeyboard()

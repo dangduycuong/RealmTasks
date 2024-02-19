@@ -20,7 +20,7 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        subView.layer.shadowColor = UIColor.white.cgColor
+        subView.layer.shadowColor = UIColor.random.cgColor
         subView.layer.shadowOpacity = 0.35
         subView.layer.shadowOffset = .zero
         subView.layer.shadowRadius = 2
@@ -39,6 +39,7 @@ class MediaTableViewCell: UITableViewCell {
     func fillData(title: String?) {
 //        iconImageView.image = R.image.bakery()
         titleLabel.text = title
+        titleLabel.textColor = UIColor.random
     }
     
 }

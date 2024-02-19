@@ -21,7 +21,7 @@ class SearchView: UIView {
             
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: italic as Any,
-                .foregroundColor: UIColor.lightGray,
+                .foregroundColor: UIColor.random,
                 .paragraphStyle: paragraphStyle,
             ]
             let attributedPlaceholder = NSAttributedString(string: R.string.localizable.enterSearchText().language(), attributes: attributes)
@@ -75,7 +75,7 @@ extension SearchView {
 //        contentView.clipsToBounds = true
         
         
-        contentView.layer.shadowColor = UIColor.white.cgColor
+        contentView.layer.shadowColor = UIColor.random.cgColor
         contentView.layer.shadowOpacity = 0.35
         contentView.layer.shadowOffset = .zero
         contentView.layer.shadowRadius = 2

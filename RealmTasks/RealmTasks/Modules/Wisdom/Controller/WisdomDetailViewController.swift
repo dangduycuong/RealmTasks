@@ -72,38 +72,82 @@ class WisdomDetailViewController: BaseViewController {
         contentView.layout(contentTextView)
             .top().left(16).bottom().right(16)
         
+        
         placeholderLabel.text = "Enter some text..."
-//        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
+        //        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
         placeholderLabel.font = R.font.playfairDisplayMediumItalic(size: 20)
         placeholderLabel.sizeToFit()
         contentTextView.addSubview(placeholderLabel)
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (contentTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+        placeholderLabel.textColor = UIColor.random.withAlphaComponent(0.5)
         placeholderLabel.isHidden = !contentTextView.text.isEmpty
         addRightBarButtonItems()
     }
     
     private func addRightBarButtonItems() {
-        let image = R.image.icons8Done()?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "doneTick")
         let imageView = UIImageView(image: image)
         
-        imageView.tintColor = .white
+//        imageView.tintColor = UIColor.random
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
         view.layout(imageView)
-            .bottomSafe(16).right(16).width(24).height(24)
+            .bottomSafe(16).right(16).width(44).height(44)
         
         if isViewWisdomDetail {
             fillData()
+            let deleteIcon = UIImage(named: "delete")
+            
             let deleteButton = UIButton()
-            deleteButton.backgroundColor = UIColor.red
+            deleteButton.setImage(deleteIcon, for: .normal)
+            
             view.layout(deleteButton)
-                .bottomSafe(16).before(imageView, 16).width(24).height(24)
+                .bottomSafe(16).before(imageView, 16).width(44).height(44)
+            deleteButton.layer.cornerRadius = 22
+            
             deleteButton.addTarget(self, action: #selector(deleteItemClicked), for: .touchUpInside)
+            
+            let stackView = UIStackView()
+            stackView.alignment = .fill
+            stackView.distribution = .fillEqually
+            stackView.axis = .horizontal
+            stackView.spacing = 8
+            
+            for i in 0..<7 {
+                let view = UIView()
+                view.backgroundColor = UIColor.random
+                NSLayoutConstraint.activate([
+                    view.widthAnchor.constraint(equalToConstant: 44)
+                ])
+                view.layer.cornerRadius = 22
+                view.translatesAutoresizingMaskIntoConstraints = false
+                stackView.addArrangedSubview(view)
+            }
+            
+            view.layout(stackView)
+                .above(deleteButton, 16).right(24).height(44)
+            
+            let changeContentColorButton = UIButton()
+            view.layout(changeContentColorButton)
+                .top(stackView, -8).leading(stackView, -8).bottom(stackView, -8).right(stackView, -8)
+            changeContentColorButton.layer.borderWidth = 1
+            changeContentColorButton.layer.borderColor = UIColor.random.cgColor
+            changeContentColorButton.layer.cornerRadius = 8
+            changeContentColorButton.layer.shadowColor = UIColor.random.cgColor
+            changeContentColorButton.layer.shadowOpacity = 0.5
+            changeContentColorButton.layer.shadowOffset = .zero
+            changeContentColorButton.layer.shadowRadius = 8
+            
+            changeContentColorButton.addTarget(self, action: #selector(changeContentColor), for: .touchUpInside)
         }
+    }
+    
+    // MARK: - Actions
+    @objc private func changeContentColor() {
+        fillData()
     }
     
     @objc func saveClicked(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -116,7 +160,21 @@ class WisdomDetailViewController: BaseViewController {
     }
     
     private func fillData() {
-        contentTextView.text = wisdom.content
+        titleLabel.textColor = UIColor.random
+        let medium = R.font.playfairDisplayMedium(size: 20)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        //        paragraphStyle.firstLineHeadIndent = 5.0
+        paragraphStyle.lineSpacing = 6
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: medium as Any,
+            .foregroundColor: UIColor.random,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let attributedQuote = NSAttributedString(string: wisdom.content, attributes: attributes)
+        contentTextView.attributedText = attributedQuote
     }
 }
 
