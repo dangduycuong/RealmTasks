@@ -130,7 +130,7 @@ class TodoViewController: BaseViewController {
 //        customSegmented.backgroundColor = UIColor(hexString: "008080")
 //        customSegmented.customColor = UIColor(hexString: "008080")
         
-        customSegmented.setNewValue(["That", "Can", "Than"])
+        customSegmented.setNewValue(["Thật", "Cẩn", "Thận"])
     }
     
     private func setupTabbar() {

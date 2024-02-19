@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO3-t1-AFs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zO3-t1-AFs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R7Y-PP-Eqf">
-                                <rect key="frame" x="8" y="96" width="398" height="32"/>
+                                <rect key="frame" x="8" y="100" width="398" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -57,8 +57,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-vietnam" translatesAutoresizingMaskIntoConstraints="NO" id="rj9-h4-Fhb">
+                                <rect key="frame" x="97.5" y="82" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="4NJ-aP-6bG"/>
+                                    <constraint firstAttribute="width" constant="24" id="uOf-Z1-8fO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-anguilla" translatesAutoresizingMaskIntoConstraints="NO" id="A2b-dJ-Pm0">
+                                <rect key="frame" x="292.5" y="82" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="2oW-my-iHc"/>
+                                    <constraint firstAttribute="height" constant="24" id="Grp-vx-ZeC"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-X0-g5J">
-                                <rect key="frame" x="16" y="60" width="382" height="60"/>
+                                <rect key="frame" x="16" y="64" width="382" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6z-Hb-wBi">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
@@ -68,7 +82,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="icons8-vietnam"/>
+                                            <backgroundConfiguration key="background"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="vietnamClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="bKL-k2-s81"/>
@@ -79,7 +93,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="icons8-anguilla"/>
+                                            <backgroundConfiguration key="background"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="englishClicked:" destination="zO3-t1-AFs" eventType="touchUpInside" id="p1d-DN-g9e"/>
@@ -88,7 +102,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Ip-ZQD">
-                                <rect key="frame" x="16" y="152" width="382" height="41"/>
+                                <rect key="frame" x="16" y="156" width="382" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-9L-GUc">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="41"/>
@@ -137,14 +151,18 @@
                             <constraint firstItem="4j5-Ip-ZQD" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="1Kr-Xa-SeQ"/>
                             <constraint firstAttribute="trailing" secondItem="2mt-5n-RBk" secondAttribute="trailing" id="7a8-nH-L46"/>
                             <constraint firstItem="2mt-5n-RBk" firstAttribute="top" secondItem="Dll-68-qe3" secondAttribute="top" id="9vG-fF-hWg"/>
+                            <constraint firstItem="rj9-h4-Fhb" firstAttribute="centerY" secondItem="w6z-Hb-wBi" secondAttribute="centerY" id="AFh-LO-5Id"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="4j5-Ip-ZQD" secondAttribute="trailing" constant="16" id="G4M-cC-5Lb"/>
                             <constraint firstItem="V0z-ys-3Yb" firstAttribute="centerY" secondItem="Dll-68-qe3" secondAttribute="centerY" id="Tks-tI-zO7"/>
+                            <constraint firstItem="rj9-h4-Fhb" firstAttribute="centerX" secondItem="w6z-Hb-wBi" secondAttribute="centerX" id="Y1i-Av-8nK"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="top" secondItem="i96-Rd-PdG" secondAttribute="top" constant="16" id="ZT1-89-Go8"/>
+                            <constraint firstItem="A2b-dJ-Pm0" firstAttribute="centerY" secondItem="1aQ-NH-0lr" secondAttribute="centerY" id="bnO-4W-8TC"/>
                             <constraint firstItem="i96-Rd-PdG" firstAttribute="trailing" secondItem="ztu-X0-g5J" secondAttribute="trailing" constant="16" id="lAh-Eu-BzC"/>
                             <constraint firstAttribute="bottom" secondItem="2mt-5n-RBk" secondAttribute="bottom" id="p4W-hE-Yh3"/>
                             <constraint firstItem="ztu-X0-g5J" firstAttribute="leading" secondItem="i96-Rd-PdG" secondAttribute="leading" constant="16" id="pLa-nt-QNc"/>
                             <constraint firstItem="2mt-5n-RBk" firstAttribute="leading" secondItem="Dll-68-qe3" secondAttribute="leading" id="q7x-wD-kLy"/>
                             <constraint firstItem="V0z-ys-3Yb" firstAttribute="centerX" secondItem="Dll-68-qe3" secondAttribute="centerX" id="xPN-t6-UFr"/>
+                            <constraint firstItem="A2b-dJ-Pm0" firstAttribute="centerX" secondItem="1aQ-NH-0lr" secondAttribute="centerX" id="zZJ-zO-1Aj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -165,7 +183,7 @@
                 <navigationController storyboardIdentifier="BaseNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="XTK-tS-d8e" customClass="BaseNavigationController" customModule="RealmTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHQ-Ju-QQS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -19,7 +19,7 @@ class NimsTinhChinhCapView: UIView {
             
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: italic as Any,
-                .foregroundColor: UIColor.lightGray,
+                .foregroundColor: UIColor.random,
                 .paragraphStyle: paragraphStyle,
             ]
             let attributedPlaceholder = NSAttributedString(string: R.string.localizable.enterSearchText().language(), attributes: attributes)
@@ -32,6 +32,8 @@ class NimsTinhChinhCapView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         searchTextField.delegate = self
+        searchTextField.textColor = UIColor.random
+        searchTextField.tintColor = UIColor.random
     }
     
 }

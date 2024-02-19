@@ -7,12 +7,13 @@
 
 import UIKit
 
-class DetailListVC: BaseViewController {
+class DetailListVC: BaseViewController, UITextViewDelegate {
     lazy var contextTextView: UITextView = {
         let textView = UITextView()
         textView.font = R.font.playfairDisplayMedium(size: 20)
         textView.backgroundColor = UIColor.clear
         textView.showsVerticalScrollIndicator = false
+        textView.delegate = self
         return textView
     }()
     
@@ -50,7 +51,7 @@ class DetailListVC: BaseViewController {
                 let medium = R.font.playfairDisplayMedium(size: 20)
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                paragraphStyle.firstLineHeadIndent = 5.0
+//                paragraphStyle.firstLineHeadIndent = 5.0
                 paragraphStyle.lineSpacing = 6
                 
                 let _ = NSAttributedString(
@@ -74,5 +75,9 @@ class DetailListVC: BaseViewController {
                 print("Got an error \(error)")
             }
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        contextTextView.resignFirstResponder()
     }
 }

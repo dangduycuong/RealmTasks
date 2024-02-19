@@ -66,7 +66,7 @@ class WisdomTableViewCell: UITableViewCell {
         ]
         var myMutableString = NSMutableAttributedString()
         myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
-        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.random, range: range)
         label.attributedText = myMutableString
     }
     

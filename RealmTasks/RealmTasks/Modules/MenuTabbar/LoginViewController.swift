@@ -52,6 +52,14 @@ class LoginViewController: BaseViewController {
         if let particleScene = SKScene(fileNamed: "ParticleScene") {
             particleView.presentScene(particleScene)
         }
+        
+        englishButton.layer.borderWidth = 1
+        englishButton.layer.borderColor = UIColor.random.cgColor
+        englishButton.layer.cornerRadius = 10
+        
+        vietnamButton.layer.borderWidth = 1
+        vietnamButton.layer.borderColor = UIColor.random.cgColor
+        vietnamButton.layer.cornerRadius = 10
     }
     
     // MARK: - Actions
