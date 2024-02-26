@@ -7,52 +7,19 @@
 
 import UIKit
 
-enum MediaType {
-    case folkVerses
-    case proverb
-    case poem
-    
-    static let list = [folkVerses, proverb, poem]
-    
-    var text: String {
-        get {
-            switch self {
-            case .folkVerses:
-                return R.string.localizable.folkVerses().language()
-            case .proverb:
-                return R.string.localizable.proverb().language()
-            case .poem:
-                return "Thơ"
-            }
-        }
-    }
-    
-    var value: String {
-        get {
-            switch self {
-            case .folkVerses:
-                return "folkVerses"
-            case .proverb:
-                return "proverb"
-            case .poem:
-                return "poem"
-            }
-        }
-    }
-}
-
 class MediaViewController: BaseViewController {
     lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["1", "2", "3"])
+        let segmentedControl = UISegmentedControl(items: MediaType.list.map { $0.text })
         segmentedControl.addTarget(self, action: #selector(segmentedControlClicked), for: .valueChanged)
         return segmentedControl
     }()
     
     lazy var searchView: NimsTinhChinhCapView = {
-        let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
-        view.layer.cornerRadius = 8
-        return view
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        searchView.layer.cornerRadius = 8
+        searchView.placeholderColor = mainColor
+        return searchView
     }()
     
     lazy var tableView: UITableView = {
@@ -62,10 +29,13 @@ class MediaViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .onDrag
+        
         return tableView
     }()
     
     var viewModel = MediaViewModel()
+    let mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -87,29 +57,35 @@ class MediaViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Giải Trí")
+        addTitle(title: "Giải Trí", color: mainColor)
         
-        let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
-        let buttonMapTypeMenuIcon = UIButton()
-        view.layout(buttonMapTypeMenuIcon)
-            .topSafe().right(16).width(44).height(44)
+        let allListMenuIcon = UIImageView(image: R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate))
+        allListMenuIcon.tintColor = mainColor
+        let allMediaButton = UIButton()
+        view.layout(allMediaButton)
+            .centerY(titleLabel).right(16).width(44).height(44)
         
-        view.layout(mapTypeMenuIcon)
-            .center(buttonMapTypeMenuIcon).width(24).height(24)
+        allMediaButton.layout(allListMenuIcon)
+            .right().centerY(allMediaButton).width(24).height(24)
         
-        buttonMapTypeMenuIcon.addTarget(self, action: #selector(openAllMedia), for: .touchUpInside)
+        allMediaButton.addTarget(self, action: #selector(openAllMedia), for: .touchUpInside)
         
         view.layout(segmentedControl)
             .below(titleLabel, 32).left(16).right(16).height(40)
-        for i in 0..<MediaType.list.count {
-            segmentedControl.setTitle(MediaType.list[i].text, forSegmentAt: i)
-        }
         
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
-            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = UIColor.random
-            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
+            let titleNormalAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor.withAlphaComponent(0.4)
+            ]
+            let titleSelectedAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor
+            ]
+            segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
+            segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
+            segmentedControl.backgroundColor = mainColor.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
         }
         
         view.layout(searchView)
@@ -155,14 +131,12 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.mediaType == .poem {
             let cell = tableView.dequeueReusableCell(cellType: PoemTableViewCell.self, forIndexPath: indexPath)
             let item = viewModel.poemsModel[indexPath.row]
-            cell.configure(title: item.title ?? "", description: item.content ?? "", note: item.note, keyWord: viewModel.searchText)
+            cell.configure(title: item.title ?? "", description: item.content ?? "", note: item.note, keyWord: viewModel.searchText,  color: mainColor)
             return cell
         }
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(title: viewModel.filteredMediaTypeList[indexPath.row].title)
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .clear
-        cell.selectedBackgroundView = backgroundView
+        cell.fillData(title: viewModel.filteredMediaTypeList[indexPath.row].title, searchText: viewModel.searchText, colorCell: mainColor)
+        
         return cell
     }
     

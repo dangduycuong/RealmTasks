@@ -51,14 +51,59 @@ class TodoTableViewCell: UITableViewCell {
         backgroundImageView.layer.cornerRadius = 8
     }
     
-    func fillData(todo: TodoModel) {
+    func fillData(todo: TodoModel, colorCell: UIColor, searchText: String?) {
         checkboxImageView.image = todo.isCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
-        checkboxImageView.tintColor = UIColor.random
-        todoTitleLabel.text = todo.todoTitle
-        todoDescriptionLabel.text = todo.todoDescription
+        checkboxImageView.tintColor = colorCell
+        
         DispatchQueue.main.async {
             self.heightBackGroundImageView.constant = self.stackView.bounds.size.height + 8
         }
+        let bold = R.font.playfairDisplayBold(size: 20)
+        let medium = R.font.playfairDisplayMedium(size: 20)
+        hilightText(searchText: searchText, content: todo.todoTitle, label: todoTitleLabel, font: bold, color: colorCell)
+        hilightText(searchText: searchText, content: todo.todoDescription, label: todoDescriptionLabel, font: medium, color: colorCell)
+    }
+    
+    private func hilightText(searchText: String?, content: String?, label: UILabel, font: UIFont?, color: UIColor) {
+        guard let content = content else { return }
+        guard let keyWord = searchText else { return }
+        let rangeContent = findRange(source: content , textToFind: keyWord.folded.lowercased())
+        if rangeContent.location != NSNotFound {
+            setColorTextLabel(string: content, range: rangeContent, label: label, color: color, font: font)
+        } else {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            paragraphStyle.alignment = .left
+            let attributes: [NSAttributedString.Key : Any] = [
+                .font: font as Any,
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: color
+            ]
+            
+            label.attributedText = NSAttributedString(string: content, attributes: attributes)
+        }
+    }
+    
+    func findRange(source: String, textToFind: String) -> NSRange {
+        let string = NSMutableAttributedString(string: source.folded.lowercased())
+        
+        let range = string.mutableString.range(of: textToFind.folded.lowercased(), options: .caseInsensitive)
+        return range
+    }
+    
+    func setColorTextLabel(string: String, range: NSRange, label: UILabel, color: UIColor, font: UIFont?) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
+            .font: font as Any,
+            .foregroundColor: color
+        ]
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+        label.attributedText = myMutableString
     }
     
     @IBAction func checkboxButtonClicked(_ sender: Any) {

@@ -8,11 +8,6 @@
 import UIKit
 
 class WisdomViewController: BaseViewController {
-    lazy var addButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(nextDetail), for: .touchUpInside)
-        return button
-    }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -25,14 +20,16 @@ class WisdomViewController: BaseViewController {
         return tableView
     }()
     
-    private lazy var searchView: NimsTinhChinhCapView = {
+    lazy var searchView: NimsTinhChinhCapView = {
         let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = UIColor.random.withAlphaComponent(0.4)
+        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
         searchView.layer.cornerRadius = 8
+        searchView.placeholderColor = mainColor
         return searchView
     }()
     
     var viewModel = WisdomViewModel()
+    let mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -57,7 +54,7 @@ class WisdomViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Mưu Trí")
+        addTitle(title: "Mưu Trí", color: mainColor)
         
         view.layout(searchView)
             .below(titleLabel, 32).left(16).right(16).height(40)
@@ -65,19 +62,10 @@ class WisdomViewController: BaseViewController {
         view.layout(tableView)
             .below(searchView, 16).left().bottom().right()
         
-        view.layout(addButton)
-            .bottomSafe(16).right(16).width(44).height(44)
-        
-        addButton.setTitle("", for: .normal)
-        addButton.layer.cornerRadius = 22
-        addButton.layer.shadowColor = UIColor.random.cgColor
-        addButton.layer.shadowOpacity = 1
-        addButton.layer.shadowOffset = .zero
-        addButton.layer.shadowRadius = 8
-        addButton.backgroundColor = UIColor.random
+        setupAddDataButton(color: mainColor)
     }
     
-    @IBAction func nextDetail(_ sender: UIButton) {
+    override func nextDetail(_ sender: UIButton) {
         let vc = WisdomDetailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -91,7 +79,7 @@ extension WisdomViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: WisdomTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(content: viewModel.filteredListWisdom[indexPath.row].content, keyWord: viewModel.searchText)
+        cell.fillData(content: viewModel.filteredListWisdom[indexPath.row].content, keyWord: viewModel.searchText, colorCell: mainColor)
         let backgroundView = UIView()
         backgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = backgroundView

@@ -8,55 +8,53 @@
 import UIKit
 import GoogleMaps
 import DropDown
-
-enum MapType {
-    case normal
-    case satellite
-    case terrain
-    case hybrid
-    case noneNormal
-    
-    static let all = [normal, satellite, terrain, hybrid, noneNormal]
-    
-    var text: String {
-        get {
-            switch self {
-            case .normal:
-                return "Normal"
-            case .satellite:
-                return "Satellite"
-            case .terrain:
-                return "Terrain"
-            case .hybrid:
-                return "Hybrid"
-            case .noneNormal:
-                return "None"
-            }
-        }
-    }
-}
+import RxSwift
 
 class WeatherViewController: BaseViewController {
-    @IBOutlet private weak var addressLabel: UILabel!
-    @IBOutlet private weak var mapView: GMSMapView!
-    @IBOutlet private weak var mapCenterPinImage: UIImageView!
-    @IBOutlet private weak var pinImageVerticalConstraint: NSLayoutConstraint!
+    let mapTypeMenuButton = UIButton()
+    let customSegmentedView = CustomSegmentedControlView()
     
+    lazy var searchView: NimsTinhChinhCapView = {
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        searchView.layer.cornerRadius = 8
+        searchView.placeholderColor = mainColor
+        return searchView
+    }()
     
-    @IBOutlet weak var weatherInfoView: UIView!
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(with: WeatherTableViewCell.self)
+        return tableView
+    }()
     
-    @IBOutlet weak var locationLabel: UILabel!
+    private lazy var explainView: ExplainContentView = {
+       let view = ExplainContentView()
+        return view
+    }()
     
-    @IBOutlet weak var timeConditionLabel: UILabel!
+    var addressLabel = UILabel()
+    var mapView = GMSMapView()
+    var mapCenterPinImage = UIImageView()
+    var weatherInfoView = UIView()
     
-    @IBOutlet weak var weatherIconImageView: UIImageView!
+    var locationLabel = UILabel()
+    var timeConditionLabel = UILabel()
+    var weatherIconImageView = UIImageView()
+    var tempCLabel = UILabel()
     
-    @IBOutlet weak var tempCLabel: UILabel!
-    @IBOutlet weak var feelslikeCLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
+    var feelslikeCLabel = UILabel()
+    var humidityLabel = UILabel()
+    var windkphLabel = UILabel()
+    var conditionTextLabel = UILabel()
     
-    @IBOutlet weak var windkphLabel: UILabel!
-    @IBOutlet weak var conditionTextLabel: UILabel!
+    let targetView = UIView()
     
     private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     private let locationManager = CLLocationManager()
@@ -65,20 +63,25 @@ class WeatherViewController: BaseViewController {
     
     var viewModel = WeatherViewModel()
     var timer = Timer()
+    private var weatherType: WeatherSegmentedType = WeatherSegmentedType.map
+    var lastContentOffset: CGFloat = 0
+    let mainColor = UIColor.random
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .changeMapType, object: nil)
+    override func loadView() {
+        super.loadView()
+        prepareForViewController()
     }
-}
-
-// MARK: - Lifecycle
-extension WeatherViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addObserver()
+        viewModel.tabSelected.accept(weatherType)
+        customSegmentedView.setDefaultValue(0)
+        updateUI(0)
+        viewModel.readJSONFile(forName: "Weather")
         NotificationCenter.default.addObserver(self, selector: #selector(changeMapType), name: .changeMapType, object: nil)
-        setupUI()
+        
         locationManager.delegate = self
         
         DispatchQueue.main.async {
@@ -91,13 +94,161 @@ extension WeatherViewController {
         mapView.animate(toZoom: 17)
     }
     
+    private func prepareForViewController() {
+        addBackground()
+
+        view.layout(mapView)
+            .topSafe()
+            .left()
+            .bottomSafe()
+            .right()
+        
+        addTitle(title: "Thời Tiết", color: mainColor)
+        
+        view.layout(customSegmentedView)
+            .below(titleLabel, 32)
+            .left(16).right(16).height(40)
+        customSegmentedView.setNewValue(WeatherSegmentedType.all.map { $0.title })
+        customSegmentedView.updateColor(mainColor)
+        
+        view.layout(searchView)
+            .below(customSegmentedView, 16).left(16).right(16).height(40)
+        
+        view.layout(tableView)
+            .below(searchView, 16).left().bottomSafe().right()
+        
+        targetView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        targetView.layer.borderWidth = 1
+        targetView.layer.borderColor = mainColor.cgColor
+        view.layout(targetView)
+            .center(mapView)
+            .width(40)
+            .height(40)
+        targetView.layer.cornerRadius = 20
+        
+        let dotView = UIView()
+        targetView.layout(dotView)
+            .center().width(4).height(4)
+        dotView.backgroundColor = mainColor
+        dotView.layer.cornerRadius = 2
+        
+        view.layout(addressLabel)
+            .below(targetView, 8)
+            .left(16)
+            .right(16)
+            .height(40)
+        
+        addressLabel.textColor = mainColor
+        addressLabel.backgroundColor = mainColor.withAlphaComponent(0.4)
+        addressLabel.layer.cornerRadius = 4
+        
+        let vStackView = UIStackView()
+        vStackView.axis = .vertical
+        vStackView.spacing = 8
+        vStackView.alignment = .fill
+        vStackView.distribution = .fill
+        
+        weatherInfoView.layer.shadowColor = UIColor.black.cgColor
+        weatherInfoView.layer.shadowOpacity = 0.35
+        weatherInfoView.layer.shadowOffset = .zero
+        weatherInfoView.layer.shadowRadius = 2
+        weatherInfoView.layer.cornerRadius = 4
+        view.layout(weatherInfoView)
+            .below(customSegmentedView, 16)
+            .left(16)
+        weatherInfoView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        
+        weatherInfoView.layout(vStackView)
+            .top(8)
+            .left(8)
+            .bottom(8)
+            .right(8)
+        
+        vStackView.addArrangedSubview(locationLabel)
+        vStackView.addArrangedSubview(timeConditionLabel)
+        vStackView.addArrangedSubview(tempCLabel)
+        vStackView.addArrangedSubview(feelslikeCLabel)
+        
+        vStackView.addArrangedSubview(humidityLabel)
+        vStackView.addArrangedSubview(windkphLabel)
+        vStackView.addArrangedSubview(conditionTextLabel)
+        
+        locationLabel.font = R.font.playfairDisplayMedium(size: 20)
+        timeConditionLabel.font = R.font.playfairDisplayMedium(size: 20)
+        tempCLabel.font = R.font.playfairDisplayMedium(size: 20)
+        feelslikeCLabel.font = R.font.playfairDisplayMedium(size: 20)
+        
+        humidityLabel.font = R.font.playfairDisplayMedium(size: 20)
+        windkphLabel.font = R.font.playfairDisplayMedium(size: 20)
+        conditionTextLabel.font = R.font.playfairDisplayMedium(size: 20)
+        
+        locationLabel.textColor = mainColor
+        timeConditionLabel.textColor = mainColor
+        tempCLabel.textColor = mainColor
+        feelslikeCLabel.textColor = mainColor
+        
+        humidityLabel.textColor = mainColor
+        windkphLabel.textColor = mainColor
+        conditionTextLabel.textColor = mainColor
+        
+        view.layout(explainView)
+            .left()
+            .bottomSafe()
+            .right()
+        
+        let hight = NSLayoutConstraint(item: explainView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
+        explainView.addConstraints([hight])
+        explainView.translatesAutoresizingMaskIntoConstraints = false
+        
+        setupMenuButtonMapType()
+    }
+    
+    private func addObserver() {
+        customSegmentedView.segmentedControlValue = { index in
+            self.updateUI(index)
+        }
+        viewModel.fetchedWeatherDataSource.skip(1).observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] list in
+            guard let `self` = self else { return }
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
+        
+        searchView.searchText = { text in
+            self.viewModel.searchText = text
+        }
+    }
+    
+    private func updateUI(_ index: Int) {
+        self.weatherType = WeatherSegmentedType.all[index]
+        self.viewModel.tabSelected.accept(self.weatherType)
+        self.tableView.isHidden = self.weatherType == .map
+        self.searchView.isHidden = self.weatherType == .map
+        self.weatherInfoView.isHidden = !(self.weatherType == .map)
+        explainView.isHidden = true
+        mapView.isHidden = !(weatherType == .map)
+        addressLabel.isHidden = !(weatherType == .map)
+        targetView.isHidden = !(weatherType == .map)
+        mapTypeMenuButton.isHidden = !(weatherType == .map)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .changeMapType, object: nil)
+    }
+}
+
+// MARK: - Lifecycle
+extension WeatherViewController {
+    
     private func requestPermissonLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
-            mapView.isMyLocationEnabled = true
-            mapView.settings.myLocationButton = true
-        } else {
-            locationManager.requestWhenInUseAuthorization()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                DispatchQueue.main.async {
+                    self.locationManager.requestLocation()
+                    self.mapView.isMyLocationEnabled = true
+                    self.mapView.settings.myLocationButton = true
+                }
+            } else {
+                self.locationManager.requestWhenInUseAuthorization()
+            }
         }
     }
     
@@ -105,23 +256,17 @@ extension WeatherViewController {
         viewModel.realtimeWeather()
     }
     
-    private func setupUI() {
-        weatherInfoView.layer.shadowColor = UIColor.random.cgColor
-        weatherInfoView.layer.shadowOpacity = 0.35
-        weatherInfoView.layer.shadowOffset = .zero
-        weatherInfoView.layer.shadowRadius = 2
-        weatherInfoView.layer.cornerRadius = 10
-        weatherInfoView.isHidden = true
+    private func setupMenuButtonMapType() {
+        let mapTypeImageView = UIImageView(image: R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate))
+        mapTypeImageView.tintColor = mainColor
         
-        let mapTypeMenuIcon = UIImageView(image: R.image.icons8Menu_rounded())
-        let buttonMapTypeMenuIcon = UIButton()
-        view.layout(buttonMapTypeMenuIcon)
-            .topSafe().right(16).width(44).height(44)
+        view.layout(mapTypeMenuButton)
+            .centerY(titleLabel).right(16).width(40).height(40)
         
-        view.layout(mapTypeMenuIcon)
-            .center(buttonMapTypeMenuIcon).width(24).height(24)
+        mapTypeMenuButton.layout(mapTypeImageView)
+            .right().centerY().width(24).height(24)
         
-        buttonMapTypeMenuIcon.addTarget(self, action: #selector(updateMapType), for: .touchUpInside)
+        mapTypeMenuButton.addTarget(self, action: #selector(updateMapType), for: .touchUpInside)
     }
     
     @objc private func updateMapType(_ sender: UIButton) {
@@ -265,7 +410,17 @@ extension WeatherViewController {
                 return
             }
             
-            self.addressLabel.text = lines.joined(separator: "\n")
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            paragraphStyle.firstLineHeadIndent = 8
+            
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: R.font.playfairDisplayMedium(size: 20) as Any,
+                .foregroundColor: self.mainColor,
+                .paragraphStyle: paragraphStyle
+            ]
+            let place = lines.joined(separator: "\n")
+            self.addressLabel.attributedText = NSAttributedString(string: place, attributes: attributes)
             
             let labelHeight = self.addressLabel.intrinsicContentSize.height
             let topInset = self.view.safeAreaInsets.top
@@ -276,7 +431,7 @@ extension WeatherViewController {
                 right: 0)
             
             UIView.animate(withDuration: 0.25) {
-                self.pinImageVerticalConstraint.constant = (labelHeight - topInset) * 0.5
+//                self.pinImageVerticalConstraint.constant = (labelHeight - topInset) * 0.5
                 self.view.layoutIfNeeded()
             }
         }
@@ -371,7 +526,6 @@ extension WeatherViewController: GMSMapViewDelegate {
     }
 }
 
-
 extension WeatherViewController: WeatherViewModelDelegate {
     func updateData(weather: RealtimeWeather) {
         DispatchQueue.main.async {
@@ -384,7 +538,7 @@ extension WeatherViewController: WeatherViewModelDelegate {
         locationLabel.text = weather.location?.name
         timeConditionLabel.text = weather.current?.lastUpdated
         if let tempC = weather.current?.tempC?.toString() {
-            tempCLabel.text = "\(tempC)"
+            tempCLabel.text = "\(tempC) °C"
         }
         
         if let feelslikeC = weather.current?.feelslikeC?.toString() {
@@ -401,6 +555,47 @@ extension WeatherViewController: WeatherViewModelDelegate {
         
         if let text = weather.current?.condition?.text {
             conditionTextLabel.text = text
+        }
+    }
+}
+
+extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.fetchedWeatherDataSource.value.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(cellType: WeatherTableViewCell.self, forIndexPath: indexPath)
+        let data = viewModel.fetchedWeatherDataSource.value[indexPath.row]
+        cell.fillData(content: data.content, isShowing: data.isShowing, searchText: viewModel.searchText, color: mainColor)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.updateShowingItem(indexPath.row)
+        explainView.isHidden = false
+        explainView.fillData(viewModel.fetchedWeatherDataSource.value[indexPath.row].explain)
+    }
+    
+}
+
+extension WeatherViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.lastContentOffset < scrollView.contentOffset.y {
+            print("---- did move up")
+            // did move up
+            explainView.isHidden = true
+        } else if self.lastContentOffset > scrollView.contentOffset.y {
+            print("---- did move down")
+            // did move down
+        } else {
+            print("---- didn't move")
+            // didn't move
         }
     }
 }

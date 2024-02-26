@@ -36,10 +36,49 @@ class MediaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fillData(title: String?) {
-//        iconImageView.image = R.image.bakery()
-        titleLabel.text = title
-        titleLabel.textColor = UIColor.random
+    func fillData(title: String?, searchText: String?, colorCell: UIColor) {
+        hilightText(searchText: searchText, content: title, colorCell: colorCell, label: titleLabel)
+    }
+    
+    private func hilightText(searchText: String?, content: String?, colorCell: UIColor, label: UILabel) {
+        guard let content = content else { return }
+        guard let keyWord = searchText else { return }
+        let rangeContent = findRange(source: content , textToFind: keyWord.folded.lowercased())
+        if rangeContent.location != NSNotFound {
+            setColorTextLabel(string: content, range: rangeContent, label: label)
+        } else {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            paragraphStyle.alignment = .left
+            let attributes: [NSAttributedString.Key : Any] = [
+                .font: R.font.playfairDisplayMedium(size: 20) as Any,
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: colorCell
+            ]
+            
+            label.attributedText = NSAttributedString(string: content, attributes: attributes)
+        }
+    }
+    
+    func findRange(source: String, textToFind: String) -> NSRange {
+        let string = NSMutableAttributedString(string: source.folded.lowercased())
+        
+        let range = string.mutableString.range(of: textToFind.folded.lowercased(), options: .caseInsensitive)
+        return range
+    }
+    
+    func setColorTextLabel(string: String, range: NSRange, label: UILabel) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
+            .font: R.font.playfairDisplayMedium(size: 20) as Any
+        ]
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+        label.attributedText = myMutableString
     }
     
 }

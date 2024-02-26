@@ -167,6 +167,42 @@ class DataManager: NSObject {
         }
         return true
     }
+    
+    //MARK: - DiaryModel
+    func addDiaryToRealm(_ diary: DiaryModel) {
+        try! realm.write {
+            realm.add(diary)
+        }
+    }
+    
+    func modifyDiary(dataEdit: DiaryModel) {
+        let listData = realm.objects(DiaryModel.self)
+        realm.beginWrite()
+        for item in listData {
+            if item.id == dataEdit.id {
+                item.content = dataEdit.content
+                item.upDateTime = dataEdit.upDateTime
+            }
+        }
+        try! realm.commitWrite()
+    }
+    
+    func removeDiaryItem(id: String) -> Bool {
+        guard let wisdom = realm.objects(DiaryModel.self).filter({$0.id == id}).first else { return false }
+        try! realm.write {
+            realm.delete(wisdom)
+        }
+        return true
+    }
+    
+    func getListDiaryFromRealm(_ completionHandler: @escaping ([DiaryModel]) -> Void ) {
+        var listData = [DiaryModel]()
+        let items = realm.objects(DiaryModel.self)
+        for item in items {
+            listData.append(item)
+        }
+        completionHandler(listData)
+    }
 }
 
 extension Results {

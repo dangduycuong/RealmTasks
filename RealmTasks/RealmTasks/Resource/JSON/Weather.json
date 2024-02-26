@@ -1,0 +1,414 @@
+{
+    "folks": [
+        {
+            "content": "Bạn chìa thợ lái bảo nhau\nMống đông chớp lạch quay mau về nhà.",
+            "explain": "Bạn chìa thợ lái bảo nhau\nMống đông chớp lạch quay mau về nhà."
+        },
+        {
+            "content": "Trời nồm tốt mạ\nTrời giá tốt rau.",
+            "explain": "Trời nồm tốt mạ\nTrời giá tốt rau."
+        },
+        {
+            "content": "Chớp đằng đông nước đông tràn ngập\nChớp đằng tây mua dây mà tát.",
+            "explain": "Chớp đằng đông nước đông tràn ngập\nChớp đằng tây mua dây mà tát."
+        },
+        {
+            "content": "Bao giờ Hòn Đỏ mang tơi\nHòn Hèo đội mũ thì trời sắp mưa.",
+            "explain": "Bao giờ Hòn Đỏ mang tơi\nHòn Hèo đội mũ thì trời sắp mưa."
+        },
+        {
+            "content": "Chớp thừng chớp chảo\nKhông bão thì mưa.",
+            "explain": "Chớp thừng chớp chảo\nKhông bão thì mưa."
+        },
+        {
+            "content": "Chóp chài đội mũ, mây phủ đá bia\nẾch nhái kêu lia, trời mưa như trút.",
+            "explain": "Chóp chài đội mũ, mây phủ đá bia\nẾch nhái kêu lia, trời mưa như trút."
+        },
+        {
+            "content": "Chớp đông nhay nháy\nMà gà gáy thì mưa.",
+            "explain": "Chớp đông nhay nháy\nMà gà gáy thì mưa."
+        },
+        {
+            "content": "Cò bay ngược nước, nước vào nhà\nCò bay xuôi, nước lui ra biển.",
+            "explain": "Cò bay ngược nước, nước vào nhà\nCò bay xuôi, nước lui ra biển."
+        },
+        {
+            "content": "Kiến đen tha trứng lên cao\nThế nào cũng có mưa rào rất to.",
+            "explain": "Kiến đen tha trứng lên cao\nThế nào cũng có mưa rào rất to."
+        },
+        {
+            "content": "Mưa tháng bảy gẫy cành trám\nNắng tháng tám rám trái bưởi.",
+            "explain": "Mưa tháng bảy gẫy cành trám\nNắng tháng tám rám trái bưởi."
+        },
+        {
+            "content": "Ông tha mà bà chẳng tha\nLàm nên cái lụt hăm ba tháng mười.",
+            "explain": "Ông tha mà bà chẳng tha\nLàm nên cái lụt hăm ba tháng mười."
+        },
+        {
+            "content": "Trời chớp Mũi Nạy, thức dậy mà đi\nTrời chớp Đề Di ở nhà mà ngủ.",
+            "explain": "Trời chớp Mũi Nạy, thức dậy mà đi\nTrời chớp Đề Di ở nhà mà ngủ."
+        },
+        {
+            "content": "Tháng năm, tháng sau mặt trời đi chệch\nTháng bảy, tháng tám mặt trời đi xiên.",
+            "explain": "Tháng năm, tháng sau mặt trời đi chệch\nTháng bảy, tháng tám mặt trời đi xiên."
+        },
+        {
+            "content": "Giông bể Đông bắt nồi rang thóc\nGiông bể Tây đổ thóc ra phơi.",
+            "explain": "Giông bể Đông bắt nồi rang thóc\nGiông bể Tây đổ thóc ra phơi."
+        },
+        {
+            "content": "Mây kéo xuống bể thì nắng chang chang\nMây kéo lên ngàn thì mưa như trút.",
+            "explain": "Mây kéo xuống bể thì nắng chang chang\nMây kéo lên ngàn thì mưa như trút."
+        },
+        {
+            "content": "Chớp đằng đông nước đồng tràn ngập\nChớp đằng tây mua dây mà tát.",
+            "explain": "Chớp đằng đông nước đồng tràn ngập\nChớp đằng tây mua dây mà tát."
+        },
+        {
+            "content": "Mặt trăng má đỏ\nTrời đã sắp mưa.",
+            "explain": "Mặt trăng má đỏ\nTrời đã sắp mưa."
+        },
+        {
+            "content": "Trên trời có vẩy tê tê\nLà mưa sắp sửa kéo về nay mai.",
+            "explain": "Trên trời có vẩy tê tê\nLà mưa sắp sửa kéo về nay mai."
+        },
+        {
+            "content": "Mồng chín tháng chín có mưa\nAnh em ta sắm sửa cày bừa làm ăn.",
+            "explain": "Mồng chín tháng chín có mưa\nAnh em ta sắm sửa cày bừa làm ăn."
+        },
+        {
+            "content": "Chiều chiều mây phủ Sơn Trà\nSóng xô Cửa Đại trời đà chuyển mưa.",
+            "explain": "Chiều chiều mây phủ Sơn Trà\nSóng xô Cửa Đại trời đà chuyển mưa."
+        },
+        {
+            "content": "Lập thu mới cấy lúa mùa\nKhác nào hương khói lên chùa cầu con.",
+            "explain": "Lập thu mới cấy lúa mùa\nKhác nào hương khói lên chùa cầu con."
+        },
+        {
+            "content": "Kiến đắp thành thì bão\nKiến ẵm con chạy vào thì mưa.",
+            "explain": "Kiến đắp thành thì bão\nKiến ẵm con chạy vào thì mưa."
+        },
+        {
+            "content": "Mồng bốn cá đi ăn thề\nMồng tám cá về cá vượt vũ môn.",
+            "explain": "Mồng bốn cá đi ăn thề\nMồng tám cá về cá vượt vũ môn."
+        },
+        {
+            "content": "Mây càng bay cao trời càng đẹp\nHoa cúc cụp cánh lại trước khi trời mưa.",
+            "explain": "Mây càng bay cao trời càng đẹp\nHoa cúc cụp cánh lại trước khi trời mưa."
+        },
+        {
+            "content": "Trời đỏ vào buổi sáng, thủy thủ phải cảnh giác\nTrời đỏ vào ban đêm, thủy thủ nên phấn khởi.",
+            "explain": "Trời đỏ vào buổi sáng, thủy thủ phải cảnh giác\nTrời đỏ vào ban đêm, thủy thủ nên phấn khởi."
+        },
+        {
+            "content": "Chuồn chuồn bay thấp thì mưa\nBay cao thì nắng, bay vừa thì râm",
+            "explain": "Đây là một câu ca dao vốn đã đi sâu vào trong tiềm thức người dân Việt Nam. Kinh nghiệm các cụ đã truyền lại rằng nếu quan sát con chuồn chuồn và những hiện tượng sau đó thì có thể thấy được quy luật của thời tiết rằng: chuồn chuồn mà bay thấp thì trời có khả năng cao sẽ mưa, còn chuồn chuồn bay cao thì trời sẽ nắng và chuồn chuồn bay vừa thì trời râm. Câu ca dao này có thể được nhận xét là khá hợp lý trên góc độ khoa học và được giải thích rằng khi độ ẩm trong không khí cao sẽ khiến cho cánh con chuồn chuồn bị ướt. Đây là lý do con chuồn chuồn không bay cao được và khi độ ẩm trong không khí cao có nghĩa là khả năng sắp có mưa."
+        },
+        {
+            "content": "Cò bay ngược, nước vô nhà\nCò bay xuôi nước lui ra biển",
+            "explain": "Câu ca dao này chỉ ra rằng cha ông ta đã quan sát thói quen kiếm ăn của con cò để đoán biết con nước. Khi con nước dâng vào bờ cao thì sẽ mang theo nhiều cá tôm. Đó là lý do đàn cò bay ngược vào đất liền để kiếm ăn. Khi nước rút ra biển, thì cá tôm cũng theo đường nước mà rút ra xa bờ, đàn cò cũng sẽ bay xuôi theo để kiếm thức ăn. Từ đó, người dân có thể nhìn hướng bay của đàn cò mà đoán biết con nước, thuận lợi cho việc đánh bắt."
+        },
+        {
+            "content": "Lúa chiêm lấp ló đầu bờ\nHễ nghe tiếng sấm phất cờ mà lên",
+            "explain": "Câu ca dao tái hiện hình ảnh lúa Chiêm là giống lúa có xuất xứ từ khu vực Nam Trung Bộ. Lúa Chiêm này được gieo vào tháng giêng và thu hoạch khoảng tháng năm âm lịch. Và cứ mỗi khi vào độ khoảng tháng 2 tháng 3 khi mùa mưa bắt đầu, lúc này thì lại có rất nhiều sấm sét là điều kiện quan trọng giúp cố định một lượng lớn nitơ bổ sung dinh dưỡng cho đất... Theo cơ sở khoa học thì ta thấy được rằng chính sấm sét sinh ra nhiệt độ cao xúc tác phản ứng diễn ra trong bầu khí quyển trên trái đất. Hơn nữa ta như thấy được sản phẩm theo nước mưa rơi xuống đất. Lúc này đây thì nó dường như cũng đã hoà tan vào đất tồn tại ở dạng NO3-, và đây cũng chính là nguồn dinh dưỡng khoáng quan trọng cho cây lúa."
+        },
+        {
+            "content": "Chớp đằng đông vừa trông vừa chạy\nChớp đằng tây vừa cày vừa chơi.",
+            "explain": "Đây là câu ca dao dự báo về thời tiết. Phía đông là phía biển, khi ở phía biển có chớp thì mưa sắp tới, chuẩn bị chạy lúa là vừa(thu lúa đang phơi về nhà), còn khi chớp đằng nam (đối với Đồng bằng Sông Hồng) thì không mưa do gió là gió khô, không mang theo hơi nước nên không cần lo lắng. Cũng như với Bắc Trung Bộ chớp đằng Tây cho Mưa ở bên Lào (Lào ở bên sườn Tây Trường Sơn) và khi qua sườn Đông - phía Việt Nam thì khô nóng - nên cứ vừa cày vừa chơi vì gió từ Lào qua là gió nóng và khô."
+        },
+        {
+            "content": "Bao giờ kéo vảy tê tê\nSắp gồng sắp gánh ta về kẻo mưa",
+            "explain": "\"Vẩy tê\" là đám mây có dạng như vảy con tê tê, ở Việt Nam thường thấy được vào lúc sáng sớm đầu tháng 6 dương lịch. Khi người ta thấy đám mây này thì trời sẽ sắp mưa."
+        },
+        {
+            "content": "Ếch kêu uôm uôm\nAo chuôm đầy nước",
+            "explain": "Đây là một kinh nghiệm về việc dự đoán trời mưa. Ếch là một loài động vật rất mẫn cảm với việc đổi thay thời tiết, nhất là khi trời trở trời mưa. Khi trời chuẩn bị kéo cơn mưa, ếch thường cất tiếng kêu lên bờ ao, hồ, đồng ruộng. Chính vì thế mà dựa vào tiếng kêu của ếch, dân gian ta có thể biết trước trời sắp có mưa."
+        },
+        {
+            "content": "Kiến đen tha trứng lên cao\nThế nào cũng có mưa rào rất to",
+            "explain": "Loài kiến có khả năng dự đoán trước mưa bão, do đó khi thấy kiến tha trứng tức là mưa vì khi cảm nhận nguy hiểm đang đến gần thì kiến sẽ tìm nơi an toàn cho tổ, còn việc mưa rất to là do kiến cảm thấy mưa to đến mức có thể tiêu diệt hết giống nòi mình nên phải di chuyển đến cây cao thật cao để có thể tránh được mưa to."
+        },
+        {
+            "content": "Mưa tháng bảy gãy cành trám\nNắng tháng tám rám trái bưởi",
+            "explain": "Cây trám là cây gỗ lớn bản địa có chiều cao từ 20 - 30m, đường kính ngang ngực từ 50 - 70cm, thân tròn thẳng, tán lá rộng và xanh quanh năm. Từ đặc điểm của cây, có thể thấy cây trám rất to và chắc khỏe, thường vững chãi trước sự khắc nghiệt của thiên nhiên. Hai câu ca dao dự báo thời tiết về mưa và nắng qua hình ảnh cành trám và quả bưởi. Mưa tháng bảy to và khắc nghiệt đến mức bẻ gãy được cả cành trám, nắng tháng tám to đến mức có thể làm rám cả vỏ trái bưởi."
+        },
+        {
+            "content": "Đêm tháng năm chưa nằm đã sáng\nNgày tháng mười chưa cười đã tối",
+            "explain": "Đó là một câu ca dao mà ông cha ta đã truyền lại rất chính xác căn cứ vào những kinh nghiệm và vẫn còn rất đúng cho đến ngày nay. Câu ca dao có ý nghĩa là tháng năm thì thời gian ban ngày dài hơn thời gian ban đêm. Còn vào tháng mười thì thời gian ban ngày ngắn hơn thời gian ban đêm. Thực tế, dù ở bất kì tháng nào trong năm thì một ngày chúng ta vẫn luôn có 24 tiếng, và quỹ đạo trái đất vẫn luôn xoay vòng giống nhau nhưng tháng năm là vào mùa hè nên trời thường sáng lâu hơn là tháng mười- thời điểm khi tiết trời đã vào mùa đông."
+        }
+    ],
+    "proverbs": [
+        {
+            "content": "Ráng mỡ gà, có nhà thì giữ.",
+            "explain": "Theo kinh nghiệm dân gian, khi chân trời có màu vàng óng như màu mỡ gà là dấu hiệu của mưa to, bão lớn đang chuẩn bị kéo đến. Chính vì vậy, ông cha ta muốn nhắc nhở mọi người khi gặp hiện tượng thời tiết như này là sắp có bão, cần gia cố lại nhà cửa cho chắc chắn để chống bão."
+        },
+        {
+            "content": "Nước chảy đá mòn.",
+            "explain": "Nước chảy đá mòn."
+        },
+        {
+            "content": "Gió thổi đổi trời.",
+            "explain": "Gió thổi đổi trời."
+        },
+        {
+            "content": "Mống đông vồng tây, chẳng mưa dây cũng bão cát.",
+            "explain": "Mống đông vồng tây, chẳng mưa dây cũng bão cát."
+        },
+        {
+            "content": "Ráng mỡ gà thì gió, ráng mỡ chó thì mưa.",
+            "explain": "Ráng mỡ gà thì gió, ráng mỡ chó thì mưa."
+        },
+        {
+            "content": "Tháng ba mưa đám, tháng tám mưa cơn.",
+            "explain": "Tháng ba mưa đám, tháng tám mưa cơn."
+        },
+        {
+            "content": "Trăng quầng thì hạn, trăng tán thì mưa.",
+            "explain": "Có nghĩa là: Nếu quanh mặt trăng chỉ có một quầng sáng thì trời còn nắng, nếu có vùng sáng mờ toả ra như cái tán là trời sắp mưa."
+        },
+        {
+            "content": "Đầu năm sương muối, cuối năm gió nồm.",
+            "explain": "Đầu năm sương muối, cuối năm gió nồm."
+        },
+        {
+            "content": "Trời nắng chống trưa, trời mưa chóng tối.",
+            "explain": "Trời nắng chống trưa, trời mưa chóng tối."
+        },
+        {
+            "content": "Kiến bò từ dưới lên cao, mang theo cơm gạo gây nên mưa rào.",
+            "explain": "Kiến bò từ dưới lên cao, mang theo cơm gạo gây nên mưa rào."
+        },
+        {
+            "content": "Trời đang nắng, cỏ gà trắng thì mưa.",
+            "explain": "Trời đang nắng, cỏ gà trắng thì mưa."
+        },
+        {
+            "content": "Tam Đảo đội mũ, nước lũ sẽ về.",
+            "explain": "Tam Đảo đội mũ, nước lũ sẽ về."
+        },
+        {
+            "content": "Mưa đồng bay vừa trông vừa chạy, mưa Tam Đảo bảo nhau đi cày.",
+            "explain": "Mưa đồng bay vừa trông vừa chạy, mưa Tam Đảo bảo nhau đi cày."
+        },
+        {
+            "content": "Mống dài trời cụt, mống ngắn trời mưa.",
+            "explain": "Mống dài trời cụt, mống ngắn trời mưa."
+        },
+        {
+            "content": "Chớp đằng đông vừa trông vừa chạy.",
+            "explain": "Chớp đằng đông vừa trông vừa chạy."
+        },
+        {
+            "content": "Rét tháng ba, bà già chết cóng.",
+            "explain": "Rét tháng ba, bà già chết cóng."
+        },
+        {
+            "content": "Nắng chóng mưa, trưa chóng tối.",
+            "explain": "Nắng chóng mưa, trưa chóng tối."
+        },
+        {
+            "content": "Trăng mờ tốt lúa nỏ, trăng tỏ tốt lúa sâu.",
+            "explain": "Trăng mờ tốt lúa nỏ, trăng tỏ tốt lúa sâu."
+        },
+        {
+            "content": "Quạ tắm thì ráo, sáo tắm thì mưa.",
+            "explain": "Quạ tắm thì ráo, sáo tắm thì mưa."
+        },
+        {
+            "content": "Dế kêu càng gấp gáp trời càng ấm.",
+            "explain": "Dế kêu càng gấp gáp trời càng ấm."
+        },
+        {
+            "content": "Chớp đông nhay nháy, gà gáy thì mưa.",
+            "explain": "Chớp đông nhay nháy, gà gáy thì mưa."
+        },
+        {
+            "content": "Vàng mây thì gió, đỏ mây thì mưa.",
+            "explain": "Vàng mây thì gió, đỏ mây thì mưa."
+        },
+        {
+            "content": "Sấm động, gió tan.",
+            "explain": "Sấm động, gió tan."
+        },
+        {
+            "content": "Tháng mười chưa cười đã tối.",
+            "explain": "Tháng mười chưa cười đã tối."
+        },
+        {
+            "content": "Gió heo mây, chuồn chuồn bay thì bão.",
+            "explain": "Khi trời nối gió heo may và chuồn chuồn bay ra nhiều thì sắp có bão."
+        },
+        {
+            "content": "Én bay thấp mưa ngập bờ ao, én bay cao mưa rào lại tạnh.",
+            "explain": "Én bay thấp mưa ngập bờ ao, én bay cao mưa rào lại tạnh."
+        },
+        {
+            "content": "Trời đã sẫm tối rồi, gà còn đi bới điểm trời sắp mưa.",
+            "explain": "Trời đã sẫm tối rồi, gà còn đi bới điểm trời sắp mưa."
+        },
+        {
+            "content": "Đường đi kiến đắp thành bờ, chẳng mưa thì gió còn ngờ vực chi.",
+            "explain": "Đường đi kiến đắp thành bờ, chẳng mưa thì gió còn ngờ vực chi."
+        },
+        {
+            "content": "Kiến cánh vỡ tổ bay ra, bão táp mưa sa tới gần.",
+            "explain": "Kiến cánh vỡ tổ bay ra, bão táp mưa sa tới gần."
+        },
+        {
+            "content": "Ba ngày gió nam mùa màng mất trắng.",
+            "explain": "Ba ngày gió nam mùa màng mất trắng."
+        },
+        {
+            "content": "Chuồng gà hướng Đông, cái lông chẳng còn.",
+            "explain": "Chuồng gà hướng Đông, cái lông chẳng còn."
+        },
+        {
+            "content": "Sấm tháng mười cày cươi mà cấy.",
+            "explain": "Sấm tháng mười cày cươi mà cấy."
+        },
+        {
+            "content": "Trên trời có vảy tê tê, là mưa sắp sửa kéo về nay mai.",
+            "explain": "Trên trời có vảy tê tê, là mưa sắp sửa kéo về nay mai."
+        },
+        {
+            "content": "Nắng sớm thì đi trồng cà, mưa sớm ở nhà phơi thóc.",
+            "explain": "Nắng sớm thì đi trồng cà, mưa sớm ở nhà phơi thóc."
+        },
+        {
+            "content": "Cày ruộng tháng năm xem trăng rằm tháng tám.",
+            "explain": "Cày ruộng tháng năm xem trăng rằm tháng tám."
+        },
+        {
+            "content": "Nắng tháng tám nám má hồng.",
+            "explain": "Nắng tháng tám nám má hồng."
+        },
+        {
+            "content": "Ếch kêu uôm uôm, ao chuôm đầy nước.",
+            "explain": "Ếch kêu uôm uôm, ao chuôm đầy nước."
+        },
+        {
+            "content": "Chớp thừng chớp bão, chẳng bão thì mưa.",
+            "explain": "Chớp thừng chớp bão, chẳng bão thì mưa."
+        },
+        {
+            "content": "Bầu nắng, mướp đắng mưa, dưa đại hạn.",
+            "explain": "Bầu nắng, mướp đắng mưa, dưa đại hạn."
+        },
+        {
+            "content": "Mặt trời có quầng thì hạn, mặt trăng có tán thì mưa.",
+            "explain": "Mặt trời có quầng thì hạn, mặt trăng có tán thì mưa."
+        },
+        {
+            "content": "Cỏ gà màu trắng điểm nắng đã hết.",
+            "explain": "Cỏ gà màu trắng điểm nắng đã hết."
+        },
+        {
+            "content": "Cỏ gà mọc loang, cả làng đầy nước.",
+            "explain": "Cỏ gà mọc loang, cả làng đầy nước."
+        },
+        {
+            "content": "Tháng bảy kiến bò, chỉ lo lại lụt.",
+            "explain": "Tháng bảy kiến bò, chỉ lo lại lụt."
+        },
+        {
+            "content": "Mau sao thì nắng, vắng sao thì mưa.",
+            "explain": "Mau sao thì nắng, vắng sao thì mưa."
+        },
+        {
+            "content": "Mây xanh thì nắng, mây trắng thì mưa.",
+            "explain": "Mây xanh thì nắng, mây trắng thì mưa."
+        },
+        {
+            "content": "Tháng bảy kiến đàn đại hàn hồng thủy.",
+            "explain": "Tháng bảy kiến đàn đại hàn hồng thủy."
+        },
+        {
+            "content": "Tháng bảy nước nhảy lên bờ.",
+            "explain": "Tháng bảy nước nhảy lên bờ."
+        },
+        {
+            "content": "Trời nắng chóng mưa, trời mưa chóng tối.",
+            "explain": "Trời nắng chóng mưa, trời mưa chóng tối."
+        },
+        {
+            "content": "Tháng bảy heo may, chuồn chuồn bay thì bão.",
+            "explain": "Tháng bảy heo may, chuồn chuồn bay thì bão."
+        },
+        {
+            "content": "Gió bấc hiu hiu, sếu kêu thì rét.",
+            "explain": "Gió bấc hiu hiu, sếu kêu thì rét."
+        },
+        {
+            "content": "Chuồn chuồn bay thấp thì mưa, bay cao thì nắng, bay vừa thì râm.",
+            "explain": "Nếu chuồn chuồn bay thấp tức trời sẽ mưa. Khi nó bay cao trời sẽ nắng và bay vừa trời sẽ râm. Điều này là phụ thuộc vào áp suất không khí."
+        },
+        {
+            "content": "Mưa chẳng qua ngọ, gió chẳng qua mùi.",
+            "explain": "Mưa chẳng qua ngọ, gió chẳng qua mùi."
+        },
+        {
+            "content": "Tháng bảy ngâu ra, mồng ba ngâu vào.",
+            "explain": "Tháng bảy ngâu ra, mồng ba ngâu vào."
+        },
+        {
+            "content": "Mây xanh thì nắng, mây trắng thì mưa.",
+            "explain": "Mây xanh thì nắng, mây trắng thì mưa."
+        },
+        {
+            "content": "Nồm động đất, Bấc động khơi.",
+            "explain": "Nồm động đất, Bấc động khơi."
+        },
+        {
+            "content": "Tháng giêng rét dài, tháng hai rét lộc, tháng ba rét nàng Bân.",
+            "explain": "Tháng giêng rét đài, tháng hai rét lộc, tháng ba rét nàng bân. Có nghĩa là: (rét đài: rét khá đậm làm hoa rụng cánh chỉ còn trơ lại đài; rét lộc: ẩm ướt, thuận lợi cho sự hồi sinh của cây cỏ sau những ngày đông tháng giá; rét nàng bân: rét ngắn ngày, với câu chuyện nàng Bân may áo rét cho chồng. Kinh nghiệm về thời tiết của nhân dân ta."
+        },
+        {
+            "content": "Gió heo may, chuồn chuồn bay thì bão.",
+            "explain": "Gió heo may, chuồn chuồn bay thì bão."
+        },
+        {
+            "content": "Vàng mây thì gió, đỏ mây thì mưa.",
+            "explain": "Vàng mây thì gió, đỏ mây thì mưa."
+        },
+        {
+            "content": "Trời oi đen sẫm sấm sét tới nơi.",
+            "explain": "Trời oi đen sẫm sấm sét tới nơi."
+        },
+        {
+            "content": "Cóc nghiến răng trời đang năng thì mưa.",
+            "explain": "Cóc nghiến răng trời đang năng thì mưa."
+        },
+        {
+            "content": "Sao dày thì mưa, sao thưa thì nắng",
+            "explain": "Câu tục ngữ trên dự báo thời tiết qua cách nhìn sao trên bầu trời vào buổi tối. Nếu buổi tối hôm nay nhiều sao thì trời ngày mai sẽ mưa, và ngược lại nếu trời tối hôm nay ít sao thì ngày mai sẽ nắng. Đây là một cách dự báo thời tiết rất đúng của ông bà ta ngày xưa. Xét trên góc độ khoa học, sao thưa có nghĩa là trời nhiều mây làm che khuất tầm nhìn, mà nhiều mây thì khả năng là có mưa và ngược lại. Nhận biết được điều này từ đêm hôm trước, để người nông dân sẽ có kế hoạch phù hợp cho buổi làm đồng vào ngày hôm sau."
+        },
+        {
+            "content": "Tháng bảy kiến đàn, đại hàn hồng thủy",
+            "explain": "Vào tháng 7, mùa hè của nửa Cầu Bắc trong đó có Việt Nam nhiệt độ không khí ở trên lục địa cao trở thành khu áp thấp hút gió khối khí ẩm từ Thái Bình dương vào gây nên những trận mưa lớn cùng với sự xuất hiện của các khí áp thấp gây nên mưa bão ở Bắc bộ và Bắc trung Bộ"
+        },
+        {
+            "content": "Tháng giêng rét dài, tháng hai rét lộc, tháng ba rét nàng Bân",
+            "explain": "Đó là ba đợt rét đầu năm ở miền Bắc. Rét dài là đợt rét cho cây trổ hoa. Sau đó là rét lộc tức là đợt rét khi cây nảy mầm non. Rét Nàng Bân hay còn gọi rét muộn."
+        },
+        {
+            "content": "Sấm động, gió tan",
+            "explain": "Đây là câu tục ngữ ám chỉ việc sấm chớp động trời, bắt đầu có giông tố thì gió cũng tan để bắt đầu cơn mưa. Đây là một kinh nghiệm nhìn thời tiết quý báu của ông cha ta truyền lại đến ngày nay để con cháy biết đường sắp xếp công việc, tránh mưa tránh gió."
+        },
+        {
+            "content": "Mau sao thì nắng, vắng sao thì mưa",
+            "explain": "Câu tục ngữ là kinh nghiệm được đúc kết của cha ông ta về chuyện nắng mưa. Đây là câu tục ngữ rất quen thuộc giúp chúng ta dự báo thời tiết một cách tự nhiên. Theo đó, ông cha ta đã truyền đạt kinh nghiệm rằng nếu trời nhiều sao thì ngày hôm sau sẽ nắng, còn nếu trời ít sao hoặc không có sao thì trời sẽ có mưa."
+        },
+        {
+            "content": "Mống dài trời lụt, mống cụt trời mưa",
+            "explain": "Mống ở đây được hiểu là cầu vồng: cầu vồng sẽ xuất hiện sau cơn mưa khi trời còn nắng. Quan sát thấy cầu vồng dài thì nhiều hơi nước, trời có khả năng mưa lớn, dẫn đến ngập lụt."
+        },
+        {
+            "content": "Chuồng gà hướng Đông, cái lông chẳng còn",
+            "explain": "Đó là kinh nghiệm của cha ông ta nhằm quan sát và dự đoán thời tiết, từ đó bố trí chuồng trại trong chăn nuôi gia cầm. Theo đó, hướng Đông là hướng dễ đón gió, khiến vật nuôi bị gió tạt vào, ảnh hưởng đến đề kháng, dễ sinh bệnh. Vì vậy, không nên bố trí cửa chuồng nuôi về hướng Đông."
+        },
+        {
+            "content": "Gió thổi là đổi trời",
+            "explain": "Câu tục ngữ này phản ánh thực tiễn về hiện tượng tự nhiên, gió thổi tức là có sự thay đổi thời tiết để con người quan giữ gìn sức khỏe."
+        }
+    ]
+}

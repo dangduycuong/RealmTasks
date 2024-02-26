@@ -12,9 +12,9 @@ enum TabbarTitle {
     case weather
     case media
     case wisdom
-    case setting
+    case diary
     
-    static let all = [todo, weather, media, wisdom, setting]
+    static let all = [todo, weather, media, wisdom, diary]
     
     var text: String {
         get {
@@ -27,20 +27,19 @@ enum TabbarTitle {
                 return "media".language()
             case .wisdom:
                 return "Mưu"
-            case .setting:
-                return "Setting".language()
+            case .diary:
+                return "Nhật Ký".language()
             }
         }
     }
 }
 
 class MenuTabbarViewController: UITabBarController {
-    var todoVC = TodoViewController()
-    var weatherVC: WeatherViewController!
-    var mediaVC: MediaViewController!
-    var wisdomVC: WisdomViewController!
-    
-    var settingVC = SettingViewController()
+    var todoViewController = TodoViewController()
+    var weatherViewController = WeatherViewController()
+    var mediaViewController = MediaViewController()
+    var wisdomViewController = WisdomViewController()
+    var diaryViewController = DiaryViewController()
     
     var tabbarType = TabbarTitle.todo
     
@@ -52,22 +51,22 @@ class MenuTabbarViewController: UITabBarController {
     }
     
     private func setupTabbar() {
-        todoVC = TodoViewController()
-        weatherVC = R.storyboard.weather.weatherViewController()
-        mediaVC = MediaViewController()
-        wisdomVC = WisdomViewController()
-        
-        todoVC.tabBarItem.image = R.image.icons8Todo_list()
-        //        dynastyVC.tabBarItem.selectedImage = R.image.dynasty()
-        weatherVC.tabBarItem.image = R.image.icons8Wind_speed_3842()
+        todoViewController.tabBarItem.image = R.image.icons8Todo_list()
+        todoViewController.tabBarItem.selectedImage = R.image.icons8Todo_list()?.withRenderingMode(.alwaysTemplate)
+        todoViewController.tabBarItem.selectedImage?.withTintColor(UIColor.white.withAlphaComponent(0.4))
+//        weatherVC.tabBarItem.image = R.image.icons8Wind_speed_3842()
         //        timelineVC.tabBarItem.selectedImage = R.image.timeline()
-        mediaVC.tabBarItem.image = R.image.icons8Kodi()
+        mediaViewController.tabBarItem.image = R.image.icons8Kodi()
+        mediaViewController.tabBarItem.selectedImage = R.image.icons8Kodi()
         //        personVC.tabBarItem.selectedImage = R.image.king()
         
-        wisdomVC.tabBarItem.image = R.image.icons8Ok()
-        settingVC.tabItem.image = R.image.icons8Search()
+        wisdomViewController.tabBarItem.image = R.image.icons8Ok()
+        wisdomViewController.tabBarItem.selectedImage = R.image.icons8Ok()
         
-        viewControllers = [todoVC, weatherVC, mediaVC, wisdomVC, settingVC]
+        diaryViewController.tabBarItem.image = R.image.icons8Search()
+        diaryViewController.tabBarItem.selectedImage = R.image.icons8Search()
+        
+        viewControllers = [todoViewController, weatherViewController, mediaViewController, wisdomViewController, diaryViewController]
         
         if let items = tabBar.items {
             for i in 0..<items.count {

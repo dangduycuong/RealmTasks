@@ -22,31 +22,28 @@ class WisdomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fillData(content: String, keyWord: String) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        paragraphStyle.lineSpacing = 6
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: R.font.playfairDisplayMedium(size: 20) as Any,
-            .foregroundColor: UIColor.random,
-            .paragraphStyle: paragraphStyle
-        ]
-        contentLabel.attributedText = NSAttributedString(string: content, attributes: attributes)
-        
-        
-        let rangeContent = findRange(source: content.folded.lowercased(), textToFind: keyWord.folded.lowercased())
+    func fillData(content: String, keyWord: String, colorCell: UIColor) {
+        let medium = R.font.playfairDisplayMedium(size: 20)
+        hilightText(searchText: keyWord, content: content, label: contentLabel, color: colorCell, font: medium)
+    }
+    
+    private func hilightText(searchText: String?, content: String?, label: UILabel, color: UIColor, font: UIFont?) {
+        guard let content = content else { return }
+        guard let keyWord = searchText else { return }
+        let rangeContent = findRange(source: content , textToFind: keyWord.folded.lowercased())
         if rangeContent.location != NSNotFound {
-            setColorTextLabel(string: content, range: rangeContent, label: contentLabel)
+            setColorTextLabel(string: content, range: rangeContent, label: label, color: color, font: font)
         } else {
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .left
             paragraphStyle.lineSpacing = 6
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: R.font.playfairDisplayMedium(size: 20) as Any,
-                .foregroundColor: UIColor.random,
-                .paragraphStyle: paragraphStyle
+            paragraphStyle.alignment = .left
+            let attributes: [NSAttributedString.Key : Any] = [
+                .font: font as Any,
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: color
             ]
-            contentLabel.attributedText = NSAttributedString(string: content, attributes: attributes)
+            
+            label.attributedText = NSAttributedString(string: content, attributes: attributes)
         }
     }
     
@@ -57,16 +54,18 @@ class WisdomTableViewCell: UITableViewCell {
         return range
     }
     
-    func setColorTextLabel(string: String, range: NSRange, label: UILabel) {
+    func setColorTextLabel(string: String, range: NSRange, label: UILabel, color: UIColor, font: UIFont?) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
         paragraphStyle.lineSpacing = 6
         let attributes: [NSAttributedString.Key: Any] = [
-            .paragraphStyle: paragraphStyle
+            .paragraphStyle: paragraphStyle,
+            .font: font as Any,
+            .foregroundColor: color
         ]
         var myMutableString = NSMutableAttributedString()
         myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
-        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.random, range: range)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
         label.attributedText = myMutableString
     }
     

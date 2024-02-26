@@ -26,11 +26,14 @@ class CustomSegmentedControlView: UIView {
     var selectedLabels = [UILabel]()
     var selectedButtons = [UIButton]()
     
+    var mainColor: UIColor = UIColor.random
+    
     private var titles: [String] = ["1", "2", "3"]
+    var segmentedControlValue: ((Int) -> Void) = { _ in }
     // Add any custom properties
     
     // Example custom property
-    var customColor: UIColor = .random {
+    var customColor: UIColor = .red {
         didSet {
             // Call setNeedsDisplay to update the view when the property changes
             setNeedsDisplay()
@@ -95,16 +98,32 @@ class CustomSegmentedControlView: UIView {
     }
     
     private func updateUI(_ selectedSegmentIndex: Int) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        paragraphStyle.alignment = .center
+        
+        let attributesSelected: [NSAttributedString.Key : Any] = [
+            .font: R.font.playfairDisplayBold(size: 20) as Any,
+            .foregroundColor: mainColor,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let attributesNormal: [NSAttributedString.Key : Any] = [
+            .font: R.font.playfairDisplayMedium(size: 20) as Any,
+            .foregroundColor: UIColor.white,
+            .paragraphStyle: paragraphStyle
+        ]
+        
         UIView.animate(withDuration: 0.35) {
             for i in 0..<self.titles.count {
                 if i == selectedSegmentIndex {
-                    self.selectedSubViews[i].backgroundColor = UIColor.random.withAlphaComponent(0.4)
-                    self.selectedSubViews[i].layer.borderColor = UIColor.random.cgColor
-                    self.selectedLabels[i].textColor = UIColor.random
+                    self.selectedSubViews[i].backgroundColor = UIColor.white
+                    self.selectedSubViews[i].layer.borderColor = self.mainColor.cgColor
+                    self.selectedLabels[i].attributedText = NSAttributedString(string: self.titles[i], attributes: attributesSelected)
                 } else {
                     self.selectedSubViews[i].backgroundColor = UIColor.clear
                     self.selectedSubViews[i].layer.borderColor = UIColor.clear.cgColor
-                    self.selectedLabels[i].textColor = UIColor.random.withAlphaComponent(0.4)
+                    self.selectedLabels[i].attributedText = NSAttributedString(string: self.titles[i], attributes: attributesNormal)
                 }
             }
         }
@@ -141,8 +160,18 @@ class CustomSegmentedControlView: UIView {
         setupUI()
     }
     
+    func setDefaultValue(_ value: Int) {
+        updateUI(value)
+    }
+    
+    func updateColor(_ color: UIColor) {
+        mainColor = color
+        containerView.backgroundColor = color.withAlphaComponent(0.4)
+    }
+    
     @objc private func segmentControlValueChanged(_ sender: UIButton) {
         updateUI(sender.tag)
+        segmentedControlValue(sender.tag)
     }
 }
 

@@ -7,30 +7,6 @@
 
 import UIKit
 
-enum MediaAllViewSegmented {
-    case all
-    case folkVerses
-    case proverb
-    case favorite
-    
-    static let list = [all, folkVerses, proverb, favorite]
-    
-    var text: String {
-        get {
-            switch self {
-            case .all:
-                return "All"
-            case .folkVerses:
-                return "Ca Dao"
-            case .proverb:
-                return "Tục Ngữ"
-            case .favorite:
-                return "Yêu Thích"
-            }
-        }
-    }
-}
-
 class MediaAllViewController: BaseViewController {
     lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["1", "2", "3", "4"])
@@ -40,10 +16,11 @@ class MediaAllViewController: BaseViewController {
     }()
     
     lazy var searchView: NimsTinhChinhCapView = {
-        let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
-        view.layer.cornerRadius = 8
-        return view
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        searchView.layer.cornerRadius = 8
+        searchView.placeholderColor = mainColor
+        return searchView
     }()
     
     private lazy var tableView: UITableView = {
@@ -58,6 +35,7 @@ class MediaAllViewController: BaseViewController {
     }()
     
     var viewModel = MediaAllViewModel()
+    let mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -85,8 +63,8 @@ class MediaAllViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Ca dao tục ngữ Việt Nam")
-        addBackButton()
+        addTitle(title: "Ca dao tục ngữ Việt Nam", color: mainColor)
+        addBackButton(color: mainColor)
         
         view.layout(segmentedControl)
             .below(titleLabel, 32).left(16).right(16).height(40)
@@ -95,10 +73,18 @@ class MediaAllViewController: BaseViewController {
             segmentedControl.setTitle(MediaAllViewSegmented.list[i].text, forSegmentAt: i)
         }
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
-            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = UIColor.random
-            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
+            let titleNormalAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor.withAlphaComponent(0.4)
+            ]
+            let titleSelectedAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor
+            ]
+            segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
+            segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
+            segmentedControl.backgroundColor = mainColor.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
         }
         segmentedControl.selectedSegmentIndex = 0
         
@@ -123,7 +109,8 @@ extension MediaAllViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaDetailTableViewCell.self, forIndexPath: indexPath)
         cell.delegate = self
-        cell.fillData(data: viewModel.filteredResultList[indexPath.row], keyWord: viewModel.searchText)
+        cell.fillData(data: viewModel.filteredResultList[indexPath.row], searchText: viewModel.searchText, color: mainColor)
+        
         return cell
     }
     

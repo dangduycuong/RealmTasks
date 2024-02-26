@@ -70,47 +70,38 @@ class PoemTableViewCell: UITableViewCell {
     
     // MARK: - Configure Cell
     
-    func configure(title: String, description: String, note: String?, keyWord: String) {
-        
+    func configure(title: String, description: String, note: String?, keyWord: String?, color: UIColor) {
         // Configure UI elements with data
         titleLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
-        
-        titleLabel.textColor = UIColor.random
-        noteLabel.textColor = UIColor.random
-        
-        titleLabel.font = R.font.playfairDisplayBold(size: 20)
-        descriptionLabel.font = R.font.playfairDisplayMedium(size: 20)
-        noteLabel.font = R.font.playfairDisplaySemiBoldItalic(size: 20)
         noteLabel.numberOfLines = 0
         
-        let rangeTitle = findRange(source: title.folded.lowercased(), textToFind: keyWord.folded.lowercased())
-        if rangeTitle.location != NSNotFound {
-            setColorTextLabel(string: title, range: rangeTitle, label: titleLabel)
-        } else {
-            titleLabel.text = title
-        }
+        let bold = R.font.playfairDisplayBold(size: 20)
+        let medium = R.font.playfairDisplayMedium(size: 20)
+        let italic = R.font.playfairDisplayMediumItalic(size: 20)
         
-        let rangeContent = findRange(source: description.folded.lowercased(), textToFind: keyWord.folded.lowercased())
+        hilightText(searchText: keyWord, content: title, label: titleLabel, color: color, font: bold)
+        hilightText(searchText: keyWord, content: description, label: descriptionLabel, color: color, font: medium)
+        hilightText(searchText: keyWord, content: note, label: noteLabel, color: color, font: italic)
+    }
+    
+    private func hilightText(searchText: String?, content: String?, label: UILabel, color: UIColor, font: UIFont?) {
+        guard let content = content else { return }
+        guard let keyWord = searchText else { return }
+        let rangeContent = findRange(source: content , textToFind: keyWord.folded.lowercased())
         if rangeContent.location != NSNotFound {
-            setColorTextLabel(string: description, range: rangeContent, label: descriptionLabel)
+            setColorTextLabel(string: content, range: rangeContent, label: label, color: color, font: font)
         } else {
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .left
             paragraphStyle.lineSpacing = 6
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: R.font.playfairDisplayMedium(size: 20) as Any,
-                .foregroundColor: UIColor.random,
-                .paragraphStyle: paragraphStyle
+            paragraphStyle.alignment = .left
+            let attributes: [NSAttributedString.Key : Any] = [
+                .font: font as Any,
+                .paragraphStyle: paragraphStyle,
+                .foregroundColor: color
             ]
-            descriptionLabel.attributedText = NSAttributedString(string: description, attributes: attributes)
-        }
-        
-        let rangeNote = findRange(source: note ?? "".folded.lowercased(), textToFind: keyWord.folded.lowercased())
-        if rangeNote.location != NSNotFound {
-            setColorTextLabel(string: description, range: rangeNote, label: noteLabel)
-        } else {
-            noteLabel.text = note
+            
+            label.attributedText = NSAttributedString(string: content, attributes: attributes)
         }
     }
     
@@ -121,16 +112,18 @@ class PoemTableViewCell: UITableViewCell {
         return range
     }
     
-    func setColorTextLabel(string: String, range: NSRange, label: UILabel) {
+    func setColorTextLabel(string: String, range: NSRange, label: UILabel, color: UIColor, font: UIFont?) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
         paragraphStyle.lineSpacing = 6
         let attributes: [NSAttributedString.Key: Any] = [
-            .paragraphStyle: paragraphStyle
+            .paragraphStyle: paragraphStyle,
+            .font: font as Any,
+            .foregroundColor: color
         ]
         var myMutableString = NSMutableAttributedString()
         myMutableString = NSMutableAttributedString(string: string, attributes: attributes)
-        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.random, range: range)
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
         label.attributedText = myMutableString
     }
     

@@ -24,6 +24,8 @@ class WisdomDetailViewController: BaseViewController {
         textView.delegate = self
         textView.backgroundColor = UIColor.clear
         textView.isScrollEnabled = false
+        textView.textColor = mainColor
+        
         return textView
     }()
     
@@ -35,6 +37,7 @@ class WisdomDetailViewController: BaseViewController {
     var viewModel = WisdomDetailViewModel()
     var wisdom = WisdomModel()
     var isViewWisdomDetail: Bool = false
+    private var mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -50,8 +53,8 @@ class WisdomDetailViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: R.string.localizable.todo())
-        addBackButton()
+        addTitle(title: "Trí Mưu", color: mainColor)
+        addBackButton(color: mainColor)
         
         view.layout(scrollView)
             .below(titleLabel, 32).left().bottom().right()
@@ -76,10 +79,11 @@ class WisdomDetailViewController: BaseViewController {
         placeholderLabel.text = "Enter some text..."
         //        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
         placeholderLabel.font = R.font.playfairDisplayMediumItalic(size: 20)
+        placeholderLabel.textColor = mainColor
         placeholderLabel.sizeToFit()
         contentTextView.addSubview(placeholderLabel)
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (contentTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = UIColor.random.withAlphaComponent(0.5)
+        placeholderLabel.textColor = mainColor
         placeholderLabel.isHidden = !contentTextView.text.isEmpty
         addRightBarButtonItems()
     }
@@ -160,16 +164,15 @@ class WisdomDetailViewController: BaseViewController {
     }
     
     private func fillData() {
-        titleLabel.textColor = UIColor.random
+        titleLabel.textColor = mainColor
         let medium = R.font.playfairDisplayMedium(size: 20)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
-        //        paragraphStyle.firstLineHeadIndent = 5.0
         paragraphStyle.lineSpacing = 6
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: medium as Any,
-            .foregroundColor: UIColor.random,
+            .foregroundColor: mainColor,
             .paragraphStyle: paragraphStyle
         ]
         

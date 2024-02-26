@@ -34,10 +34,11 @@ class MediaDetailViewController: BaseViewController {
     }()
     
     lazy var searchView: NimsTinhChinhCapView = {
-        let view: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        view.backgroundColor = UIColor.random.withAlphaComponent(0.4)
-        view.layer.cornerRadius = 8
-        return view
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        searchView.layer.cornerRadius = 8
+        searchView.placeholderColor = mainColor
+        return searchView
     }()
     
     private lazy var tableView: UITableView = {
@@ -50,6 +51,8 @@ class MediaDetailViewController: BaseViewController {
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
+    
+    let mainColor = UIColor.random
     
     var viewModel = MediaDetailViewModel()
     var mediaType = MediaTypeLocalModel()
@@ -75,8 +78,8 @@ class MediaDetailViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: mediaType.title)
-        addBackButton()
+        addTitle(title: mediaType.title, color: mainColor)
+        addBackButton(color: mainColor)
         
         view.layout(segmentedControl)
             .below(titleLabel, 32).left(16).right(16).height(40)
@@ -86,10 +89,18 @@ class MediaDetailViewController: BaseViewController {
         }
         
         if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleAttributes = [NSAttributedString.Key.font: bold, NSAttributedString.Key.foregroundColor: UIColor.random]
-            segmentedControl.setTitleTextAttributes(titleAttributes, for: .normal)
-            segmentedControl.backgroundColor = UIColor.random
-            segmentedControl.selectedSegmentTintColor = UIColor.random.withAlphaComponent(0.4)
+            let titleNormalAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor.withAlphaComponent(0.4)
+            ]
+            let titleSelectedAttributes = [
+                NSAttributedString.Key.font: bold,
+                NSAttributedString.Key.foregroundColor: mainColor
+            ]
+            segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
+            segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
+            segmentedControl.backgroundColor = mainColor.withAlphaComponent(0.4)
+            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
         }
         
         view.layout(searchView)
@@ -103,9 +114,7 @@ class MediaDetailViewController: BaseViewController {
     private func addRightBarButtonItems() {
         let image = R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
-        
-        
-        imageView.tintColor = UIColor.random
+        imageView.tintColor = mainColor
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveClicked(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
@@ -136,10 +145,8 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: MediaDetailTableViewCell.self, forIndexPath: indexPath)
         cell.delegate = self
-        cell.fillData(data: viewModel.filteredList[indexPath.row], keyWord: viewModel.searchText)
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .clear
-        cell.selectedBackgroundView = selectedBackgroundView
+        cell.fillData(data: viewModel.filteredList[indexPath.row], searchText: viewModel.searchText, color: mainColor)
+        
         return cell
     }
 }

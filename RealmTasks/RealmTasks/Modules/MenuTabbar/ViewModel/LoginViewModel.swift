@@ -48,6 +48,8 @@ class LoginViewModel {
     func setCurentLanguage() {
         if let currentLanguage = LocalData.getDataFromLocal(key: LocalKey.currentLanguage.rawValue) {
             LocalizationHandlerUtil.shareInstance().setLanguageIdentifier(currentLanguage)
+        } else {
+            setLanguage(languageKey: .vietnamese)
         }
     }
     
@@ -75,7 +77,7 @@ class LoginViewModel {
                 MediaFile(fileName: "ca_dao_ve_thuoc_thang", title: "Ca Dao Về Thuốc Thang", mediaType: MediaType.folkVerses.value),
                 MediaFile(fileName: "ca_dao_đac_sac_va_giau_triet_ly_song", title: "Ca Dao Đặc Sắc Và Giàu Triết Lý Sống", mediaType: MediaType.folkVerses.value),
                 MediaFile(fileName: "ca_dao_hay_ve_cach_an_uong", title: "Ca Dao Hay Về Cách Ăn Uống", mediaType: MediaType.folkVerses.value),
-                MediaFile(fileName: "tuc_ngu_hoc_tap", title: "Tục ngự học tập", mediaType: MediaType.proverb.value),
+                MediaFile(fileName: "tuc_ngu_hoc_tap", title: "Tục ngữ học tập", mediaType: MediaType.proverb.value),
                 MediaFile(fileName: "tuc_ngu_tinh_yeu_nam_nu", title: "Tình yêu nam nữ", mediaType: MediaType.proverb.value),
                 MediaFile(fileName: "tuc_ngu_cha_me", title: "Cha mẹ", mediaType: MediaType.proverb.value),
                 MediaFile(fileName: "tuc_ngu_an_uong", title: "Ăn uống", mediaType: MediaType.proverb.value),

@@ -12,6 +12,8 @@ target 'RealmTasks' do
 	pod 'Material', '3.1.0'
   pod 'GoogleMaps', '6.1'
 	pod 'DropDown', '2.3.13'
+	pod 'RxSwift', '5.1.1'
+  pod 'RxCocoa', '5.1.1'
 
   target 'RealmTasksTests' do
     inherit! :search_paths
