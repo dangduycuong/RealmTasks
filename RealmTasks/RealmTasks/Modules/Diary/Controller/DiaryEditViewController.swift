@@ -14,7 +14,7 @@ class DiaryEditViewController: BaseViewController {
         textView.backgroundColor = UIColor.clear
         textView.showsVerticalScrollIndicator = false
         textView.delegate = self
-        textView.textColor = mainColor
+        textView.textColor = UIColor.black
         
         return textView
     }()
@@ -25,7 +25,6 @@ class DiaryEditViewController: BaseViewController {
     }()
     
     var diaryModel: DiaryModel?
-    private var mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -41,8 +40,8 @@ class DiaryEditViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Nhật ký hôm nay", color: mainColor)
-        addBackButton(color: mainColor)
+        addTitle(title: "Nhật ký hôm nay")
+        addBackButton()
         
         view.layout(contextTextView)
             .below(titleLabel, 32)
@@ -59,7 +58,7 @@ class DiaryEditViewController: BaseViewController {
         saveButton.setTitle("Lưu Lại", for: .normal)
         saveButton.titleLabel?.font = R.font.playfairDisplayMedium(size: 20)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        saveButton.setTitleColor(mainColor, for: .normal)
+        saveButton.setTitleColor(UIColor.black, for: .normal)
         
         placeholderLabel.text = "Enter some text..."
         placeholderLabel.font = R.font.playfairDisplayMediumItalic(size: 20)
@@ -67,7 +66,7 @@ class DiaryEditViewController: BaseViewController {
         contextTextView.addSubview(placeholderLabel)
         
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (contextTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = mainColor
+        placeholderLabel.textColor = UIColor.black
         placeholderLabel.isHidden = !contextTextView.text.isEmpty
     }
     

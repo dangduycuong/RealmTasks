@@ -16,7 +16,6 @@ class TodoTableViewCell: UITableViewCell {
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var heightBackGroundImageView: NSLayoutConstraint!
     @IBOutlet weak var checkboxImageView: UIImageView!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var todoTitleLabel: UILabel!
@@ -39,25 +38,18 @@ class TodoTableViewCell: UITableViewCell {
     private func setupUI() {
         checkboxButton.setTitle("", for: .normal)
         checkboxButton.tintColor = AppColor.blueCustom
+        backgroundImageView.layer.cornerRadius = 6
         
-        subView.layer.shadowColor = UIColor.random.cgColor
-        subView.layer.shadowOpacity = 0.35
-        subView.layer.shadowOffset = .zero
-        subView.layer.shadowRadius = 2
-        
-        subView.layer.cornerRadius = 8
-        subView.backgroundColor = UIColor.random
-        
-        backgroundImageView.layer.cornerRadius = 8
+        subView.layer.borderWidth = 1
+        subView.layer.borderColor = UIColor.black.cgColor
+        subView.layer.cornerRadius = 6
     }
     
-    func fillData(todo: TodoModel, colorCell: UIColor, searchText: String?) {
+    func fillData(todo: TodoModel, searchText: String?) {
+        let colorCell = UIColor(hexString: "0f0600")
         checkboxImageView.image = todo.isCompleted ? R.image.icons8Checked_checkbox()?.withRenderingMode(.alwaysTemplate) : R.image.icons8Unchecked_checkbox()?.withRenderingMode(.alwaysTemplate)
         checkboxImageView.tintColor = colorCell
         
-        DispatchQueue.main.async {
-            self.heightBackGroundImageView.constant = self.stackView.bounds.size.height + 8
-        }
         let bold = R.font.playfairDisplayBold(size: 20)
         let medium = R.font.playfairDisplayMedium(size: 20)
         hilightText(searchText: searchText, content: todo.todoTitle, label: todoTitleLabel, font: bold, color: colorCell)

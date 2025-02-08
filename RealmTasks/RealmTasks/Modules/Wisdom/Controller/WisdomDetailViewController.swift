@@ -24,7 +24,7 @@ class WisdomDetailViewController: BaseViewController {
         textView.delegate = self
         textView.backgroundColor = UIColor.clear
         textView.isScrollEnabled = false
-        textView.textColor = mainColor
+        textView.textColor = UIColor.black
         
         return textView
     }()
@@ -37,7 +37,6 @@ class WisdomDetailViewController: BaseViewController {
     var viewModel = WisdomDetailViewModel()
     var wisdom = WisdomModel()
     var isViewWisdomDetail: Bool = false
-    private var mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -53,8 +52,8 @@ class WisdomDetailViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Trí Mưu", color: mainColor)
-        addBackButton(color: mainColor)
+        addTitle(title: "Trí Mưu")
+        addBackButton()
         
         view.layout(scrollView)
             .below(titleLabel, 32).left().bottom().right()
@@ -79,11 +78,11 @@ class WisdomDetailViewController: BaseViewController {
         placeholderLabel.text = "Enter some text..."
         //        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (contentTextView.font?.pointSize)!)
         placeholderLabel.font = R.font.playfairDisplayMediumItalic(size: 20)
-        placeholderLabel.textColor = mainColor
+        placeholderLabel.textColor = UIColor.black
         placeholderLabel.sizeToFit()
         contentTextView.addSubview(placeholderLabel)
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (contentTextView.font?.pointSize)! / 2)
-        placeholderLabel.textColor = mainColor
+        placeholderLabel.textColor = UIColor.black
         placeholderLabel.isHidden = !contentTextView.text.isEmpty
         addRightBarButtonItems()
     }
@@ -120,7 +119,7 @@ class WisdomDetailViewController: BaseViewController {
             stackView.axis = .horizontal
             stackView.spacing = 8
             
-            for i in 0..<7 {
+            for _ in 0..<7 {
                 let view = UIView()
                 view.backgroundColor = UIColor.random
                 NSLayoutConstraint.activate([
@@ -164,7 +163,7 @@ class WisdomDetailViewController: BaseViewController {
     }
     
     private func fillData() {
-        titleLabel.textColor = mainColor
+        titleLabel.textColor = UIColor.black
         let medium = R.font.playfairDisplayMedium(size: 20)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
@@ -172,7 +171,7 @@ class WisdomDetailViewController: BaseViewController {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: medium as Any,
-            .foregroundColor: mainColor,
+            .foregroundColor: UIColor.black,
             .paragraphStyle: paragraphStyle
         ]
         

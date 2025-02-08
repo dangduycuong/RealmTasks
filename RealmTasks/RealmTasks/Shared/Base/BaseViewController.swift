@@ -11,6 +11,20 @@ import RxSwift
 
 class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
+    lazy var searchView: NimsTinhChinhCapView = {
+        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
+        return searchView
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.keyboardDismissMode = .onDrag
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
+    
     lazy var addButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(nextDetail), for: .touchUpInside)
@@ -28,7 +42,8 @@ class BaseViewController: UIViewController {
     }()
     
     lazy var backGroundImageView: UIImageView = {
-        let imageView = UIImageView(image: R.image.woodGrain3())
+        let imageView = UIImageView(image: R.image.whiteBG())
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -42,7 +57,7 @@ class BaseViewController: UIViewController {
         spinner.color = AppColor.blueCustom
     }
     
-    func setupAddDataButton(color: UIColor? = UIColor.random) {
+    func setupAddDataButton() {
         let addView = UIView()
         let addImageView = UIImageView()
         
@@ -63,7 +78,7 @@ class BaseViewController: UIViewController {
             .right()
         
         addImageView.image = R.image.add()?.withRenderingMode(.alwaysTemplate)
-        addImageView.tintColor = color
+        addImageView.tintColor = UIColor.black
         
         addView.layer.cornerRadius = 20
         addView.layer.shadowColor = UIColor.black.cgColor
@@ -93,7 +108,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
     }
     
-    func addBackButton(color: UIColor? = UIColor.random) {
+    func addBackButton() {
         backButton.removeFromSuperview()
         backButton.addTarget(self, action: #selector(backButtonClicked(sender:)), for: .touchUpInside)
         view.layout(backButton)
@@ -101,16 +116,16 @@ class BaseViewController: UIViewController {
         
         let backImage = UIImage(named: "left-arrow")?.withRenderingMode(.alwaysTemplate)
         let backImageView = UIImageView(image: backImage)
-        backImageView.tintColor = color
+        backImageView.tintColor = UIColor.black
         backButton.layout(backImageView)
             .left(16).centerY(titleLabel).width(24).height(24)
     }
     
-    func addTitle(title: String, color: UIColor? = UIColor.random) {
+    func addTitle(title: String) {
         if let extraBold = PlayfairDisplayFont.extraBold(with: 20) {
             titleLabel.text = title
             titleLabel.font = extraBold
-            titleLabel.textColor = color
+            titleLabel.textColor = UIColor.black
             view.layout(titleLabel)
                 .centerX().topSafe(8)
         }

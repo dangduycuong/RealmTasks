@@ -10,29 +10,7 @@ import RealmSwift
 import RxSwift
 
 class DiaryViewController: BaseViewController {
-    
-    lazy var searchView: NimsTinhChinhCapView = {
-        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
-        searchView.layer.cornerRadius = 8
-        searchView.placeholderColor = mainColor
-        return searchView
-    }()
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.keyboardDismissMode = .onDrag
-        tableView.showsVerticalScrollIndicator = false
-        tableView.register(with: DiaryTableViewCell.self)
-        return tableView
-    }()
-    
     private var viewModel = DiaryViewModel()
-    let mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -44,6 +22,9 @@ class DiaryViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         addObserver()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(with: DiaryTableViewCell.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,7 +35,7 @@ class DiaryViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Nhật Ký", color: mainColor)
+        addTitle(title: "Nhật Ký")
         
         view.layout(searchView)
             .below(titleLabel, 32).left(16).right(16).height(40)
@@ -62,7 +43,7 @@ class DiaryViewController: BaseViewController {
         view.layout(tableView)
             .below(searchView, 16).left().bottom().right()
         
-        setupAddDataButton(color: mainColor)
+        setupAddDataButton()
     }
     
     private func addObserver() {
@@ -94,7 +75,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         let diary = viewModel.fetchedDiaryDataSource.value[indexPath.row]
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-YYYY, HH:mm:ss"
-        cell.configure(title: dateFormatter.string(from: diary.dateTime), description: diary.content, searchText: viewModel.searchText, color: mainColor)
+        cell.configure(title: dateFormatter.string(from: diary.dateTime), description: diary.content, searchText: viewModel.searchText)
         
         return cell
     }

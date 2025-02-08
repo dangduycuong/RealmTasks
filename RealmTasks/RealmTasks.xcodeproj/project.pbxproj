@@ -108,12 +108,12 @@
 		FA09B44A2816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */; };
 		FA09B44D2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */; };
 		FA15D7B5282419F30067EEBB /* galaxy.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA15D7B4282419F30067EEBB /* galaxy.gif */; };
-		FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DB2826299D009F1F8E /* R.generated.swift */; };
 		FA1C15E128262D31009F1F8E /* WisdomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */; };
 		FA1C15E228262D31009F1F8E /* WisdomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */; };
 		FA1C15E428262DE6009F1F8E /* WisdomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */; };
 		FA23582F2B7E201D00DCC773 /* Tagore.json in Resources */ = {isa = PBXBuildFile; fileRef = FA23582E2B7E201D00DCC773 /* Tagore.json */; };
 		FA2358322B7E284D00DCC773 /* PoemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */; };
+		FA2927402D566B1D0051AD16 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29273F2D566B1D0051AD16 /* R.generated.swift */; };
 		FA35D2FD2B807D1A00C2FC35 /* CustomSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */; };
 		FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */; };
 		FA37DCC3281AE1A6001F8FE3 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */; };
@@ -135,6 +135,8 @@
 		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
 		FAC706892B70FF7F000A8F8B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC706882B70FF7F000A8F8B /* DiaryViewController.swift */; };
 		FAC7068B2B710139000A8F8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */; };
+		FAD38D522D574F27008C1619 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */; };
+		FAD38D542D575924008C1619 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD38D532D575924008C1619 /* SegmentedControlView.swift */; };
 		FAD3DD4E281CE5CC0004B60C /* MediaAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */; };
 		FAE546532B8A548000D27CE9 /* DiaryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE546522B8A548000D27CE9 /* DiaryEditViewController.swift */; };
 		FAE546562B8A5BBC00D27CE9 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE546552B8A5BBC00D27CE9 /* DiaryModel.swift */; };
@@ -286,12 +288,12 @@
 		FA09B4492816EC000018D4B6 /* ca_dao_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ca_dao_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA09B44C2816F1850018D4B6 /* tuc_ngu_tinh_yeu_nam_nu.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tuc_ngu_tinh_yeu_nam_nu.rtf; sourceTree = "<group>"; };
 		FA15D7B4282419F30067EEBB /* galaxy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = galaxy.gif; sourceTree = "<group>"; };
-		FA1C15DB2826299D009F1F8E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FA1C15DF28262D31009F1F8E /* WisdomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomTableViewCell.swift; sourceTree = "<group>"; };
 		FA1C15E028262D31009F1F8E /* WisdomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WisdomTableViewCell.xib; sourceTree = "<group>"; };
 		FA1C15E328262DE6009F1F8E /* WisdomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WisdomViewModel.swift; sourceTree = "<group>"; };
 		FA23582E2B7E201D00DCC773 /* Tagore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tagore.json; sourceTree = "<group>"; };
 		FA2358312B7E284D00DCC773 /* PoemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemTableViewCell.swift; sourceTree = "<group>"; };
+		FA29273F2D566B1D0051AD16 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlView.swift; sourceTree = "<group>"; };
 		FA37DCC0281AE1A6001F8FE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FA37DCC1281AE1A6001F8FE3 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
@@ -317,6 +319,8 @@
 		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
 		FAC706882B70FF7F000A8F8B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		FAD38D532D575924008C1619 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		FAD3DD4D281CE5CC0004B60C /* MediaAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAllViewModel.swift; sourceTree = "<group>"; };
 		FAE546522B8A548000D27CE9 /* DiaryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditViewController.swift; sourceTree = "<group>"; };
 		FAE546552B8A5BBC00D27CE9 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -428,8 +432,8 @@
 		AC2019D928112F3000ACFC4E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FA29273F2D566B1D0051AD16 /* R.generated.swift */,
 				FA23582C2B7E1FD300DCC773 /* JSON */,
-				FA1C15DB2826299D009F1F8E /* R.generated.swift */,
 				AC5462132824C3E6003F0F5A /* Fonts */,
 				AC74076D2816717F0073E38E /* Localize */,
 				AC74076B28166F3E0073E38E /* Language */,
@@ -739,6 +743,7 @@
 				AC61C5EA281BBDA200ED185C /* Double.swift */,
 				FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */,
 				FA47B4082B7E3963004717AC /* UIColor+Extension.swift */,
+				FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				FAA179F52B7F879D0041D4FC /* NimsTinhChinhCapView */,
 				FA37DCBF281AE1A6001F8FE3 /* SearchView */,
 				FA35D2FC2B807D1A00C2FC35 /* CustomSegmentedControlView.swift */,
+				FAD38D532D575924008C1619 /* SegmentedControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1457,12 +1463,15 @@
 				AC740771281671E40073E38E /* BundleLocalization.m in Sources */,
 				AC740751281639890073E38E /* MediaTableViewCell.swift in Sources */,
 				FA02FD82281406AA00C820ED /* RealtimeWeather.swift in Sources */,
+				FA2927402D566B1D0051AD16 /* R.generated.swift in Sources */,
 				ACB1B6F22811370A00C2F90D /* TodoInfoViewController.swift in Sources */,
 				AC61C5E5281B9E8100ED185C /* Notification+Name.swift in Sources */,
 				AC7D846A2818F9F500E40FB1 /* LoginViewModel.swift in Sources */,
 				AC61C5EB281BBDA200ED185C /* Double.swift in Sources */,
+				FAD38D522D574F27008C1619 /* UITableViewCell+Extension.swift in Sources */,
 				FAF998242B84ED0000FA40E8 /* PoemModel.swift in Sources */,
 				ACCEE4122812A8A9007D0049 /* UIView+Extension.swift in Sources */,
+				FAD38D542D575924008C1619 /* SegmentedControlView.swift in Sources */,
 				AC740777281672510073E38E /* NSBundle+Localization.m in Sources */,
 				AC2019E728112FEE00ACFC4E /* BaseNavigationConntroller.swift in Sources */,
 				FAA179F72B7F87A40041D4FC /* NimsTinhChinhCapView.swift in Sources */,
@@ -1480,7 +1489,6 @@
 				ACCEE4102812A81A007D0049 /* Metadata.swift in Sources */,
 				AC740763281644B80073E38E /* MediaDetailTableViewCell.swift in Sources */,
 				AC114C662823751B007F0528 /* MediaDetailLocalModel.swift in Sources */,
-				FA1C15DC2826299D009F1F8E /* R.generated.swift in Sources */,
 				FA37DCC2281AE1A6001F8FE3 /* SearchView.swift in Sources */,
 				FA47B4092B7E3963004717AC /* UIColor+Extension.swift in Sources */,
 				FA02FD772813A83D00C820ED /* MarkerInfoView.swift in Sources */,

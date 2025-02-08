@@ -8,34 +8,13 @@
 import UIKit
 
 class MediaViewController: BaseViewController {
-    lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: MediaType.list.map { $0.text })
-        segmentedControl.addTarget(self, action: #selector(segmentedControlClicked), for: .valueChanged)
+    lazy var segmentedControl: SegmentedControlView = {
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
+        let segmentedControl = SegmentedControlView(items: MediaType.list.map { $0.text }, frame: frame)
         return segmentedControl
     }()
     
-    lazy var searchView: NimsTinhChinhCapView = {
-        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
-        searchView.layer.cornerRadius = 8
-        searchView.placeholderColor = mainColor
-        return searchView
-    }()
-    
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = .clear
-        tableView.keyboardDismissMode = .onDrag
-        
-        return tableView
-    }()
-    
-    var viewModel = MediaViewModel()
-    let mainColor = UIColor.random
+    private var viewModel = MediaViewModel()
     
     override func loadView() {
         super.loadView()
@@ -46,7 +25,8 @@ class MediaViewController: BaseViewController {
         super.viewDidLoad()
         
         addObserver()
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.registerCell(MediaTableViewCell.self)
         tableView.register(with: PoemTableViewCell.self)
         viewModel.delegate = self
@@ -57,10 +37,10 @@ class MediaViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Giải Trí", color: mainColor)
+        addTitle(title: "Giải Trí")
         
         let allListMenuIcon = UIImageView(image: R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate))
-        allListMenuIcon.tintColor = mainColor
+        allListMenuIcon.tintColor = UIColor.black
         let allMediaButton = UIButton()
         view.layout(allMediaButton)
             .centerY(titleLabel).right(16).width(44).height(44)
@@ -73,26 +53,11 @@ class MediaViewController: BaseViewController {
         view.layout(segmentedControl)
             .below(titleLabel, 32).left(16).right(16).height(40)
         
-        if let bold = PlayfairDisplayFont.bold(with: 20) {
-            let titleNormalAttributes = [
-                NSAttributedString.Key.font: bold,
-                NSAttributedString.Key.foregroundColor: mainColor.withAlphaComponent(0.4)
-            ]
-            let titleSelectedAttributes = [
-                NSAttributedString.Key.font: bold,
-                NSAttributedString.Key.foregroundColor: mainColor
-            ]
-            segmentedControl.setTitleTextAttributes(titleNormalAttributes, for: .normal)
-            segmentedControl.setTitleTextAttributes(titleSelectedAttributes, for: .selected)
-            segmentedControl.backgroundColor = mainColor.withAlphaComponent(0.4)
-            segmentedControl.selectedSegmentTintColor = UIColor.white.withAlphaComponent(0.4)
-        }
-        
         view.layout(searchView)
             .below(segmentedControl, 16).left(16).right(16).height(40)
         
         view.layout(tableView)
-            .below(searchView, 16).left().bottom().right()
+            .below(searchView, 16).left().bottomSafe().right()
     }
     
     private func addObserver() {
@@ -100,6 +65,10 @@ class MediaViewController: BaseViewController {
         searchView.searchText = { [weak self] text in
             guard let `self` = self else { return }
             self.viewModel.searchText = text
+        }
+        
+        segmentedControl.indexValueChanged = { index in
+            self.viewModel.mediaType = MediaType.list[index]
         }
     }
     
@@ -111,10 +80,6 @@ class MediaViewController: BaseViewController {
     @objc func openAllMedia(_ sender: UIButton) {
         let vc = MediaAllViewController()
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
-        viewModel.mediaType = MediaType.list[segmentedControl.selectedSegmentIndex]
     }
     
 }
@@ -131,11 +96,11 @@ extension MediaViewController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.mediaType == .poem {
             let cell = tableView.dequeueReusableCell(cellType: PoemTableViewCell.self, forIndexPath: indexPath)
             let item = viewModel.poemsModel[indexPath.row]
-            cell.configure(title: item.title ?? "", description: item.content ?? "", note: item.note, keyWord: viewModel.searchText,  color: mainColor)
+            cell.configure(title: item.title ?? "", description: item.content ?? "", note: item.note, keyWord: viewModel.searchText)
             return cell
         }
         let cell = tableView.dequeueReusableCell(cellType: MediaTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(title: viewModel.filteredMediaTypeList[indexPath.row].title, searchText: viewModel.searchText, colorCell: mainColor)
+        cell.fillData(title: viewModel.filteredMediaTypeList[indexPath.row].title, searchText: viewModel.searchText)
         
         return cell
     }

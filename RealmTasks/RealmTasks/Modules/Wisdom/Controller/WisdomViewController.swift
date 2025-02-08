@@ -8,28 +8,7 @@
 import UIKit
 
 class WisdomViewController: BaseViewController {
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.keyboardDismissMode = .onDrag
-        tableView.showsVerticalScrollIndicator = false
-        return tableView
-    }()
-    
-    lazy var searchView: NimsTinhChinhCapView = {
-        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
-        searchView.layer.cornerRadius = 8
-        searchView.placeholderColor = mainColor
-        return searchView
-    }()
-    
-    var viewModel = WisdomViewModel()
-    let mainColor = UIColor.random
+    private  var viewModel = WisdomViewModel()
     
     override func loadView() {
         super.loadView()
@@ -39,6 +18,8 @@ class WisdomViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.registerCell(WisdomTableViewCell.self)
         viewModel.delegate = self
         searchView.searchText = { [weak self] text in
@@ -54,15 +35,15 @@ class WisdomViewController: BaseViewController {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: "Mưu Trí", color: mainColor)
+        addTitle(title: "Mưu Trí")
         
         view.layout(searchView)
             .below(titleLabel, 32).left(16).right(16).height(40)
         
         view.layout(tableView)
-            .below(searchView, 16).left().bottom().right()
+            .below(searchView, 16).left().bottomSafe().right()
         
-        setupAddDataButton(color: mainColor)
+        setupAddDataButton()
     }
     
     override func nextDetail(_ sender: UIButton) {
@@ -79,10 +60,9 @@ extension WisdomViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: WisdomTableViewCell.self, forIndexPath: indexPath)
-        cell.fillData(content: viewModel.filteredListWisdom[indexPath.row].content, keyWord: viewModel.searchText, colorCell: mainColor)
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .clear
-        cell.selectedBackgroundView = backgroundView
+        cell.fillData(content: viewModel.filteredListWisdom[indexPath.row].content, keyWord: viewModel.searchText)
+        
+        cell.selectionStyle = .none
         return cell
     }
     

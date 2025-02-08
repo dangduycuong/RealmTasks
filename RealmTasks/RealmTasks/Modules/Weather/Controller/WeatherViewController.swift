@@ -14,26 +14,6 @@ class WeatherViewController: BaseViewController {
     let mapTypeMenuButton = UIButton()
     let customSegmentedView = CustomSegmentedControlView()
     
-    lazy var searchView: NimsTinhChinhCapView = {
-        let searchView: NimsTinhChinhCapView = NimsTinhChinhCapView.loadFromNib()
-        searchView.backgroundColor = mainColor.withAlphaComponent(0.4)
-        searchView.layer.cornerRadius = 8
-        searchView.placeholderColor = mainColor
-        return searchView
-    }()
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.keyboardDismissMode = .onDrag
-        tableView.showsVerticalScrollIndicator = false
-        tableView.register(with: WeatherTableViewCell.self)
-        return tableView
-    }()
-    
     private lazy var explainView: ExplainContentView = {
        let view = ExplainContentView()
         return view
@@ -65,7 +45,6 @@ class WeatherViewController: BaseViewController {
     var timer = Timer()
     private var weatherType: WeatherSegmentedType = WeatherSegmentedType.map
     var lastContentOffset: CGFloat = 0
-    let mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -76,6 +55,9 @@ class WeatherViewController: BaseViewController {
         super.viewDidLoad()
         
         addObserver()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(with: WeatherTableViewCell.self)
         viewModel.tabSelected.accept(weatherType)
         customSegmentedView.setDefaultValue(0)
         updateUI(0)
@@ -103,13 +85,13 @@ class WeatherViewController: BaseViewController {
             .bottomSafe()
             .right()
         
-        addTitle(title: "Thời Tiết", color: mainColor)
+        addTitle(title: "Thời Tiết")
         
         view.layout(customSegmentedView)
             .below(titleLabel, 32)
             .left(16).right(16).height(40)
         customSegmentedView.setNewValue(WeatherSegmentedType.all.map { $0.title })
-        customSegmentedView.updateColor(mainColor)
+        customSegmentedView.updateColor(UIColor.black)
         
         view.layout(searchView)
             .below(customSegmentedView, 16).left(16).right(16).height(40)
@@ -117,9 +99,9 @@ class WeatherViewController: BaseViewController {
         view.layout(tableView)
             .below(searchView, 16).left().bottomSafe().right()
         
-        targetView.backgroundColor = mainColor.withAlphaComponent(0.4)
+        targetView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         targetView.layer.borderWidth = 1
-        targetView.layer.borderColor = mainColor.cgColor
+        targetView.layer.borderColor = UIColor.white.cgColor
         view.layout(targetView)
             .center(mapView)
             .width(40)
@@ -129,7 +111,7 @@ class WeatherViewController: BaseViewController {
         let dotView = UIView()
         targetView.layout(dotView)
             .center().width(4).height(4)
-        dotView.backgroundColor = mainColor
+        dotView.backgroundColor = UIColor.white
         dotView.layer.cornerRadius = 2
         
         view.layout(addressLabel)
@@ -138,8 +120,8 @@ class WeatherViewController: BaseViewController {
             .right(16)
             .height(40)
         
-        addressLabel.textColor = mainColor
-        addressLabel.backgroundColor = mainColor.withAlphaComponent(0.4)
+        addressLabel.textColor = UIColor.black
+        addressLabel.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         addressLabel.layer.cornerRadius = 4
         
         let vStackView = UIStackView()
@@ -182,14 +164,14 @@ class WeatherViewController: BaseViewController {
         windkphLabel.font = R.font.playfairDisplayMedium(size: 20)
         conditionTextLabel.font = R.font.playfairDisplayMedium(size: 20)
         
-        locationLabel.textColor = mainColor
-        timeConditionLabel.textColor = mainColor
-        tempCLabel.textColor = mainColor
-        feelslikeCLabel.textColor = mainColor
+        locationLabel.textColor = UIColor.black
+        timeConditionLabel.textColor = UIColor.black
+        tempCLabel.textColor = UIColor.black
+        feelslikeCLabel.textColor = UIColor.black
         
-        humidityLabel.textColor = mainColor
-        windkphLabel.textColor = mainColor
-        conditionTextLabel.textColor = mainColor
+        humidityLabel.textColor = UIColor.black
+        windkphLabel.textColor = UIColor.black
+        conditionTextLabel.textColor = UIColor.black
         
         view.layout(explainView)
             .left()
@@ -258,7 +240,7 @@ extension WeatherViewController {
     
     private func setupMenuButtonMapType() {
         let mapTypeImageView = UIImageView(image: R.image.icons8Menu_rounded()?.withRenderingMode(.alwaysTemplate))
-        mapTypeImageView.tintColor = mainColor
+        mapTypeImageView.tintColor = UIColor.black
         
         view.layout(mapTypeMenuButton)
             .centerY(titleLabel).right(16).width(40).height(40)
@@ -416,7 +398,7 @@ extension WeatherViewController {
             
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: R.font.playfairDisplayMedium(size: 20) as Any,
-                .foregroundColor: self.mainColor,
+                .foregroundColor: UIColor.black,
                 .paragraphStyle: paragraphStyle
             ]
             let place = lines.joined(separator: "\n")
@@ -567,7 +549,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cellType: WeatherTableViewCell.self, forIndexPath: indexPath)
         let data = viewModel.fetchedWeatherDataSource.value[indexPath.row]
-        cell.fillData(content: data.content, isShowing: data.isShowing, searchText: viewModel.searchText, color: mainColor)
+        cell.fillData(content: data.content, isShowing: data.isShowing, searchText: viewModel.searchText, color: UIColor.black)
         
         return cell
     }

@@ -18,7 +18,6 @@ class DetailListVC: BaseViewController, UITextViewDelegate {
     }()
     
     var mediaType = MediaTypeLocalModel()
-    private var mainColor = UIColor.random
     
     override func loadView() {
         super.loadView()
@@ -33,8 +32,8 @@ class DetailListVC: BaseViewController, UITextViewDelegate {
     
     private func prepareForViewController() {
         addBackground()
-        addTitle(title: mediaType.title, color: mainColor)
-        addBackButton(color: mainColor)
+        addTitle(title: mediaType.title)
+        addBackButton()
         
         view.layout(contextTextView)
             .below(titleLabel, 32)
@@ -59,14 +58,14 @@ class DetailListVC: BaseViewController, UITextViewDelegate {
                     string: string,
                     attributes: [
                         .font: medium as Any,
-                        .foregroundColor: mainColor,
+                        .foregroundColor: UIColor.black,
                         .paragraphStyle: paragraphStyle
                     ]
                 )
                 
                 let attributes: [NSAttributedString.Key: Any] = [
                     .font: medium as Any,
-                    .foregroundColor: mainColor,
+                    .foregroundColor: UIColor.black,
                     .paragraphStyle: paragraphStyle
                 ]
                 
