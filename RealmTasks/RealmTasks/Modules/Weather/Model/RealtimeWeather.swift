@@ -19,7 +19,7 @@ import Foundation
 
 // MARK: - RealtimeWeather
 struct RealtimeWeather: Codable {
-    let current: Current?
+    var current: Current?
     let location: Location?
 }
 
@@ -30,17 +30,17 @@ struct Current: Codable {
     let feelslikeF, feelslikeC: Double?
     let isDay, visMiles: Int?
     let pressureIn: Double?
-    let visKM: Int?
+    let visKM: Double?
     let windDir: String?
     let windDegree: Int?
     let tempF: Double?
     let humidity: Int?
     let windMph: Double?
-    let condition: Condition?
+    var condition: Condition?
     let pressureMB: Int?
     let windKph, tempC: Double?
     let lastUpdated: String?
-    let uv: Int?
+    let uv: Double?
     
     enum CodingKeys: String, CodingKey {
         case gustMph = "gust_mph"
@@ -72,7 +72,7 @@ struct Current: Codable {
 // MARK: - Condition
 struct Condition: Codable {
     let code: Int?
-    let text, icon: String?
+    var text, icon: String?
 }
 
 // MARK: - Location

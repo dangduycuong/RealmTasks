@@ -133,6 +133,9 @@
 		FAA179F72B7F87A40041D4FC /* NimsTinhChinhCapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA179F62B7F87A40041D4FC /* NimsTinhChinhCapView.swift */; };
 		FAA179F92B7F87BA0041D4FC /* NimsTinhChinhCapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA179F82B7F87BA0041D4FC /* NimsTinhChinhCapView.xib */; };
 		FAA239CD2827FC1900798A27 /* DetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA239CC2827FC1900798A27 /* DetailListVC.swift */; };
+		FAA9BD652D5B324A00D0D00D /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9BD642D5B324A00D0D00D /* URLRequest+Extension.swift */; };
+		FAA9BD672D5B48CF00D0D00D /* LangueRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9BD662D5B48CF00D0D00D /* LangueRequestModel.swift */; };
+		FAA9BD692D5B4E2B00D0D00D /* LanguageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9BD682D5B4E2B00D0D00D /* LanguageResponseModel.swift */; };
 		FAC706892B70FF7F000A8F8B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC706882B70FF7F000A8F8B /* DiaryViewController.swift */; };
 		FAC7068B2B710139000A8F8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */; };
 		FAD38D522D574F27008C1619 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */; };
@@ -317,6 +320,9 @@
 		FAA179F62B7F87A40041D4FC /* NimsTinhChinhCapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimsTinhChinhCapView.swift; sourceTree = "<group>"; };
 		FAA179F82B7F87BA0041D4FC /* NimsTinhChinhCapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NimsTinhChinhCapView.xib; sourceTree = "<group>"; };
 		FAA239CC2827FC1900798A27 /* DetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListVC.swift; sourceTree = "<group>"; };
+		FAA9BD642D5B324A00D0D00D /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
+		FAA9BD662D5B48CF00D0D00D /* LangueRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangueRequestModel.swift; sourceTree = "<group>"; };
+		FAA9BD682D5B4E2B00D0D00D /* LanguageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageResponseModel.swift; sourceTree = "<group>"; };
 		FAC706882B70FF7F000A8F8B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
@@ -744,6 +750,7 @@
 				FAC7068A2B710139000A8F8B /* UIViewController+Extension.swift */,
 				FA47B4082B7E3963004717AC /* UIColor+Extension.swift */,
 				FAD38D512D574F27008C1619 /* UITableViewCell+Extension.swift */,
+				FAA9BD642D5B324A00D0D00D /* URLRequest+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -811,6 +818,7 @@
 				FAE5465B2B8B1EC200D27CE9 /* WeatherSegmentedType.swift */,
 				FAE5465D2B8B21DF00D27CE9 /* MapType.swift */,
 				FAE546632B8B36FC00D27CE9 /* WeatherModel.swift */,
+				FAA9BD682D5B4E2B00D0D00D /* LanguageResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +838,7 @@
 			isa = PBXGroup;
 			children = (
 				FA02FD7D2813B7ED00C820ED /* WeatherViewModel.swift */,
+				FAA9BD662D5B48CF00D0D00D /* LangueRequestModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1456,6 +1465,7 @@
 				AC74078728167BEF0073E38E /* LoginViewController.swift in Sources */,
 				FAE546562B8A5BBC00D27CE9 /* DiaryModel.swift in Sources */,
 				ACCEE3FD281251EF007D0049 /* MenloFont.swift in Sources */,
+				FAA9BD692D5B4E2B00D0D00D /* LanguageResponseModel.swift in Sources */,
 				AC114C68282375D9007F0528 /* MediaTypeLocalModel.swift in Sources */,
 				AC74075528163CDF0073E38E /* MediaViewModel.swift in Sources */,
 				AC114C702823A2D9007F0528 /* WisdomDetailViewController.swift in Sources */,
@@ -1482,6 +1492,7 @@
 				AC61C5F3281BF0FD00ED185C /* MediaAllViewController.swift in Sources */,
 				AC74077E281674D20073E38E /* LocalData.swift in Sources */,
 				ACB1B6F82811378F00C2F90D /* UIView+Identifier.swift in Sources */,
+				FAA9BD652D5B324A00D0D00D /* URLRequest+Extension.swift in Sources */,
 				ACA38EA0281A2CF90021428C /* DevCenters+GIF.swift in Sources */,
 				FA2358322B7E284D00DCC773 /* PoemTableViewCell.swift in Sources */,
 				AC2019EB2811301E00ACFC4E /* WeatherViewController.swift in Sources */,
@@ -1506,6 +1517,7 @@
 				AC7407742816721E0073E38E /* LocalizationHandlerUtil.m in Sources */,
 				AC114C6E2823A299007F0528 /* WisdomViewController.swift in Sources */,
 				FAE5465C2B8B1EC200D27CE9 /* WeatherSegmentedType.swift in Sources */,
+				FAA9BD672D5B48CF00D0D00D /* LangueRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1732,6 +1744,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LW34R6CMB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RealmTasks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

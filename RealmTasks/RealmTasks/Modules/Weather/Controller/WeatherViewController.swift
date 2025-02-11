@@ -121,7 +121,7 @@ class WeatherViewController: BaseViewController {
             .height(40)
         
         addressLabel.textColor = UIColor.black
-        addressLabel.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        addressLabel.backgroundColor = UIColor.white
         addressLabel.layer.cornerRadius = 4
         
         let vStackView = UIStackView()
@@ -138,7 +138,7 @@ class WeatherViewController: BaseViewController {
         view.layout(weatherInfoView)
             .below(customSegmentedView, 16)
             .left(16)
-        weatherInfoView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        weatherInfoView.backgroundColor = UIColor.white
         
         weatherInfoView.layout(vStackView)
             .top(8)
@@ -155,7 +155,7 @@ class WeatherViewController: BaseViewController {
         vStackView.addArrangedSubview(windkphLabel)
         vStackView.addArrangedSubview(conditionTextLabel)
         
-        locationLabel.font = R.font.playfairDisplayMedium(size: 20)
+        locationLabel.font = R.font.playfairDisplayBold(size: 20)
         timeConditionLabel.font = R.font.playfairDisplayMedium(size: 20)
         tempCLabel.font = R.font.playfairDisplayMedium(size: 20)
         feelslikeCLabel.font = R.font.playfairDisplayMedium(size: 20)
@@ -254,12 +254,12 @@ extension WeatherViewController {
     @objc private func updateMapType(_ sender: UIButton) {
         let dropDown = DropDown()
         
-        DropDown.appearance().textColor = UIColor.random
+        DropDown.appearance().textColor = UIColor.black
         DropDown.appearance().selectedTextColor = UIColor.random
         if let font = PlayfairDisplayFont.semiBold(with: 20) {
             DropDown.appearance().textFont = font
         }
-        DropDown.appearance().backgroundColor = UIColor.random
+        DropDown.appearance().backgroundColor = UIColor.white
         DropDown.appearance().selectionBackgroundColor = UIColor.random
         DropDown.appearance().cellHeight = 60
         
@@ -302,12 +302,12 @@ extension WeatherViewController {
         //        }
         let dropDown = DropDown()
         
-        DropDown.appearance().textColor = UIColor.random
+        DropDown.appearance().textColor = UIColor.black
         DropDown.appearance().selectedTextColor = UIColor.random
         if let font = PlayfairDisplayFont.semiBold(with: 20) {
             DropDown.appearance().textFont = font
         }
-        DropDown.appearance().backgroundColor = UIColor.random
+        DropDown.appearance().backgroundColor = UIColor.white
         DropDown.appearance().selectionBackgroundColor = UIColor.random
         DropDown.appearance().cellHeight = 60
         
@@ -509,33 +509,33 @@ extension WeatherViewController: GMSMapViewDelegate {
 }
 
 extension WeatherViewController: WeatherViewModelDelegate {
-    func updateData(weather: RealtimeWeather) {
+    func updateData(model: TransModel) {
         DispatchQueue.main.async {
-            self.fillData(weather: weather)
+            self.fillData(model: model)
         }
     }
     
-    private func fillData(weather: RealtimeWeather) {
+    private func fillData(model: TransModel) {
         weatherInfoView.isHidden = false
-        locationLabel.text = weather.location?.name
-        timeConditionLabel.text = weather.current?.lastUpdated
-        if let tempC = weather.current?.tempC?.toString() {
+        locationLabel.text = model.address
+        timeConditionLabel.text = model.lastUpdated
+        if let tempC = model.tempC {
             tempCLabel.text = "\(tempC) °C"
         }
         
-        if let feelslikeC = weather.current?.feelslikeC?.toString() {
-            feelslikeCLabel.text = "Feels Like \(feelslikeC) °C"
+        if let feelsLike = model.feelsLike {
+            feelslikeCLabel.text = "\(feelsLike) °C"
         }
         
-        if let humidity = weather.current?.humidity?.toString() {
-            humidityLabel.text = "Humidity \(humidity) %"
+        if let humidity = model.humidity {
+            humidityLabel.text = "\(humidity) %"
         }
         
-        if let windKph = weather.current?.windKph?.toString() {
-            windkphLabel.text = "Wind \(windKph) Kph"
+        if let wind = model.wind {
+            windkphLabel.text = "\(wind) Kph"
         }
         
-        if let text = weather.current?.condition?.text {
+        if let text = model.text {
             conditionTextLabel.text = text
         }
     }
@@ -581,3 +581,4 @@ extension WeatherViewController: UIScrollViewDelegate {
         }
     }
 }
+
