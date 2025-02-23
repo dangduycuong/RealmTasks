@@ -90,64 +90,19 @@ class WeatherViewModel: BaseViewModel {
         fetchedWeatherDataSource.accept(array)
     }
     
-    private func createURL() -> URL {
+    func realtimeWeather() {
         let latitude = cocationCoordinate.latitude
         let longitude = cocationCoordinate.longitude
-        let double = latitude
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        guard let number =  numberFormatter.string(from: NSNumber(value: double)) else { fatalError("Can not get number") }
-        print("\(number)")
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "weatherapi-com.p.rapidapi.com"
-        urlComponents.path = "/current.json"
-        let urlQueryItem: [URLQueryItem] = [
+        let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "q", value: "\(latitude),\(longitude)")
         ]
-        urlComponents.queryItems = urlQueryItem
-        guard let url = urlComponents.url else {
-            fatalError("URL not found")
-        }
-        return url
-    }
-    
-    private func createURLRequest(url: URL) -> URLRequest {
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        let headers = [
-            "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-            "X-RapidAPI-Key": "fb71aa7f62msh153e4924e940392p16bbc4jsn166248f8bdaa"
-        ]
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        return request
-    }
-    
-    func realtimeWeather() {
-        let url = createURL()
-        let request = createURLRequest(url: url)
-        let session = URLSession.shared
         
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            print("====CURL:\n", request.cURL())
-            if let error = error as? URLError {
-                print("error code: ", error.code)
-                return
-            }
-            if let httpResponse = response as? HTTPURLResponse {
-                print("statusCode: ", httpResponse.statusCode) // httpResponse as Any
-            }
-            guard let data = data else { return }
-            do {
-                let json = try JSONDecoder().decode(RealtimeWeather.self, from: data)
-                self.weather = json
-                self.translateJSON(weather: self.weather)
-            } catch let error {
-                print(error)
-            }
+        let target = WeatherEndpoint.realtimeWeather(queryItems: queryItems)
+        APIClient.shared.callApi(target: target) { (model: RealtimeWeather) in
+            self.weather = model
+            self.translateJSON(weather: self.weather)
         }
-        dataTask.resume()
     }
     
     func readJSONFile(forName name: String) {
@@ -199,42 +154,13 @@ class WeatherViewModel: BaseViewModel {
     }
     
     func translateJSON(weather: RealtimeWeather?) {
-        let headers = [
-            "x-rapidapi-key": "b266514becmsh63278b22c117acfp12ef2cjsn7a142a5dffa4",
-            "x-rapidapi-host": "google-translate113.p.rapidapi.com",
-            "Content-Type": "application/json"
-        ]
+        let requestModel = getBody()
         
-        guard let url = URL(string: "https://google-translate113.p.rapidapi.com/api/v1/translator/json") else { return }
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        do {
-            let requestModel = getBody()
-            let postData = try JSONEncoder().encode(requestModel)
-            request.httpBody = postData
-        } catch {}
-        
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            print("====cURL:\n", request.cURL())
-            if let error = error as? URLError {
-                print(error.errorCode)
-                return
+        let target = TranslateEndpoint.translateJSON(model: requestModel)
+        APIClient.shared.callApi(target: target) { (model: LanguageResponseModel) in
+            if let trans = model.trans {
+                self.delegate?.updateData(model: trans)
             }
-            if let httpResponse = response as? HTTPURLResponse {
-                print(httpResponse.statusCode)
-            }
-            guard let data = data else { return }
-            do {
-                let json = try JSONDecoder().decode(LanguageResponseModel.self, from: data)
-                if let trans = json.trans {
-                    self.delegate?.updateData(model: trans)
-                }
-            } catch {}
         }
-        
-        dataTask.resume()
     }
 }

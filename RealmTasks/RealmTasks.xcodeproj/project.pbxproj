@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -346,6 +346,10 @@
 		FAF998262B84EEDD00FA40E8 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FA92FDCF2D6B1E670084BE64 /* Service */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Service; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		FA3E74ED28105C570087F8EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -498,6 +502,7 @@
 		AC2019DF28112F7B00ACFC4E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FA92FDCF2D6B1E670084BE64 /* Service */,
 				AC77FBA0281781FA0085F8C8 /* DataManager */,
 				AC74077C2816745A0073E38E /* LocalData */,
 				ACB1B6F32811375A00C2F90D /* Extension */,
@@ -1098,6 +1103,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FA92FDCF2D6B1E670084BE64 /* Service */,
 			);
 			name = RealmTasks;
 			productName = RealmTasks;
